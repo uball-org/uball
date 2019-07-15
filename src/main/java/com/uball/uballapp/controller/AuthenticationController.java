@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class AuthenticationController {
     @GetMapping("/")
     public String loginPage() {
-        return "index";
+        return "user/userprofile";
     }
 }
