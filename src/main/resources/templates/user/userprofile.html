@@ -2,34 +2,38 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head th:replace="partials/head :: head('User Profile')">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
 </head>
 <body>
 <nav th:replace="partials/navbar :: nav"></nav>
 
 <!--header here (Welcome, ${User.name})-->
 <h1>Welcome, ${User.name}</h1>
+<style>
+
+</style>
 
 <div class="container">
-
     <div class="row">
 
         <!--        profile picture of Admin-->
 
-        <div class="col s4 card-panel hoverable" style="border: 2px solid black;"><span class="flow-text">Picture will go here</span></div>
+        <div class="col s6 card-panel hoverable" style="border: 2px solid black;"><span class="flow-text">Picture will go here</span></div>
 
         <!--        table of users-->
 
-        <div class="col s8" style=" border: 2px solid black;">
-
-            <h6>Name: ${user.firstname ' ' user.lastname}</h6>
-            <h6>User ID: ${user.id}</h6>
-            <h6>Email: ${user.email}</h6>
-            <h6>D.O.B. : ${user.DOB}</h6>
-            <h6>Gender: ${user.email}</h6>
-            <h6>Total Points: ${user.points}</h6>
-            <h6>League: ${user.league_id.name}</h6>
-
         </div>
+    <div class="card">
+        <p>Name: ${user.firstname ' ' user.lastname}</p>
+        <p>User ID: ${user.id}</p>
+        <p>Email: ${user.email}</p>
+        <p>D.O.B. : ${user.DOB}</p>
+        <p>Gender: ${user.email}</p>
+        <p>Total Points: ${user.points}</p>
+        <p>League: ${user.league_id.name}</p>
+    </div>
+
 
         <div class="card">
             <div class="card-tabs">
@@ -85,8 +89,8 @@
                             </tbody>
                         </table>
                     </div>
-
-
+<!-- //////////////////////////////////////////////////////////////-->
+<br>
                     </div>
 
 <!--                overall Tab-->
@@ -135,7 +139,7 @@
                     </div>
 
                 </div>
-
+<br>
 <!--                machine Tab-->
 
                 <div id="machine">
@@ -180,16 +184,26 @@
                             </tbody>
                         </table>
                     </div>
-
                 </div>
             </div>
         </div>
-
     </div>
-
-
 </div>
 
+
+
+
+
+
+
+
+
+
+<script>
+
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <th:block th:include="partials/footer :: scripts" />
 </body>
 </html>

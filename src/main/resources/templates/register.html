@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/head :: head('UBall Register')">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
 </head>
 <body>
 <nav th:replace="partials/navbar :: nav"></nav>
 
-<main class="container " >
+<h2 class="center-align">Register </h2>
+
+<main class="container">
     <form th:action="@{/register}" method="POST" th:object="${user}" >
         <label for="firstName">First Name</label>
         <br/>
@@ -20,10 +24,10 @@
         <br/>
         <input id="password" type="password" th:field="*{password}" />
         <br/>
-<!--        <label for="cpassword">Confirm Password</label>-->
-<!--        <br/>-->
-<!--        <input id="cpassword" type="password" th:field="*{password}" />-->
-<!--        <br/>-->
+        <label for="cpassword">Confirm Password</label>
+        <br/>
+        <input id="cpassword" type="password" th:field="*{password}" />
+        <br/>
         <label for="email">Email</label>
         <br/>
         <input id="email" th:field="*{email}" />
@@ -32,6 +36,7 @@
         <br/>
         <input id="DOB" type="date" th:field="*{DOB}" />
         <br/>
+
         <label>Gender</label>
         <select class="browser-default">
             <option value="" >Choose your option</option>
@@ -47,10 +52,15 @@
             </select>
         <br/>
         <br/>
-        <input value="Sign me up!" type="submit" />
+        <!--<input value="Sign me up!" type="submit" /> -->
+        <div class="center-align">
+            <button type="submit" class="btn btn-primary">Register</button>
+        </div>
     </form>
     <br class="mb-1" />
 </main>
 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
