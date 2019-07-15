@@ -26,7 +26,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth
-                .userDetailsService(usersLoader) // How to find users by their username
+                .userDetailsService(usersLoader) // How to find users by their email
                 .passwordEncoder(passwordEncoder()) // How to encode and verify passwords
         ;
     }
@@ -36,8 +36,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http
                 /* Login configuration */
                 .formLogin()
-                .loginPage("/")
-                .defaultSuccessUrl("/") // user's home page, it can be any URL
+                .loginPage("/index")
+                .defaultSuccessUrl("/user/userprofile") // user's home page, it can be any URL
                 .permitAll() // Anyone can go to the login page
                 /* Logout configuration */
                 .and()
@@ -50,7 +50,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 /* Pages that can be viewed without having to log in */
                 .and()
                 .authorizeRequests()
-                .antMatchers("/") // anyone can see the home and the ads pages
+                .antMatchers("/") // anyone can see the home page
                 .permitAll()
                 /* Pages that require athentication */
                 .and()

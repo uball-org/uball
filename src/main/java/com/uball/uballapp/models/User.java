@@ -1,6 +1,6 @@
 package com.uball.uballapp.models;
-import com.uball.uballapp.repos.UserRepository;
 import org.springframework.format.annotation.DateTimeFormat;
+import com.uball.uballapp.repos.UserRepository;
 
 import javax.persistence.*;
 import java.util.Date;
