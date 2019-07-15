@@ -1,5 +1,6 @@
 package com.uball.uballapp.models;
 import com.uball.uballapp.repos.UserRepository;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -26,6 +27,7 @@ public class User {
     private String password;
 
     @Column(nullable = false)
+    @DateTimeFormat(pattern ="yyyy-MM-dd")
     private Date DOB;
 
     @Column(nullable = false)
