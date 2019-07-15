@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.Date;
+
 @Controller
 public class UserController {
     private UserRepository userDao;
@@ -30,12 +32,19 @@ public class UserController {
 
     @PostMapping("/register")
     public String saveUser(@ModelAttribute User user){
-//        Date DOB = user.getDOB();
-//        user.setDOB(DOB);
+        Date DOB = user.getDOB();
+        user.setDOB(DOB);
         String hash = passwordEncoder.encode(user.getPassword());
         user.setPassword(hash);
         userDao.save(user);
         return "redirect:/";
+    }
+
+    //request to the login form page
+    @GetMapping("/login")
+    public String loginForm(Model model){
+        model.addAttribute("user", new User());
+        return "user/login";
     }
 
 //    //Getting all Users!
