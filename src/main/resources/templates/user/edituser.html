@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head th:replace="partials/head :: head('Edit User')">
+</head>
+<body>
+<nav th:replace="partials/navbar :: nav"></nav>
+
+
+<main class="container " >
+    <form th:action="@{'/users/' + ${user.id} + '/edit'}" method="POST" th:object="${user}" >
+        <label for="firstName">First Name</label>
+        <br/>
+        <input id="firstName" th:field="*{firstName}" />
+        <br/>
+        <label for="lastName">Last Name</label>
+        <br/>
+        <input id="lastName" th:field="*{lastName}" />
+        <br/>
+        <label for="email">Email</label>
+        <br/>
+        <input id="email" th:field="*{email}" />
+        <br/>
+        <label for="DOB">Date of Birth</label>
+        <br/>
+        <input id="DOB" type="date" th:field="*{DOB}" />
+        <br/>
+        <label>Gender</label>
+        <select class="browser-default">
+            <option value="" >Choose your option</option>
+            <option value="M">M</option>
+            <option value="F">F</option>
+        </select>
+        <br/>
+        <label>League</label>
+        <select class="browser-default">
+            <option value="" >Choose your option</option>
+            <option value="Belles">Belles</option>
+            <option value="SAPL">SAPL</option>
+        </select>
+        <br/>
+        <br/>
+        <input value="Update" type="submit" />
+    </form>
+    <br class="mb-1" />
+
+<!--admin edit user view &#45;&#45;-->
+
+<!--is_admin field-->
+<!--points field-->
+<!--league_id field-->
+
+</main>
+
+
+
+
+
+<footer>
+    <div th:replace="partials/footer :: footer"></div>
+    <th:block th:include="partials/footer :: scripts" />
+</footer>
+</body>
+</html>
