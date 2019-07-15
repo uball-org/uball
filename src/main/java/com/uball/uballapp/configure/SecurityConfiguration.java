@@ -44,7 +44,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .logout()
 //                **********
 //                I do not think this will work?
-                .logoutSuccessUrl("/?logout") // append a query string value
+                .logoutSuccessUrl("/login?logout") // append a query string value
 //                ***********
 
                 /* Pages that can be viewed without having to log in */

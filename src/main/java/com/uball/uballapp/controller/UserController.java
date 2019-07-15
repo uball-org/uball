@@ -24,6 +24,7 @@ public class UserController {
         this.passwordEncoder = passwordEncoder;
     }
 
+
     @GetMapping("/register")
     public String registerForm(Model model){
         model.addAttribute("user", new User());
@@ -31,7 +32,27 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public String saveUser(@ModelAttribute User user){
+    public String saveUser(@ModelAttribute User user, Model model){
+
+        /*** registration Validation***/
+        //if empty fields redirect register
+        if (user.getEmail().equals("")
+                || user.getFirstName().equals("")
+                || user.getLastName().equals("")
+                || user.getPassword().equals("")
+//                || user.getGender.equals("");
+                || user.getDOB().equals("")) {
+            return "user/register";
+        }
+        // for redirect again
+        for (User registeredUser : userDao.findAll()) {
+            if (user.getEmail().equals(registeredUser.getEmail())) {
+                if (user.getEmail().equals(registeredUser.getEmail())) {
+                    model.addAttribute("duplicateEmail", "Email already in use");
+                    return "user/register";
+                }
+            }
+        }
         Date DOB = user.getDOB();
         user.setDOB(DOB);
         String hash = passwordEncoder.encode(user.getPassword());
@@ -40,12 +61,14 @@ public class UserController {
         return "redirect:/";
     }
 
+
     //request to the login form page
     @GetMapping("/login")
     public String loginForm(Model model){
         model.addAttribute("user", new User());
         return "user/login";
     }
+
 
 //    //Getting all Users!
 //    @GetMapping("/leaguepage") // this will be the method that shows all members of the league page
