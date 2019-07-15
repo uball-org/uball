@@ -1,4 +1,6 @@
 package com.uball.uballapp.models;
+import com.uball.uballapp.repos.UserRepository;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
@@ -47,7 +49,6 @@ public class User {
     )
     private List<Group> groups;
 
-
     public User() {
     }
 
@@ -61,6 +62,19 @@ public class User {
         this.isAdmin = isAdmin;
         this.points = points;
     }
+
+    public User(User copy) {
+        firstName = copy.firstName;
+        lastName = copy.lastName;
+        email = copy.email;
+        password = copy.password;
+        DOB = copy.DOB;
+        gender = copy.gender;
+        isAdmin = copy.isAdmin;
+        points = copy.points;
+
+    }
+
 
     public long getId() {
         return id;

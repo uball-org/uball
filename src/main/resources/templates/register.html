@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="partials/head :: head('UBall Register')">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+</head>
+<body>
+<nav th:replace="partials/navbar :: nav"></nav>
+
+<main class="container " >
+    <form th:action="@{/register}" method="POST" th:object="${user}" >
+        <label for="firstName">First Name</label>
+        <br/>
+        <input id="firstName" th:field="*{firstName}" />
+        <br/>
+        <label for="lastName">Last Name</label>
+        <br/>
+        <input id="lastName" th:field="*{lastName}" />
+        <br/>
+        <label for="password">Password</label>
+        <br/>
+        <input id="password" type="password" th:field="*{password}" />
+        <br/>
+<!--        <label for="cpassword">Confirm Password</label>-->
+<!--        <br/>-->
+<!--        <input id="cpassword" type="password" th:field="*{password}" />-->
+<!--        <br/>-->
+        <label for="email">Email</label>
+        <br/>
+        <input id="email" th:field="*{email}" />
+        <br/>
+        <label for="DOB">Date of Birth</label>
+        <br/>
+        <input id="DOB" type="date" th:field="*{DOB}" />
+        <br/>
+        <label>Gender</label>
+        <select class="browser-default">
+            <option value="" >Choose your option</option>
+            <option value="M">M</option>
+            <option value="F">F</option>
+        </select>
+        <br/>
+            <label>League</label>
+            <select class="browser-default">
+                <option value="" >Choose your option</option>
+                <option value="Belles">Belles</option>
+                <option value="SAPL">SAPL</option>
+            </select>
+        <br/>
+        <br/>
+        <input value="Sign me up!" type="submit" />
+    </form>
+    <br class="mb-1" />
+</main>
+
+</body>
+</html>

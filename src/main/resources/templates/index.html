@@ -1,13 +1,29 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
-<head th:replace="partials/head :: head('View Posts')">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="partials/head :: head('Welcome to UBall')">
 </head>
 <body>
     <nav th:replace="partials/navbar :: nav"></nav>
 
     <h1>Myk check...</h1>
+
+
+    <div id="logIn" class="row">
+        <form th:action="@{/}" method="post" class="col s12">
+            <label for="email">Email</label>
+            <br/>
+            <input id="email" name="email" type="text" />
+            <br/>
+            <label for="password">Password</label>
+            <br/>
+            <input id="password" name="password" type="password" />
+            <br/>
+            <br/>
+            <button class="btn waves-effect waves-light" type="submit" name="action">
+                Log In
+            </button>
+        </form>
+    </div>
 
 
 
