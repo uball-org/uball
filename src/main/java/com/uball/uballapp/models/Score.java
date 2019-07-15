@@ -18,7 +18,7 @@ public class Score {
     private long score;
 
     @Column(nullable = false)
-    @DateTimeFormat(pattern ="yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date date;
 
     @ManyToOne

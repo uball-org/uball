@@ -27,7 +27,7 @@ public class User {
     private String password;
 
     @Column(nullable = false)
-    @DateTimeFormat(pattern ="yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date DOB;
 
     @Column(nullable = false)
