@@ -65,7 +65,22 @@ public class User {
         this.points = points;
     }
 
+    public User(String firstName, String lastName, String email, String password, Date DOB, char gender, boolean isAdmin, long points, League league, List<Score> scores, List<Group> groups) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.DOB = DOB;
+        this.gender = gender;
+        this.isAdmin = isAdmin;
+        this.points = points;
+        this.league = league;
+        this.scores = scores;
+        this.groups = groups;
+    }
+
     public User(User copy) {
+        id = copy.id;
         firstName = copy.firstName;
         lastName = copy.lastName;
         email = copy.email;
@@ -74,6 +89,9 @@ public class User {
         gender = copy.gender;
         isAdmin = copy.isAdmin;
         points = copy.points;
+        league = copy.league;
+        scores = copy.scores;
+        groups = copy.groups;
 
     }
 
@@ -173,4 +191,5 @@ public class User {
     public void setGroups(List<Group> groups) {
         this.groups = groups;
     }
+
 }
