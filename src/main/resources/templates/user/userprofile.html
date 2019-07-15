@@ -1,195 +1,209 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head th:replace="partials/head :: head('User Profile')">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
 </head>
 <body>
 <nav th:replace="partials/navbar :: nav"></nav>
 
 <!--header here (Welcome, ${User.name})-->
-<h1>Welcome, ${User.name}</h1>
+<h1 th:text="'Welcome, ' + ${User.name} + '!'">Welcome, </h1>
+<style>
+
+</style>
 
 <div class="container">
-
     <div class="row">
 
         <!--        profile picture of Admin-->
 
-        <div class="col s4 card-panel hoverable" style="border: 2px solid black;"><span class="flow-text">Picture will go here</span></div>
+        <div class="col s6 card-panel hoverable" style="border: 2px solid black;"><span class="flow-text">Picture will go here</span></div>
 
         <!--        table of users-->
 
-        <div class="col s8" style=" border: 2px solid black;">
-
-            <h6>Name: ${user.firstname ' ' user.lastname}</h6>
-            <h6>User ID: ${user.id}</h6>
-            <h6>Email: ${user.email}</h6>
-            <h6>D.O.B. : ${user.DOB}</h6>
-            <h6>Gender: ${user.email}</h6>
-            <h6>Total Points: ${user.points}</h6>
-            <h6>League: ${user.league_id.name}</h6>
-
-        </div>
-
-        <div class="card">
-            <div class="card-tabs">
-                <ul class="tabs tabs-fixed-width">
-                    <li class="tab"><a href="#individual">Individual</a></li>
-                    <li class="tab"><a class="active" href="#overall">Overall</a></li>
-                    <li class="tab"><a href="#machine">Machine</a></li>
-                </ul>
-            </div>
-            <div class="card-content grey lighten-4">
-
-<!--                individual Tab-->
-
-                <div id="individual">
-
-                    <div class="col" style=" border: 2px solid black;">
-                        <table class="responsive-table centered highlight">
-                            <thead>
-                            <tr>
-                                <th></th>
-                                <th>Machine Name</th>
-                                <th>Points</th>
-                                <th>Date</th>
-
-                            </tr>
-                            </thead>
-
-<!--                            forEach will generate this-->
-
-                            <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Rocky</td>
-                                <td>200000</td>
-                                <td>01/01/2019</td>
-
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Galaga</td>
-                                <td>200000</td>
-                                <td>01/01/2019</td>
-
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>World Cup Soccer</td>
-                                <td>200000</td>
-                                <td>01/01/2019</td>
-
-                            </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-
-
-                    </div>
-
-<!--                overall Tab-->
-
-                <div id="overall">
-
-                    <div class="col" style=" border: 2px solid black;">
-                        <table class="responsive-table centered highlight">
-                            <thead>
-                            <tr>
-                                <th></th>
-                                <th>Machine Name</th>
-                                <th>Points</th>
-                                <th>Date</th>
-
-                            </tr>
-                            </thead>
-
-<!--                            forEach will generate this-->
-
-                            <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Galaga</td>
-                                <td>500000</td>
-                                <td>01/01/2019</td>
-
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Baseball</td>
-                                <td>300000</td>
-                                <td>01/01/2019</td>
-
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Rocky</td>
-                                <td>250000</td>
-                                <td>01/01/2019</td>
-
-                            </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-
-                </div>
-
-<!--                machine Tab-->
-
-                <div id="machine">
-
-                    <div class="col" style=" border: 2px solid black;">
-                        <table class="responsive-table centered highlight">
-                            <thead>
-                            <tr>
-                                <th></th>
-                                <th>Machine Name</th>
-                                <th>Points</th>
-                                <th>Date</th>
-
-                            </tr>
-                            </thead>
-
-<!--                            forEach will generate this-->
-
-                            <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>PacMan</td>
-                                <td>500000</td>
-                                <td>01/01/2019</td>
-
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Bam</td>
-                                <td>330000</td>
-                                <td>01/01/2019</td>
-
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Tribute</td>
-                                <td>290000</td>
-                                <td>01/01/2019</td>
-
-                            </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
+    </div>
+    <div class="card">
+        <p> Name: <span th:text="${user.firstname}" th:text="{user.lastname}"></span> </p>
+        <p>User ID:<span th:text="${user.id}"></span> </p>
+        <p>Email: <span th:text="${user.email}"></span></p>
+        <p>D.O.B. : <span th:text="${user.DOB}"></span></p>
+        <p>Gender: <span th:text="${user.gender}"></span></p>
+        <p>Total Points: <span th:text="${user.points}"></span></p>
+        <p>League: <span th:text="${user.league_id.name}"></span></p>
     </div>
 
 
+    <div class="card">
+        <div class="card-tabs">
+            <ul class="tabs tabs-fixed-width">
+                <li class="tab"><a href="#individual">Individual</a></li>
+                <li class="tab"><a class="active" href="#overall">Overall</a></li>
+                <li class="tab"><a href="#machine">Machine</a></li>
+            </ul>
+        </div>
+        <div class="card-content grey lighten-4">
+
+            <!--                individual Tab-->
+
+            <div id="individual">
+
+                <div class="col" style=" border: 2px solid black;">
+                    <table class="responsive-table centered highlight">
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th>Machine Name</th>
+                            <th>Points</th>
+                            <th>Date</th>
+
+                        </tr>
+                        </thead>
+
+                        <!--                            forEach will generate this-->
+
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Rocky <span th:text="${}"></span></td>
+                            <td>200000 <span th:text="${}"></span></td>
+                            <td>01/01/2019</td>
+
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Galaga <span th:text="${}"></span></td>
+                            <td>200000 <span th:text="${}"></span></td>
+                            <td>01/01/2019</td>
+
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>World Cup Soccer <span th:text="${}"></span></td>
+                            <td>200000 <span th:text="${}"></span></td>
+                            <td>01/01/2019</td>
+
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <!-- //////////////////////////////////////////////////////////////-->
+                <br>
+            </div>
+
+            <!--                overall Tab-->
+
+            <div id="overall">
+
+                <div class="col" style=" border: 2px solid black;">
+                    <table class="responsive-table centered highlight">
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th>Machine Name</th>
+                            <th>Points</th>
+                            <th>Date</th>
+
+                        </tr>
+                        </thead>
+
+                        <!--                            forEach will generate this-->
+
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Galaga <span th:text="${}"></span></td>
+                            <td>500000 <span th:text="${}"></span></td>
+                            <td>01/01/2019</td>
+
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Baseball <span th:text="${}"></span></td>
+                            <td>300000 <span th:text="${}"></span></td>
+                            <td>01/01/2019</td>
+
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Rocky <span th:text="${}"></span></td>
+                            <td>250000 <span th:text="${}"></span></td>
+                            <td>01/01/2019</td>
+
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <br>
+            <!--                machine Tab-->
+
+            <div id="machine">
+
+                <div class="col" style=" border: 2px solid black;">
+                    <table class="responsive-table centered highlight">
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th>Machine Name</th>
+                            <th>Points</th>
+                            <th>Date</th>
+
+                        </tr>
+                        </thead>
+
+                        <!--                            forEach will generate this-->
+
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>PacMan <span th:text="${}"></span></td>
+                            <td>500000 <span th:text="${}"></span></td>
+                            <td >01/01/2019</td>
+
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Bam <span th:text="${}"></span></td>
+                            <td>330000 <span th:text="${}"></span></td>
+                            <td>01/01/2019</td>
+
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Tribute <span th:text="${}"></span></td>
+                            <td>290000 <span th:text="${}"></span></td>
+                            <td>01/01/2019</td>
+
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 
+
+
+
+
+
+
+
+
+
+<script>
+
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <th:block th:include="partials/footer :: scripts" />
 </body>
 </html>
