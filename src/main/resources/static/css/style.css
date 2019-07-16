@@ -1,5 +1,13 @@
 /* Custom Stylesheet */
 
+.nav-wrapper {
+  color: #1C71A4;
+}
+
+.ilike-blue-container {
+@extend .blue, .darken-3;
+}
+
 nav ul a,
 nav .brand-logo {
   color: #444;
