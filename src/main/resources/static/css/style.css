@@ -1,10 +1,4 @@
 /* Custom Stylesheet */
-/**
- * Use this file to override Materialize files so you can update
- * the core Materialize files in the future
- *
- * Made By MaterializeCSS.com
- */
 
 nav ul a,
 nav .brand-logo {
@@ -28,6 +22,15 @@ p {
   .parallax-container .section {
     width: 100%;
   }
+
+
+/*.header-img {*/
+/*  opacity: 0.6;*/
+/*  filter: alpha(opacity=60);*/
+/*}*/
+
+
+
 
 @media only screen and (max-width : 992px) {
   .parallax-container .section {
