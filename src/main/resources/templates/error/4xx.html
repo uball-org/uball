@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head th:replace="partials/head :: head(${error})">
+</head>
+<body class="grey lighten-2">
+
+<nav th:replace="partials/navbar :: nav"></nav>
+
+<div class="container">
+<th:block th:switch="${error}">
+    <div th:case="'Not Found'">
+        <div class="col s12 m4 center error">
+            <img src="img/404error.jpg" alt="404 error image" />
+        </div>
+    </div>
+    <div th:case="'Forbidden'">
+        <div class="col s12 m4 center error">
+            <img src="img/403error.jpg" alt="403 error image" />
+        </div>
+    </div>
+</th:block>
+</div>
+
+
+
+<footer>
+    <div th:replace="partials/footer :: footer"></div>
+    <th:block th:include="partials/footer :: scripts" />
+</footer>
+</body>
+</html>
