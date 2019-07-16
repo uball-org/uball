@@ -16,12 +16,11 @@ import java.util.List;
 public interface UserRepository extends CrudRepository <User, Long> {
 
     //------------------------------
-    //          Two forms of "findByEmail"      \\
 
-    User findByEmail(String email);
+    User findByUsername(String username);
 
-//    @Query("from users where email = ?1")
-//    User findByEmail(String email);
+//    @Query("from users where username = ?1")
+//    User findByUsername(String username);
     //------------------------------
 
 

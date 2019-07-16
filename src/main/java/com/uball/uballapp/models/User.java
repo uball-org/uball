@@ -15,6 +15,9 @@ public class User {
     private long id;
 
     @Column(nullable = false)
+    private String username;
+
+    @Column(nullable = false)
     private String firstName;
 
     @Column(nullable = false)
@@ -54,7 +57,8 @@ public class User {
     public User() {
     }
 
-    public User(String firstName, String lastName, String email, String password, Date DOB, char gender, boolean isAdmin, long points) {
+    public User(String username, String firstName, String lastName, String email, String password, Date DOB, char gender, boolean isAdmin, long points) {
+        this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -65,7 +69,8 @@ public class User {
         this.points = points;
     }
 
-    public User(String firstName, String lastName, String email, String password, Date DOB, char gender, boolean isAdmin, long points, League league, List<Score> scores, List<Group> groups) {
+    public User(String username, String firstName, String lastName, String email, String password, Date DOB, char gender, boolean isAdmin, long points, League league, List<Score> scores, List<Group> groups) {
+        this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -81,6 +86,7 @@ public class User {
 
     public User(User copy) {
         id = copy.id;
+        username = copy.username;
         firstName = copy.firstName;
         lastName = copy.lastName;
         email = copy.email;
@@ -192,4 +198,11 @@ public class User {
         this.groups = groups;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 }

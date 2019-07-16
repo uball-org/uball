@@ -26,7 +26,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth
-                .userDetailsService(usersLoader) // How to find users by their email
+                .userDetailsService(usersLoader) // How to find users by their username
                 .passwordEncoder(passwordEncoder()) // How to encode and verify passwords
         ;
     }
@@ -36,15 +36,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http
                 /* Login configuration */
                 .formLogin()
-                .loginPage("/index")
+                .loginPage("/login")
                 .defaultSuccessUrl("/user/userprofile") // user's home page, it can be any URL
                 .permitAll() // Anyone can go to the login page
                 /* Logout configuration */
                 .and()
                 .logout()
 //                **********
-//                I do not think this will work?
-                .logoutSuccessUrl("/?logout") // append a query string value
+                .logoutSuccessUrl("/login?logout") // append a query string value
 //                ***********
 
                 /* Pages that can be viewed without having to log in */
@@ -57,9 +56,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers(
                         "/user/userprofile", // only authenticated users can create ads
-                        "/admin/admindashboard" // only authenticated users can create ads
-//                        "/user/{id}/edit", // only authenticated users can edit ads
-//                        "/user/{id}/disable"// only authenticated users can delete ads
+                        "/admin/admindashboard", // only authenticated users can create ads
+                        "/user/userprofile/{id}/edit", // only authenticated users can edit ads
+                        "/user/{id}/delete"// only authenticated users can delete ads
                 )
                 .authenticated()
         ;
