@@ -28,34 +28,35 @@ public class AdminController {
     }
 
     //Show one user, by ID #
-    @GetMapping("/user/{id}/userprofile")
+    @GetMapping("/admin/{id}/userprofile")
     public String show(@PathVariable long id, Model model){
-        model.addAttribute("post", adminDao.findOne(id));
+        model.addAttribute("user", adminDao.findOne(id));
         return "user/userprofile";
     }
 
-//    //Editing a User from adminside
-//    @GetMapping("/admin/admindashboard/{id}/edit")
-//    public String edit ( @PathVariable long id, Model model){
-//        model.addAttribute("user", adminDao.findOne(id));
-//        return "admin/admindashboard";
-//    }
-//
-//    @PostMapping("/admin/admindashboard/{id}/edit")
-//    public String update (
-//            @PathVariable long id,
-//            @ModelAttribute User user)
-//    {
-//        user.setUser((User) SecurityContextHolder.getContext().getAuthentication().getPrincipal());
-//        adminDao.save(user);
-//        return "redirect:/posts";
-//    }
+    //Editing a User from adminside
+    @GetMapping("/admin/admindashboard/{id}/edit")
+    public String edit ( @PathVariable long id, Model model){
+        model.addAttribute("user", adminDao.findOne(id));
+        return "admin/admindashboard";
+    }
 
-//    @PostMapping("/user/{id}/delete") //This will actually be to disable NOT DELETE
-//    public String delete(@PathVariable long id) {
-//        adminDao.delete(id);
-//        return "redirect:/admin/admindashboard";
-//    }
+    @PostMapping("/admin/admindashboard/{id}/edit")
+    public String update (
+            @PathVariable long id,
+            @ModelAttribute User user)
+    {
+        User original = adminDao.findOne(id);
+        user.setId(original.getId());
+        adminDao.save(user);
+        return "redirect:/posts";
+    }
+
+    @PostMapping("/user/{id}/delete") //This will actually be to disable NOT DELETE
+    public String delete(@PathVariable long id) {
+        adminDao.delete(id);
+        return "redirect:/admin/admindashboard";
+    }
 
 
 }
