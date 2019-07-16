@@ -7,8 +7,9 @@
 <nav th:replace="partials/navbar :: nav"></nav>
 
 <!--Need to verify ADMIN-->
-<div sec:authorize="isAuthenticated()">
-<h1>Welcome, <span th:text="${#authentication.principal.first_name}"></span></h1>
+<!--<div sec:authorize="isAuthenticated()">-->
+<!--<h1>Welcome, <span th:text="${#authentication.principal. ?? }"></span></h1>-->
+<h1>Welcome, Admin</h1>
 
 <div class="container">
 
@@ -24,102 +25,120 @@
             <table class="responsive-table centered highlight">
                 <thead>
                 <tr>
+                    <th>ID#</th>
                     <th>Name</th>
-                    <th>Gender</th>
-                    <th>League</th>
-                    <th>Date of Birth</th>
                     <th>Email</th>
+                    <th>Gender</th>
+<!--                    <th>League</th>-->
+                    <th>Date of Birth</th>
                     <th>Edit / Delete</th>
                 </tr>
                 </thead>
-
-                <!--*****************-->
-                <!--This will be dynamically made with a forEach loop and grabbing data through the controller-->
-
                 <tbody>
-                <tr th:each="users : ${users}">
-                    <td th:text="${users.first_name + ' ' + users.last_name}"></td>
-                    <td th:text="${users.email}">theiremail@live.com</td>
-                    <td th:text="${users.gender}"></td>
-                    <td th:text="${users.getLeague().getName}"></td>
-                    <td th:text="${users.dob}"></td>
-                    <td>
-                        <a class="btn btn-primary"  th:href="@{'/posts/'+${post.id}}">View</a>
-                        <a sec:authorize="isAuthenticated()"
-                           class="btn btn-warning mt-1"
-                           th:href="@{'/users/'+${user.id}+'/edit'}"
-                        >Edit</a>
-        </div>
-                    </td>
-                </tr>
+                <th:block th:each="user : ${users}">
                 <tr>
-                    <td>first last</td>
-                    <td>M / F</td>
-                    <td>League they are in</td>
-                    <td>01/01/2019</td>
-                    <td>theiremail@live.com</td>
+                    <td th:text="${user.id}"></td>
+                    <td th:text="${user.firstName + ' ' + user.lastName}"></td>
+                    <td th:text="${user.email}">theiremail@live.com</td>
+                    <td th:text="${user.gender}"></td>
+<!--                    <td th:text="${user.getLeague().getName}"></td>-->
+                    <td th:text="${user.DOB}"></td>
                     <td>
-                        <a class="waves-effect waves-light btn">Edit</a>
-                        <button class="btn waves-effect waves-light" type="submit" name="action">Delete
-                        </button>
+                        <a class="btn btn-primary" th:hidden="${user.id}"
+                           th:href="@{'/userprofile/'+${user.id} + '/disable'}">
+                            Disable
+                        </a>
+<!--                        <a sec:authorize="isAuthenticated()"-->
+                        <a class="btn btn-warning mt-1" th:hidden="${user.id}"
+                           th:href="@{'/edituser/'+${user.id}}">
+                            Edit
+                        </a>
                     </td>
                 </tr>
-                <tr>
-                    <td>first last</td>
-                    <td>M / F</td>
-                    <td>League they are in</td>
-                    <td>01/01/2019</td>
-                    <td>theiremail@live.com</td>
-                    <td>
-                        <a class="waves-effect waves-light btn">Edit</a>
-                        <button class="btn waves-effect waves-light" type="submit" name="action">Delete
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>first last</td>
-                    <td>M / F</td>
-                    <td>League they are in</td>
-                    <td>01/01/2019</td>
-                    <td>theiremail@live.com</td>
-                    <td>
-                        <a class="waves-effect waves-light btn">Edit</a>
-                        <button class="btn waves-effect waves-light" type="submit" name="action">Delete
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>first last</td>
-                    <td>M / F</td>
-                    <td>League they are in</td>
-                    <td>01/01/2019</td>
-                    <td>theiremail@live.com</td>
-                    <td>
-                        <a class="waves-effect waves-light btn">Edit</a>
-                        <button class="btn waves-effect waves-light" type="submit" name="action">Delete
-                        </button>
-                    </td>
-                </tr>
-
+                </th:block>
                 </tbody>
 
+                <!--*****************-->
+<!--                Bottom Nav Card Below              -->
                 <!--*****************-->
 
             </table>
         </div>
 
         <div class="card">
-            <div class="card-tabs">
+            <div class="card-tabs" style="height: 20px;">
                 <ul class="tabs tabs-fixed-width">
-                    <li class="tab"><a href="#test4">Test 1</a></li>
-                    <li class="tab"><a class="active" href="#test5">Test 2</a></li>
-                    <li class="tab"><a href="#test6">Test 3</a></li>
+                    <li class="tab"><a class="active" href="#CG">Create Groups</a></li>
+                    <li class="tab"><a href="#CM">Create Machines</a></li>
+                    <li class="tab"><a href="#CDSF">Competition Day Score Form</a></li>
                 </ul>
             </div>
             <div class="card-content grey lighten-4">
-                <div id="test4">Create Groups</div>
-                <div id="test5">Create Machines</div>
-                <div id="test6">Competition Day Score Form</div>
+                <div id="CG">
+                    <h3>Create Groups</h3>
+                        <table class="responsive-table centered highlight">
+                            <thead>
+                            <tr>
+                                <th>ID#</th>
+                                <th>Name</th>
+                                <th>Gender</th>
+<!--                                <th>League</th>-->
+                                <th>Active Today</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <th:block th:each="user : ${users}">
+                                <tr>
+                                    <td th:text="${user.id}"></td>
+                                    <td th:text="${user.firstName + ' ' + user.lastName}"></td>
+                                    <td th:text="${user.gender}"></td>
+<!--                                    <td th:text="${user.getLeague().getName}"></td>-->
+                                    <td>
+                                        <div class="switch">
+                                            <label th:hidden="${user.id}">
+                                                Yes
+                                                <input type="checkbox" />
+                                                <span class="lever"></span>
+                                                No
+                                            </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </th:block>
+                            </tbody>
+                        </table>
+                </div>
+                <div id="CM">
+                    <h3>Create Machines</h3>
+                        <table class="responsive-table centered highlight">
+                            <thead>
+                            <tr>
+                                <th>ID#</th>
+                                <th>Name</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <th:block th:each="machine : ${machines}">
+                                <tr>
+                                    <td th:text="${machine.id}"></td>
+                                    <td th:text="${machine.name}"></td>
+                                    <td>
+                                        <div class="switch">
+                                            <label  th:hidden="${machine.id}">
+                                                Yes
+                                                <input type="checkbox" />
+                                                <span class="lever"></span>
+                                                No
+                                            </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </th:block>
+                            </tbody>
+                        </table>
+                        </div>
+                <div id="CDSF">Competition Day Score Form</div>
+                <h5>TO COME SOON...</h5>
             </div>
         </div>
 
