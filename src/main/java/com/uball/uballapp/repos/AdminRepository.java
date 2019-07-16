@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface AdminRepository extends CrudRepository <User, Long> {
-    User findUserByAdminTrue();
+//    User findUserByAdminTrue();
 
 
 }
