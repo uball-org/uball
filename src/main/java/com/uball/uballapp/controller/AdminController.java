@@ -1,7 +1,7 @@
 package com.uball.uballapp.controller;
 
 
-import com.uball.uballapp.models.Score;
+import com.uball.uballapp.repos.MachineRepository;
 import org.springframework.security.core.context.SecurityContextHolder;
 import com.uball.uballapp.models.User;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -15,33 +15,29 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class AdminController {
     private AdminRepository adminDao;
+    private MachineRepository machineDao;
 
-    public AdminController(AdminRepository adminDao) {
+    public AdminController(AdminRepository adminDao, MachineRepository machineDao) {
         this.adminDao = adminDao;
+        this.machineDao = machineDao;
     }
 
     //Getting all Users!
-    @GetMapping("/admin/admindashboard") // needs to be factored to use the "id of button" for this element
+    @GetMapping("/admindashboard") // needs to be factored to use the "id of button" for this element
     public String all(Model model){
         model.addAttribute("users", adminDao.findAll());
+        model.addAttribute("machines", machineDao.findAll());
         return "admin/admindashboard";
-    }
-
-    //Show one user, by ID #
-    @GetMapping("/admin/{id}/userprofile")
-    public String show(@PathVariable long id, Model model){
-        model.addAttribute("user", adminDao.findOne(id));
-        return "user/userprofile";
     }
 
     //Editing a User from adminside
-    @GetMapping("/admin/admindashboard/{id}/edit")
+    @GetMapping("/edituser/{id}")
     public String edit ( @PathVariable long id, Model model){
         model.addAttribute("user", adminDao.findOne(id));
-        return "admin/admindashboard";
+        return "user/edituser";
     }
 
-    @PostMapping("/admin/admindashboard/{id}/edit")
+    @PostMapping("/edituser/{id}")
     public String update (
             @PathVariable long id,
             @ModelAttribute User user)
@@ -49,14 +45,16 @@ public class AdminController {
         User original = adminDao.findOne(id);
         user.setId(original.getId());
         adminDao.save(user);
-        return "redirect:/posts";
+        return "redirect:/userprofile/{id}";
     }
 
-    @PostMapping("/user/{id}/delete") //This will actually be to disable NOT DELETE
-    public String delete(@PathVariable long id) {
-        adminDao.delete(id);
-        return "redirect:/admin/admindashboard";
-    }
+//
+//
+//    @PostMapping("/user/{id}/disable") //This will actually be to disable NOT DELETE
+//    public String delete(@PathVariable long id) {
+//        adminDao.delete(id);
+//        return "redirect:/admindashboard";
+//    }
 
 
 }
