@@ -6,8 +6,8 @@ import com.uball.uballapp.models.Machine;
 import com.uball.uballapp.models.User;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
@@ -15,22 +15,20 @@ import java.util.List;
 public interface UserRepository extends CrudRepository <User, Long> {
 
     //------------------------------
-
-    //    Two forms of "findByEmail"
+    //          Two forms of "findByEmail"      \\
 
     User findByEmail(String email);
 
-//    @Query("select u from #{#entityName} u where u.email = ?1")
+//    @Query("from users where email = ?1")
 //    User findByEmail(String email);
     //------------------------------
 
-//    Get user by their id
 
+//    Get user by their id
     @Query("from User u where u.id = ?1")
     User getUserById(long id);
 
 //    Find all who are in one league by league id
-
     @Query("select id, concat(first_name, ' ', last_name) as Name, " +
             "       gender as Gender," +
             "       points as Total_Points " +
@@ -42,8 +40,7 @@ public interface UserRepository extends CrudRepository <User, Long> {
             "    )")
     User findByLeague(long id);
 
-//  get the machines a user has played on (SUBQuery)
-
+//  get all the machines a user has played on (SUBQuery)
     @Query("select name from machines " +
             "where id in (" +
             "    select machine_id " +
@@ -54,11 +51,10 @@ public interface UserRepository extends CrudRepository <User, Long> {
             "        where id = ?1 " +
             "    )" +
             ")")
-    List<Machine> searchByMachine(@Param("id") long id);
+    List<Machine> searchByMachine(long id);
 
 
 //  Top 4 of all time
-
     @Query("select u.id, concat(u.first_name, ' ', u.last_name) as Name," +
             "u.gender as Gender, s.score as Score " +
             "from users u " +
@@ -67,9 +63,25 @@ public interface UserRepository extends CrudRepository <User, Long> {
             "limit, 4")
     List<User> findTop4();
 
+//  4 random machines
+    @Query(value = "SELECT * FROM machines ORDER BY RAND() LIMIT 4", nativeQuery = true)
+    List<Machine> randoMachines();
+
+//  update total points for user (ADDING)
+    @Query("update users set points = points + ?2 where id = ?1")
+    User updatePointsAdd(long id, long points);
+
+    //  update total points for user (Subtracting)
+    @Query("update users set points = points - ?2 where id = ?1")
+    User updatePointsSub(long id, long points);
+
+
+//                      NOT DONE                 \\
+
+
 //    Find top scores for machines user has played on (JOIN)
     @Query("")
-    List<Machine> usersMachineScore(@Param("id") long id);
+    List<Machine> usersMachineScore(long id);
 
 
 //    Example of adding users to joining users_groups table
