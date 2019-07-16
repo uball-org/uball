@@ -106,4 +106,5 @@ public interface UserRepository extends CrudRepository <User, Long> {
     //    Example of adding users to joining users_groups table
     //    @Query("insert into users_groups (user_id, group_id) VALUES (?1, ?2)")
 
+
 }
