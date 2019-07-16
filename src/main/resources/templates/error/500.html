@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head th:replace="partials/head :: head('500 Error')">
+</head>
+<body class="grey lighten-2">
+
+<nav th:replace="partials/navbar :: nav"></nav>
+
+
+<div class="container">
+    <br />
+<div>
+    <div class="col s12 m4 center error">
+        <img src="img/500error.jpg" alt="500 error image" />
+    </div>
+    <br />
+</div>
+</div>
+
+
+
+<footer>
+    <div th:replace="partials/footer :: footer"></div>
+    <th:block th:include="partials/footer :: scripts" />
+</footer>
+</body>
+</html>
