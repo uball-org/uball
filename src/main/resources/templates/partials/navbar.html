@@ -8,44 +8,43 @@
 <ul id="dropdown1" class="dropdown-content">
     <li><a href="../user/userprofile.html">Profile</a></li>
     <!--            This will go to the Leagues page-->
-    <li><a href="#">League</a></li>
-<!--    <li sec:authorize="isAuthenticated()">-->
-<!--        <a href="../admin/admindashboard.html">Admin Dashboard</a>-->
-<!--    </li>-->
+    <li><a href="/leagues">League</a></li>
+    <li sec:authorize="isAuthenticated()">
+        <a href="../admin/admindashboard.html">Admin Dashboard</a>
+    </li>
 </ul>
 <nav>
     <div class="nav-wrapper ilike-blue-container">
         <a href="/" class="brand-logo">UBall</a>
         <ul class="right hide-on-med-and-down">
             <li sec:authorize="isAuthenticated()"><a class="dropdown-trigger" href="#" data-target="dropdown1">
-<!--                <i class="material-icons right">arrow_drop_down</i>-->
+                <i class="material-icons right">arrow_drop_down</i>
             </a></li>
-            <li><a href="/register">Register</a></li>
-            <!--  <li sec:authorize="isAnonymous()">-->
-            <li><a href="/login">Login</a></li>
+            <li sec:authorize="isAnonymous()"><a href="/register">Register</a></li>
+<!--              <li sec:authorize="isAnonymous()" >-->
+            <li sec:authorize="isAuthenticated()"><a href="/login">Login</a></li>
 <!--            <li sec:authorize="isAuthenticated()">-->
-<!--                <form th:action="@{/logout}" th:method="post">-->
-<!--                    <button class="btn-link btn">Logout</button>-->
-<!--                </form>-->
-<!--            </li>-->
+                <form th:action="@{/logout}" th:method="post">
+                    <button class="btn-link btn">Logout</button>
+                </form>
         </ul>
     </div>
 </nav>
 
-<ul class="sidenav" id="mobile-demo">
-    <li sec:authorize="isAuthenticated()">
-        <a class="dropdown-trigger" href="#" data-target="dropdown1">
-        <!--     <i class="material-icons right">arrow_drop_down</i>-->
-    </a>
-    </li>
-    <li><a href="/register">Register</a></li>
-    <li><a href="/login">Login</a></li>
+<!--<ul class="sidenav" id="mobile-demo">-->
+<!--    <li sec:authorize="isAuthenticated()">-->
+<!--        <a class="dropdown-trigger" href="#" data-target="dropdown1">-->
+<!--             <i class="material-icons right">arrow_drop_down</i>-->
+<!--    </a>-->
+<!--    </li>-->
+<!--    <li><a href="/register">Register</a></li>-->
+<!--    <li><a href="/login">Login</a></li>-->
 <!--    <li sec:authorize="isAuthenticated()">-->
 <!--        <form th:action="@{/logout}" th:method="post">-->
 <!--            <button class="btn-link btn">Logout</button>-->
 <!--        </form>-->
 <!--    </li>-->
-</ul>
+<!--</ul>-->
 
 </body>
 </html>

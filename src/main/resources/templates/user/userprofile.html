@@ -1,18 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/head :: head('User Profile')">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
 </head>
 <body>
 <nav th:replace="partials/navbar :: nav"></nav>
 
 <!--header here (Welcome, ${User.name})-->
 <h1>Welcome, ${User.name}</h1>
-<style>
-
-</style>
 
 <div class="container">
     <div class="row">
@@ -199,11 +193,9 @@
 
 
 
-<script>
-
-</script>
-
-
-<th:block th:include="partials/footer :: scripts" />
+<footer>
+    <div th:replace="partials/footer :: footer"></div>
+    <th:block th:include="partials/footer :: scripts" />
+</footer>
 </body>
 </html>
