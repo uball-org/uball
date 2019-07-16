@@ -40,28 +40,17 @@ public class UserController {
     @PostMapping("/register")
     public String saveUser(@Valid User user, Errors validation, Model m){
 
-//        UserRepository userRepository;
-//
-//        User existingEmail = userRepository.findByEmail(user.getEmail());
-//
-//        if(existingEmail != null){
-//
-//            validation.rejectValue("email", "user.email", "Duplicated email " + user.getEmail());
-//
-//        }
-//
-//        if (validation.hasErrors()) {
-//            m.addAttribute("errors", validation);
-//            m.addAttribute("user", user);
-//            return "user/register";
-//        }
-
         Date DOB = user.getDOB();
         user.setDOB(DOB);
         String hash = passwordEncoder.encode(user.getPassword());
         user.setPassword(hash);
         userDao.save(user);
-        return "redirect:/";
+        return "redirect:/login";
+    }
+
+    @GetMapping("/user/userprofile")
+    public String userProfilePage(){
+        return "user/userprofile";
     }
 
     //Getting all Users!

@@ -12,11 +12,15 @@ import java.util.List;
 
 @Repository
 public interface UserRepository extends CrudRepository <User, Long> {
-    //    Find a User by email
-    User findByEmail(String email);
 
-    //    get A User by Email
-    User getUserByEmail(String Email);
+    //------------------------------
+
+    User findByUsername(String username);
+
+//    @Query("from users where username = ?1")
+//    User findByUsername(String username);
+    //------------------------------
+
 
     //    Get a User by their ID
     User getUserById(long id);
