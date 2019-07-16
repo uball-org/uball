@@ -1,30 +1,55 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head th:replace="partials/head :: head('User Profile')">
+    <!--I added these scripts below because I need to find out why the thymeleaf doesnt work on my end -->
+    <!--erase if necessary-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+    <link rel = "stylesheet"
+          href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel = "stylesheet"
+          href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <script type = "text/javascript"
+            src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+    </script>
 </head>
 <body>
 <nav th:replace="partials/navbar :: nav"></nav>
 
 <!--header here (Welcome, ${User.name})-->
 <h1 th:text="'Welcome, ' + ${User.name} + '!'">Welcome, </h1>
-<style>
 
+
+<!--inline style for profile -->
+<style>
+    h1{
+        position: relative;
+        width: 500px;
+        left: 86px;
+    }
+ .card.gre{
+     position:relative;
+     width:400px;
+     left: 55%;
+ }
+
+ div.col.s6.card-panel.hoverable {
+     position:relative;
+     top:175px;
+     left:13px;
+ }
 </style>
+
 
 <div class="container">
     <div class="row">
-
         <!--        profile picture of Admin-->
-
         <div class="col s6 card-panel hoverable" style="border: 2px solid black;"><span class="flow-text">Picture will go here</span></div>
-
         <!--        table of users-->
-
     </div>
-    <div class="card">
+    <div class="card gre">
         <p> Name: <span th:text="${user.firstname}" th:text="{user.lastname}"></span> </p>
         <p>User ID:<span th:text="${user.id}"></span> </p>
         <p>Email: <span th:text="${user.email}"></span></p>
@@ -117,14 +142,12 @@
                             <td>Galaga <span th:text="${}"></span></td>
                             <td>500000 <span th:text="${}"></span></td>
                             <td>01/01/2019</td>
-
                         </tr>
                         <tr>
                             <td>2</td>
                             <td>Baseball <span th:text="${}"></span></td>
                             <td>300000 <span th:text="${}"></span></td>
                             <td>01/01/2019</td>
-
                         </tr>
                         <tr>
                             <td>3</td>
@@ -139,7 +162,7 @@
                 </div>
 
             </div>
-            <br>
+
             <!--                machine Tab-->
 
             <div id="machine">
@@ -189,19 +212,6 @@
     </div>
 </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-<script>
-
-</script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <th:block th:include="partials/footer :: scripts" />
