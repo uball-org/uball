@@ -37,16 +37,24 @@
         <label>Gender</label>
         <select class="browser-default">
             <option value="" >Choose your option</option>
-            <option value="M">M</option>
-            <option value="F">F</option>
+            <option th:field="*{gender}" th:value="M" th:text="M" >M</option>
+            <option th:field="*{gender}" th:value="F" th:text="F">F</option>
         </select>
         <br/>
-            <label>League</label>
-            <select class="browser-default">
-                <option value="" >Choose your option</option>
-                <option value="Belles">Belles</option>
-                <option value="SAPL">SAPL</option>
-            </select>
+
+        <label>League</label>
+        <select class="browser-default" >
+            <option value="" >Choose your option</option>
+            <option th:field="*{league}" th:value="1" th:text="SAPL"></option>
+            <option th:field="*{league}" th:value="2" th:text="Belles"></option>
+        </select>
+
+<!--            <label>League</label>-->
+<!--            <select class="browser-default">-->
+<!--                <option value="" >Choose your option</option>-->
+<!--                <option value="Belles">Belles</option>-->
+<!--                <option value="SAPL">SAPL</option>-->
+<!--            </select>-->
         <br/>
         <br/>
         <!--<input value="Sign me up!" type="submit" /> -->

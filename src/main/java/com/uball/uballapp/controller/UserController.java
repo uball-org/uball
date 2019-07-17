@@ -1,6 +1,7 @@
 package com.uball.uballapp.controller;
 
 
+import com.uball.uballapp.models.League;
 import org.springframework.security.core.context.SecurityContextHolder;
 import com.uball.uballapp.models.User;
 import com.uball.uballapp.repos.UserRepository;
@@ -42,6 +43,10 @@ public class UserController {
 
         Date DOB = user.getDOB();
         user.setDOB(DOB);
+        League league = user.getLeague();
+        user.setLeague(league);
+        char gender = user.getGender();
+        user.setGender(gender);
         String hash = passwordEncoder.encode(user.getPassword());
         user.setPassword(hash);
         userDao.save(user);
