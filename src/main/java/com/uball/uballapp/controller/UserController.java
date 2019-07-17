@@ -1,10 +1,10 @@
 package com.uball.uballapp.controller;
 
 
-import com.uball.uballapp.repos.MachineRepository;
+import org.codehaus.groovy.transform.SourceURIASTTransformation;
+import org.springframework.security.core.context.SecurityContextHolder;
 import com.uball.uballapp.models.User;
 import com.uball.uballapp.repos.UserRepository;
-import org.hibernate.type.descriptor.sql.VarcharTypeDescriptor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,14 +21,14 @@ import java.util.Date;
 public class UserController {
     private UserRepository userDao;
     private PasswordEncoder passwordEncoder;
-    private MachineRepository machineDao;
+//    private MachineRepository machineDao;
 //    private ScoresRepository scoresDao;
 
 
-    public UserController(UserRepository userDao, PasswordEncoder passwordEncoder, MachineRepository machineDao) {
+    public UserController(UserRepository userDao, PasswordEncoder passwordEncoder) {
         this.userDao = userDao;
         this.passwordEncoder = passwordEncoder;
-        this.machineDao = machineDao;
+//        this.machineDao = machineDao;
 //        this.scoresDao = scoresDao;
     }
 
@@ -56,8 +56,9 @@ public class UserController {
     //Getting all Users!
     @GetMapping("/leagues") // this will be the method that shows all members of the league page
     public String all(Model model){
-        model.addAttribute("listTopRankings", userDao.findTop4());
-        model.addAttribute("users", userDao.findAll());
+
+        model.addAttribute("listTopRankings",userDao.findTop4());
+//        model.addAttribute("users", userDao.findAll());
         return "league/leaguedashboard";
     }
 
