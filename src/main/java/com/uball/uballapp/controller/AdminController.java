@@ -25,27 +25,11 @@ public class AdminController {
     //Getting all Users!
     @GetMapping("/admindashboard") // needs to be factored to use the "id of button" for this element
     public String all(Model model){
+        System.out.println(SecurityContextHolder.getContext().getAuthentication().getPrincipal());
+//        model.addAttribute("user", adminDao.findOne(id));
         model.addAttribute("users", adminDao.findAll());
         model.addAttribute("machines", machineDao.findAll());
         return "admin/admindashboard";
-    }
-
-    //Editing a User from adminside
-    @GetMapping("/edituser/{id}")
-    public String edit ( @PathVariable long id, Model model){
-        model.addAttribute("user", adminDao.findOne(id));
-        return "user/edituser";
-    }
-
-    @PostMapping("/edituser/{id}")
-    public String update (
-            @PathVariable long id,
-            @ModelAttribute User user)
-    {
-        User original = adminDao.findOne(id);
-        user.setId(original.getId());
-        adminDao.save(user);
-        return "redirect:/userprofile/{id}";
     }
 
 //

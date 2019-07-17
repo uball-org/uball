@@ -1,6 +1,9 @@
 package com.uball.uballapp.controller;
 
 
+import com.uball.uballapp.models.League;
+import com.uball.uballapp.repos.MachineRepository;
+import com.uball.uballapp.repos.ScoreRepository;
 import org.springframework.security.core.context.SecurityContextHolder;
 import com.uball.uballapp.models.User;
 import com.uball.uballapp.repos.UserRepository;
@@ -20,15 +23,16 @@ import java.util.Date;
 public class UserController {
     private UserRepository userDao;
     private PasswordEncoder passwordEncoder;
-//    private MachineRepository machineDao;
-//    private ScoresRepository scoresDao;
+    private MachineRepository machineDao;
+    private ScoreRepository scoresDao;
 
 
-    public UserController(UserRepository userDao, PasswordEncoder passwordEncoder) {
+    public UserController(UserRepository userDao, PasswordEncoder passwordEncoder,
+                          MachineRepository machineDao, ScoreRepository scoresDao) {
         this.userDao = userDao;
         this.passwordEncoder = passwordEncoder;
-//        this.machineDao = machineDao;
-//        this.scoresDao = scoresDao;
+        this.machineDao = machineDao;
+        this.scoresDao = scoresDao;
     }
 
     @GetMapping("/register")
@@ -39,17 +43,17 @@ public class UserController {
 
     @PostMapping("/register")
     public String saveUser(@Valid User user, Errors validation, Model m){
-//        Date DOB = user.getDOB();
-//        user.setDOB(DOB);
+
+        Date DOB = user.getDOB();
+        user.setDOB(DOB);
+        League league = user.getLeague();
+        user.setLeague(league);
+        char gender = user.getGender();
+        user.setGender(gender);
         String hash = passwordEncoder.encode(user.getPassword());
         user.setPassword(hash);
         userDao.save(user);
         return "redirect:/login";
-    }
-
-    @GetMapping("/user/userprofile")
-    public String userProfilePage(){
-        return "user/userprofile";
     }
 
     //Getting all Users!
@@ -59,29 +63,36 @@ public class UserController {
         return "league/leaguedashboard";
     }
 
-    //Show one user, by ID #
-    @GetMapping("/user/{id}/userprofile")
-    public String show(@PathVariable long id, Model model){
-        model.addAttribute("user", userDao.findOne(id));
+    //Show User Profile, by ID #
+    @GetMapping("/userprofile/{id}")
+    public String userProfileView(@PathVariable long id, Model model){
+        System.out.println(SecurityContextHolder.getContext().getAuthentication().getPrincipal());
+        model.addAttribute("users", userDao.findOne(id));
+        model.addAttribute("machines", machineDao.findOne(id));
+//        model.addAttribute("machines1", machineDao.findDistinctTopByScoresAnd_User_Id(id));
+        model.addAttribute("scores", scoresDao.findAllByUser_Id(id));
+//        model.addAttribute("scores1", scoresDao.findDistinctTopByMachineAndUser_Id(machineDao.findAll(), id));
         return "user/userprofile";
     }
 
     //Editing a User from user side
-    @GetMapping("/user/userprofile/{id}/edit")
+    @GetMapping("/edituser/{id}")
     public String edit ( @PathVariable long id, Model model){
         model.addAttribute("user", userDao.findOne(id));
-        return "user/userprofile";
+        return "user/edituser";
     }
 
-    @PostMapping("/user/userprofile/{id}/edit")
+    @PostMapping("/edituser/{id}")
     public String update (
             @PathVariable long id,
             @ModelAttribute User user)
     {
         User original = userDao.findOne(id);
         user.setId(original.getId());
+        user.setPassword(original.getPassword());
+        user.setUsername(original.getUsername());
         userDao.save(user);
-        return "redirect:/user/userprofile/{id}";
+        return "redirect:/userprofile/{id}";
     }
 
 }

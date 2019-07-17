@@ -1,201 +1,117 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head th:replace="partials/head :: head('User Profile')">
 </head>
 <body>
 <nav th:replace="partials/navbar :: nav"></nav>
 
-<!--header here (Welcome, ${User.name})-->
-<h1>Welcome, ${User.name}</h1>
+<!--Need to verify ADMIN-->
+<!--<div sec:authorize="isAuthenticated()">-->
+<!--<h1>Welcome, <span th:text="${#authentication.principal. ?? }"></span></h1>-->
+<h1>Welcome, <span th:text="${users.username}"></span></h1>
 
-<div class="container">
+<div class="container" style="position: absolute; margin-left: 5%;">
+
+
     <div class="row">
 
         <!--        profile picture of Admin-->
 
-        <div class="col s6 card-panel hoverable" style="border: 2px solid black;"><span class="flow-text">Picture will go here</span></div>
+        <div class="col s4 card-panel hoverable" style="border: 2px solid black; margin-top: 0; height: auto;">
+            <span class="flow-text">Picture will go here</span></div>
 
         <!--        table of users-->
 
+        <div class="col s8" style=" border: 2px solid black;">
+            <div class="row">
+                <div class="col s-6" th:text="${users.id}">ID: </div>
+                <div class="col s-6" th:text="${users.DOB}">DOB: </div>
+                <div class="col s-6" th:text="${users.gender}">Gender: </div>
+                <div class="col s-6" th:text="${users.points}">Points: </div>
+                <div class="col s-6" th:text="${users.getLeague().name}">League: </div>
+            </div>
         </div>
-    <div class="card">
-        <p>Name: ${user.firstname ' ' user.lastname}</p>
-        <p>User ID: ${user.id}</p>
-        <p>Email: ${user.email}</p>
-        <p>D.O.B. : ${user.DOB}</p>
-        <p>Gender: ${user.email}</p>
-        <p>Total Points: ${user.points}</p>
-        <p>League: ${user.league_id.name}</p>
-    </div>
+                <!--*****************-->
+                <!--                Bottom Nav Card Below              -->
+                <!--*****************-->
 
-
-        <div class="card">
-            <div class="card-tabs">
+        <div class="card" style="position: inherit;">
+            <div class="card-tabs" style="height: 20px;">
                 <ul class="tabs tabs-fixed-width">
-                    <li class="tab"><a href="#individual">Individual</a></li>
-                    <li class="tab"><a class="active" href="#overall">Overall</a></li>
-                    <li class="tab"><a href="#machine">Machine</a></li>
+                    <li class="tab"><a class="active" href="#Indiv">Individual</a></li>
+                    <li class="tab"><a href="#OvA">Overall</a></li>
+                    <li class="tab"><a href="#Mach">Machine</a></li>
                 </ul>
             </div>
             <div class="card-content grey lighten-4">
-
-<!--                individual Tab-->
-
-                <div id="individual">
-
-                    <div class="col" style=" border: 2px solid black;">
-                        <table class="responsive-table centered highlight">
-                            <thead>
+                <div id="Indiv">
+                    <h3>Individual</h3>
+                    <table class="responsive-table centered highlight">
+                        <thead>
+                        <tr>
+                            <th>Machine Name</th>
+                            <th>Date Played</th>
+                            <th>Score</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <th:block th:each="score : ${scores}">
                             <tr>
-                                <th></th>
-                                <th>Machine Name</th>
-                                <th>Points</th>
-                                <th>Date</th>
-
+                                <td th:text="${score.getMachine().name}"></td>
+                                <td th:text="${score.date}"></td>
+                                <td th:text="${score.score}"></td>
                             </tr>
-                            </thead>
-
-<!--                            forEach will generate this-->
-
-                            <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Rocky</td>
-                                <td>200000</td>
-                                <td>01/01/2019</td>
-
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Galaga</td>
-                                <td>200000</td>
-                                <td>01/01/2019</td>
-
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>World Cup Soccer</td>
-                                <td>200000</td>
-                                <td>01/01/2019</td>
-
-                            </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-<!-- //////////////////////////////////////////////////////////////-->
-<br>
-                    </div>
-
-<!--                overall Tab-->
-
-                <div id="overall">
-
-                    <div class="col" style=" border: 2px solid black;">
-                        <table class="responsive-table centered highlight">
-                            <thead>
-                            <tr>
-                                <th></th>
-                                <th>Machine Name</th>
-                                <th>Points</th>
-                                <th>Date</th>
-
-                            </tr>
-                            </thead>
-
-<!--                            forEach will generate this-->
-
-                            <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Galaga</td>
-                                <td>500000</td>
-                                <td>01/01/2019</td>
-
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Baseball</td>
-                                <td>300000</td>
-                                <td>01/01/2019</td>
-
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Rocky</td>
-                                <td>250000</td>
-                                <td>01/01/2019</td>
-
-                            </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-
+                        </th:block>
+                        </tbody>
+                    </table>
                 </div>
-<br>
-<!--                machine Tab-->
-
-                <div id="machine">
-
-                    <div class="col" style=" border: 2px solid black;">
-                        <table class="responsive-table centered highlight">
-                            <thead>
-                            <tr>
-                                <th></th>
-                                <th>Machine Name</th>
-                                <th>Points</th>
-                                <th>Date</th>
-
-                            </tr>
-                            </thead>
-
-<!--                            forEach will generate this-->
-
-                            <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>PacMan</td>
-                                <td>500000</td>
-                                <td>01/01/2019</td>
-
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Bam</td>
-                                <td>330000</td>
-                                <td>01/01/2019</td>
-
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Tribute</td>
-                                <td>290000</td>
-                                <td>01/01/2019</td>
-
-                            </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
+                <div id="OvA">
+                    <h3>Overall</h3>
+                    stuffing
+<!--                    <table class="responsive-table centered highlight">-->
+<!--                        <thead>-->
+<!--                        <tr>-->
+<!--                            <th>Machine Name</th>-->
+<!--                            <th>Date Played</th>-->
+<!--                            <th>Score</th>-->
+<!--                        </tr>-->
+<!--                        </thead>-->
+<!--                        <tbody>-->
+<!--                        <th:block th:each="score1 : ${scores}">-->
+<!--                            <tr>-->
+<!--                                <td th:text="${score1.getMachine().name}"></td>-->
+<!--                                <td th:text="${score1.date}"></td>-->
+<!--                                <td th:text="${score1.score}"></td>-->
+<!--                            </tr>-->
+<!--                        </th:block>-->
+<!--                        </tbody>-->
+<!--                    </table>-->
                 </div>
+                <div id="Mach">Machine</div>
+                <h3>Machines</h3>
+                Stuff
+<!--                <table class="responsive-table centered highlight">-->
+<!--                    <thead>-->
+<!--                    <tr>-->
+<!--                        <th>Machine Name</th>-->
+<!--                        <th>Score</th>-->
+<!--                    </tr>-->
+<!--                    </thead>-->
+<!--                    <tbody>-->
+<!--                    <th:block th:each="machinetop : ${machines1}">-->
+<!--                        <tr>-->
+<!--                            <td th:text="${machinetop.name}"></td>-->
+<!--                            <td th:text="${machinetop.getScores()}"></td>-->
+<!--                        </tr>-->
+<!--                    </th:block>-->
+<!--                    </tbody>-->
+<!--                </table>-->
             </div>
         </div>
     </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-<footer>
-    <div th:replace="partials/footer :: footer"></div>
-    <th:block th:include="partials/footer :: scripts" />
-</footer>
+<th:block th:include="partials/footer :: scripts" />
 </body>
 </html>
