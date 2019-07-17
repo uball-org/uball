@@ -2,8 +2,19 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head th:replace="partials/head :: head('User Profile')">
+    <link rel = "stylesheet"
+          href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
 </head>
 <body>
+
+<style>
+    div.col.s4.card-panel.hoverable{
+        width: 18%;
+    }
+    div.row{
+        position:relative;
+    }
+</style>
 <nav th:replace="partials/navbar :: nav"></nav>
 
 <!--Need to verify ADMIN-->
@@ -11,7 +22,8 @@
 <!--<h1>Welcome, <span th:text="${#authentication.principal. ?? }"></span></h1>-->
 <h1>Welcome, <span th:text="${users.username}"></span></h1>
 
-<div class="container" style="position: absolute; margin-left: 5%;">
+
+<div class="container" style="position: absolute; margin-left: 5%; width:92%">
 
 
     <div class="row">
@@ -32,10 +44,12 @@
                 <div class="col s-6" th:text="${users.getLeague().name}">League: </div>
             </div>
         </div>
+    </div>
                 <!--*****************-->
                 <!--                Bottom Nav Card Below              -->
                 <!--*****************-->
 
+<div class="container">
         <div class="card" style="position: inherit;">
             <div class="card-tabs" style="height: 20px;">
                 <ul class="tabs tabs-fixed-width">
@@ -44,9 +58,11 @@
                     <li class="tab"><a href="#Mach">Machine</a></li>
                 </ul>
             </div>
+
+            <!-- displays individual -->
             <div class="card-content grey lighten-4">
                 <div id="Indiv">
-                    <h3>Individual</h3>
+                    <h5>Individual</h5>
                     <table class="responsive-table centered highlight">
                         <thead>
                         <tr>
@@ -66,51 +82,66 @@
                         </tbody>
                     </table>
                 </div>
+<!--                                  -->
+
+                <!-- displays overall and machines used -->
+                <!-- combined OvA and Mach. removed the id from Mach to use -->
                 <div id="OvA">
-                    <h3>Overall</h3>
+                    <h5>Overall</h5>
                     stuffing
-<!--                    <table class="responsive-table centered highlight">-->
-<!--                        <thead>-->
-<!--                        <tr>-->
-<!--                            <th>Machine Name</th>-->
-<!--                            <th>Date Played</th>-->
-<!--                            <th>Score</th>-->
-<!--                        </tr>-->
-<!--                        </thead>-->
-<!--                        <tbody>-->
-<!--                        <th:block th:each="score1 : ${scores}">-->
-<!--                            <tr>-->
-<!--                                <td th:text="${score1.getMachine().name}"></td>-->
-<!--                                <td th:text="${score1.date}"></td>-->
-<!--                                <td th:text="${score1.score}"></td>-->
-<!--                            </tr>-->
-<!--                        </th:block>-->
-<!--                        </tbody>-->
-<!--                    </table>-->
+                   <table class="responsive-table centered highlight">
+                       <thead>
+                        <tr>
+                            <th>Machine Name</th>
+                            <th>Date Played</th>
+                            <th>Score</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <th:block th:each="score1 : ${scores}">
+                            <tr>
+                                <td th:text="${score1.getMachine().name}"></td>
+                                <td th:text="${score1.date}"></td>
+                                <td th:text="${score1.score}"></td>
+                            </tr>
+                        </th:block>
+                        </tbody>
+                    </table>
                 </div>
-                <div id="Mach">Machine</div>
-                <h3>Machines</h3>
+                <!-- displays machines used -->
+                <div id="Mach"> <!--Deleted Machine-->
+                <h5>Machines</h5>
                 Stuff
-<!--                <table class="responsive-table centered highlight">-->
-<!--                    <thead>-->
-<!--                    <tr>-->
-<!--                        <th>Machine Name</th>-->
-<!--                        <th>Score</th>-->
-<!--                    </tr>-->
-<!--                    </thead>-->
-<!--                    <tbody>-->
-<!--                    <th:block th:each="machinetop : ${machines1}">-->
-<!--                        <tr>-->
-<!--                            <td th:text="${machinetop.name}"></td>-->
-<!--                            <td th:text="${machinetop.getScores()}"></td>-->
-<!--                        </tr>-->
-<!--                    </th:block>-->
-<!--                    </tbody>-->
-<!--                </table>-->
+                <table class="responsive-table centered highlight">
+                    <thead>
+                    <tr>
+                        <th>Machine Name</th>
+                        <th>Score</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <th:block th:each="machinetop : ${machines1}">
+                        <tr>
+                            <td th:text="${machinetop.name}"></td>
+                            <td th:text="${machinetop.getScores()}"></td>
+                        </tr>
+                    </th:block>
+                    </tbody>
+                </table>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+
+<!--             Adding this vvv fixes the tabs  -->
+<script type = "text/javascript"
+        src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+</script>
+<!--             Adding this ^^^^ fixes the tabs  -->
+
 
 <th:block th:include="partials/footer :: scripts" />
 </body>
