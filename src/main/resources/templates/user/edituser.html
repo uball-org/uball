@@ -26,17 +26,17 @@
         <input id="DOB" type="date" th:field="*{DOB}" />
         <br/>
         <label>Gender</label>
-        <select class="browser-default">
+        <select class="browser-default" th:field="*{gender}">
             <option value="" >Choose your option</option>
-            <option value="M">M</option>
-            <option value="F">F</option>
+            <option value="M" th:text="M" ></option>
+            <option value="F" th:text="F" ></option>
         </select>
         <br/>
         <label>League</label>
-        <select class="browser-default">
+        <select class="browser-default" th:field="*{league}">
             <option value="" >Choose your option</option>
-            <option value="Belles">Belles</option>
-            <option value="SAPL">SAPL</option>
+            <option value="SAPL" th:text="SAPL" >SAPL</option>
+            <option value="Belles" th:text="Belles" >Belles</option>
         </select>
         <br/>
         <br/>
