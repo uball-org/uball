@@ -39,9 +39,8 @@ public class UserController {
 
     @PostMapping("/register")
     public String saveUser(@Valid User user, Errors validation, Model m){
-
-        Date DOB = user.getDOB();
-        user.setDOB(DOB);
+//        Date DOB = user.getDOB();
+//        user.setDOB(DOB);
         String hash = passwordEncoder.encode(user.getPassword());
         user.setPassword(hash);
         userDao.save(user);
