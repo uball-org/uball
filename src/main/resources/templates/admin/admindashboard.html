@@ -78,7 +78,7 @@
             <div class="card-content grey lighten-4">
                 <div id="CG">
                     <h3>Create Groups</h3>
-                    <form th:action="@{/admindashboard}" method="post">
+                    <form th:action="@{/admindashboard/creategroup}" method="post">
                         <table class="responsive-table centered highlight">
                             <thead>
                             <tr>
@@ -97,20 +97,14 @@
                                     <td th:text="${user.gender}"></td>
                                     <td th:text="${user.getLeague().name}"></td>
                                     <td>
-
+                                        <form action="#">
                                             <p>
                                                 <label>
-                                                    <input th:hidden="${user.id}" th:value="checked" type="checkbox" />
+                                                    <input th:hidden="${user.id}" th:value="uchecked" type="checkbox" />
+                                                    <span></span>
                                                 </label>
                                             </p>
-<!--                                        <div class="switch">-->
-<!--                                            <label th:hidden="${user.id}">-->
-<!--                                                Yes-->
-<!--                                                <input type="checkbox" />-->
-<!--                                                <span class="lever"></span>-->
-<!--                                                No-->
-<!--                                            </label>-->
-<!--                                        </div>-->
+                                        </form>
                                     </td>
                                 </tr>
                             </th:block>
@@ -121,17 +115,19 @@
 <!--                           th:href="@{'/creategroups'}">-->
 <!--                            Submit-->
 <!--                        </a>-->
-                        <a class="btn btn-primary mt-1">Submit</a>
+                        <button type="submit" class="btn btn-primary mt-1">Submit</button>
                     </form>
 
                 </div>
                 <div id="CM">
                     <h3>Create Machines</h3>
-                        <table class="responsive-table centered highlight">
+                    <form th:action="@{/admindashboard/createmachine}" method="post">
+                    <table class="responsive-table centered highlight">
                             <thead>
                             <tr>
                                 <th>ID#</th>
                                 <th>Name</th>
+                                <th>Active</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -143,24 +139,19 @@
                                         <form action="#">
                                             <p>
                                                 <label>
-                                                    <input type="checkbox" />
-                                                    <span>Red</span>
+                                                    <input th:hidden="${machine.id}" th:value="mchecked" type="checkbox" />
+                                                    <span></span>
                                                 </label>
                                             </p>
                                         </form>
-<!--                                        <div class="switch">-->
-<!--                                            <label  th:hidden="${machine.id}">-->
-<!--                                                Yes-->
-<!--                                                <input type="checkbox" />-->
-<!--                                                <span class="lever"></span>-->
-<!--                                                No-->
-<!--                                            </label>-->
-<!--                                        </div>-->
                                     </td>
                                 </tr>
                             </th:block>
                             </tbody>
                         </table>
+                        <br />
+                        <a class="btn btn-primary mt-1">Submit</a>
+                    </form>
                         </div>
                 <div id="CDSF">Competition Day Score Form</div>
                 <h5>TO COME SOON...</h5>
