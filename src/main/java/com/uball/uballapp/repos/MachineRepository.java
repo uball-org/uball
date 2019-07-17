@@ -3,6 +3,7 @@ package com.uball.uballapp.repos;
 
 
 import com.uball.uballapp.models.Machine;
+import com.uball.uballapp.models.Score;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -25,6 +26,8 @@ public interface MachineRepository extends CrudRepository <Machine, Long> {
     @Query(value = "select name from machines where id in ( select machine_id from scores " +
             "where user_id in ( select id from users where id = ?1 ))", nativeQuery = true)
     List<Machine> searchByMachine(long id);
+
+//    List<Machine> findDistinctTopByScoresAnd_User_Id(long scores_user_id);
 
 
 }
