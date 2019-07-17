@@ -8,7 +8,7 @@
 
 
 <main class="container " >
-    <form th:action="@{'/users/' + ${user.id} + '/edit'}" method="POST" th:object="${user}" >
+    <form th:action="@{'/edituser/' + ${user.id}}" method="POST" th:object="${user}" >
         <label for="firstName">First Name</label>
         <br/>
         <input id="firstName" th:field="*{firstName}" />

@@ -9,7 +9,8 @@
 <!--Need to verify ADMIN-->
 <!--<div sec:authorize="isAuthenticated()">-->
 <!--<h1>Welcome, <span th:text="${#authentication.principal. ?? }"></span></h1>-->
-<h1>Welcome, Admin</h1>
+<!--<h1>Welcome, <span th:text="${user.username}"></span></h1>-->
+<h1>Welcome, User</h1>
 
 <div class="container" style="position: absolute; margin-left: 15%;">
 
@@ -29,7 +30,7 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>Gender</th>
-<!--                    <th>League</th>-->
+                    <th>League</th>
                     <th>Date of Birth</th>
                     <th>Edit / Delete</th>
                 </tr>
@@ -41,7 +42,7 @@
                     <td th:text="${user.firstName + ' ' + user.lastName}"></td>
                     <td th:text="${user.email}">theiremail@live.com</td>
                     <td th:text="${user.gender}"></td>
-<!--                    <td th:text="${user.getLeague().getName}"></td>-->
+                    <td th:text="${user.getLeague().name}"></td>
                     <td th:text="${user.DOB}"></td>
                     <td>
                         <a class="btn btn-primary" th:hidden="${user.id}"
@@ -82,7 +83,7 @@
                                 <th>ID#</th>
                                 <th>Name</th>
                                 <th>Gender</th>
-<!--                                <th>League</th>-->
+                                <th>League</th>
                                 <th>Active Today</th>
                             </tr>
                             </thead>
@@ -92,7 +93,7 @@
                                     <td th:text="${user.id}"></td>
                                     <td th:text="${user.firstName + ' ' + user.lastName}"></td>
                                     <td th:text="${user.gender}"></td>
-<!--                                    <td th:text="${user.getLeague().getName}"></td>-->
+                                    <td th:text="${user.getLeague().name}"></td>
                                     <td>
                                         <div class="switch">
                                             <label th:hidden="${user.id}">
@@ -147,6 +148,7 @@
 
 
 </div>
+<!--</div>-->
 
 <th:block th:include="partials/footer :: scripts" />
 </body>

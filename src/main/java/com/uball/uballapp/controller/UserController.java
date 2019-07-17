@@ -48,11 +48,6 @@ public class UserController {
         return "redirect:/login";
     }
 
-    @GetMapping("/user/userprofile")
-    public String userProfilePage(){
-        return "user/userprofile";
-    }
-
     //Getting all Users!
     @GetMapping("/leagues") // this will be the method that shows all members of the league page
     public String all(Model model){
@@ -61,28 +56,30 @@ public class UserController {
     }
 
     //Show one user, by ID #
-    @GetMapping("/user/{id}/userprofile")
+    @GetMapping("/userprofile/{id}")
     public String show(@PathVariable long id, Model model){
         model.addAttribute("user", userDao.findOne(id));
         return "user/userprofile";
     }
 
     //Editing a User from user side
-    @GetMapping("/user/userprofile/{id}/edit")
+    @GetMapping("/edituser/{id}")
     public String edit ( @PathVariable long id, Model model){
         model.addAttribute("user", userDao.findOne(id));
-        return "user/userprofile";
+        return "user/edituser";
     }
 
-    @PostMapping("/user/userprofile/{id}/edit")
+    @PostMapping("/edituser/{id}")
     public String update (
             @PathVariable long id,
             @ModelAttribute User user)
     {
         User original = userDao.findOne(id);
         user.setId(original.getId());
+        user.setPassword(original.getPassword());
+        user.setUsername(original.getUsername());
         userDao.save(user);
-        return "redirect:/user/userprofile/{id}";
+        return "redirect:/userprofile/{id}";
     }
 
 }
