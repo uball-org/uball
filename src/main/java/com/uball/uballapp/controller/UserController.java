@@ -1,6 +1,7 @@
 package com.uball.uballapp.controller;
 
 
+import org.codehaus.groovy.transform.SourceURIASTTransformation;
 import org.springframework.security.core.context.SecurityContextHolder;
 import com.uball.uballapp.models.User;
 import com.uball.uballapp.repos.UserRepository;
@@ -55,7 +56,9 @@ public class UserController {
     //Getting all Users!
     @GetMapping("/leagues") // this will be the method that shows all members of the league page
     public String all(Model model){
-        model.addAttribute("users", userDao.findAll());
+
+        model.addAttribute("listTopRankings",userDao.findTop4());
+//        model.addAttribute("users", userDao.findAll());
         return "league/leaguedashboard";
     }
 
