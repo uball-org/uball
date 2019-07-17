@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/head :: head('League Dashboard')">
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
 </head>
 <body>
 <nav th:replace="partials/navbar :: nav"></nav>
@@ -23,7 +23,7 @@
                         <!--player's rank (score) from the every player(db)-->
                         <span th:text="${topRank.score}">score</span>
                         <p  th:text="${topRank.place}">First Place <br />
-                            <span>Name:</span><span  th:text="${topRank.firstname} ${topRank.lastname}">firstname lastname</span>
+                            <span>Name:</span><span  th:text="${topRank.firstName + ' ' + topRank.lastName}">firstname lastname</span>
                         </p>
                     </li>
                 </ul>

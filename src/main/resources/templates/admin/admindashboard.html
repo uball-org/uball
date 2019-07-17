@@ -95,14 +95,22 @@
                                     <td th:text="${user.gender}"></td>
                                     <td th:text="${user.getLeague().name}"></td>
                                     <td>
-                                        <div class="switch">
-                                            <label th:hidden="${user.id}">
-                                                Yes
-                                                <input type="checkbox" />
-                                                <span class="lever"></span>
-                                                No
-                                            </label>
-                                        </div>
+                                        <form action="#">
+                                            <p>
+                                                <label>
+                                                    <input type="checkbox" />
+                                                    <span>Red</span>
+                                                </label>
+                                            </p>
+                                        </form>
+<!--                                        <div class="switch">-->
+<!--                                            <label th:hidden="${user.id}">-->
+<!--                                                Yes-->
+<!--                                                <input type="checkbox" />-->
+<!--                                                <span class="lever"></span>-->
+<!--                                                No-->
+<!--                                            </label>-->
+<!--                                        </div>-->
                                     </td>
                                 </tr>
                             </th:block>
@@ -124,14 +132,22 @@
                                     <td th:text="${machine.id}"></td>
                                     <td th:text="${machine.name}"></td>
                                     <td>
-                                        <div class="switch">
-                                            <label  th:hidden="${machine.id}">
-                                                Yes
-                                                <input type="checkbox" />
-                                                <span class="lever"></span>
-                                                No
-                                            </label>
-                                        </div>
+                                        <form action="#">
+                                            <p>
+                                                <label>
+                                                    <input type="checkbox" />
+                                                    <span>Red</span>
+                                                </label>
+                                            </p>
+                                        </form>
+<!--                                        <div class="switch">-->
+<!--                                            <label  th:hidden="${machine.id}">-->
+<!--                                                Yes-->
+<!--                                                <input type="checkbox" />-->
+<!--                                                <span class="lever"></span>-->
+<!--                                                No-->
+<!--                                            </label>-->
+<!--                                        </div>-->
                                     </td>
                                 </tr>
                             </th:block>
