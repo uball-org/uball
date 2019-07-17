@@ -2,13 +2,15 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/head :: head('League Dashboard')">
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
 </head>
 <body>
 <nav th:replace="partials/navbar :: nav"></nav>
 
 
 <!-- Page Layout here -->
+<h1 th:text="${topRank.getFirstName}"></h1>
+
 <div class="row">
     <div class="parallax-container">
         <div  style="background-color: #1E88E5 " class="parallax"><img src="/static/img/background1.jpg" alt="Unsplashed background img 3" />
@@ -21,9 +23,9 @@
                         <!--player photo-->
                         <img src="https://placeholder.pics/svg/50" alt="" class="circle" />
                         <!--player's rank (score) from the every player(db)-->
-                        <span th:text="${topRank.score}">score</span>
-                        <p  th:text="${topRank.place}">First Place <br />
-                            <span>Name:</span><span  th:text="${topRank.firstname} ${topRank.lastname}">firstname lastname</span>
+                        <span th:text="${topRank.getScores()}">score</span>
+                        <p  th:text="${listTopRankings.indexOf(listTopRankings)}">First Place <br />
+                            <span>Name:</span><span  th:text="${topRank.getFirstName() + ' ' + topRank.getLastName()}">firstname lastname</span>
                         </p>
                     </li>
                 </ul>
@@ -33,69 +35,69 @@
 
 
     <!-- start league section-->
-    <div class="section white container">
-        <!-- start section container-->
-        <div class="row">
-            <!--                machine #1 Tab-->
-            <div class="col s6 ">
-                <div class="col s6" id="machine1">
-                    <a class="waves-effect waves-light btn-large">Belles & Chimes</a>
-                    <div class="col" style=" border: 2px solid black;">
-                        <table class="responsive-table centered highlight">
-                            <thead>
-                            <tr>
-                                <th></th>
-                                <th>Machine Name</th>
-                                <th>Points</th>
-                                <th>Date</th>
-                            </tr>
-                            </thead>
-                            <!--                            forEach will generate this-->
-                            <tbody>
-                            <tr th:each="machine : ${listTopMachines}">
-                                <td th:text="${machine.rankNumber}">1</td>
-                                <td th:text="${product.name}">PacMan</td>
-                                <td th:text="${product.points}">500000</td>
-                                <td th:text="${product.lastUpdateDate}">01/01/2019</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+    <!--<div class="section white container">-->
+        <!--&lt;!&ndash; start section container&ndash;&gt;-->
+        <!--<div class="row">-->
+            <!--&lt;!&ndash;                machine #1 Tab&ndash;&gt;-->
+            <!--<div class="col s6 ">-->
+                <!--<div class="col s6" id="machine1">-->
+                    <!--<a class="waves-effect waves-light btn-large">Belles & Chimes</a>-->
+                    <!--<div class="col" style=" border: 2px solid black;">-->
+                        <!--<table class="responsive-table centered highlight">-->
+                            <!--<thead>-->
+                            <!--<tr>-->
+                                <!--<th></th>-->
+                                <!--<th>Machine Name</th>-->
+                                <!--<th>Points</th>-->
+                                <!--<th>Date</th>-->
+                            <!--</tr>-->
+                            <!--</thead>-->
+                            <!--&lt;!&ndash;                            forEach will generate this&ndash;&gt;-->
+                            <!--<tbody>-->
+                            <!--<tr th:each="machine : ${listTopMachines}">-->
+                                <!--<td th:text="${machine.rankNumber}">1</td>-->
+                                <!--<td th:text="${product.name}">PacMan</td>-->
+                                <!--<td th:text="${product.points}">500000</td>-->
+                                <!--<td th:text="${product.lastUpdateDate}">01/01/2019</td>-->
+                            <!--</tr>-->
+                            <!--</tbody>-->
+                        <!--</table>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
 
-            <!--                machine #2 Tab-->
-            <div class="col s6 ">
-                <div class="col s6" id="machine2">
-                    <a class="waves-effect waves-light btn-large">SAPL</a>
-                    <div class="col" style=" border: 2px solid black;">
-                        <table class="responsive-table centered highlight">
-                            <thead>
-                            <tr>
-                                <th></th>
-                                <th>Machine Name</th>
-                                <th>Points</th>
-                                <th>Date</th>
+            <!--&lt;!&ndash;                machine #2 Tab&ndash;&gt;-->
+            <!--<div class="col s6 ">-->
+                <!--<div class="col s6" id="machine2">-->
+                    <!--<a class="waves-effect waves-light btn-large">SAPL</a>-->
+                    <!--<div class="col" style=" border: 2px solid black;">-->
+                        <!--<table class="responsive-table centered highlight">-->
+                            <!--<thead>-->
+                            <!--<tr>-->
+                                <!--<th></th>-->
+                                <!--<th>Machine Name</th>-->
+                                <!--<th>Points</th>-->
+                                <!--<th>Date</th>-->
 
-                            </tr>
-                            </thead>
+                            <!--</tr>-->
+                            <!--</thead>-->
 
-                            <!--                            forEach will generate this-->
+                            <!--&lt;!&ndash;                            forEach will generate this&ndash;&gt;-->
 
-                            <tbody>
-                            <tr th:each="machine : ${listSAPLTopMachines}">
-                                <td th:text="${machine.rankNumber}">1</td>
-                                <td th:text="${product.name}">PacMan</td>
-                                <td th:text="${product.points}">500000</td>
-                                <td th:text="${product.lastUpdateDate}">01/01/2019</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- end section container-->
-    </div> <!-- end league section -->
+                            <!--<tbody>-->
+                            <!--<tr th:each="machine : ${listSAPLTopMachines}">-->
+                                <!--<td th:text="${machine.rankNumber}">1</td>-->
+                                <!--<td th:text="${product.name}">PacMan</td>-->
+                                <!--<td th:text="${product.points}">500000</td>-->
+                                <!--<td th:text="${product.lastUpdateDate}">01/01/2019</td>-->
+                            <!--</tr>-->
+                            <!--</tbody>-->
+                        <!--</table>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div> &lt;!&ndash; end section container&ndash;&gt;-->
+    <!--</div> &lt;!&ndash; end league section &ndash;&gt;-->
 </div>
 
 

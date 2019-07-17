@@ -35,8 +35,7 @@ public interface UserRepository extends CrudRepository <User, Long> {
     User findAllByLeague(League league);
 
     //  Top 4 of all time
-    @Query(value = "select u.id, concat(u.first_name, ' ', u.last_name) as Name," +
-            "u.gender as Gender, m.name as Game, s.score as Score " +
+    @Query(value = "select  u.*, m.name as Game, s.score as Score " +
             "from users u " +
             "join scores s on u.id = s.user_id join machines m on s.machine_id = m.id " +
             "order by s.score desc " +
