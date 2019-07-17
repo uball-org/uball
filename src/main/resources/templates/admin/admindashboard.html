@@ -45,8 +45,9 @@
                     <td th:text="${user.getLeague().name}"></td>
                     <td th:text="${user.DOB}"></td>
                     <td>
-                        <a class="btn btn-primary" th:hidden="${user.id}"
-                           th:href="@{'/userprofile/'+${user.id} + '/disable'}">
+                        <a class="btn btn-primary" th:hidden="${user.id}">
+<!--                           th:href="/">-->
+<!--                           th:href="@{'/userprofile/'+${user.id} + '/disable'}">-->
                             Disable
                         </a>
 <!--                        <a sec:authorize="isAuthenticated()"-->
@@ -77,6 +78,7 @@
             <div class="card-content grey lighten-4">
                 <div id="CG">
                     <h3>Create Groups</h3>
+                    <form th:action="@{/admindashboard}" method="post">
                         <table class="responsive-table centered highlight">
                             <thead>
                             <tr>
@@ -95,14 +97,12 @@
                                     <td th:text="${user.gender}"></td>
                                     <td th:text="${user.getLeague().name}"></td>
                                     <td>
-                                        <form action="#">
+
                                             <p>
                                                 <label>
-                                                    <input type="checkbox" />
-                                                    <span>Red</span>
+                                                    <input th:hidden="${user.id}" th:value="checked" type="checkbox" />
                                                 </label>
                                             </p>
-                                        </form>
 <!--                                        <div class="switch">-->
 <!--                                            <label th:hidden="${user.id}">-->
 <!--                                                Yes-->
@@ -116,6 +116,14 @@
                             </th:block>
                             </tbody>
                         </table>
+                        <br />
+<!--                        <a class="btn btn-primary mt-1"-->
+<!--                           th:href="@{'/creategroups'}">-->
+<!--                            Submit-->
+<!--                        </a>-->
+                        <a class="btn btn-primary mt-1">Submit</a>
+                    </form>
+
                 </div>
                 <div id="CM">
                     <h3>Create Machines</h3>
