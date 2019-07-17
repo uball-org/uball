@@ -55,10 +55,9 @@ public class UserController {
 
     //Getting all Users!
     @GetMapping("/leagues") // this will be the method that shows all members of the league page
-    public String all(Model model){
-
-        model.addAttribute("listTopRankings",userDao.findTop4());
-//        model.addAttribute("users", userDao.findAll());
+    public String all(){
+//        model.addAttribute("listTopRankings",userDao.findTop4());
+//        model.addAttribute("listTopRankings", userDao.findAll());
         return "league/leaguedashboard";
     }
 
