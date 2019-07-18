@@ -51,7 +51,6 @@ public class User {
 
     private long points;
 
-    @NotNull(message = "Must choose a league")
     @OneToOne
     private League league;
 
