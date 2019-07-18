@@ -58,6 +58,16 @@ public interface UserRepository extends CrudRepository <User, Long> {
             "            limit 4", nativeQuery = true)
     List<User> findTop4ScoringUsers();
 
+        //  Top 4 of all time scores
+    @Query(value = "select s.*  " +
+            "from users u  " +
+            "join scores s on u.id = s.user_id " +
+            "join machines m on s.machine_id = m.id  " +
+            "order by s.score desc" +
+            "            limit 4", nativeQuery = true)
+    List<Score> findTop4Scores();
+
+
     //  Top 4 of all time machines
     @Query(value = "select m.* " +
             "from machines m  " +
