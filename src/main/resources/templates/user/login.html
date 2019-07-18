@@ -5,7 +5,7 @@
 <body>
 
 <nav th:replace="partials/navbar :: nav"></nav>
-
+<main>
 <h1 class="center">Log In</h1>
 <div th:if="${param.error}" class="center" style="color: red;">
     Invalid Username and Password.
@@ -33,10 +33,11 @@
 </main>
 <br />
 <br />
-
 <footer>
     <div th:replace="partials/footer :: footer"></div>
     <th:block th:include="partials/footer :: scripts" />
 </footer>
+</main>
+
 </body>
 </html>
