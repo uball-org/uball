@@ -46,6 +46,12 @@ public class UserController {
     @PostMapping("/register")
     public String saveUser(@Valid User user, Errors validation, Model m){
 
+        if (validation.hasErrors()) {
+            m.addAttribute("errors", validation);
+            m.addAttribute("user", user);
+            return "user/register";
+        }
+
         Date DOB = user.getDOB();
         user.setDOB(DOB);
         League league = user.getLeague();

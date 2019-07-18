@@ -12,26 +12,32 @@
         <label for="username">Username</label>
         <br/>
         <input id="username" th:field="*{username}" />
+        <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}" style="color: red;" />
         <br/>
         <label for="firstName">First Name</label>
         <br/>
         <input id="firstName" th:field="*{firstName}" />
+        <p th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" style="color: red;" />
         <br/>
         <label for="lastName">Last Name</label>
         <br/>
         <input id="lastName" th:field="*{lastName}" />
+        <p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" style="color: red;"/>
         <br/>
         <label for="password">Password</label>
         <br/>
         <input id="password" type="password" th:field="*{password}" />
+        <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" style="color: red;"/>
         <br/>
         <label for="email">Email</label>
         <br/>
         <input id="email" th:field="*{email}" />
+        <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color: red;"/>
         <br/>
         <label for="DOB">Date of Birth</label>
         <br/>
         <input id="DOB" type="date" th:field="*{DOB}" />
+        <p th:if="${#fields.hasErrors('DOB')}" th:errors="*{DOB}" style="color: red;"/>
         <br/>
 
         <label>Gender</label>
@@ -48,6 +54,7 @@
             <option value="1" th:text="SAPL"></option>
             <option value="2" th:text="Belles"></option>
         </select>
+        <p th:if="${#fields.hasErrors('league')}" th:errors="*{league}" style="color: red;"/>
         <br/>
         <br/>
         <!--<input value="Sign me up!" type="submit" /> -->
