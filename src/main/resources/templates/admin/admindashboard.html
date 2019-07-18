@@ -148,7 +148,24 @@
                 </div>
 
                 <div id="ScoreForm">
-                <h5>TO COME SOON...</h5>
+                <h5>Groups And Machines</h5>
+                        <table class="responsive-table centered highlight">
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <th>Name</th>
+                                <th>Points</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <th:block th:each="machineuses : ${newM}">
+                                <tr>
+                                    <td th:text="${machineusesStat}"></td>
+                                    <td th:text="${machineusesStat.index}"></td>
+                                </tr>
+                            </th:block>
+                            </tbody>
+                        </table>
                 </div>
             </div>
         </div>

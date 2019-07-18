@@ -50,10 +50,12 @@ public class AdminController {
         System.out.println(newU.size());
         System.out.println(newU.get(0).getFirstName());
         for(User users : newU){
+            model.addAttribute("usergroup", adminDao.findAll());
             users.getGroups().add(groupDao.findOne(1L));
             userDao.save(users);
             System.out.println(groupDao.findOne(1L).getUsers().size());
         }
+
         return "admin/admindashboard";
     }
 
@@ -64,10 +66,12 @@ public class AdminController {
     public String newMachines(Model model, @RequestParam(name = "mchecked") List<Machine> newM) {
         System.out.println(newM.size()/2);
         System.out.println(newM.get(0).getName());
-//        for(Machine machine : newM){
+        model.addAttribute(newM);
+        for(Machine machine : newM){
+            System.out.println(newM.get(newM.indexOf(machine)).getName());
+        }
+        return "admin/admindashboard";
 //            machineDao.save(machine);
-//        }
-        return "redirect: /admindashboard";
     }
 
     // disable button
