@@ -55,7 +55,7 @@ public interface UserRepository extends CrudRepository <User, Long> {
             "join scores s on u.id = s.user_id " +
             "join machines m on s.machine_id = m.id  " +
             "order by s.score desc" +
-            "            limit 4;", nativeQuery = true)
+            "            limit 4", nativeQuery = true)
     List<User> findTop4ScoringUsers();
 
     //  Top 4 of all time machines
@@ -63,7 +63,7 @@ public interface UserRepository extends CrudRepository <User, Long> {
             "from machines m  " +
             "join scores s  on s.machine_id = m.id " +
             "order by s.score desc " +
-            "limit 4;", nativeQuery = true)
+            "limit 4", nativeQuery = true)
     List<Machine> findTop4ScoringMachines();
 
     //  Top 4 of all time leagues
@@ -71,10 +71,19 @@ public interface UserRepository extends CrudRepository <User, Long> {
             "                  join scores s  on s.machine_id = m.id" +
             "                  join users u  on  s.user_id =  u.id" +
             "                  join leagues l  on l.id = u.league_id" +
-            "where s.machine_id = m.id order by s.score desc limit 4;", nativeQuery = true)
+            "where s.machine_id = m.id order by s.score desc limit 4", nativeQuery = true)
     List<League> findTop4ScoringLeagues();
 
+        /**Top All time scorers by league(id)*/
 
+    //  Top 4 of users by league(id)
+    @Query(value = "select u.*" +
+            "from users u" +
+            "join scores s on u.id = s.user_id" +
+            "join machines m on s.machine_id = m.id" +
+            "where league_id in (select id from leagues where id =?1 )" +
+            "order by s.score desc", nativeQuery = true)
+    List<User> Top4ScoringUserByLeague(long id);
 
 
 
