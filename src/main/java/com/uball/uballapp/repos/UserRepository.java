@@ -43,29 +43,29 @@ public interface UserRepository extends CrudRepository <User, Long> {
             "order by s.score desc " +
             "limit 4", nativeQuery = true)
     List<User> findTop4();
-  @Query(value = "select s.* " +
-            "from users u " +
-            "join scores s on u.id = s.user_id join machines m on s.machine_id = m.id " +
-            "order by s.score desc " +
-            "limit 4", nativeQuery = true)
-    List<Score> findTopScores();
 
-    /**
-     * //    select u.*, m.name as Game,  s.score as Score, s.date as Date, l.name as League
-     * //    from users u
-     * //    join scores s on s.user_id = u.id
-     * //    join leagues l on l.id = u.league_id
-     * //    join scores s  on s.user_id =  u.id
-     * //    join machines m on  m.id = s.machine_id
-     * //    order by s.score desc limit 4;
-     * */
-    //  Top 4 of all time machines
-    @Query(value = "select  m.* " +
-            "from users u " +
-            "join scores s on u.id = s.user_id join machines m on s.machine_id = m.id " +
-            "order by s.score desc " +
-            "limit 4", nativeQuery = true)
-    List<Machine> findTop4Machines();
+
+    /**ToDo: Start here
+ * working on League page data**/
+
+    /**  Top 4 all times #*/
+    //  Top 4 of all time users
+    @Query(value = "select u.*  " +
+            "from users u  " +
+            "join scores s on u.id = s.user_id " +
+            "join machines m on s.machine_id = m.id  " +
+            "order by s.score desc" +
+            "            limit 4;", nativeQuery = true)
+    List<User> findTop4ScoringUsers();
+
+
+
+
+
+
+
+    /**ToDo: End here
+ * working on League page data**/
 
 
     //  update total points for user (ADDING)
