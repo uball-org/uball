@@ -6,13 +6,13 @@
 <body>
 <nav th:replace="partials/navbar :: nav"></nav>
 
-<!--Need to verify ADMIN-->
-<!--<div sec:authorize="isAuthenticated()">-->
-<!--<h1>Welcome, <span th:text="${#authentication.principal. ?? }"></span></h1>-->
-<!--<h1>Welcome, <span th:text="${user.username}"></span></h1>-->
+                        <!--Need to verify ADMIN-->
+                        <!--<div sec:authorize="isAuthenticated()">-->
+                <!--<h1>Welcome, <span th:text="${user.username}"></span></h1>-->
+
 <h1>Welcome, User</h1>
 
-<div class="container" style="position: absolute; margin-left: 5%;">
+<div class="container" style="position: absolute; margin-left: 5%; width: 90%;">
 
     <div class="row">
 
@@ -22,8 +22,8 @@
 
         <!--        table of users-->
 
-        <div class="col s8" style=" border: 2px solid black;">
-            <table class="responsive-table centered highlight">
+        <div class="col s8" style=" border: 2px solid black; margin-top: 0;">
+            <table class="responsive-table centered highlight" style="margin-top: 0;">
                 <thead>
                 <tr>
                     <th>ID#</th>
@@ -45,14 +45,13 @@
                     <td th:text="${user.getLeague().name}"></td>
                     <td th:text="${user.DOB}"></td>
                     <td>
-                        <a class="btn btn-primary" th:hidden="${user.id}">
-<!--                           th:href="/">-->
+                        <a class="btn btn-primary" th:hidden="${user.id}">Disable</a>
+
+<!--  ////////////////////              THIS WILL BE USED LATER           \\\\\\\\\\\\\\\\\\\   -->
 <!--                           th:href="@{'/userprofile/'+${user.id} + '/disable'}">-->
-                            Disable
-                        </a>
-<!--                        <a sec:authorize="isAuthenticated()"-->
-                        <a class="btn btn-warning mt-1" th:hidden="${user.id}"
-                           th:href="@{'/edituser/'+${user.id}}">
+<!--                           <a sec:authorize="isAuthenticated()"-->
+
+                        <a class="btn btn-warning mt-1" th:hidden="${user.id}" th:href="@{'/edituser/'+${user.id}}">
                             Edit
                         </a>
                     </td>
@@ -67,7 +66,7 @@
             </table>
         </div>
 
-        <div class="card" style="position: inherit;">
+        <div class="card row" style="position: inherit;">
             <div class="card-tabs" style="height: 20px;">
                 <ul class="tabs tabs-fixed-width">
                     <li class="tab"><a class="active" href="#CG">Create Groups</a></li>
@@ -75,7 +74,7 @@
                     <li class="tab"><a href="#CDSF">Competition Day Score Form</a></li>
                 </ul>
             </div>
-            <div class="card-content grey lighten-4">
+            <div class="card-content grey lighten-4" >
                 <div id="CG">
                     <h3>Create Groups</h3>
                     <form th:action="@{/admindashboard/creategroup}" method="post">
@@ -90,7 +89,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <th:block th:each="user : ${users}">
+                            <th:block th:each="user, machine : ${users}">
                                 <tr>
                                     <td th:text="${user.id}"></td>
                                     <td th:text="${user.firstName + ' ' + user.lastName}"></td>
@@ -111,10 +110,6 @@
                             </tbody>
                         </table>
                         <br />
-<!--                        <a class="btn btn-primary mt-1"-->
-<!--                           th:href="@{'/creategroups'}">-->
-<!--                            Submit-->
-<!--                        </a>-->
                         <button type="submit" class="btn btn-primary mt-1">Submit</button>
                     </form>
 
@@ -159,8 +154,6 @@
         </div>
     </div>
 </div>
-<!--</div>-->
-
 <th:block th:include="partials/footer :: scripts" />
 </body>
 </html>
