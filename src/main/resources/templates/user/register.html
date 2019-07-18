@@ -42,19 +42,19 @@
 
         <label>Gender</label>
         <select class="browser-default" th:field="*{gender}">
-            <option value= "0" >Choose your option</option>
-            <option value="M" th:text="M" ></option>
-            <option value="F" th:text="F"></option>
+            <option th:value= "0" >Choose your option</option>
+            <option th:value="M" th:text="M" ></option>
+            <option th:value="F" th:text="F"></option>
         </select>
         <br/>
 
         <label>League</label>
         <select class="browser-default" th:field="*{league}">
-            <option value="0" >Choose your option</option>
-            <option value="1" th:text="SAPL"></option>
-            <option value="2" th:text="Belles"></option>
+            <option th:value="0" >Choose your option</option>
+            <option th:value="1" th:text="SAPL"></option>
+            <option th:value="2" th:text="Belles"></option>
         </select>
-        <p th:if="${#fields.hasErrors('league')}" th:errors="*{league}" style="color: red;"/>
+<!--        <p th:if="${#fields.hasErrors('league')}" th:errors="*{league}" style="color: red;"/>-->
         <br/>
         <br/>
         <!--<input value="Sign me up!" type="submit" /> -->
