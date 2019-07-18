@@ -51,7 +51,6 @@
 <!--  ////////////////////              THIS WILL BE USED LATER           \\\\\\\\\\\\\\\\\\\   -->
 <!--                           th:href="@{'/userprofile/'+${user.id} + '/disable'}">-->
 <!--                           <a sec:authorize="isAuthenticated()"-->
-
                         <a class="btn btn-warning mt-1" th:hidden="${user.id}" th:href="@{'/edituser/'+${user.id}}">
                             Edit
                         </a>
