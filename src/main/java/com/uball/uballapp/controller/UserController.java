@@ -52,14 +52,26 @@ public class UserController {
     public String userProfilePage(){
         return "user/userprofile";
     }
-
+/**league page controller: map data to the views when this URI is accessed*/
     //Getting all Users!
     @GetMapping("/leagues") // this will be the method that shows all members of the league page
-    public String all(){
-//        model.addAttribute("listTopRankings",userDao.findTop4());
-//        model.addAttribute("listTopRankings", userDao.findAll());
+    public String all(Model model){
+        model.addAttribute("users",userDao.findTop4ScoringUsers());
+        model.addAttribute("scores",userDao.findTop4Scores());
+        model.addAttribute("machines",userDao.findTop4ScoringMachines());
+
+        model.addAttribute("1leagueUsers",userDao.Top4ScoringUserByLeague(1));
+        model.addAttribute("1leagueScores",userDao.Top4ScoresByLeague(1));
+        model.addAttribute("1leagueMachines",userDao.Top4ScoringMachinesByLeague(1));
+
+        model.addAttribute("2leagueUsers",userDao.Top4ScoringUserByLeague(2));
+        model.addAttribute("2leagueScores",userDao.Top4ScoresByLeague(2));
+        model.addAttribute("2leagueMachines",userDao.Top4ScoringMachinesByLeague(2));
+
         return "league/leaguedashboard";
     }
+
+
 
     //Show one user, by ID #
     @GetMapping("/user/{id}/userprofile")
