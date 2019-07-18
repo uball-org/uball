@@ -1,9 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/head :: head('User Profile')">
-    <link rel = "stylesheet"
-          href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css" />
 </head>
 <body>
 
@@ -23,7 +20,7 @@
 <h1>Welcome, <span th:text="${users.username}"></span></h1>
 
 
-<div class="container" style="position: absolute; margin-left: 5%; width:92%">
+<div class="container" style="position: absolute; margin-left: 5%; width:90%">
 
 
     <div class="row">
@@ -37,11 +34,11 @@
 
         <div class="col s8" style=" border: 2px solid black;">
             <div class="row">
-                <div class="col s-6" th:text="${users.id}">ID: </div>
-                <div class="col s-6" th:text="${users.DOB}">DOB: </div>
-                <div class="col s-6" th:text="${users.gender}">Gender: </div>
-                <div class="col s-6" th:text="${users.points}">Points: </div>
-                <div class="col s-6" th:text="${users.getLeague().name}">League: </div>
+                <div class="col s6">ID: <span th:text="${users.id}"></span></div>
+                <div class="col s6" >DOB: <span th:text="${users.DOB}"></span></div>
+                <div class="col s6" >Gender: <span th:text="${users.gender}"></span></div>
+                <div class="col s6" >Points: <span th:text="${users.points}"></span></div>
+                <div class="col s6" >League: <span th:text="${users.getLeague().name}"></span></div>
             </div>
         </div>
     </div>
@@ -88,7 +85,6 @@
                 <!-- combined OvA and Mach. removed the id from Mach to use -->
                 <div id="OvA">
                     <h5>Overall</h5>
-                    stuffing
                    <table class="responsive-table centered highlight">
                        <thead>
                         <tr>
@@ -111,7 +107,6 @@
                 <!-- displays machines used -->
                 <div id="Mach"> <!--Deleted Machine-->
                 <h5>Machines</h5>
-                Stuff
                 <table class="responsive-table centered highlight">
                     <thead>
                     <tr>
@@ -120,10 +115,10 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <th:block th:each="machinetop : ${machines1}">
+                    <th:block th:each="machines : ${machines1}">
                         <tr>
-                            <td th:text="${machinetop.name}"></td>
-                            <td th:text="${machinetop.getScores()}"></td>
+                            <td th:text="${machines.name}"></td>
+                            <td th:text="${machines.getScores()}"></td>
                         </tr>
                     </th:block>
                     </tbody>
@@ -134,15 +129,9 @@
     </div>
 </div>
 
-
-<!--             Adding this vvv fixes the tabs-->
-<script type = "text/javascript"
-        src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
-</script>
-<!--             Adding this ^^^^ fixes the tabs-->
-
-
-<th:block th:include="partials/footer :: scripts" />
+<footer>
+    <div th:replace="partials/footer :: footer"></div>
+    <th:block th:include="partials/footer :: scripts" />
+</footer>
 </body>
 </html>
