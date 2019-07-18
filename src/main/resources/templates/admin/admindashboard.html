@@ -70,13 +70,14 @@
         <div class="card row" style="position: inherit;">
             <div class="card-tabs" style="height: 20px;">
                 <ul class="tabs tabs-fixed-width">
-                    <li class="tab"><a class="active" href="#CG">Create Groups</a></li>
-                    <li class="tab"><a href="#CM">Create Machines</a></li>
-                    <li class="tab"><a href="#CDSF">Competition Day Score Form</a></li>
+                    <li class="tab"><a href="#CreateGroups">Create Groups</a></li>
+                    <li class="tab"><a href="#CreateMachines" class="active">Create Machines</a></li>
+                    <li class="tab"><a href="#ScoreForm" >Competition Day Score Form</a></li>
                 </ul>
             </div>
+
             <div class="card-content grey lighten-4" >
-                <div id="CG" style="display: block;">
+                <div id="CreateGroups">
                     <h3>Create Groups</h3>
                     <form th:action="@{/admindashboard/creategroup}" method="post">
                         <table class="responsive-table centered highlight">
@@ -113,9 +114,9 @@
                         <br />
                         <button type="submit" class="btn btn-primary mt-1">Submit</button>
                     </form>
-
                 </div>
-                <div id="CM" style="display: none;">
+
+                <div id="CreateMachines" >
                     <h3>Create Machines</h3>
                     <form th:action="@{/admindashboard/createmachine}" method="post">
                     <table class="responsive-table centered highlight">
@@ -148,12 +149,14 @@
                         <br />
                         <a class="btn btn-primary mt-1">Submit</a>
                     </form>
-                        </div>
-                <div id="CDSF" style="display: none;"></div>
+                </div>
+
+                <div id="ScoreForm">
                 <h5>TO COME SOON...</h5>
+                </div>
             </div>
         </div>
-    </div>
+</div>
 </div>
 
 <footer>
