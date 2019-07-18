@@ -94,6 +94,15 @@ public interface UserRepository extends CrudRepository <User, Long> {
             "order by s.score desc", nativeQuery = true)
     List<Machine> Top4ScoringMachinesByLeague(long id);
 
+    // Top 4 of scores by league(id)
+    @Query(value = "select s.*" +
+            "from users u" +
+            "join scores s on u.id = s.user_id" +
+            "join machines m on s.machine_id = m.id" +
+            "where league_id in (select id from leagues where id = ?1 )" +
+            "order by s.score desc", nativeQuery = true)
+    List<Score> Top4ScoresByLeague();
+
 
 
 
