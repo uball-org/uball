@@ -1,6 +1,8 @@
 package com.uball.uballapp.controller;
 
 
+import com.uball.uballapp.repos.MachineRepository;
+import com.uball.uballapp.repos.ScoreRepository;
 import org.codehaus.groovy.transform.SourceURIASTTransformation;
 import org.springframework.security.core.context.SecurityContextHolder;
 import com.uball.uballapp.models.User;
@@ -18,11 +20,12 @@ import javax.validation.Valid;
 import java.util.Date;
 
 @Controller
-public class UserController {
+public class UserController<leagueRepository> {
     private UserRepository userDao;
     private PasswordEncoder passwordEncoder;
-//    private MachineRepository machineDao;
-//    private ScoresRepository scoresDao;
+    private MachineRepository machineDao;
+    private ScoreRepository scoresDao;
+    private leagueRepository leagueDoa;
 
 
     public UserController(UserRepository userDao, PasswordEncoder passwordEncoder) {
@@ -52,21 +55,21 @@ public class UserController {
     public String userProfilePage(){
         return "user/userprofile";
     }
-/**league page controller: map data to the views when this URI is accessed*/
+///**league page controller: map data to the views when this URI is accessed*/
     //Getting all Users!
     @GetMapping("/leagues") // this will be the method that shows all members of the league page
     public String all(Model model){
-        model.addAttribute("users",userDao.findTop4ScoringUsers());
-        model.addAttribute("scores",userDao.findTop4Scores());
-        model.addAttribute("machines",userDao.findTop4ScoringMachines());
+//        model.addAttribute("users",userDao.findTop4ScoringUsers());
+//        model.addAttribute("scores",scoresDao.findTop4Scores());
+//        model.addAttribute("machines",machineDao.findTop4ScoringMachines());
 
-        model.addAttribute("1leagueUsers",userDao.Top4ScoringUserByLeague(1));
-        model.addAttribute("1leagueScores",userDao.Top4ScoresByLeague(1));
-        model.addAttribute("1leagueMachines",userDao.Top4ScoringMachinesByLeague(1));
-
-        model.addAttribute("2leagueUsers",userDao.Top4ScoringUserByLeague(2));
-        model.addAttribute("2leagueScores",userDao.Top4ScoresByLeague(2));
-        model.addAttribute("2leagueMachines",userDao.Top4ScoringMachinesByLeague(2));
+        model.addAttribute("oneLeagueUsers",userDao.Top4ScoringUserByLeague(1));
+//        model.addAttribute("oneLeagueScores",scoresDao.Top4ScoresByLeague(1));
+//        model.addAttribute("oneLeagueMachines",machineDao.Top4ScoringMachinesByLeague(1));
+//
+        model.addAttribute("twoLeagueUsers",userDao.Top4ScoringUserByLeague(2));
+//        model.addAttribute("2leagueScores",scoresDao.Top4ScoresByLeague(2));
+//        model.addAttribute("twoLeagueMachines",machineDao.Top4ScoringMachinesByLeague(2));
 
         return "league/leaguedashboard";
     }

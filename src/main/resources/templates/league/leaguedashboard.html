@@ -12,7 +12,7 @@
 <!-- Page Layout here -->
 <div class="row">
     <div class="parallax-container">
-        <div  style="background-color: #1E88E5 " class="parallax"><img src="/static/img/background1.jpg" alt="Unsplashed background img 3" />
+        <div  class="parallax", style="background-image: url(https://picsum.photos/id/215/1999/600)">
             <div class="col s4 offset-s6">
                 <table class="responsive-table centered highlight">
                     <thead>
@@ -21,20 +21,21 @@
                         <th>Place</th>
                         <th>Score</th>
                         <th>Name</th>
+                        <th>League</th>
                     </tr>
                     </thead>
                     <tbody class="collection">
-                    <th:block th:each="topRank : ${listTopRankings}">
-                        <tr>
-                            <td> <!--player photo-->
-                                <img src="https://placeholder.pics/svg/50" alt="" class="circle" />
-                            </td>
-                            <td ><span>#</span><span th:text="${listTopRankings.indexOf(topRank)} + 1">1</span><span> place</span></td>
-                            <td th:text="${topRank}">score</td>
-                            <td th:text="${topRank.gender}">gender</td>
-                            <td th:text="${topRank.firstName + ' ' + topRank.lastName}">Name</td>
+                    <th:block th:each="user : ${users}">
+                    <tr>,
+                    <td> <!--player photo-->
+                    <img src="https://placeholder.pics/svg/50" alt="" class="circle" />
+                    </td>
+                    <td ><span>#</span><span th:text="${users.indexOf(user)} + 1">1</span><span> place</span></td>
+                    <td th:text="${user.points}">score</td> <!--Currently displaying points instead of scores(working on the logic getting proper format)-->
+                    <td th:text="${user.gender}">gender</td>
+                    <td th:text="${user.firstName + ' ' + user.lastName}">Name</td>
 
-                        </tr>
+                    </tr>
                     </th:block>
                     </tbody>
                 </table>
@@ -44,70 +45,107 @@
 
 
 
-    <!-- start league section-->
-    <!--<div class="section white container">-->
-        <!--&lt;!&ndash; start section container&ndash;&gt;-->
-        <!--<div class="row">-->
-            <!--&lt;!&ndash;                machine #1 Tab&ndash;&gt;-->
-            <!--<div class="col s6 ">-->
-                <!--<div class="col s6" id="machine1">-->
-                    <!--<a class="waves-effect waves-light btn-large">Belles & Chimes</a>-->
-                    <!--<div class="col" style=" border: 2px solid black;">-->
-                        <!--<table class="responsive-table centered highlight">-->
-                            <!--<thead>-->
-                            <!--<tr>-->
-                                <!--<th></th>-->
-                                <!--<th>Machine Name</th>-->
-                                <!--<th>Points</th>-->
-                                <!--<th>Date</th>-->
-                            <!--</tr>-->
-                            <!--</thead>-->
-                            <!--&lt;!&ndash;                            forEach will generate this&ndash;&gt;-->
-                            <!--<tbody>-->
-                            <!--<tr th:each="machine : ${listTopMachines}">-->
-                                <!--<td th:text="${machine.rankNumber}">1</td>-->
-                                <!--<td th:text="${product.name}">PacMan</td>-->
-                                <!--<td th:text="${product.points}">500000</td>-->
-                                <!--<td th:text="${product.lastUpdateDate}">01/01/2019</td>-->
-                            <!--</tr>-->
-                            <!--</tbody>-->
-                        <!--</table>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
+    <!--start league section-->
+    <div class="section white container">
+        <!-- start section container-->
+        <div class="row">
+            <!--                machine #1 Tab-->
+            <div class="col s6 ">
+                <div class="col s6" id="machine1">
+                    <a class="waves-effect waves-light btn-large">Belles & Chimes</a>
+                    <div class="col" style=" border: 2px solid black;">
+                        <table class="responsive-table centered highlight">
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <th>Machine Name</th>
+                                <th>Points</th>
+                                <th>Date</th>
+                            </tr>
+                            </thead>
+                            <!--                            forEach will generate this-->
+                            <tbody>
+                            <tr >
+                            <td>#1 place</td>
+                            <td>PacMan</td>
+                            <td>500000</td>
+                            <td>01/01/2019</td>
+                            </tr>
+                            <tr >
+                            <td>#2 place</td>
+                            <td>PASDF</td>
+                            <td>300000</td>
+                            <td>01/01/2019</td>
+                            </tr>
+                            <tr >
+                            <td>#3 place</td>
+                            <td>ManMAS</td>
+                            <td>200000</td>
+                            <td>01/01/2019</td>
+                            </tr>
+                            <tr >
+                            <td>#4 place</td>
+                            <td>Madsf</td>
+                            <td>10000</td>
+                            <td>01/01/2019</td>
+                            </tr>
 
-            <!--&lt;!&ndash;                machine #2 Tab&ndash;&gt;-->
-            <!--<div class="col s6 ">-->
-                <!--<div class="col s6" id="machine2">-->
-                    <!--<a class="waves-effect waves-light btn-large">SAPL</a>-->
-                    <!--<div class="col" style=" border: 2px solid black;">-->
-                        <!--<table class="responsive-table centered highlight">-->
-                            <!--<thead>-->
-                            <!--<tr>-->
-                                <!--<th></th>-->
-                                <!--<th>Machine Name</th>-->
-                                <!--<th>Points</th>-->
-                                <!--<th>Date</th>-->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
 
-                            <!--</tr>-->
-                            <!--</thead>-->
+            <!--                machine #2 Tab-->
+            <div class="col s6 ">
+                <div class="col s6" id="machine2">
+                    <a class="waves-effect waves-light btn-large">SAPL</a>
+                    <div class="col" style=" border: 2px solid black;">
+                        <table class="responsive-table centered highlight">
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <th>Machine Name</th>
+                                <th>Points</th>
+                                <th>Date</th>
 
-                            <!--&lt;!&ndash;                            forEach will generate this&ndash;&gt;-->
+                            </tr>
+                            </thead>
 
-                            <!--<tbody>-->
-                            <!--<tr th:each="machine : ${listSAPLTopMachines}">-->
-                                <!--<td th:text="${machine.rankNumber}">1</td>-->
-                                <!--<td th:text="${product.name}">PacMan</td>-->
-                                <!--<td th:text="${product.points}">500000</td>-->
-                                <!--<td th:text="${product.lastUpdateDate}">01/01/2019</td>-->
-                            <!--</tr>-->
-                            <!--</tbody>-->
-                        <!--</table>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div> &lt;!&ndash; end section container&ndash;&gt;-->
-    <!--</div> &lt;!&ndash; end league section &ndash;&gt;-->
+                            <!--                            forEach will generate this-->
+
+                            <tbody>
+                            <tr >
+                                <td>#1 place</td>
+                                <td>ASFDF</td>
+                                <td>500000</td>
+                                <td>01/01/2019</td>
+                            </tr>
+                            <tr >
+                                <td>#2 place</td>
+                                <td>DGH</td>
+                                <td>400000</td>
+                                <td>01/01/2019</td>
+                            </tr>
+                            <tr >
+                                <td>#3 place</td>
+                                <td>FHJG</td>
+                                <td>250000</td>
+                                <td>01/01/2019</td>
+                            </tr>
+                            <tr >
+                                <td>#4 place</td>
+                                <td>FDGS</td>
+                                <td>10000</td>
+                                <td>01/01/2019</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- end section container-->
+    </div> <!-- end league section -->
 </div>
 
 

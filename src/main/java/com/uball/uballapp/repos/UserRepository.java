@@ -47,8 +47,7 @@ public interface UserRepository extends CrudRepository <User, Long> {
 
     /**ToDo: Start here
  * working on League page data**/
-
-    /**  Top 4 all times #*/
+            /**  Top 4 all times #*/
     //  Top 4 of all time users
     @Query(value = "select u.*  " +
             "from users u  " +
@@ -57,35 +56,7 @@ public interface UserRepository extends CrudRepository <User, Long> {
             "order by s.score desc" +
             "            limit 4", nativeQuery = true)
     List<User> findTop4ScoringUsers();
-
-        //  Top 4 of all time scores
-    @Query(value = "select s.*  " +
-            "from users u  " +
-            "join scores s on u.id = s.user_id " +
-            "join machines m on s.machine_id = m.id  " +
-            "order by s.score desc" +
-            "            limit 4", nativeQuery = true)
-    List<Score> findTop4Scores();
-
-
-    //  Top 4 of all time machines
-    @Query(value = "select m.* " +
-            "from machines m  " +
-            "join scores s  on s.machine_id = m.id " +
-            "order by s.score desc " +
-            "limit 4", nativeQuery = true)
-    List<Machine> findTop4ScoringMachines();
-
-    //  Top 4 of all time leagues
-    @Query(value = "select l.* from machines m" +
-            "                  join scores s  on s.machine_id = m.id" +
-            "                  join users u  on  s.user_id =  u.id" +
-            "                  join leagues l  on l.id = u.league_id" +
-            "where s.machine_id = m.id order by s.score desc limit 4", nativeQuery = true)
-    List<League> findTop4ScoringLeagues();
-
-        /**Top All time scorers by league(id)*/
-
+            /**Top All time scorers by league(id)*/
     //  Top 4 of users by league(id)
     @Query(value = "select u.*" +
             "from users u" +
@@ -94,30 +65,6 @@ public interface UserRepository extends CrudRepository <User, Long> {
             "where league_id in (select id from leagues where id =?1 )" +
             "order by s.score desc", nativeQuery = true)
     List<User> Top4ScoringUserByLeague(long id);
-
-    // Top 4 of machines by league(id)
-    @Query(value = "select m.*" +
-            "from users u" +
-            "join scores s on u.id = s.user_id" +
-            "join machines m on s.machine_id = m.id" +
-            "where league_id in (select id from leagues where id = ?1 )" +
-            "order by s.score desc", nativeQuery = true)
-    List<Machine> Top4ScoringMachinesByLeague(long id);
-
-    // Top 4 of scores by league(id)
-    @Query(value = "select s.*" +
-            "from users u" +
-            "join scores s on u.id = s.user_id" +
-            "join machines m on s.machine_id = m.id" +
-            "where league_id in (select id from leagues where id = ?1 )" +
-            "order by s.score desc", nativeQuery = true)
-    List<Score> Top4ScoresByLeague(long id);
-
-
-
-
-
-
     /**ToDo: End here
  * working on League page data**/
 
