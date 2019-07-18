@@ -4,32 +4,39 @@
 </head>
 <body>
 
-<!--<ul id="dropdown1" class="dropdown-content">-->
-<!--    <li><a href="#../user/userprofile.html">Profile</a></li>-->
-<!--    <li><a href= "#/league">League</a></li>-->
-<!--    <li sec:authorize="isAuthenticated()">-->
-<!--        <a href="#/admindashboard">Admin Dashboard</a>-->
-<!--    </li>-->
-<!--</ul>-->
-<ul id="dropdown1" class="dropdown-content">
-    <li><a href="#!">Profile</a></li>
-    <li><a href="#!">League</a></li>
-    <li sec:authorize="isAuthenticated()">
-    <a href="#!">Admin Dashboard</a>
-    </li>
-</ul>
 <nav>
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="#!">Profile</a></li>
+        <li><a href="#!">League</a></li>
+        <li sec:authorize="isAuthenticated()">
+            <a href="#!">Admin Dashboard</a>
+        </li>
+    </ul>
     <div class="nav-wrapper">
         <a href="/" class="brand-logo">UBall</a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
             <li sec:authorize="isAnonymous()"><a href="/register">Register</a></li>
             <li sec:authorize="isAnonymous()"><a href="/login">Login</a></li>
-            <li sec:authorize="isAuthenticated()"><a class="dropdown-trigger" href="#" data-target="dropdown1">User<i class="material-icons right">arrow_drop_down</i></a></li>
+            <li sec:authorize="isAuthenticated()"><a class="dropdown-trigger" href="#!" data-target="dropdown1">User<i class="material-icons right">arrow_drop_down</i></a></li>
             <li sec:authorize="isAuthenticated()"><a href="/login?logout">Logout</a></li>
         </ul>
     </div>
+    <ul id="dropdown2" class="dropdown-content">
+        <li><a href="#!">Profile</a></li>
+        <li><a href="#!">League</a></li>
+        <li sec:authorize="isAuthenticated()">
+            <a href="#!">Admin Dashboard</a>
+        </li>
+    </ul>
+    <ul class="sidenav" id="mobile-demo">
+        <li sec:authorize="isAnonymous()"><a href="/register">Register</a></li>
+        <li sec:authorize="isAnonymous()"><a href="/login">Login</a></li>
+        <li sec:authorize="isAuthenticated()"><a class="dropdown-trigger" href="#" data-target="dropdown2">User<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li sec:authorize="isAuthenticated()"><a href="/login?logout">Logout</a></li>
+    </ul>
 </nav>
+
 
 <!-- mobile nav -->
 
@@ -46,39 +53,5 @@
 <!--    </div>-->
 <!--</nav>-->
 
-<ul class="sidenav" id="mobile-demo">
-    <li sec:authorize="isAnonymous()"><a href="/register">Register</a></li>
-    <li sec:authorize="isAnonymous()"><a href="/login">Login</a></li>
-    <li sec:authorize="isAuthenticated()"><a class="dropdown-trigger" href="#" data-target="dropdown1">User<i class="material-icons right">arrow_drop_down</i></a></li>
-    <li sec:authorize="isAuthenticated()"><a href="/login?logout">Logout</a></li>
-</ul>
-
-
-
-
-<!--<ul id="dropdown1" class="dropdown-content">-->
-<!--    <li><a href="#!">one</a></li>-->
-<!--    <li><a href="#!">two</a></li>-->
-<!--    <li class="divider"></li>-->
-<!--    <li><a href="#!">three</a></li>-->
-<!--</ul>-->
-<!--<nav>-->
-<!--    <div class="nav-wrapper">-->
-<!--        <a href="#!" class="brand-logo">Logo</a>-->
-<!--        <ul class="right hide-on-med-and-down">-->
-<!--            <li><a href="sass.html">Sass</a></li>-->
-<!--            <li><a href="badges.html">Components</a></li>-->
-<!--            &lt;!&ndash; Dropdown Trigger &ndash;&gt;-->
-<!--            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>-->
-<!--        </ul>-->
-<!--    </div>-->
-<!--</nav>-->
-
-
-
-
-<!--<script>-->
-<!--    M.AutoInit();-->
-<!--</script>-->
 </body>
 </html>

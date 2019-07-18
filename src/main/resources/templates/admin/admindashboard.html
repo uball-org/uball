@@ -6,6 +6,7 @@
 <body>
 <nav th:replace="partials/navbar :: nav"></nav>
 
+
                         <!--Need to verify ADMIN-->
                         <!--<div sec:authorize="isAuthenticated()">-->
                 <!--<h1>Welcome, <span th:text="${user.username}"></span></h1>-->
@@ -76,7 +77,7 @@
                 </ul>
             </div>
             <div class="card-content grey lighten-4" >
-                <div id="CG">
+                <div id="CG" style="display: block;">
                     <h3>Create Groups</h3>
                     <form th:action="@{/admindashboard/creategroup}" method="post">
                         <table class="responsive-table centered highlight">
@@ -115,7 +116,7 @@
                     </form>
 
                 </div>
-                <div id="CM">
+                <div id="CM" style="display: none;">
                     <h3>Create Machines</h3>
                     <form th:action="@{/admindashboard/createmachine}" method="post">
                     <table class="responsive-table centered highlight">
@@ -149,19 +150,17 @@
                         <a class="btn btn-primary mt-1">Submit</a>
                     </form>
                         </div>
-                <div id="CDSF">Competition Day Score Form</div>
+                <div id="CDSF" style="display: none;"></div>
                 <h5>TO COME SOON...</h5>
             </div>
         </div>
     </div>
 </div>
-<!--             Adding this vvv fixes the tabs-->
-<script type = "text/javascript"
-        src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
-</script>
-<!--             Adding this ^^^^ fixes the tabs-->
 
-<th:block th:include="partials/footer :: scripts" />
+<footer>
+    <div th:replace="partials/footer :: footer"></div>
+    <th:block th:include="partials/footer :: scripts" />
+</footer>
+
 </body>
 </html>
