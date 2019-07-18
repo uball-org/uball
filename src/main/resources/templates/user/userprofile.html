@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/head :: head('User Profile')">
-    <link rel = "stylesheet"
-          href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css" />
+<!--    <link rel = "stylesheet"-->
+<!--          href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css" />-->
 </head>
 <body>
 
@@ -37,11 +36,11 @@
 
         <div class="col s8" style=" border: 2px solid black;">
             <div class="row">
-                <div class="col s-6" th:text="${users.id}">ID: </div>
-                <div class="col s-6" th:text="${users.DOB}">DOB: </div>
-                <div class="col s-6" th:text="${users.gender}">Gender: </div>
-                <div class="col s-6" th:text="${users.points}">Points: </div>
-                <div class="col s-6" th:text="${users.getLeague().name}">League: </div>
+                <div class="col s6" th:text="${users.id}">ID: </div>
+                <div class="col s6" th:text="${users.DOB}">DOB: </div>
+                <div class="col s6" th:text="${users.gender}">Gender: </div>
+                <div class="col s6" th:text="${users.points}">Points: </div>
+                <div class="col s6" th:text="${users.getLeague().name}">League: </div>
             </div>
         </div>
     </div>
