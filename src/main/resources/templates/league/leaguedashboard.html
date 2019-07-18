@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/head :: head('League Dashboard')">
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <!--&lt;!&ndash; Compiled and minified CSS &ndash;&gt;-->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />-->
 </head>
 <body>
 <nav th:replace="partials/navbar :: nav"></nav>
@@ -12,7 +12,7 @@
 <!-- Page Layout here -->
 <div class="row">
     <div class="parallax-container">
-        <div  class="parallax", style="background-image: url(https://picsum.photos/id/215/1999/600)">
+        <div  class="parallax" style="background-image: url(https://picsum.photos/id/215/1999/600)">
             <div class="col s4 offset-s6">
                 <table class="responsive-table centered highlight">
                     <thead>
@@ -34,7 +34,6 @@
                     <td th:text="${user.points}">score</td> <!--Currently displaying points instead of scores(working on the logic getting proper format)-->
                     <td th:text="${user.gender}">gender</td>
                     <td th:text="${user.firstName + ' ' + user.lastName}">Name</td>
-
                     </tr>
                     </th:block>
                     </tbody>
@@ -53,11 +52,11 @@
             <div class="col s6 ">
                 <div class="col s6" id="machine1">
                     <a class="waves-effect waves-light btn-large">Belles & Chimes</a>
-                    <div class="col" style=" border: 2px solid black;">
+                    <div class="col" style=" border: 2px solid black">
                         <table class="responsive-table centered highlight">
                             <thead>
                             <tr>
-                                <th></th>
+                                <th>Place</th>
                                 <th>Machine Name</th>
                                 <th>Points</th>
                                 <th>Date</th>
@@ -153,8 +152,8 @@
     <div th:replace="partials/footer :: footer"></div>
     <th:block th:include="partials/footer :: scripts" />
 </footer>
-<!-- Compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!--&lt;!&ndash; Compiled and minified JavaScript &ndash;&gt;-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>-->
 
 </body>
 </html>
