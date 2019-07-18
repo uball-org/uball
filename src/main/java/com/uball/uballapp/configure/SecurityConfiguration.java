@@ -60,6 +60,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/admin/admindashboard" // only authenticated users can create ads
 //                        "/user/{id}/edit", // only authenticated users can edit ads
 //                        "/user/{id}/disable"// only authenticated users can delete ads
+                        "/leagues"// only authenticated users can view leagues page
                 )
                 .authenticated()
         ;
