@@ -4,6 +4,9 @@
 </head>
 <body>
 
+
+
+
 <style>
     div.col.s4.card-panel.hoverable{
         width: 18%;
@@ -11,6 +14,15 @@
     div.row{
         position:relative;
     }
+
+    /* A TEMPORARY FIX FOR FOOTER*/
+    /* In doing this, the footer is positioned to the bottom of the page*/
+    footer.page-footer.grey.darken-4{
+        position: relative;
+        top: 400px;
+    }
+    /* A TEMPORARY FIX*/
+
 </style>
 <nav th:replace="partials/navbar :: nav"></nav>
 
@@ -38,7 +50,8 @@
                 <div class="col s6" >DOB: <span th:text="${users.DOB}"></span></div>
                 <div class="col s6" >Gender: <span th:text="${users.gender}"></span></div>
                 <div class="col s6" >Points: <span th:text="${users.points}"></span></div>
-                <div class="col s6" >League: <span th:text="${users.getLeague().name}"></span></div>
+               <!-- <div class="col s6" >League: <span th:text="${users.getLeague().name}"></span></div>-->
+                <!--uncomment before pushing/ the league portion causes page error -->
             </div>
         </div>
     </div>
@@ -82,7 +95,7 @@
 <!--                                  -->
 
                 <!-- displays overall and machines used -->
-                <!-- combined OvA and Mach. removed the id from Mach to use -->
+
                 <div id="OvA">
                     <h5>Overall</h5>
                    <table class="responsive-table centered highlight">
