@@ -59,15 +59,15 @@ public class UserController<leagueRepository> {
     //Getting all Users!
     @GetMapping("/leagues") // this will be the method that shows all members of the league page
     public String all(Model model){
-//        model.addAttribute("users",userDao.findTop4ScoringUsers());
+        model.addAttribute("users",userDao.findTop4ScoringUsers());
 //        model.addAttribute("scores",scoresDao.findTop4Scores());
 //        model.addAttribute("machines",machineDao.findTop4ScoringMachines());
 
-        model.addAttribute("oneLeagueUsers",userDao.Top4ScoringUserByLeague(1));
+//        model.addAttribute("oneLeagueUsers",userDao.Top4ScoringUserByLeague(1));
 //        model.addAttribute("oneLeagueScores",scoresDao.Top4ScoresByLeague(1));
 //        model.addAttribute("oneLeagueMachines",machineDao.Top4ScoringMachinesByLeague(1));
 //
-        model.addAttribute("twoLeagueUsers",userDao.Top4ScoringUserByLeague(2));
+//        model.addAttribute("twoLeagueUsers",userDao.Top4ScoringUserByLeague(2));
 //        model.addAttribute("2leagueScores",scoresDao.Top4ScoresByLeague(2));
 //        model.addAttribute("twoLeagueMachines",machineDao.Top4ScoringMachinesByLeague(2));
 
