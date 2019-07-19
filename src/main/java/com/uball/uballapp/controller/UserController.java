@@ -121,11 +121,6 @@ public class UserController<leagueRepository> {
     }
 
 
-
-
-
-
-
     @GetMapping("/userprofile")
     public String userPro(Model model){
             model.addAttribute("msg", "what can you see");
