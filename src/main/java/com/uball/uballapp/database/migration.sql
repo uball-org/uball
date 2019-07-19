@@ -115,6 +115,27 @@ values (1,
        ),
        (3,
         'Machine 3'
+       ),
+       (4,
+        'Machine 4'
+       ),
+       (5,
+        'Machine 5'
+       ),
+       (6,
+        'Machine 6'
+       ),
+       (7,
+        'Machine 7'
+       ),
+       (8,
+        'Machine 8'
+       ),
+       (9,
+        'Machine 9'
+       ),
+       (10,
+        'Machine 10'
        );
 
 
