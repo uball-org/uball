@@ -45,7 +45,6 @@ public interface MachineRepository extends CrudRepository <Machine, Long> {
             "order by s.score desc " +
             "limit 4", nativeQuery = true)
     List<Machine> findTop4ScoringMachines();
-
     /**Top All time scorers by league(id)*/
     // Top 4 of machines by league(id)
     @Query(value = "select m.*" +

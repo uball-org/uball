@@ -24,15 +24,16 @@ public class UserController<leagueRepository> {
     private UserRepository userDao;
     private PasswordEncoder passwordEncoder;
     private MachineRepository machineDao;
-    private ScoreRepository scoresDao;
+    private ScoreRepository scoreDao;
     private leagueRepository leagueDoa;
 
 
-    public UserController(UserRepository userDao, PasswordEncoder passwordEncoder) {
+    public UserController(UserRepository userDao, PasswordEncoder passwordEncoder, MachineRepository machineDao) {
         this.userDao = userDao;
         this.passwordEncoder = passwordEncoder;
-//        this.machineDao = machineDao;
-//        this.scoresDao = scoresDao;
+        this.machineDao = machineDao;
+//        this.scoreDao = scoreDao;
+//        this.leagueDoa = leagueDoa;
     }
 
     @GetMapping("/register")
@@ -60,15 +61,15 @@ public class UserController<leagueRepository> {
     @GetMapping("/leagues") // this will be the method that shows all members of the league page
     public String all(Model model){
         model.addAttribute("users",userDao.findTop4ScoringUsers());
-//        model.addAttribute("scores",scoresDao.findTop4Scores());
+//        model.addAttribute("scores",scoreDao.findTop4Scores());
 //        model.addAttribute("machines",machineDao.findTop4ScoringMachines());
 
 //        model.addAttribute("oneLeagueUsers",userDao.Top4ScoringUserByLeague(1));
-//        model.addAttribute("oneLeagueScores",scoresDao.Top4ScoresByLeague(1));
+//        model.addAttribute("oneLeagueScores",scoreDao.Top4ScoresByLeague(1));
 //        model.addAttribute("oneLeagueMachines",machineDao.Top4ScoringMachinesByLeague(1));
 //
 //        model.addAttribute("twoLeagueUsers",userDao.Top4ScoringUserByLeague(2));
-//        model.addAttribute("2leagueScores",scoresDao.Top4ScoresByLeague(2));
+//        model.addAttribute("2leagueScores",scoreDao.Top4ScoresByLeague(2));
 //        model.addAttribute("twoLeagueMachines",machineDao.Top4ScoringMachinesByLeague(2));
 
         return "league/leaguedashboard";
