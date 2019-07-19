@@ -33,7 +33,7 @@
                             </td>
                             <td> <!--score-->
                                 <th:block th:each="scoreinfo : ${scores}">
-                                    <span th:text="scoreinfo.score">score</span>
+                                    <span th:text="${scoreinfo.score}">score</span>
                                 </th:block>
                             </td>
                             <!--name-->
@@ -41,8 +41,8 @@
                             <!--gender-->
                             <td th:text="${user.gender}">gender</td>
                             <td> <!--league-->
-                                <th:block th:each="league : ${leagues}">
-                                    <span th:text="league.name">score</span>
+                                <th:block th:each="leagueinfo : ${leagues}">
+                                    <span th:text="${leagueinfo.name}">league</span>
                                 </th:block>
                             </td>
                         </tr>
