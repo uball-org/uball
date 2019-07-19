@@ -1,6 +1,7 @@
 package com.uball.uballapp.controller;
 
 
+import com.uball.uballapp.models.League;
 import com.uball.uballapp.repos.LeagueRepository;
 import com.uball.uballapp.repos.MachineRepository;
 import com.uball.uballapp.repos.ScoreRepository;
@@ -94,7 +95,7 @@ public class UserController<leagueRepository> {
         model.addAttribute("users", userDao.findOne(id));
         model.addAttribute("machines", machineDao.findOne(id));
 //        model.addAttribute("machines1", machineDao.findDistinctTopByScoresAnd_User_Id(id));
-        model.addAttribute("scores", scoresDao.findAllByUser_Id(id));
+        model.addAttribute("scores", scoreDao.findAllByUser_Id(id));
 //        model.addAttribute("scores1", scoresDao.findDistinctTopByMachineAndUser_Id(machineDao.findAll(), id));
         return "user/userprofile";
     }
