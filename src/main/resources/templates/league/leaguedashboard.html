@@ -31,20 +31,11 @@
                             <td> <!--place-->
                                 <span>#</span><span th:text="${users.indexOf(user)} + 1">1</span><span> place</span>
                             </td>
-                            <td> <!--score-->
-                                <th:block th:each="scoreinfo : ${scores}">
-                                    <span th:text="${scoreinfo.score}">score</span>
-                                </th:block>
-                            </td>
-                            <!--name-->
+                            <td th:text="${user.points}">Points</td>
                             <td th:text="${user.firstName + ' ' + user.lastName}">Name</td>
                             <!--gender-->
                             <td th:text="${user.gender}">gender</td>
-                            <td> <!--league-->
-                                <th:block th:each="leagueinfo : ${leagues}">
-                                    <span th:text="${leagueinfo.name}">league</span>
-                                </th:block>
-                            </td>
+                            <td th:text="${user.getLeague().name}">gender</td>
                         </tr>
                     </th:block>
                     </tbody>
