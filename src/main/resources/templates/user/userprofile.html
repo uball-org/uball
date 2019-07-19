@@ -8,6 +8,12 @@
 
 
 <style>
+
+    div.container.one{
+        position: relative;
+        top: 275px;
+    }
+
     /*
     div.col.s4.card-panel.hoverable{
         width: 18%;
@@ -26,9 +32,10 @@
         position: relative;
         top: 400px;
     }
-    /* A TEMPORARY FIX*/
+     /*A TEMPORARY FIX*/
 
 </style>
+
 <nav th:replace="partials/navbar :: nav"></nav>
 
 <!--Need to verify ADMIN-->
@@ -42,118 +49,76 @@
 
     <div class="row">
 
-        <!--        profile picture of Admin-->
+
+        <div class="col s12 m4 l4">
+            <div id="profile-card" class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <!--<img class="activator" src="images/gallary/3.png" alt="user bg">-->
+                </div>
+                <div class="card-content">
+                    <!--<img src="images/avatar/avatar-7.png" alt="" class="circle responsive-img activator card-profile-image cyan lighten-1 padding-2">-->
+                    <a class="btn-floating activator btn-move-up waves-effect waves-light red accent-2 z-depth-4 right">
+                        <i class="material-icons">edit</i>
+                    </a>
+                    <span class="card-title activator grey-text text-darken-4"><span th:text="${users.username}"></span></span>
+                    <p>
+                        <i class="material-icons">perm_identity</i> Gender:<span th:text="${users.gender}"></span></p>
+                    <p>
+                        <i class="material-icons">perm_phone_msg</i>Points:<span th:text="${users.points}"></span> </p>
+                    <p>
+                        <i class="material-icons">email</i>:<span th:text="${users.email}"></span> </p>
+                </div>
+                <div class="card-reveal">
+                      <span class="card-title grey-text text-darken-4">name: <span th:text="${users.username}"></span>
+                        <i class="material-icons right">close</i>
+                      </span>
+                    <p>Here is some more information about this card.</p>
+                    <p>
+                        <i class="material-icons">perm_identity</i>ID:<span th:text="${users.id}"></span> </p>
+                    <p>
+                        <i class="material-icons">perm_phone_msg</i>Points:<span th:text="${users.points}"></span></p>
+                    <p>
+                        <i class="material-icons">email</i>:<span th:text="${users.email}"></span></p>
+                    <p>
+                        <i class="material-icons">cake</i> Birthday:<span th:text="${users.DOB}"></span>
+                    </p>
+                    <p>
+                    </p>
+                    <p>
+                        <i class="material-icons">airplanemode_active</i> BAR - AUS
+                    </p>
+                    <p>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--        profile picture of Admin
 
         <div class="col s4 card-panel hoverable" style="border: 2px solid black; margin-top: 0; height: auto;">
             <span class="flow-text">Picture will go here</span></div>
 
-        <!--        table of users-->
+                table of users-->
 
-
+<!--
         <div class="col s8" style=" border: 2px solid black;">
             <div class="row">
                 <div class="col s6">ID: <span th:text="${users.id}"></span></div>
                 <div class="col s6" >DOB: <span th:text="${users.DOB}"></span></div>
                 <div class="col s6" >Gender: <span th:text="${users.gender}"></span></div>
                 <div class="col s6" >Points: <span th:text="${users.points}"></span></div>
-               <!--<div class="col s6" >League: <span th:text="${users.getLeague().name}"></span></div>-->
-                <!--uncomment before pushing/ the league portion causes page error -->
+               <div class="col s6" >League: <span th:text="${users.getLeague().name}"></span></div>-->
+                <!--uncomment before pushing/ the league portion causes page error
             </div>
-
-            <!--The edit button that does nothing -->
+            The edit button that does nothing -->
             <!--<a class="waves-effect waves-light btn-small">Edit</a> -->
             <!--The edit button that does nothing -->
-
         </div>
     </div>
                 <!--*****************-->
                 <!--                Bottom Nav Card Below              -->
                 <!--*****************-->
 
-<div class="container">
-    <!--
-        <div class="card" style="position: inherit;">
-            <div class="card-tabs" style="height: 20px;">
-                <ul class="tabs tabs-fixed-width">
-                    <li class="tab "><a class="active" href="#Indiv">Individual</a></li>
-                    <li class="tab"><a href="#OvA">Overall</a></li>
-                    <li class="tab"><a href="#Mach">Machine</a></li>
-                </ul>
-            </div>
-
-             displays individual
-            <div class="card-content grey lighten-4">
-                <div id="Indiv">
-                    <h5>Individual</h5>
-                    <table class="responsive-table centered highlight">
-                        <thead>
-                        <tr>
-                            <th>Machine Name</th>
-                            <th>Date Played</th>
-                            <th>Score</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <th:block th:each="score : ${scores}">
-                            <tr>
-                                <td th:text="${score.getMachine().name}"></td>
-                                <td th:text="${score.date}"></td>
-                                <td th:text="${score.score}"></td>
-                            </tr>
-                        </th:block>
-                        </tbody>
-                    </table>
-                </div>
-
-
-                 displays overall and machines used
-
-                <div id="OvA">
-                    <h5>Overall</h5>
-                   <table class="responsive-table centered highlight">
-                       <thead>
-                        <tr>
-                            <th>Machine Name</th>
-                            <th>Date Played</th>
-                            <th>Score</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <th:block th:each="score1 : ${scores}">
-                            <tr>
-                                <td th:text="${score1.getMachine().name}"></td>
-                                <td th:text="${score1.date}"></td>
-                                <td th:text="${score1.score}"></td>
-                            </tr>
-                        </th:block>
-                        </tbody>
-                    </table>
-                </div>
-                 displays machines used
-                <div id="Mach">
-                <h5>Machines</h5>
-                <table class="responsive-table centered highlight">
-                    <thead>
-                    <tr>
-                        <th>Machine Name</th>
-                        <th>Score</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <th:block th:each="machines : ${machines1}">
-                        <tr>
-                            <td th:text="${machines.name}"></td>
-                            <td th:text="${machines.getScores()}"></td>
-                        </tr>
-                    </th:block>
-                    </tbody>
-                </table>
-                </div>
-            </div>
-        </div>
-    -->
-    </div>
-
+<div class="container one">
 
     <div class="card">
         <div class="card-content">
@@ -227,16 +192,7 @@
             </ul>
         </div>
     </div>
-        <!--
-        <div class="card-content grey lighten-4">
-            <div id="test4">INDIVIDUAL</div>
-            <div id="test5">OVERALL</div>
-            <div id="test6">MACHINE</div>
-        </div>
-        -->
-    </div>
-
-
+</div>
 
 <footer>
     <div th:replace="partials/footer :: footer"></div>
