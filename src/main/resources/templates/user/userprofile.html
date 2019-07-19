@@ -8,6 +8,7 @@
 
 
 <style>
+    /*
     div.col.s4.card-panel.hoverable{
         width: 18%;
     }
@@ -20,6 +21,7 @@
 
     /* A TEMPORARY FIX FOR FOOTER*/
     /* In doing this, the footer is positioned to the bottom of the page*/
+
     footer.page-footer.grey.darken-4{
         position: relative;
         top: 400px;
@@ -69,16 +71,17 @@
                 <!--*****************-->
 
 <div class="container">
+    <!--
         <div class="card" style="position: inherit;">
             <div class="card-tabs" style="height: 20px;">
                 <ul class="tabs tabs-fixed-width">
-                    <li class="tab"><a class="active" href="#Indiv">Individual</a></li>
+                    <li class="tab "><a class="active" href="#Indiv">Individual</a></li>
                     <li class="tab"><a href="#OvA">Overall</a></li>
                     <li class="tab"><a href="#Mach">Machine</a></li>
                 </ul>
             </div>
 
-            <!-- displays individual -->
+             displays individual
             <div class="card-content grey lighten-4">
                 <div id="Indiv">
                     <h5>Individual</h5>
@@ -101,9 +104,9 @@
                         </tbody>
                     </table>
                 </div>
-<!--                                  -->
 
-                <!-- displays overall and machines used -->
+
+                 displays overall and machines used
 
                 <div id="OvA">
                     <h5>Overall</h5>
@@ -126,8 +129,8 @@
                         </tbody>
                     </table>
                 </div>
-                <!-- displays machines used -->
-                <div id="Mach"> <!--Deleted Machine-->
+                 displays machines used
+                <div id="Mach">
                 <h5>Machines</h5>
                 <table class="responsive-table centered highlight">
                     <thead>
@@ -148,12 +151,97 @@
                 </div>
             </div>
         </div>
+    -->
     </div>
-</div>
+
+
+    <div class="card">
+        <div class="card-content">
+            <div class="card-content">
+
+                <div id="Indiv">
+                    <table class="responsive-table centered">
+                        <thead>
+                        <tr>
+                            <th>Machine Name</th>
+                            <th>Date Played</th>
+                            <th>Score</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <th:block th:each="score : ${scores}">
+                            <tr>
+                                <td th:text="${score.getMachine().name}"></td>
+                                <td th:text="${score.date}"></td>
+                                <td th:text="${score.score}"></td>
+                            </tr>
+                        </th:block>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="OvA">
+                    <table class="responsive-table centered">
+                        <thead>
+                        <tr>
+                            <th>Machine Name</th>
+                            <th>Date Played</th>
+                            <th>Score</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <th:block th:each="score : ${scores}">
+                            <tr>
+                                <td th:text="${score.getMachine().name}"></td>
+                                <td th:text="${score.date}"></td>
+                                <td th:text="${score.score}"></td>
+                            </tr>
+                        </th:block>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="Mach">
+                    <table class="responsive-table centered">
+                        <thead>
+                        <tr>
+                            <th>Machine Name</th>
+                            <th>Score</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <th:block th:each="machines : ${machines1}">
+                            <tr>
+                                <td th:text="${machines.name}"></td>
+                                <td th:text="${machines.getScores()}"></td>
+                            </tr>
+                        </th:block>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="card-tabs">
+            <ul class="tabs tabs-fixed-width">
+                <li class="tab"><a href="#Indiv">INDIVIDUAL</a></li>
+                <li class="tab"><a class="active" href="#OvA">OVERALL</a></li>
+                <li class="tab"><a href="#Mach">MACHINE</a></li>
+            </ul>
+        </div>
+    </div>
+        <!--
+        <div class="card-content grey lighten-4">
+            <div id="test4">INDIVIDUAL</div>
+            <div id="test5">OVERALL</div>
+            <div id="test6">MACHINE</div>
+        </div>
+        -->
+    </div>
+
+
 
 <footer>
     <div th:replace="partials/footer :: footer"></div>
     <th:block th:include="partials/footer :: scripts" />
 </footer>
+
 </body>
 </html>
