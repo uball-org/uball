@@ -77,9 +77,9 @@
             </div>
 
             <div class="card-content grey lighten-4" >
+                <form th:action="@{/admindashboard/creategrouping}" method="post">
                 <div id="CreateGroups">
                     <h3>Create Groups</h3>
-                    <form th:action="@{/admindashboard/creategroup}" method="post">
                         <table class="responsive-table centered highlight">
                             <thead>
                             <tr>
@@ -110,13 +110,9 @@
                             </tbody>
                         </table>
                         <br />
-                        <button type="submit" class="btn btn-primary mt-1">Submit</button>
-                    </form>
                 </div>
-
                 <div id="CreateMachines" >
                     <h3>Create Machines</h3>
-                    <form th:action="@{/admindashboard/createmachines}" method="post">
                     <table class="responsive-table centered highlight">
                             <thead>
                             <tr>
@@ -144,9 +140,7 @@
                         </table>
                         <br />
                         <button type="submit" class="btn btn-primary mt-1">Submit</button>
-                    </form>
                 </div>
-
                 <div id="ScoreForm">
                 <h5>Groups And Machines</h5>
                         <table class="responsive-table centered highlight">
@@ -158,15 +152,16 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <th:block th:each="machineuses : ${newM}">
+                            <th:block th:each="new : ${matchmachines}">
                                 <tr>
-                                    <td th:text="${machineusesStat}"></td>
-                                    <td th:text="${machineusesStat.index}"></td>
+                                    <td th:text="${new}"></td>
+                                    <td th:text="${new.id}"></td>
                                 </tr>
                             </th:block>
                             </tbody>
                         </table>
                 </div>
+                </form>
             </div>
         </div>
 </div>
