@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="partials/head :: head('UBall')">
+</head>
+<body class="teal lighten-5">
+<nav th:replace="partials/navbar :: nav"></nav>
+
+<div class="card-box col s12 m4 l4">
+    <div class="card">
+        <div class="header">
+            <img src="https://placeholder.pics/svg/300" />
+
+            <div class="social-line social-line-visible" data-buttons="4">
+                <button class="btn btn-social btn-github">
+                    <i class="material-icons public"></i>
+                </button>
+                <button class="btn btn-social btn-linkedin">
+                    <i class="material-icons people"></i>
+                </button>
+                <button class="btn btn-social btn-resume">
+                    <i class="material-icons attachment"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="content">
+            <h4 class="title">Team Member</h4>
+<!--            <p class="description">When selling products it's always a good idea to go with commanding fonts that are good at showing authority and security. I feel like Raleway and Roboto do just that.</p>-->
+        </div>
+    </div> <!-- end card -->
+</div>
+
+
+
+
+
+<div th:replace="partials/footer :: footer"></div>
+<th:block th:include="partials/footer :: scripts" />
+
+</body>
+</html>

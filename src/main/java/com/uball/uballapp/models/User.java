@@ -1,8 +1,11 @@
 package com.uball.uballapp.models;
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.format.annotation.DateTimeFormat;
 import com.uball.uballapp.repos.UserRepository;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Date;
 import java.util.List;
 
@@ -14,21 +17,29 @@ public class User {
     @GeneratedValue
     private long id;
 
+    @NotBlank(message = "Must enter username")
+    @Size(min = 3, message = "Username must be at least 3 characters.")
     @Column(nullable = false)
     private String username;
 
+    @NotBlank(message = "Must enter first name")
     @Column(nullable = false)
     private String firstName;
 
+    @NotBlank(message = "Must enter last name")
     @Column(nullable = false)
     private String lastName;
 
+    @NotBlank(message = "Must enter email")
     @Column(nullable = false, unique = true)
     private String email;
 
+    @NotBlank(message = "Must enter password")
+    @Size(min = 5, message = "Password must be at least 5 characters.")
     @Column(nullable = false)
     private String password;
 
+    @NotNull(message = "Must enter a birthdate")
     @Column(nullable = false)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date DOB;

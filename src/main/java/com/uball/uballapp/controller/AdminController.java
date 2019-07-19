@@ -1,54 +1,91 @@
 package com.uball.uballapp.controller;
 
 
-import com.uball.uballapp.repos.MachineRepository;
+import com.uball.uballapp.models.Group;
+import com.uball.uballapp.models.Machine;
+import com.uball.uballapp.models.Score;
+import com.uball.uballapp.repos.*;
 import org.springframework.security.core.context.SecurityContextHolder;
 import com.uball.uballapp.models.User;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import com.uball.uballapp.repos.AdminRepository;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+
+import javax.validation.Valid;
+import java.util.Date;
+import java.util.List;
 
 @Controller
 public class AdminController {
     private AdminRepository adminDao;
+    private UserRepository userDao;
+    private ScoreRepository scoreDao;
     private MachineRepository machineDao;
+    private GroupRepository groupDao;
 
-    public AdminController(AdminRepository adminDao, MachineRepository machineDao) {
+    public AdminController(AdminRepository adminDao,
+                           MachineRepository machineDao,
+                           GroupRepository groupDao,
+                           UserRepository userDao,
+                           ScoreRepository scoreDao) {
+
         this.adminDao = adminDao;
         this.machineDao = machineDao;
+        this.groupDao = groupDao;
+        this.userDao = userDao;
+        this.scoreDao = scoreDao;
     }
-
-    //Getting all Users!
-    @GetMapping("/admindashboard") // needs to be factored to use the "id of button" for this element
+            //All Machines and Users
+    @GetMapping("/admindashboard")
     public String all(Model model){
         model.addAttribute("users", adminDao.findAll());
         model.addAttribute("machines", machineDao.findAll());
         return "admin/admindashboard";
     }
 
-    //Editing a User from adminside
-    @GetMapping("/edituser/{id}")
-    public String edit ( @PathVariable long id, Model model){
-        model.addAttribute("user", adminDao.findOne(id));
-        return "user/edituser";
+            //Value of user selected on view is : "uchecked" / "mchecked"
+    @RequestMapping(value = "/admindashboard/creategrouping", method = RequestMethod.POST)
+    public String newUsersForGroups(Model model,
+                                    @RequestParam(name = "uchecked") List<User> newU,
+                                    @RequestParam(name = "mchecked") List<Machine> newM) {
+        model.addAttribute("machines2", newM);
+
+
+        for(User users : newU){
+            System.out.println("users = " +
+                    newU.indexOf(users) + " " +
+                    users.isAdmin() + " " +
+                    users.getGroups() + " " +
+                    users.getFirstName() + " " +
+                    users.getLastName() + " " + users.getId());
+
+            //Create logic for making group amount and number of groups
+
+            for(Machine machine : newM){
+                System.out.println(machine.getId() + " " +
+                        machine.getName() + " " +
+                        machine.getScores());
+
+                Score blankscore = new Score(); // New score object to use to add new scores tied to the user_id and machine_id just added
+                blankscore.setScore(0);
+                blankscore.setMachine(machine);
+                blankscore.setUser(users);
+                scoreDao.save(blankscore);
+            }
+
+            users.getGroups().add(groupDao.findOne(2L));
+            userDao.save(users);
+        }
+
+        System.out.println("size of new users list divide by two= " + newU.size()/2);
+        System.out.println("size of users in group 1 = " + groupDao.findOne(1L).getUsers().size());
+        System.out.println("size of new machines list divide by two= " + newM.size()/2);
+
+        return "redirect:/admindashboard";
     }
 
-    @PostMapping("/edituser/{id}")
-    public String update (
-            @PathVariable long id,
-            @ModelAttribute User user)
-    {
-        User original = adminDao.findOne(id);
-        user.setId(original.getId());
-        adminDao.save(user);
-        return "redirect:/userprofile/{id}";
-    }
 
-//
+    // disable button
 //
 //    @PostMapping("/user/{id}/disable") //This will actually be to disable NOT DELETE
 //    public String delete(@PathVariable long id) {
