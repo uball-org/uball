@@ -66,13 +66,13 @@ public class UserController<leagueRepository> {
         model.addAttribute("scores",scoreDao.findTop4Scores());
         model.addAttribute("leagues", leagueDoa.findTop4ScoringLeagues());
 
-//        model.addAttribute("oneLeagueUsers",userDao.Top4ScoringUserByLeague(1));
+        model.addAttribute("oneLeagueUsers",userDao.Top4ScoringUserByLeague(1));
 //        model.addAttribute("oneLeagueScores",scoreDao.Top4ScoresByLeague(1));
-//        model.addAttribute("oneLeagueMachines",machineDao.Top4ScoringMachinesByLeague(1));
-//
-//        model.addAttribute("twoLeagueUsers",userDao.Top4ScoringUserByLeague(2));
-//        model.addAttribute("2leagueScores",scoreDao.Top4ScoresByLeague(2));
-//        model.addAttribute("twoLeagueMachines",machineDao.Top4ScoringMachinesByLeague(2));
+        model.addAttribute("oneLeagueMachines",machineDao.Top4ScoringMachinesByLeague(1));
+
+        model.addAttribute("twoLeagueUsers",userDao.Top4ScoringUserByLeague(2));
+//        model.addAttribute("twoLeagueScores",scoreDao.Top4ScoresByLeague(2));
+        model.addAttribute("twoLeagueMachines",machineDao.Top4ScoringMachinesByLeague(2));
 
         return "league/leaguedashboard";
     }
