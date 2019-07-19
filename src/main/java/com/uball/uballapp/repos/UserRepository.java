@@ -3,6 +3,8 @@ package com.uball.uballapp.repos;
 
 
 import com.uball.uballapp.models.League;
+import com.uball.uballapp.models.Machine;
+import com.uball.uballapp.models.Score;
 import com.uball.uballapp.models.User;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -35,13 +37,36 @@ public interface UserRepository extends CrudRepository <User, Long> {
     User findAllByLeague(League league);
 
     //  Top 4 of all time
-    @Query(value = "select u.id, concat(u.first_name, ' ', u.last_name) as Name," +
-            "u.gender as Gender, m.name as Game, s.score as Score " +
+    @Query(value = "select  u.*, m.name as Game, s.score as Score " +
             "from users u " +
             "join scores s on u.id = s.user_id join machines m on s.machine_id = m.id " +
             "order by s.score desc " +
             "limit 4", nativeQuery = true)
     List<User> findTop4();
+
+
+    /**ToDo: Start here
+     * working on League page data**/
+    /**  Top 4 all times #*/
+    //  Top 4 of all time users
+    @Query(value = "select u.*" +
+            " from users u" +
+            " join scores s on u.id = s.user_id" +
+            " order by s.score desc" +
+            " limit 4", nativeQuery = true)
+    List<User> findTop4ScoringUsers();
+    /**Top All time scorers by league(id)*/
+    //  Top 4 of users by league(id)
+    @Query(value = "select u.*" +
+            " from users u" +
+            " join scores s on u.id = s.user_id" +
+            " join machines m on s.machine_id = m.id" +
+            " where league_id in (select id from leagues where id = ?1)" +
+            " order by s.score desc " +
+            " limit 4", nativeQuery = true)
+    List<User> Top4ScoringUserByLeague(long id);
+    /**ToDo: End here
+     * working on League page data**/
 
 
     //  update total points for user (ADDING)

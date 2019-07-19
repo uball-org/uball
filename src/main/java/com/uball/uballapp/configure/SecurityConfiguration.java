@@ -57,6 +57,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers(
 
+
                         "/userprofile/{id}",
                         "/admindashboard",
                         "/edituser/{id}",

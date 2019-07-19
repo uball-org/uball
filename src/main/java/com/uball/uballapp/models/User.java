@@ -68,6 +68,12 @@ public class User {
     public User() {
     }
 
+    public User(String firstName, String lastName, char gender) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gender = gender;
+    }
+
     public User(String username, String firstName, String lastName, String email, String password, Date DOB, char gender, boolean isAdmin, long points) {
         this.username = username;
         this.firstName = firstName;
