@@ -99,9 +99,9 @@
             </div>
 
             <div class="card-content grey lighten-4" >
+                <form th:action="@{/admindashboard/creategrouping}" method="post">
                 <div id="CreateGroups">
                     <h3>Create Groups</h3>
-                    <form th:action="@{/admindashboard/creategroup}" method="post">
                         <table class="responsive-table centered highlight">
                             <thead>
                             <tr>
@@ -113,34 +113,28 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <th:block th:each="user, machine : ${users}">
+                            <th:block th:each="user : ${users}">
                                 <tr>
                                     <td th:text="${user.id}"></td>
                                     <td th:text="${user.firstName + ' ' + user.lastName}"></td>
                                     <td th:text="${user.gender}"></td>
                                     <td th:text="${user.getLeague().name}"></td>
                                     <td>
-                                        <form action="#">
-                                            <p>
-                                                <label>
-                                                    <input th:hidden="${user.id}" th:value="uchecked" type="checkbox" />
-                                                    <span></span>
-                                                </label>
-                                            </p>
-                                        </form>
+                                        <p>
+                                            <label>
+                                                <input  name="uchecked" th:value="${user.id}" type="checkbox" />
+                                                <span></span>
+                                            </label>
+                                        </p>
                                     </td>
                                 </tr>
                             </th:block>
                             </tbody>
                         </table>
                         <br />
-                        <button type="submit" class="btn btn-primary mt-1">Submit</button>
-                    </form>
                 </div>
-
                 <div id="CreateMachines" >
                     <h3>Create Machines</h3>
-                    <form th:action="@{/admindashboard/createmachine}" method="post">
                     <table class="responsive-table centered highlight">
                             <thead>
                             <tr>
@@ -155,27 +149,80 @@
                                     <td th:text="${machine.id}"></td>
                                     <td th:text="${machine.name}"></td>
                                     <td>
-                                        <form action="#">
-                                            <p>
-                                                <label>
-                                                    <input th:hidden="${machine.id}" th:value="mchecked" type="checkbox" />
-                                                    <span></span>
-                                                </label>
-                                            </p>
-                                        </form>
+                                        <p>
+                                            <label>
+                                                <input  name="mchecked" th:value="${machine.id}" type="checkbox" />
+                                                <span></span>
+                                            </label>
+                                        </p>
                                     </td>
                                 </tr>
                             </th:block>
                             </tbody>
                         </table>
                         <br />
-                        <a class="btn btn-primary mt-1">Submit</a>
-                    </form>
+                        <button type="submit" class="btn btn-primary mt-1">Submit</button>
                 </div>
-
                 <div id="ScoreForm">
-                <h5>TO COME SOON...</h5>
+                <h5>Groups And Machines</h5>
+                        <table class="responsive-table centered highlight">
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <th>Name</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <th:block th:each="newUserList : ${newUsersList}">
+                                <tr>
+                                    <td th:text="${newUserList.indexOf(newUsersList)}">1</td>
+                                    <td th:text="${newUserList.userName}">John</td>
+                                </tr>
+                            </th:block>
+                            </tbody>
+                        </table>
+
+                    <th:block th:each="machinestwo : ${machines2}">
+
+                    <table class="responsive-table centered highlight">
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <th>Score</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <th:block th:each="scoreinput : ${newUsersList}">
+                                <tr>
+                                    <td th:text="${scoreinput.indexOf(newUsersList)}"></td>
+                                    <div class="input-field">
+                                        <input th:hidden="${scoreinput.id}" name="score" id="input_text" type="text" data-length="12" />
+                                        <label for="input_text">Score</label>
+                                    </div>
+                                </tr>
+                            </th:block>
+                            </tbody>
+                        </table>
+                    </th:block>
+
+                    <table class="responsive-table centered highlight">
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <th>Total Points</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <th:block th:each="totalpoints : ${newUsersList}">
+                                <tr>
+                                    <td th:text="${totalpoints.id}">1</td>
+                                    <td th:text="${CALCULATED VALUE}">16</td>
+                                </tr>
+                            </th:block>
+                            </tbody>
+                        </table>
                 </div>
+                </form>
             </div>
         </div>
 </div>
