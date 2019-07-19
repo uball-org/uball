@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/head :: head('League Dashboard')">
-    <!--&lt;!&ndash; Compiled and minified CSS &ndash;&gt;-->
-    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />-->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
 </head>
 <body>
 <nav th:replace="partials/navbar :: nav"></nav>
 
 <!-- Page Layout here -->
 <div class="row">
-    <div class="container">
-        <div style="background-image: url(https://picsum.photos/id/215/1999/600)">
+    <div class=" container parallax  " style="background-image: url(https://picsum.photos/id/215/1999/600)">
+        <div>
             <div class="col s4 offset-s8">
                 <table class="responsive-table centered highlight">
                     <thead>
@@ -19,6 +19,7 @@
                         <th>Place</th>
                         <th>Score</th>
                         <th>Name</th>
+                        <th>Gender</th>
                         <th>League</th>
                     </tr>
                     </thead>
@@ -29,13 +30,13 @@
                                 <img src="https://placeholder.pics/svg/50" alt="" class="circle" />
                             </td>
                             <td> <!--place-->
-                                <span>#</span><span th:text="${users.indexOf(user)} + 1">1</span><span> place</span>
+                                <span>#</span><span th:text="${users.indexOf(user)} + 1">1</span><span> Place</span>
                             </td>
-                            <td th:text="${user.points}">Points</td>
+                            <td th:text="${user.points}">score</td>
                             <td th:text="${user.firstName + ' ' + user.lastName}">Name</td>
                             <!--gender-->
-                            <td th:text="${user.gender}">gender</td>
-                            <td th:text="${user.getLeague().name}">gender</td>
+                            <td th:text="${user.gender}">Gender</td>
+                            <td th:text="${user.getLeague().name}">League</td>
                         </tr>
                     </th:block>
                     </tbody>
@@ -45,77 +46,77 @@
     </div>
 
 
-    <!--&lt;!&ndash; start league section&ndash;&gt;-->
-    <!--<div class="section white container">-->
-        <!--&lt;!&ndash; start section container&ndash;&gt;-->
-        <!--<div class="row">-->
+    <!-- start league section-->
+    <div class="section white container">
+        <!-- start section container-->
+        <div class="row">
                             <!--machine #1 Tab-->
-            <!--<div class="col s6 ">-->
-                <!--<div class="col s6" id="machine1">-->
-                    <!--<a class="waves-effect waves-light btn-large">Belles and Chimes</a>-->
-                    <!--<div class="col" style=" border: 2px solid black">-->
-                        <!--<table class="responsive-table centered highlight">-->
-                            <!--<thead>-->
-                            <!--<tr>-->
-                                <!--<th></th>-->
-                                <!--<th>Machine Name</th>-->
-                                <!--<th>Score</th>-->
-                                <!--<th>Date</th>-->
-                            <!--</tr>-->
-                            <!--</thead>-->
-                            <!--&lt;!&ndash;                            forEach will generate this&ndash;&gt;-->
-                            <!--<tbody>-->
-                            <!--<th:block>-->
-                                <!--<tr th:each="oneLM : ${oneLeagueMachines}">-->
-                                    <!--<td th:text="${oneLeagueMachines.indexOf(oneLM)}">Place</td>-->
-                                    <!--<td><span th:text="${oneLM.name}"></span>Name</td>-->
+            <div class="col s6 ">
+                <div class="col s6" id="machine1">
+                    <a class="waves-effect waves-light btn-large">Belles and Chimes</a>
+                    <div class="col" style=" border: 2px solid black">
+                        <table class="responsive-table centered highlight">
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <th>Machine Name</th>
+                                <th>Score</th>
+                                <th>Date</th>
+                            </tr>
+                            </thead>
+                            <!--                            forEach will generate this-->
+                            <tbody>
+                            <th:block>
+                                <tr th:each="oneLS : ${oneLeagueScores}">
+                                    <td># <span th:text="${oneLeagueScores.indexOf(oneLS) + 1 } "></span> Place</td>
+                                    <td><span th:text="${oneLS.getMachine().name}"></span>Name</td>
                                     <!--<th:block th:each=" lUser: ${oneLeagueUsers}">-->
                                         <!--<td th:text="${lUser.scores}"> Score</td>-->
                                         <!--<td th:text="${lUser.getDOB()}">Date</td>-->
                                     <!--</th:block>-->
-                                <!--</tr>-->
-                            <!--</th:block>-->
-                            <!--</tbody>-->
-                        <!--</table>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
+                                    <td th:text="${oneLS.score}"> Score</td>
+                                    <td th:text="${oneLS.date}">Date</td>
+                                </tr>
+                            </th:block>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
 
-            <!--&lt;!&ndash;                machine #2 Tab&ndash;&gt;-->
-            <!--<div class="col s6 ">-->
-                <!--<div class="col s6" id="machine2">-->
-                    <!--<a class="waves-effect waves-light btn-large">SAPL</a>-->
-                    <!--<div class="col" style=" border: 2px solid black">-->
-                        <!--<table class="responsive-table centered highlight">-->
-                            <!--<thead>-->
-                            <!--<tr>-->
-                                <!--<th></th>-->
-                                <!--<th>Machine Name</th>-->
-                                <!--<th>Points</th>-->
-                                <!--<th>Date</th>-->
-                            <!--</tr>-->
-                            <!--</thead>-->
+            <!--                machine #2 Tab-->
+            <div class="col s6 ">
+                <div class="col s6" id="machine2">
+                    <a class="waves-effect waves-light btn-large">SAPL</a>
+                    <div class="col" style=" border: 2px solid black">
+                        <table class="responsive-table centered highlight">
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <th>Machine Name</th>
+                                <th>Points</th>
+                                <th>Date</th>
+                            </tr>
+                            </thead>
 
-                            <!--&lt;!&ndash;                            forEach will generate this&ndash;&gt;-->
+                            <!--                            forEach will generate this-->
 
-                            <!--<tbody>-->
-                            <!--<th:block>-->
-                                <!--<tr th:each="oneLM : ${twoLeagueMachines}">-->
-                                    <!--<td th:text="${twoLeagueMachines.indexOf(oneLM)}">Place</td>-->
-                                    <!--<td><span th:text="${oneLM.name}"></span>Name</td>-->
-                                    <!--<th:block th:each=" lTwoUser: ${twoLeagueUsers}">-->
-                                        <!--<td> 8247</td>-->
-                                        <!--<td th:text="${lTwoUser.date}">Date</td>-->
-                                    <!--</th:block>-->
-                                <!--</tr>-->
-                            <!--</th:block>-->
-                            <!--</tbody>-->
-                        <!--</table>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div> &lt;!&ndash; end section container&ndash;&gt;-->
-    <!--</div> &lt;!&ndash; end league section &ndash;&gt;-->
+                            <tbody>
+                            <th:block>
+                                <tr th:each="twoLS : ${twoLeagueScores}">
+                                    <td># <span th:text="${twoLeagueScores.indexOf(twoLS) + 1 } "></span> Place</td>
+                                    <td><span th:text="${twoLS.getMachine().name}"></span>Name</td>
+                                    <td th:text="${twoLS.score}"> Score</td>
+                                    <td th:text="${twoLS.date}">Date</td>
+                                </tr>
+                            </th:block>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- end section container-->
+    </div> <!-- end league section -->
 
 </div>
 
@@ -124,8 +125,8 @@
     <div th:replace="partials/footer :: footer"></div>
     <th:block th:include="partials/footer :: scripts" />
 </footer>
-<!--&lt;!&ndash; Compiled and minified JavaScript &ndash;&gt;-->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>-->
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 </body>
 </html>

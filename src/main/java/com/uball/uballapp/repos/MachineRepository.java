@@ -3,6 +3,7 @@ package com.uball.uballapp.repos;
 
 
 import com.uball.uballapp.models.Machine;
+import com.uball.uballapp.models.Score;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -58,5 +59,6 @@ public interface MachineRepository extends CrudRepository <Machine, Long> {
     List<Machine> Top4ScoringMachinesByLeague(long id);
 /**ToDo: End here
  * working on League page data**/
+
 
 }
