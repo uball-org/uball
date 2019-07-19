@@ -12,45 +12,49 @@
         <label for="username">Username</label>
         <br/>
         <input id="username" th:field="*{username}" />
+        <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}" style="color: red;" />
         <br/>
         <label for="firstName">First Name</label>
         <br/>
         <input id="firstName" th:field="*{firstName}" />
+        <p th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" style="color: red;" />
         <br/>
         <label for="lastName">Last Name</label>
         <br/>
         <input id="lastName" th:field="*{lastName}" />
+        <p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" style="color: red;"/>
         <br/>
         <label for="password">Password</label>
         <br/>
         <input id="password" type="password" th:field="*{password}" />
+        <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" style="color: red;"/>
         <br/>
         <label for="email">Email</label>
         <br/>
         <input id="email" th:field="*{email}" />
+        <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color: red;"/>
         <br/>
         <label for="DOB">Date of Birth</label>
         <br/>
         <input id="DOB" type="date" th:field="*{DOB}" />
+        <p th:if="${#fields.hasErrors('DOB')}" th:errors="*{DOB}" style="color: red;"/>
         <br/>
 
         <label>Gender</label>
-        <select class="browser-default" >
-            <option value="" >Choose your option</option>
-            <option th:field="*{gender}" th:value="'M'" th:text="M"></option>
-<!--            <option value="M" th:text="M"></option>-->
-            <option th:field="*{gender}" th:value="'F'" th:text="F"></option>
-<!--            <option value="F" th:text="F"></option>-->
+        <select class="browser-default" th:field="*{gender}">
+            <option value="0" >Choose your option</option>
+            <option value="M" th:text="M" ></option>
+            <option value="F" th:text="F" ></option>
         </select>
         <br/>
-            <label>League</label>
-            <select class="browser-default" >
-                <option value="" >Choose your option</option>
-                <option th:field="*{league}" th:value="1" th:text="SAPL"></option>
-<!--                <option value="1" th:text="SAPL"></option>-->
-                <option th:field="*{league}" th:value="2" th:text="Belles"></option>
-<!--                <option value="2" th:text="Belles"></option>-->
-            </select>
+
+        <label>League</label>
+        <select class="browser-default" th:field="*{league}">
+            <option value="0">Choose your option</option>
+            <option value="1" th:text="SAPL"></option>
+            <option value="2" th:text="Belles"></option>
+        </select>
+<!--        <p th:if="${#fields.hasErrors('league')}" th:errors="*{league}" style="color: red;"/>-->
         <br/>
         <br/>
         <!--<input value="Sign me up!" type="submit" /> -->
@@ -61,6 +65,7 @@
     <br/>
 </main>
 
+<div th:replace="partials/footer :: footer"></div>
 
 </body>
 </html>

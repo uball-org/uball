@@ -3,12 +3,12 @@
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head th:replace="partials/head :: head('Edit User')">
 </head>
-<body>
+<body class="grey lighten-2">
 <nav th:replace="partials/navbar :: nav"></nav>
 
 
-<main class="container " >
-    <form th:action="@{'/users/' + ${user.id} + '/edit'}" method="POST" th:object="${user}" >
+<main class="container " style="margin-top: 5em;" >
+    <form th:action="@{'/edituser/' + ${user.id}}" method="POST" th:object="${user}" >
         <label for="firstName">First Name</label>
         <br/>
         <input id="firstName" th:field="*{firstName}" />
@@ -26,21 +26,23 @@
         <input id="DOB" type="date" th:field="*{DOB}" />
         <br/>
         <label>Gender</label>
-        <select class="browser-default">
-            <option value="" >Choose your option</option>
-            <option value="M">M</option>
-            <option value="F">F</option>
+        <select class="browser-default" th:field="*{gender}">
+            <option value="0" >Choose your option</option>
+            <option th:value="M" th:text="M" ></option>
+            <option th:value="F" th:text="F" ></option>
         </select>
         <br/>
         <label>League</label>
-        <select class="browser-default">
-            <option value="" >Choose your option</option>
-            <option value="Belles">Belles</option>
-            <option value="SAPL">SAPL</option>
+        <select class="browser-default" th:field="*{league}">
+            <option value="0" >Choose your option</option>
+            <option th:value="1" th:text="SAPL" ></option>
+            <option th:value="2" th:text="Belles" ></option>
         </select>
         <br/>
         <br/>
-        <input value="Update" type="submit" />
+        <div class="center-align">
+            <button type="submit" class="btn btn-primary" >Save</button>
+        </div>
     </form>
     <br class="mb-1" />
 
@@ -52,13 +54,10 @@
 
 </main>
 
-
-
-
-
 <footer>
     <div th:replace="partials/footer :: footer"></div>
     <th:block th:include="partials/footer :: scripts" />
 </footer>
+
 </body>
 </html>

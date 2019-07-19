@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="partials/head :: head('Welcome to UBall')">
+<head th:replace="partials/head :: head('UBall')">
 </head>
 <body class="grey lighten-2">
     <nav th:replace="partials/navbar :: nav"></nav>
@@ -10,8 +10,8 @@
             <div class="container">
                 <br /><br />
 <!--                    <h1 class="header center light-blue-text text-darken-2">UBall</h1>-->
-                <div class="row center">
-                    <h2 class="header col s12 light"><strong>UBall is a score management system for San Antonio pinball leagues</strong></h2>
+                <div class="row center header-shadow">
+                    <h2 class="header col s12 light"><strong>UBall is a management system for San Antonio pinball leagues</strong></h2>
                 </div>
 
                 <div class="row center">
@@ -71,89 +71,124 @@
                 </div>
             </div>
         </div>
-        <div class="parallax"><img src="img/background2.jpg" alt="Unsplashed background img 2" /></div>
+        <div class="parallax"><img src="img/background8.jpg" alt="Unsplashed background img 2" /></div>
     </div>
 
-    <div class="container">
-        <div class="section">
+<!--    <div class="container">-->
+<!--        <div class="section" id="card-panel-type">-->
 
-            <!-- unstyled placeholder cards for our information (names, links, profile photos) -->
-
-            <div class="row">
-                <div class="col s12 center">
-                    <div class="col l3 s12">
-                        <ul class="collection">
-                            <li class="collection-item avatar">
-                                <img src="https://placeholder.pics/svg/100" alt="" class="circle" />
-                                <span class="title">Team Member</span>
-                                <p>Github Link</p>
-                                <p>LinkedIn</p>
-                                <p>Resume</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col l3 s12">
-                        <ul class="collection">
-                            <li class="collection-item avatar">
-                                <img src="https://placeholder.pics/svg/100" alt="" class="circle" />
-                                <span class="title">Team Member</span>
-                                <p>Github Link</p>
-                                <p>LinkedIn</p>
-                                <p>Resume</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col l3 s12">
-                        <ul class="collection">
-                            <li class="collection-item avatar">
-                                <img src="https://placeholder.pics/svg/100" alt="" class="circle" />
-                                <span class="title">Team Member</span>
-                                <p>Github Link</p>
-                                <p>LinkedIn</p>
-                                <p>Resume</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col l3 s12">
-                        <ul class="collection">
-                            <li class="collection-item avatar">
-                                <img src="https://placeholder.pics/svg/100" alt="" class="circle" />
-                                <span class="title">Team Member</span>
-                                <p>Github Link</p>
-                                <p>LinkedIn</p>
-                                <p>Resume</p>
-                            </li>
-                        </ul>
-                    </div>
+<!--            &lt;!&ndash; unstyled placeholder cards for our information (names, links, profile photos) &ndash;&gt;-->
+<!--            <div class="col s12">-->
+<!--            <div class="row">-->
+<!--                <div class="col s12 m3 l3">-->
+<!--                    <div class="card-panel cyan lighten-2 gradient-shadow">-->
+<!--                        <img src="https://placeimg.com/100/100/people" alt="" class="circle center" />-->
+<!--                        <span class="title white-text center">Matthew Alaniz</span>-->
+<!--                        <p class="center">Github</p>-->
+<!--                        <p class="center">LinkedIn</p>-->
+<!--                        <p class="center">Resume</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col s12 m3 l3">-->
+<!--                    <div class="card-panel cyan lighten-2 gradient-shadow">-->
+<!--                        <img src="https://placeimg.com/100/100/people" alt="" class="circle center" />-->
+<!--                        <span class="title white-text center">Ali Baraka</span>-->
+<!--                        <p class="center">Github</p>-->
+<!--                        <p class="center">LinkedIn</p>-->
+<!--                        <p class="center">Resume</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col s12 m3 l3">-->
+<!--                    <div class="card-panel cyan lighten-2 gradient-shadow">-->
+<!--                        <img src="https://placeimg.com/100/100/people" alt="" class="circle center" />-->
+<!--                        <span class="title white-text center">Nadia Botello</span>-->
+<!--                        <p class="center">Github</p>-->
+<!--                        <p class="center">LinkedIn</p>-->
+<!--                        <p class="center">Resume</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col s12 m3 l3">-->
+<!--                    <div class="card-panel cyan lighten-2 gradient-shadow">-->
+<!--                        <img src="https://placeimg.com/100/100/people" alt="" class="circle center" />-->
+<!--                        <span class="title white-text center">Mykal Clinard</span>-->
+<!--                        <p class="center">Github</p>-->
+<!--                        <p class="center">LinkedIn</p>-->
+<!--                        <p class="center">Resume</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--                <div class="col s12 center">-->
+<!--                    <div class="col l3 s12">-->
+<!--                        <ul class="collection">-->
+<!--                            <li class="collection-item avatar">-->
+<!--                                <img src="https://placeimg.com/200/200/people" alt="" class="circle" />-->
+<!--                                <span class="title">Matthew Alaniz</span>-->
+<!--                                <p>Github Link</p>-->
+<!--                                <p>LinkedIn</p>-->
+<!--                                <p>Resume</p>-->
+<!--                            </li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                    <div class="col l3 s12">-->
+<!--                        <ul class="collection">-->
+<!--                            <li class="collection-item avatar">-->
+<!--                                <img src="https://placeimg.com/200/200/people" alt="" class="circle" />-->
+<!--                                <span class="title">Ali Baraka</span>-->
+<!--                                <p>Github Link</p>-->
+<!--                                <p>LinkedIn</p>-->
+<!--                                <p>Resume</p>-->
+<!--                            </li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                    <div class="col l3 s12">-->
+<!--                        <ul class="collection">-->
+<!--                            <li class="collection-item avatar">-->
+<!--                                <img src="https://placeimg.com/200/200/people" alt="" class="circle" />-->
+<!--                                <span class="title">Nadia Botello</span>-->
+<!--                                <p>Github Link</p>-->
+<!--                                <p>LinkedIn</p>-->
+<!--                                <p>Resume</p>-->
+<!--                            </li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                    <div class="col l3 s12">-->
+<!--                        <ul class="collection">-->
+<!--                            <li class="collection-item avatar">-->
+<!--                                <img src="https://placeimg.com/200/200/people" alt="" class="circle" />-->
+<!--                                <span class="title">Mykal Clinard</span>-->
+<!--                                <p>Github Link</p>-->
+<!--                                <p>LinkedIn</p>-->
+<!--                                <p>Resume</p>-->
+<!--                            </li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
 
 <!--                    <h3><i class="mdi-content-send brown-text"></i></h3>-->
 <!--                    <h4>Contact Us</h4>-->
 <!--                    <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>-->
-                </div>
-            </div>
+<!--                </div>-->
+<!--            </div>-->
 
-        </div>
-    </div>
-
-
-    <div class="parallax-container valign-wrapper">
-        <div class="section no-pad-bot">
-            <div class="container">
-                <div class="row center">
-                    <h5 class="header col s12 light"></h5>
-                </div>
-            </div>
-        </div>
-        <div class="parallax"><img src="img/background3.jpg" alt="Unsplashed background img 3" /></div>
-    </div>
+<!--        </div>-->
 
 
 
+<!--    <div class="parallax-container valign-wrapper">-->
+<!--        <div class="section no-pad-bot">-->
+<!--            <div class="container">-->
+<!--                <div class="row center">-->
+<!--                    <h5 class="header col s12 light"></h5>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="parallax"><img src="img/background6.jpg" alt="Unsplashed background img 3" /></div>-->
+<!--    </div>-->
 
-<footer>
+
+
+
     <div th:replace="partials/footer :: footer"></div>
     <th:block th:include="partials/footer :: scripts" />
-</footer>
 
 </body>
 </html>

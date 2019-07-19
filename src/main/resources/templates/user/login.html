@@ -5,7 +5,7 @@
 <body>
 
 <nav th:replace="partials/navbar :: nav"></nav>
-
+<main>
 <h1 class="center">Log In</h1>
 <div th:if="${param.error}" class="center" style="color: red;">
     Invalid Username and Password.
@@ -26,17 +26,18 @@
         <label for="password">Password</label>
         <input id="password" name="password" type="password" />
     </div>
-    <div class="form-group">
-        <input type="submit" value="Log In" />
+    <div class="center-align">
+        <button type="submit" class="btn btn-primary" >Log In</button>
     </div>
 </form>
 </main>
 <br />
 <br />
-
 <footer>
     <div th:replace="partials/footer :: footer"></div>
     <th:block th:include="partials/footer :: scripts" />
 </footer>
+</main>
+
 </body>
 </html>
