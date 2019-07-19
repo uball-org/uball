@@ -9,8 +9,8 @@
 
 <!-- Page Layout here -->
 <div class="row">
-    <div class="parallax-container">
-        <div  class="parallax" style="background-image: url(https://picsum.photos/id/215/1999/600)">
+    <div class="container">
+        <div style="background-image: url(https://picsum.photos/id/215/1999/600)">
             <div class="col s4 offset-s8">
                 <table class="responsive-table centered highlight">
                     <thead>
@@ -24,15 +24,28 @@
                     </thead>
                     <tbody class="collection">
                     <th:block th:each="user : ${users}">
-                    <tr>
-                    <td> <!--player photo-->
-                    <img src="https://placeholder.pics/svg/50" alt="" class="circle" />
-                    </td>
-                    <td ><span>#</span><span th:text="${users.indexOf(user)} + 1">1</span><span> place</span></td>
-                    <td th:text="${user.points}">score</td> <!--Currently displaying points instead of scores(working on the logic getting proper format)-->
-                    <td th:text="${user.gender}">gender</td>
-                    <td th:text="${user.firstName + ' ' + user.lastName}">Name</td>
-                    </tr>
+                        <tr>
+                            <td> <!--player photo-->
+                                <img src="https://placeholder.pics/svg/50" alt="" class="circle" />
+                            </td>
+                            <td> <!--place-->
+                                <span>#</span><span th:text="${users.indexOf(user)} + 1">1</span><span> place</span>
+                            </td>
+                            <td> <!--score-->
+                                <th:block th:each="scoreinfo : ${scores}">
+                                    <span th:text="scoreinfo.score">score</span>
+                                </th:block>
+                            </td>
+                            <!--name-->
+                            <td th:text="${user.firstName + ' ' + user.lastName}">Name</td>
+                            <!--gender-->
+                            <td th:text="${user.gender}">gender</td>
+                            <td> <!--league-->
+                                <th:block th:each="league : ${leagues}">
+                                    <span th:text="league.name">score</span>
+                                </th:block>
+                            </td>
+                        </tr>
                     </th:block>
                     </tbody>
                 </table>

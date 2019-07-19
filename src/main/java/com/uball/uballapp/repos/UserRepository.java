@@ -46,27 +46,27 @@ public interface UserRepository extends CrudRepository <User, Long> {
 
 
     /**ToDo: Start here
- * working on League page data**/
-            /**  Top 4 all times #*/
+     * working on League page data**/
+    /**  Top 4 all times #*/
     //  Top 4 of all time users
-    @Query(value = "select u.*  " +
-            "from users u  " +
-            "join scores s on u.id = s.user_id " +
-            "join machines m on s.machine_id = m.id  " +
-            "order by s.score desc" +
-            "            limit 4", nativeQuery = true)
+    @Query(value = "select u.*" +
+            " from users u" +
+            " join scores s on u.id = s.user_id" +
+            " order by s.score desc" +
+            " limit 4", nativeQuery = true)
     List<User> findTop4ScoringUsers();
-            /**Top All time scorers by league(id)*/
+    /**Top All time scorers by league(id)*/
     //  Top 4 of users by league(id)
     @Query(value = "select u.*" +
-            "from users u" +
-            "join scores s on u.id = s.user_id" +
-            "join machines m on s.machine_id = m.id" +
-            "where league_id in (select id from leagues where id =?1 )" +
-            "order by s.score desc", nativeQuery = true)
+            " from users u" +
+            " join scores s on u.id = s.user_id" +
+            " join machines m on s.machine_id = m.id" +
+            " where league_id in (select id from leagues where id = ?1)" +
+            " order by s.score desc " +
+            " limit 4", nativeQuery = true)
     List<User> Top4ScoringUserByLeague(long id);
     /**ToDo: End here
- * working on League page data**/
+     * working on League page data**/
 
 
     //  update total points for user (ADDING)

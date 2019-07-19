@@ -1,6 +1,7 @@
 package com.uball.uballapp.controller;
 
 
+import com.uball.uballapp.repos.LeagueRepository;
 import com.uball.uballapp.repos.MachineRepository;
 import com.uball.uballapp.repos.ScoreRepository;
 import org.codehaus.groovy.transform.SourceURIASTTransformation;
@@ -25,15 +26,15 @@ public class UserController<leagueRepository> {
     private PasswordEncoder passwordEncoder;
     private MachineRepository machineDao;
     private ScoreRepository scoreDao;
-    private leagueRepository leagueDoa;
+    private LeagueRepository leagueDoa;
 
 
-    public UserController(UserRepository userDao, PasswordEncoder passwordEncoder, MachineRepository machineDao) {
+    public UserController(UserRepository userDao, PasswordEncoder passwordEncoder, MachineRepository machineDao, LeagueRepository leagueDoa, ScoreRepository scoreDao) {
         this.userDao = userDao;
         this.passwordEncoder = passwordEncoder;
         this.machineDao = machineDao;
-//        this.scoreDao = scoreDao;
-//        this.leagueDoa = leagueDoa;
+        this.scoreDao = scoreDao;
+        this.leagueDoa = leagueDoa;
     }
 
     @GetMapping("/register")
@@ -58,11 +59,12 @@ public class UserController<leagueRepository> {
     }
 ///**league page controller: map data to the views when this URI is accessed*/
     //Getting all Users!
+
     @GetMapping("/leagues") // this will be the method that shows all members of the league page
     public String all(Model model){
         model.addAttribute("users",userDao.findTop4ScoringUsers());
-//        model.addAttribute("scores",scoreDao.findTop4Scores());
-//        model.addAttribute("machines",machineDao.findTop4ScoringMachines());
+        model.addAttribute("scores",scoreDao.findTop4Scores());
+        model.addAttribute("leagues", leagueDoa.findTop4ScoringLeagues());
 
 //        model.addAttribute("oneLeagueUsers",userDao.Top4ScoringUserByLeague(1));
 //        model.addAttribute("oneLeagueScores",scoreDao.Top4ScoresByLeague(1));
@@ -74,6 +76,7 @@ public class UserController<leagueRepository> {
 
         return "league/leaguedashboard";
     }
+
 
 
 

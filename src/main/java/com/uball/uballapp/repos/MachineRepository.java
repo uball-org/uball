@@ -34,27 +34,29 @@ public interface MachineRepository extends CrudRepository <Machine, Long> {
             "limit 4", nativeQuery = true)
     List<Machine> findTop4();
 
-    /**ToDo: Start here
-     * working on League page data**/
+
+/**ToDo: Start here
+ * working on League page data**/
 
     /**  Top 4 all times #*/
-    //  Top 4 of all time machines
-    @Query(value = "select m.* " +
-            "from machines m  " +
-            "join scores s  on s.machine_id = m.id " +
-            "order by s.score desc " +
-            "limit 4", nativeQuery = true)
+//  Top 4 of all time machines
+    @Query(value = "select m.*" +
+            " from machines m" +
+            " join scores s  on s.machine_id = m.id" +
+            " order by s.score desc" +
+            " limit 4 ", nativeQuery = true)
     List<Machine> findTop4ScoringMachines();
     /**Top All time scorers by league(id)*/
-    // Top 4 of machines by league(id)
+// Top 4 of machines by league(id)
     @Query(value = "select m.*" +
-            "from users u" +
-            "join scores s on u.id = s.user_id" +
-            "join machines m on s.machine_id = m.id" +
-            "where league_id in (select id from leagues where id = ?1 )" +
-            "order by s.score desc", nativeQuery = true)
+            " from machines m" +
+            " join scores s on s.machine_id = m.id" +
+            " join users u  on u.id = s.user_id" +
+            " where league_id in (select id from leagues where id = ?1 )" +
+            " order by s.score desc" +
+            " limit 4", nativeQuery = true)
     List<Machine> Top4ScoringMachinesByLeague(long id);
-    /**ToDo: End here
-     * working on League page data**/
+/**ToDo: End here
+ * working on League page data**/
 
 }
