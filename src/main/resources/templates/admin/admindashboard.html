@@ -148,14 +148,53 @@
                             <tr>
                                 <th></th>
                                 <th>Name</th>
-                                <th>Points</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <th:block th:each="new : ${matchmachines}">
+                            <th:block th:each="newUserList : ${newUsersList}">
                                 <tr>
-                                    <td th:text="${new}"></td>
-                                    <td th:text="${new.id}"></td>
+                                    <td th:text="${newUserList.indexOf(newUsersList)}">1</td>
+                                    <td th:text="${newUserList.userName}">John</td>
+                                </tr>
+                            </th:block>
+                            </tbody>
+                        </table>
+
+                    <th:block th:each="machinestwo : ${machines2}">
+
+                    <table class="responsive-table centered highlight">
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <th>Score</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <th:block th:each="scoreinput : ${newUsersList}">
+                                <tr>
+                                    <td th:text="${scoreinput.indexOf(newUsersList)}"></td>
+                                    <div class="input-field">
+                                        <input th:hidden="${scoreinput.id}" name="score" id="input_text" type="text" data-length="12" />
+                                        <label for="input_text">Score</label>
+                                    </div>
+                                </tr>
+                            </th:block>
+                            </tbody>
+                        </table>
+                    </th:block>
+
+                    <table class="responsive-table centered highlight">
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <th>Total Points</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <th:block th:each="totalpoints : ${newUsersList}">
+                                <tr>
+                                    <td th:text="${totalpoints.id}">1</td>
+                                    <td th:text="${CALCULATED VALUE}">16</td>
                                 </tr>
                             </th:block>
                             </tbody>

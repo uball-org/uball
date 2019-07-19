@@ -40,7 +40,6 @@ public class AdminController {
     public String all(Model model){
         model.addAttribute("users", adminDao.findAll());
         model.addAttribute("machines", machineDao.findAll());
-
         return "admin/admindashboard";
     }
 
@@ -49,6 +48,9 @@ public class AdminController {
     public String newUsersForGroups(Model model,
                                     @RequestParam(name = "uchecked") List<User> newU,
                                     @RequestParam(name = "mchecked") List<Machine> newM) {
+        model.addAttribute("machines2", newM);
+
+
         for(User users : newU){
             System.out.println("users = " +
                     newU.indexOf(users) + " " +
@@ -64,14 +66,13 @@ public class AdminController {
                         machine.getName() + " " +
                         machine.getScores());
 
-                Score blankscore = new Score();
+                Score blankscore = new Score(); // New score object to use to add new scores tied to the user_id and machine_id just added
                 blankscore.setScore(0);
                 blankscore.setMachine(machine);
                 blankscore.setUser(users);
                 scoreDao.save(blankscore);
-//                model.addAttribute("matchmachines", blankscore);
-
             }
+
             users.getGroups().add(groupDao.findOne(2L));
             userDao.save(users);
         }
