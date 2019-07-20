@@ -32,6 +32,14 @@ public class MachineController {
         model.addAttribute("machine", new Machine());
         return "machine/create";
     }
+    /**
+     * accessed through create machine form and inserts into DB before redirecting to machines index page
+     * */
+    @PostMapping("/machines/create")
+    public String insert(@ModelAttribute Machine machine) {
+        machineDao.save(machine);
+        return "redirect:/machines";
+    }
 
 
 
