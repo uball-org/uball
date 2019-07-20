@@ -12,7 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 
 import javax.validation.Valid;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 @Controller
@@ -38,8 +38,12 @@ public class AdminController {
             //All Machines and Users
     @GetMapping("/admindashboard")
     public String all(Model model){
+        System.out.println(LocalDate.now());
+        System.out.println(LocalDate.now());
+
         model.addAttribute("users", adminDao.findAll());
         model.addAttribute("machines", machineDao.findAll());
+        model.addAttribute("scores", scoreDao.findDistinctByAddedscoredateAndScore(LocalDate.now(), 0));
         return "admin/admindashboard";
     }
 
@@ -63,11 +67,11 @@ public class AdminController {
 
             for(Machine machine : newM){
                 System.out.println(machine.getId() + " " +
-                        machine.getName() + " " +
-                        machine.getScores());
+                        machine.getName() );
 
                 Score blankscore = new Score(); // New score object to use to add new scores tied to the user_id and machine_id just added
                 blankscore.setScore(0);
+                blankscore.setAddedscoredate(LocalDate.now());
                 blankscore.setMachine(machine);
                 blankscore.setUser(users);
                 scoreDao.save(blankscore);
