@@ -41,6 +41,15 @@ public class MachineController {
         return "redirect:/machines";
     }
 
+    /**
+     * when URI accessed from machines index page, displays edit machine page by id
+     * */
+    @GetMapping("/machines/{id}/edit")
+    public String edit(@PathVariable long id, Model model) {
+        model.addAttribute("machine", machineDao.findOne(id));
+        return "machines/edit";
+    }
+
 
 
 
