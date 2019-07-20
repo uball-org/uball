@@ -38,9 +38,6 @@ public class AdminController {
             //All Machines and Users
     @GetMapping("/admindashboard")
     public String all(Model model){
-        System.out.println(LocalDate.now());
-        System.out.println(LocalDate.now());
-
         model.addAttribute("users", adminDao.findAll());
         model.addAttribute("machines", machineDao.findAll());
         model.addAttribute("scores", scoreDao.findDistinctByAddedscoredateAndScore(LocalDate.now(), 0));
