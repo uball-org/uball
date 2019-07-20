@@ -41,15 +41,12 @@ public class MachineController {
         return "redirect:/createmachine";
     }
 
-
-
-
     /**
      * when URI accessed from machines index page, displays edit machine page by id
      * */
     @GetMapping("/machines/{id}/edit")
     public String edit(@PathVariable long id, Model model) {
-        model.addAttribute("machine", machineDao.findOne(id));
+        model.addAttribute("thisMachine", machineDao.findOne(id));
         return "machines/edit";
     }
 
@@ -59,7 +56,7 @@ public class MachineController {
     @PostMapping("/machines/{id}/edit")
     public String update(@PathVariable long id, @ModelAttribute Machine machine) {
         machineDao.save(machine);
-        return "redirect:/machines";
+        return "redirect:/createmachine";
     }
 
 
