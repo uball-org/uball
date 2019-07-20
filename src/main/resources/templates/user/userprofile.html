@@ -5,11 +5,9 @@
 <body>
 
 
-
-
 <style>
 
-    div.container.one{
+    div.container.one {
         position: relative;
         top: 275px;
     }
@@ -28,11 +26,12 @@
     /* A TEMPORARY FIX FOR FOOTER*/
     /* In doing this, the footer is positioned to the bottom of the page*/
 
-    footer.page-footer.grey.darken-4{
+    footer.page-footer.grey.darken-4 {
         position: relative;
         top: 400px;
     }
-     /*A TEMPORARY FIX*/
+
+    /*A TEMPORARY FIX*/
 
 </style>
 
@@ -66,9 +65,9 @@
                     <p>
                         <i class="material-icons">perm_identity</i> Gender:<span th:text="${users.gender}"></span></p>
                     <p>
-                        <i class="material-icons">perm_phone_msg</i>Points:<span th:text="${users.points}"></span> </p>
+                        <i class="material-icons">perm_phone_msg</i>Points:<span th:text="${users.points}"></span></p>
                     <p>
-                        <i class="material-icons">email</i>:<span th:text="${users.email}"></span> </p>
+                        <i class="material-icons">email</i>:<span th:text="${users.email}"></span></p>
                 </div>
                 <div class="card-reveal">
                       <span class="card-title grey-text text-darken-4">name: <span th:text="${users.username}"></span>
@@ -76,7 +75,7 @@
                       </span>
                     <p>Here is some more information about this card.</p>
                     <p>
-                        <i class="material-icons">perm_identity</i>ID:<span th:text="${users.id}"></span> </p>
+                        <i class="material-icons">perm_identity</i>ID:<span th:text="${users.id}"></span></p>
                     <p>
                         <i class="material-icons">perm_phone_msg</i>Points:<span th:text="${users.points}"></span></p>
                     <p>
@@ -101,24 +100,24 @@
 
                 table of users-->
 
-<!--
-        <div class="col s8" style=" border: 2px solid black;">
-            <div class="row">
-                <div class="col s6">ID: <span th:text="${users.id}"></span></div>
-                <div class="col s6" >DOB: <span th:text="${users.DOB}"></span></div>
-                <div class="col s6" >Gender: <span th:text="${users.gender}"></span></div>
-                <div class="col s6" >Points: <span th:text="${users.points}"></span></div>
-               <div class="col s6" >League: <span th:text="${users.getLeague().name}"></span></div>-->
-                <!--uncomment before pushing/ the league portion causes page error
-            </div>
-            The edit button that does nothing -->
-            <!--<a class="waves-effect waves-light btn-small">Edit</a> -->
-            <!--The edit button that does nothing -->
-        </div>
+        <!--
+                <div class="col s8" style=" border: 2px solid black;">
+                    <div class="row">
+                        <div class="col s6">ID: <span th:text="${users.id}"></span></div>
+                        <div class="col s6" >DOB: <span th:text="${users.DOB}"></span></div>
+                        <div class="col s6" >Gender: <span th:text="${users.gender}"></span></div>
+                        <div class="col s6" >Points: <span th:text="${users.points}"></span></div>
+                       <div class="col s6" >League: <span th:text="${users.getLeague().name}"></span></div>-->
+        <!--uncomment before pushing/ the league portion causes page error
     </div>
-                <!--*****************-->
-                <!--                Bottom Nav Card Below              -->
-                <!--*****************-->
+    The edit button that does nothing -->
+        <!--<a class="waves-effect waves-light btn-small">Edit</a> -->
+        <!--The edit button that does nothing -->
+    </div>
+</div>
+<!--*****************-->
+<!--                Bottom Nav Card Below              -->
+<!--*****************-->
 
 <div class="container one">
 
@@ -198,7 +197,7 @@
 
 <footer>
     <div th:replace="partials/footer :: footer"></div>
-    <th:block th:include="partials/footer :: scripts" />
+    <th:block th:include="partials/footer :: scripts"/>
 </footer>
 
 </body>
