@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="partials/head :: head('Admin Machines')">
+</head>
+<body>
+    <nav th:replace="partials/navbar :: nav"></nav>
+
+    <div align="center">
+        <h1>Machines List</h1>
+        <a class="waves-effect waves-light btn " th:href="@{'/machines/create'}">Create New Machine</a>
+        <br/><br/>
+        <table border="1" cellpadding="10">
+            <thead>
+            <tr>
+                <th>Machine ID</th>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="machine : ${machines}">
+                <td th:text="${machine.id}">Product ID</td>
+                <td th:text="${machine.name}">Name</td>
+                <td>
+                    <!--<form th:action="@{'/edit/'+'edit/'+${product.id}}" th:method="GET">-->
+                    <!--<button th:id="${product.id}">Edit</button>-->
+                    <!--</form>-->
+                    <!--<form th:action="@{'/delete/'+'delete/'+${product.id}}" th:method="POST">-->
+                    <!--<button id="${product.id}">Delete</button>-->
+                    <!--</form>-->
+                    <a th:href="@{'/machines/' + ${machine.id} +'/edit'}">Edit</a>
+                    &nbsp;&nbsp;&nbsp;
+                    <a th:href="@{'/machines/' + ${machine.id} + '/delete'}">Delete</a>
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <footer>
+        <div th:replace="partials/footer :: footer"></div>
+        <th:block th:include="partials/footer :: scripts" />
+    </footer>
+</body>
+</html>

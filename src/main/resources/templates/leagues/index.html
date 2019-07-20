@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="partials/head :: head('Admin Leagues')">
+</head>
+<body>
+<nav th:replace="partials/navbar :: nav"></nav>
+
+<div align="center">
+    <h1>Leagues List</h1>
+    <a class="waves-effect waves-light btn " th:href="@{'/leagues/create'}">Create New League</a>
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+        <tr>
+            <th>League ID</th>
+            <th>Name</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="league : ${leaguesList}">
+            <td th:text="${league.id}">League ID</td>
+            <td th:text="${league.name}">Name</td>
+            <td>
+                <a th:href="@{'/leagues/' + ${league.id} +'/edit'}">Edit</a>
+                &nbsp;&nbsp;&nbsp;
+                <a th:href="@{'/leagues/' + ${league.id} + '/delete'}">Delete</a>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+<footer>
+    <div th:replace="partials/footer :: footer"></div>
+    <th:block th:include="partials/footer :: scripts" />
+</footer>
+</body>
+</html>

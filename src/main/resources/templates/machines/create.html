@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="partials/head :: head('UBall create machine')">
+</head>
+<body>
+    <nav th:replace="partials/navbar :: nav"></nav>
+
+    <div align="center">
+        <h1>Create New Machine</h1>
+        <br />
+        <div>
+            <form  th:action="@{/machines/create}" method="POST" th:object="${machinesForm}">
+
+                <table border="0" cellpadding="10">
+                    <tr>
+                        <td>Product Name:</td>
+                        <td><input type="text" th:field="*{name}" />Enter machine name</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><button  class="waves-effect waves-light btn " type="submit">Save</button> </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <div th:replace="partials/footer :: footer"></div>
+        <th:block th:include="partials/footer :: scripts" />
+    </footer>
+</body>
+</html>
