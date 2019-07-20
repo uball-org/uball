@@ -53,7 +53,7 @@ public class GroupController {
     /**
      * accessed through edit machine form and inserts into DB before redirecting to machines index page
      * */
-    @PostMapping("/machines/{id}/edit")
+    @PostMapping("/groups/{id}/edit")
     public String update(@PathVariable long id, @ModelAttribute Group group) {
         groupDao.save(group);
         return "redirect:/creategroup";
