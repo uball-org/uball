@@ -24,6 +24,14 @@ public class MachineController {
         model.addAttribute("machines", machineDao.findAll());
         return "machines/index";
     }
+    /**
+     * returns create machine form
+     * */
+    @GetMapping("/machines/create")
+    public String create(Model model) {
+        model.addAttribute("machine", new Machine());
+        return "machine/create";
+    }
 
 
 
