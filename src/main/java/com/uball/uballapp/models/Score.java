@@ -5,6 +5,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -24,6 +25,10 @@ public class Score {
     @Temporal(TemporalType.TIMESTAMP)
     private Date date;
 
+    @Column(nullable = false)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate addedscoredate;
+
     @ManyToOne
     @JoinColumn (name = "user_id")
     private User user;
@@ -38,6 +43,11 @@ public class Score {
     public Score(long score, Date date) {
         this.score = score;
         this.date = date;
+    }
+
+    public Score(long score, LocalDate addedscoredate) {
+        this.score = score;
+        this.addedscoredate = addedscoredate;
     }
 
     public long getId() {
@@ -78,5 +88,13 @@ public class Score {
 
     public void setMachine(Machine machine) {
         this.machine = machine;
+    }
+
+    public LocalDate getAddedscoredate() {
+        return addedscoredate;
+    }
+
+    public void setAddedscoredate(LocalDate addedscoredate) {
+        this.addedscoredate = addedscoredate;
     }
 }

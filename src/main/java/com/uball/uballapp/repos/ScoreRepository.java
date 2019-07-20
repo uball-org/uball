@@ -8,6 +8,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 @Repository
@@ -43,5 +45,7 @@ public interface ScoreRepository extends CrudRepository <Score, Long> {
     List <Score> findDistinctTopByMachineAndUser_Id(Iterable<Machine> machine, long user_id);
 
     List<Score> findAllByUser_Id(long user_id);
+
+    List<Score> findDistinctByAddedscoredateAndScore(LocalDate date, long score);
 
 }
