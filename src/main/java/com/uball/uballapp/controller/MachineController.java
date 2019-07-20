@@ -29,8 +29,8 @@ public class MachineController {
      * */
     @GetMapping("/machines/create")
     public String create(Model model) {
-        model.addAttribute("machine", new Machine());
-        return "machine/create";
+        model.addAttribute("machinesForm", new Machine());
+        return "machines/create";
     }
     /**
      * accessed through create machine form and inserts into DB before redirecting to machines index page
@@ -40,6 +40,9 @@ public class MachineController {
         machineDao.save(machine);
         return "redirect:/createmachine";
     }
+
+
+
 
     /**
      * when URI accessed from machines index page, displays edit machine page by id
