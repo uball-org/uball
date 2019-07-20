@@ -50,6 +50,17 @@ public class MachineController {
         return "machines/edit";
     }
 
+    /**
+     * accessed through edit machine form and inserts into DB before redirecting to machines index page
+     * */
+    @PostMapping("/machines/{id}/edit")
+    public String update(@PathVariable long id, @ModelAttribute Machine machine) {
+        machineDao.save(machine);
+        return "redirect:/machines";
+    }
+
+
+
 
 
 
