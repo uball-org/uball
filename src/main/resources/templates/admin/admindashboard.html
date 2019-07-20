@@ -197,7 +197,7 @@
                             </tbody>
                         </table>
 
-                    <th:block th:each="machinestwo : ${machines2}">
+                    <th:block th:each="machinestwo : ${scores.indexOf(scores)}">
 
                     <table class="responsive-table centered highlight">
                             <thead>
@@ -220,22 +220,22 @@
                         </table>
                     </th:block>
 
-                    <table class="responsive-table centered highlight">
-                            <thead>
-                            <tr>
-                                <th></th>
-                                <th>Total Points</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <th:block th:each="totalpoints : ${newUsersList}">
-                                <tr>
-                                    <td th:text="${totalpoints.id}">1</td>
-                                    <td th:text="${CALCULATED VALUE}">16</td>
-                                </tr>
-                            </th:block>
-                            </tbody>
-                        </table>
+<!--                    <table class="responsive-table centered highlight">-->
+<!--                            <thead>-->
+<!--                            <tr>-->
+<!--                                <th></th>-->
+<!--                                <th>Total Points</th>-->
+<!--                            </tr>-->
+<!--                            </thead>-->
+<!--                            <tbody>-->
+<!--                            <th:block th:each="totalpoints : ${newUsersList}">-->
+<!--                                <tr>-->
+<!--                                    <td th:text="${totalpoints.id}">1</td>-->
+<!--                                    <td th:text="${CALCULATED VALUE}">16</td>-->
+<!--                                </tr>-->
+<!--                            </th:block>-->
+<!--                            </tbody>-->
+<!--                        </table>-->
                 </div>
             </div>
         </div>

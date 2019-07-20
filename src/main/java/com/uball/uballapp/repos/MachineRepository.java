@@ -60,5 +60,6 @@ public interface MachineRepository extends CrudRepository <Machine, Long> {
 /**ToDo: End here
  * working on League page data**/
 
-
+List<Machine> findDistinctByScoresInAddedscoredateInScores_AddedscoredateEquals(Score scores_addedscoredate);
+List<Machine> 
 }

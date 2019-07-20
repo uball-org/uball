@@ -41,6 +41,7 @@ public class AdminController {
         model.addAttribute("users", adminDao.findAll());
         model.addAttribute("machines", machineDao.findAll());
         model.addAttribute("scores", scoreDao.findDistinctByAddedscoredateAndScore(LocalDate.now(), 0));
+        model.addAttribute("scores", scoreDao.findDistinctByMachineAndAddedscoredateAndScore(machineDao.findDistinctByScoresInAddedscoredateInScores_AddedscoredateEquals(LocalDate.now()), LocalDate.now(), 0));
         return "admin/admindashboard";
     }
 
@@ -49,7 +50,8 @@ public class AdminController {
     public String newUsersForGroups(Model model,
                                     @RequestParam(name = "uchecked") List<User> newU,
                                     @RequestParam(name = "mchecked") List<Machine> newM) {
-        model.addAttribute("machines2", newM);
+
+//        model.addAttribute("machines2", newM);
 
 
         for(User users : newU){
