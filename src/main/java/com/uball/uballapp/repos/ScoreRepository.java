@@ -16,6 +16,8 @@ public interface ScoreRepository extends CrudRepository <Score, Long> {
     List <Score> findDistinctTopByMachineOrderByScore(Machine machine);
     /**ToDo: Start here
      * working on League page data**/
+    /**  Top 4 all times #*/
+
 //  Top 4 of all time scores
     @Query(value = "select s.* " +
             " from users u" +
@@ -23,8 +25,6 @@ public interface ScoreRepository extends CrudRepository <Score, Long> {
             " order by s.score desc" +
             " limit 4", nativeQuery = true)
     List<Score> findTop4Scores();
-/**  Top 4 all times #*/
-
 
     /**Top All time scorers by league(id)*/
 // Top 4 of scores by league(id)
@@ -36,6 +36,7 @@ public interface ScoreRepository extends CrudRepository <Score, Long> {
             "order by s.score desc" +
             " limit 4", nativeQuery = true)
     List<Score> Top4ScoresByLeague(long id);
+
 /**ToDo: End here
  * working on League page data**/
 

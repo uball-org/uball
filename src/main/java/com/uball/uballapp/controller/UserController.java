@@ -74,16 +74,9 @@ public class UserController<leagueRepository> {
     @GetMapping("/leagues") // this will be the method that shows all members of the league page
     public String all(Model model){
         model.addAttribute("users",userDao.findTop4ScoringUsers());
-        model.addAttribute("scores",scoreDao.findTop4Scores());
-        model.addAttribute("leagues", leagueDoa.findTop4ScoringLeagues());
-
-        model.addAttribute("oneLeagueUsers",userDao.Top4ScoringUserByLeague(1));
-//        model.addAttribute("oneLeagueScores",scoreDao.Top4ScoresByLeague(1));
-        model.addAttribute("oneLeagueMachines",machineDao.Top4ScoringMachinesByLeague(1));
-
-        model.addAttribute("twoLeagueUsers",userDao.Top4ScoringUserByLeague(2));
-//        model.addAttribute("twoLeagueScores",scoreDao.Top4ScoresByLeague(2));
-        model.addAttribute("twoLeagueMachines",machineDao.Top4ScoringMachinesByLeague(2));
+        //data by league
+        model.addAttribute("oneLeagueScores",scoreDao.Top4ScoresByLeague(1));
+        model.addAttribute("twoLeagueScores",scoreDao.Top4ScoresByLeague(2));
 
         return "league/leaguedashboard";
     }
