@@ -19,7 +19,7 @@ public class MachineController {
     /**
      * ounces URI accessed, displays machines page
      * */
-    @GetMapping("/machines")
+    @GetMapping("/createmachine")
     public String index(Model model) {
         model.addAttribute("machines", machineDao.findAll());
         return "machines/index";
@@ -38,7 +38,7 @@ public class MachineController {
     @PostMapping("/machines/create")
     public String insert(@ModelAttribute Machine machine) {
         machineDao.save(machine);
-        return "redirect:/machines";
+        return "redirect:/createmachine";
     }
 
     /**
