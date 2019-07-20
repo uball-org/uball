@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/head :: head('League Dashboard')">
-<<<<<<< HEAD
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
-=======
-
-    <!-- Compiled and minified CSS -->
-<!--     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" /> -->
->>>>>>> d39b6236f39e02a640a895e833bd6b6302571438
 </head>
 <body>
 <nav th:replace="partials/navbar :: nav"></nav>
@@ -65,7 +57,7 @@
                         <table class="responsive-table centered highlight">
                             <thead>
                             <tr>
-                                <th></th>
+                                <th>Place</th>
                                 <th>Machine Name</th>
                                 <th>Score</th>
                                 <th>Date</th>
@@ -77,10 +69,6 @@
                                 <tr th:each="oneLS : ${oneLeagueScores}">
                                     <td># <span th:text="${oneLeagueScores.indexOf(oneLS) + 1 } "></span> Place</td>
                                     <td><span th:text="${oneLS.getMachine().name}"></span>Name</td>
-                                    <!--<th:block th:each=" lUser: ${oneLeagueUsers}">-->
-                                        <!--<td th:text="${lUser.scores}"> Score</td>-->
-                                        <!--<td th:text="${lUser.getDOB()}">Date</td>-->
-                                    <!--</th:block>-->
                                     <td th:text="${oneLS.score}"> Score</td>
                                     <td th:text="${oneLS.date}">Date</td>
                                 </tr>
@@ -99,7 +87,7 @@
                         <table class="responsive-table centered highlight">
                             <thead>
                             <tr>
-                                <th></th>
+                                <th>Place</th>
                                 <th>Machine Name</th>
                                 <th>Points</th>
                                 <th>Date</th>
@@ -132,8 +120,6 @@
     <div th:replace="partials/footer :: footer"></div>
     <th:block th:include="partials/footer :: scripts" />
 </footer>
-<!-- Compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 </body>
 </html>
