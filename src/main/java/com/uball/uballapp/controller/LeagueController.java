@@ -4,12 +4,14 @@ import com.uball.uballapp.models.Group;
 import com.uball.uballapp.models.League;
 import com.uball.uballapp.repos.GroupRepository;
 import com.uball.uballapp.repos.LeagueRepository;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+@Controller
 public class LeagueController {
     private LeagueRepository leagueDao;
 
@@ -24,7 +26,7 @@ public class LeagueController {
      * */
     @GetMapping("/createleague")
     public String index(Model model) {
-        model.addAttribute("leagues", leagueDao.findAll());
+        model.addAttribute("leaguesList", leagueDao.findAll());
         return "leagues/index";
     }
     /**
