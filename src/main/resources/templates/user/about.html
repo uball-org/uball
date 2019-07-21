@@ -2,9 +2,10 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/head :: head('UBall')">
 </head>
-<body class="teal lighten-5">
+<body class="grey lighten-2">
 <nav th:replace="partials/navbar :: nav"></nav>
 
+<main>
 <div class="card-box col s12 m4 l4">
     <div class="card">
         <div class="header">
@@ -32,7 +33,7 @@
 
 
 
-
+</main>
 
 <div th:replace="partials/footer :: footer"></div>
 <th:block th:include="partials/footer :: scripts" />

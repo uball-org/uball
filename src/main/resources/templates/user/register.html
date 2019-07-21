@@ -2,49 +2,49 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/head :: head('UBall Register')">
 </head>
-<body>
+<body class="grey lighten-2">
 <nav th:replace="partials/navbar :: nav"></nav>
 
 <h2 class="center-align">Register</h2>
 
 <main class="container">
-    <form th:action="@{/register}" method="POST" th:object="${user}" >
+    <form th:action="@{/register}" method="POST" th:object="${user}">
         <label for="username">Username</label>
         <br/>
-        <input id="username" th:field="*{username}" />
-        <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}" style="color: red;" />
+        <input id="username" th:field="*{username}"/>
+        <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}" style="color: red;"/>
         <br/>
         <label for="firstName">First Name</label>
         <br/>
-        <input id="firstName" th:field="*{firstName}" />
-        <p th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" style="color: red;" />
+        <input id="firstName" th:field="*{firstName}"/>
+        <p th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" style="color: red;"/>
         <br/>
         <label for="lastName">Last Name</label>
         <br/>
-        <input id="lastName" th:field="*{lastName}" />
+        <input id="lastName" th:field="*{lastName}"/>
         <p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" style="color: red;"/>
         <br/>
         <label for="password">Password</label>
         <br/>
-        <input id="password" type="password" th:field="*{password}" />
+        <input id="password" type="password" th:field="*{password}"/>
         <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" style="color: red;"/>
         <br/>
         <label for="email">Email</label>
         <br/>
-        <input id="email" th:field="*{email}" />
+        <input id="email" th:field="*{email}"/>
         <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color: red;"/>
         <br/>
         <label for="DOB">Date of Birth</label>
         <br/>
-        <input id="DOB" type="date" th:field="*{DOB}" />
+        <input id="DOB" type="date" th:field="*{DOB}"/>
         <p th:if="${#fields.hasErrors('DOB')}" th:errors="*{DOB}" style="color: red;"/>
         <br/>
 
         <label>Gender</label>
         <select class="browser-default" th:field="*{gender}">
-            <option value="0" >Choose your option</option>
-            <option value="M" th:text="M" ></option>
-            <option value="F" th:text="F" ></option>
+            <option value="0">Choose your option</option>
+            <option value="M" th:text="M"></option>
+            <option value="F" th:text="F"></option>
         </select>
         <br/>
 
@@ -54,18 +54,19 @@
             <option value="1" th:text="SAPL"></option>
             <option value="2" th:text="Belles"></option>
         </select>
-<!--        <p th:if="${#fields.hasErrors('league')}" th:errors="*{league}" style="color: red;"/>-->
-        <br/>
+        <!--        <p th:if="${#fields.hasErrors('league')}" th:errors="*{league}" style="color: red;"/>-->
         <br/>
         <!--<input value="Sign me up!" type="submit" /> -->
         <div class="center-align">
-            <button type="submit" class="btn btn-primary">Register</button>
+            <button type="submit" class="btn btn-primary light-blue darken-2">Register</button>
         </div>
+        <br/>
     </form>
     <br/>
 </main>
 
 <div th:replace="partials/footer :: footer"></div>
+<th:block th:include="partials/footer :: scripts"/>
 
 </body>
 </html>

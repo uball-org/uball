@@ -2,98 +2,45 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/head :: head('User Profile')">
 </head>
-<body>
-
-
-
-
-<style>
-
-    div.container.one{
-        position: relative;
-        top: 275px;
-    }
-
-    /*
-    div.col.s4.card-panel.hoverable{
-        width: 18%;
-    }
-    div.row{
-        position:relative;
-    }
-    a.waves-effect.waves-light.btn-small{
-        float: right;
-    }
-
-    /* A TEMPORARY FIX FOR FOOTER*/
-    /* In doing this, the footer is positioned to the bottom of the page*/
-
-    footer.page-footer.grey.darken-4{
-        position: relative;
-        top: 400px;
-    }
-     /*A TEMPORARY FIX*/
-
-</style>
-
+<body class="grey lighten-2">
 <nav th:replace="partials/navbar :: nav"></nav>
+
+<main>
 
 <!--Need to verify ADMIN-->
 <!--<div sec:authorize="isAuthenticated()">-->
-<!--<h1>Welcome, <span th:text="${#authentication.principal. ?? }"></span></h1>-->
-<h1>Welcome, <span th:text="${users.username}"></span></h1>
 
-
-<div class="container" style="position: absolute; margin-left: 5%; width:90%">
-
+<div class="container">
 
     <div class="row">
 
-
-        <!--the images below are commented out because they cause a page loading error without an image -->
-        <div class="col s12 m4 l4">
-            <div id="profile-card" class="card">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <!--<img class="activator" src="images/gallary/3.png" alt="user bg">-->
+        <br />
+        <div class="col s12">
+            <div class="card horizontal">
+                <div class="card-image">
+                    <img src="/img/profilecard.png" />
                 </div>
-
-                <div class="card-content">
-                    <!--<img src="images/avatar/avatar-7.png" alt="" class="circle responsive-img activator card-profile-image cyan lighten-1 padding-2">-->
-                    <a class="btn-floating activator btn-move-up waves-effect waves-light red accent-2 z-depth-4 right">
-                        <i class="material-icons">edit</i>
-                    </a>
-                    <span class="card-title activator grey-text text-darken-4"><span th:text="${users.username}"></span></span>
-                    <p>
-                        <i class="material-icons">perm_identity</i> Gender:<span th:text="${users.gender}"></span></p>
-                    <p>
-                        <i class="material-icons">perm_phone_msg</i>Points:<span th:text="${users.points}"></span> </p>
-                    <p>
-                        <i class="material-icons">email</i>:<span th:text="${users.email}"></span> </p>
-                </div>
-                <div class="card-reveal">
-                      <span class="card-title grey-text text-darken-4">name: <span th:text="${users.username}"></span>
-                        <i class="material-icons right">close</i>
-                      </span>
-                    <p>Here is some more information about this card.</p>
-                    <p>
-                        <i class="material-icons">perm_identity</i>ID:<span th:text="${users.id}"></span> </p>
-                    <p>
-                        <i class="material-icons">perm_phone_msg</i>Points:<span th:text="${users.points}"></span></p>
-                    <p>
-                        <i class="material-icons">email</i>:<span th:text="${users.email}"></span></p>
-                    <p>
-                        <i class="material-icons">cake</i> Birthday:<span th:text="${users.DOB}"></span>
-                    </p>
-                    <p>
-                    </p>
-                    <p>
-                        <i class="material-icons">airplanemode_active</i> BAR - AUS
-                    </p>
-                    <p>
-                    </p>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <span class="card-title grey-text text-darken-4"><h1><span th:text="${users.username}"></span></h1></span>
+                        <p>
+                           <i class="material-icons">perm_identity</i> <span th:text=" ${users.firstName}"></span></p>
+                        <p>
+                            <i class="material-icons">wc</i> <span th:text=" ${users.gender}"></span></p>
+                        <p>
+                            <i class="material-icons">email</i> <span th:text=" ${users.email}"></span></p>
+                    </div>
                 </div>
             </div>
         </div>
+
+
+
+
+<!--    </div>-->
+
+
+
         <!--        profile picture of Admin
 
         <div class="col s4 card-panel hoverable" style="border: 2px solid black; margin-top: 0; height: auto;">
@@ -101,31 +48,32 @@
 
                 table of users-->
 
-<!--
-        <div class="col s8" style=" border: 2px solid black;">
-            <div class="row">
-                <div class="col s6">ID: <span th:text="${users.id}"></span></div>
-                <div class="col s6" >DOB: <span th:text="${users.DOB}"></span></div>
-                <div class="col s6" >Gender: <span th:text="${users.gender}"></span></div>
-                <div class="col s6" >Points: <span th:text="${users.points}"></span></div>
-               <div class="col s6" >League: <span th:text="${users.getLeague().name}"></span></div>-->
-                <!--uncomment before pushing/ the league portion causes page error
-            </div>
-            The edit button that does nothing -->
-            <!--<a class="waves-effect waves-light btn-small">Edit</a> -->
-            <!--The edit button that does nothing -->
-        </div>
+        <!--
+                <div class="col s8" style=" border: 2px solid black;">
+                    <div class="row">
+                        <div class="col s6">ID: <span th:text="${users.id}"></span></div>
+                        <div class="col s6" >DOB: <span th:text="${users.DOB}"></span></div>
+                        <div class="col s6" >Gender: <span th:text="${users.gender}"></span></div>
+                        <div class="col s6" >Points: <span th:text="${users.points}"></span></div>
+                       <div class="col s6" >League: <span th:text="${users.getLeague().name}"></span></div>-->
+        <!--uncomment before pushing/ the league portion causes page error
     </div>
-                <!--*****************-->
-                <!--                Bottom Nav Card Below              -->
-                <!--*****************-->
+    The edit button that does nothing -->
+        <!--<a class="waves-effect waves-light btn-small">Edit</a> -->
+        <!--The edit button that does nothing -->
 
-<div class="container one">
+<!--<div class="right col container one">-->
 
-    <div class="card">
-        <div class="card-content">
+    <div class="card col s12">
+<!--        <div class="card-content">-->
             <div class="card-content">
-
+<!--                <div class="card-tabs">-->
+<!--                    <ul class="tabs tabs-fixed-width">-->
+<!--                        <li class="tab"><a href="#Indiv">INDIVIDUAL</a></li>-->
+<!--                        <li class="tab"><a class="active" href="#OvA">OVERALL</a></li>-->
+<!--                        <li class="tab"><a href="#Mach">MACHINE</a></li>-->
+<!--                    </ul>-->
+<!--                </div>-->
                 <div id="Indiv">
                     <table class="responsive-table centered">
                         <thead>
@@ -146,60 +94,55 @@
                         </tbody>
                     </table>
                 </div>
-                <div id="OvA">
-                    <table class="responsive-table centered">
-                        <thead>
-                        <tr>
-                            <th>Machine Name</th>
-                            <th>Date Played</th>
-                            <th>Score</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <th:block th:each="score : ${scores}">
-                            <tr>
-                                <td th:text="${score.getMachine().name}"></td>
-                                <td th:text="${score.date}"></td>
-                                <td th:text="${score.score}"></td>
-                            </tr>
-                        </th:block>
-                        </tbody>
-                    </table>
-                </div>
-                <div id="Mach">
-                    <table class="responsive-table centered">
-                        <thead>
-                        <tr>
-                            <th>Machine Name</th>
-                            <th>Score</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <th:block th:each="machines : ${machines1}">
-                            <tr>
-                                <td th:text="${machines.name}">Galaga</td>
-                                <td th:text="${machines.getScores()}">20000</td>
-                            </tr>
-                        </th:block>
-                        </tbody>
-                    </table>
-                </div>
+<!--                <div id="OvA">-->
+<!--                    <table class="responsive-table centered">-->
+<!--                        <thead>-->
+<!--                        <tr>-->
+<!--                            <th>Machine Name</th>-->
+<!--                            <th>Date Played</th>-->
+<!--                            <th>Score</th>-->
+<!--                        </tr>-->
+<!--                        </thead>-->
+<!--                        <tbody>-->
+<!--                        <th:block th:each="score : ${scores}">-->
+<!--                            <tr>-->
+<!--                                <td th:text="${score.getMachine().name}"></td>-->
+<!--                                <td th:text="${score.date}"></td>-->
+<!--                                <td th:text="${score.score}"></td>-->
+<!--                            </tr>-->
+<!--                        </th:block>-->
+<!--                        </tbody>-->
+<!--                    </table>-->
+<!--                </div>-->
+<!--                <div id="Mach">-->
+<!--                    <table class="responsive-table centered">-->
+<!--                        <thead>-->
+<!--                        <tr>-->
+<!--                            <th>Machine Name</th>-->
+<!--                            <th>Score</th>-->
+<!--                        </tr>-->
+<!--                        </thead>-->
+<!--                        <tbody>-->
+<!--                        <th:block th:each="machines : ${machines1}">-->
+<!--                            <tr>-->
+<!--                                <td th:text="${machines.name}"></td>-->
+<!--                                <td th:text="${machines.getScores()}"></td>-->
+<!--                            </tr>-->
+<!--                        </th:block>-->
+<!--                        </tbody>-->
+<!--                    </table>-->
+<!--                </div>-->
             </div>
-        </div>
-        <div class="card-tabs">
-            <ul class="tabs tabs-fixed-width">
-                <li class="tab"><a href="#Indiv">INDIVIDUAL</a></li>
-                <li class="tab"><a class="active" href="#OvA">OVERALL</a></li>
-                <li class="tab"><a href="#Mach">MACHINE</a></li>
-            </ul>
         </div>
     </div>
 </div>
+<!--</div>-->
 
-<footer>
-    <div th:replace="partials/footer :: footer"></div>
-    <th:block th:include="partials/footer :: scripts" />
-</footer>
+</main>
+
+
+<div th:replace="partials/footer :: footer"></div>
+<th:block th:include="partials/footer :: scripts"/>
 
 </body>
 </html>
