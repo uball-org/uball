@@ -18,10 +18,11 @@
 
     /* A TEMPORARY FIX FOR FOOTER*/
     /* In doing this, the footer is positioned to the bottom of the page*/
-    footer.page-footer.grey.darken-4{
+    footer.page-footer.grey.darken-4 {
         position: relative;
         top: 2500px;
     }
+
     /* A TEMPORARY FIX*/
 
 </style>
@@ -29,9 +30,9 @@
 <nav th:replace="partials/navbar :: nav"></nav>
 
 
-                        <!--Need to verify ADMIN-->
-                        <!--<div sec:authorize="isAuthenticated()">-->
-                <!--<h1>Welcome, <span th:text="${user.username}"></span></h1>-->
+<!--Need to verify ADMIN-->
+<!--<div sec:authorize="isAuthenticated()">-->
+<!--<h1>Welcome, <span th:text="${user.username}"></span></h1>-->
 
 <h1>Welcome, User</h1>
 
@@ -41,7 +42,8 @@
 
         <!--        profile picture of Admin-->
 
-        <div class="col s4 card-panel hoverable" style="border: 2px solid black; margin-top: 0;"><span class="flow-text">Picture will go here</span></div>
+        <div class="col s4 card-panel hoverable" style="border: 2px solid black; margin-top: 0;"><span
+                class="flow-text">Picture will go here</span></div>
 
         <!--        table of users-->
 
@@ -60,24 +62,24 @@
                 </thead>
                 <tbody>
                 <th:block th:each="user : ${users}">
-                <tr>
-                    <td th:text="${user.id}"></td>
-                    <td th:text="${user.firstName + ' ' + user.lastName}"></td>
-                    <td th:text="${user.email}">theiremail@live.com</td>
-                    <td th:text="${user.gender}"></td>
-                    <td th:text="${user.getLeague().name}"></td>
-                    <td th:text="${user.DOB}"></td>
-                    <td>
-                        <a class="btn btn-primary" th:hidden="${user.id}">Disable</a>
+                    <tr>
+                        <td th:text="${user.id}"></td>
+                        <td th:text="${user.firstName + ' ' + user.lastName}"></td>
+                        <td th:text="${user.email}">theiremail@live.com</td>
+                        <td th:text="${user.gender}"></td>
+                        <td th:text="${user.getLeague().name}"></td>
+                        <td th:text="${user.DOB}"></td>
+                        <td>
+                            <a class="btn btn-primary" th:hidden="${user.id}">Disable</a>
 
-<!--  ////////////////////              THIS WILL BE USED LATER           \\\\\\\\\\\\\\\\\\\   -->
-<!--                           th:href="@{'/userprofile/'+${user.id} + '/disable'}">-->
-<!--                           <a sec:authorize="isAuthenticated()"-->
-                        <a class="btn btn-warning mt-1" th:hidden="${user.id}" th:href="@{'/edituser/'+${user.id}}">
-                            Edit
-                        </a>
-                    </td>
-                </tr>
+                            <!--  ////////////////////              THIS WILL BE USED LATER           \\\\\\\\\\\\\\\\\\\   -->
+                            <!--                           th:href="@{'/userprofile/'+${user.id} + '/disable'}">-->
+                            <!--                           <a sec:authorize="isAuthenticated()"-->
+                            <a class="btn btn-warning mt-1" th:hidden="${user.id}" th:href="@{'/edituser/'+${user.id}}">
+                                Edit
+                            </a>
+                        </td>
+                    </tr>
                 </th:block>
                 </tbody>
 
@@ -85,9 +87,9 @@
             </table>
         </div>
     </div>
-                <!--*****************-->
-<!--                Bottom Nav Card Below              -->
-                <!--*****************-->
+    <!--*****************-->
+    <!--                Bottom Nav Card Below              -->
+    <!--*****************-->
 
     <div>
 
@@ -98,21 +100,20 @@
     </div>
 
 
-
-    <div class="container" style= "width: 100%;">
+    <div class="container" style="width: 100%;">
         <div class="card row" style="position: inherit;">
             <div class="card-tabs" style="height: 20px;">
                 <ul class="tabs tabs-fixed-width">
                     <li class="tab"><a href="#CreateGroups">Create Groups</a></li>
                     <li class="tab"><a href="#CreateMachines" class="active">Create Machines</a></li>
-                    <li class="tab"><a href="#ScoreForm" >Competition Day Score Form</a></li>
+                    <li class="tab"><a href="#ScoreForm">Competition Day Score Form</a></li>
                 </ul>
             </div>
 
-            <div class="card-content grey lighten-4" >
+            <div class="card-content grey lighten-4">
                 <form th:action="@{/admindashboard/creategrouping}" method="post">
-                <div id="CreateGroups">
-                    <h3>Create Groups</h3>
+                    <div id="CreateGroups">
+                        <h3>Create Groups</h3>
                         <table class="responsive-table centered highlight">
                             <thead>
                             <tr>
@@ -133,7 +134,7 @@
                                     <td>
                                         <p>
                                             <label>
-                                                <input  name="uchecked" th:value="${user.id}" type="checkbox" />
+                                                <input name="uchecked" th:value="${user.id}" type="checkbox"/>
                                                 <span></span>
                                             </label>
                                         </p>
@@ -142,11 +143,11 @@
                             </th:block>
                             </tbody>
                         </table>
-                        <br />
-                </div>
-                <div id="CreateMachines" >
-                    <h3>Create Machines</h3>
-                    <table class="responsive-table centered highlight">
+                        <br/>
+                    </div>
+                    <div id="CreateMachines">
+                        <h3>Create Machines</h3>
+                        <table class="responsive-table centered highlight">
                             <thead>
                             <tr>
                                 <th>ID#</th>
@@ -162,7 +163,7 @@
                                     <td>
                                         <p>
                                             <label>
-                                                <input  name="mchecked" th:value="${machine.id}" type="checkbox" />
+                                                <input name="mchecked" th:value="${machine.id}" type="checkbox"/>
                                                 <span></span>
                                             </label>
                                         </p>
@@ -171,80 +172,93 @@
                             </th:block>
                             </tbody>
                         </table>
-                        <br />
+                        <br/>
                         <button type="submit" class="btn btn-primary mt-1">Submit</button>
-                </div>
+                    </div>
                 </form>
 
-                <div id="ScoreForm">
-                <h5>Groups And Machines</h5>
-                        <table class="responsive-table centered highlight">
-                            <thead>
-                            <tr>
-                                <th></th>
-                                <th>Name</th>
-                                <th>date</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <th:block th:each="newUserList : ${scores}">
-                                <tr>
-                                    <td th:text="${scores.indexOf(newUserList)}">1</td>
-                                    <td th:text="${newUserList.getUser().username}">John</td>
-                                    <td th:text="${newUserList.addedscoredate}">John</td>
-                                </tr>
-                            </th:block>
-                            </tbody>
-                        </table>
+                <div id="ScoreForm" class="row">
+                    <h5>Groups And Machines</h5>
+                    <table class="responsive-table centered highlight col s10">
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th>User Id</th>
+                            <th>User Name</th>
 
-                    <th:block th:each="machinestwo : ${scores.indexOf(scores)}">
-
-                    <table class="responsive-table centered highlight">
-                            <thead>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <th:block th:each="newUserList : ${usernames}">
                             <tr>
-                                <th></th>
-                                <th>Score</th>
+                                <td ></td>
+                                <td th:text="${newUserList.getUser().id}">John</td>
+                                <td th:text="${newUserList.getUser().username}">John</td>
                             </tr>
-                            </thead>
-                            <tbody>
-                            <th:block th:each="scoreinput : ${newUsersList}">
-                                <tr>
-                                    <td th:text="${scoreinput.indexOf(newUsersList)}"></td>
+                        </th:block>
+                        </tbody>
+                    </table>
+                    <br />
+
+                    <table class="responsive-table centered highlight col s10">
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th>Machine Id</th>
+                            <th>Machine Name</th>
+                            <th>Score</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <th:block th:each="newUserList : ${machine}">
+                            <tr>
+                                <td ></td>
+                                <td th:text="${newUserList.getMachine().id}">John</td>
+                                <td th:text="${newUserList.getMachine().name}">John</td>
+                                <td th:text="${newUserList.score}">John</td>
+                            </tr>
+                        </th:block>
+                        </tbody>
+                    </table>
+                    <br />
+
+                    <table class="responsive-table centered highlight col s10">
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th>Machine Id</th>
+                            <th>Machine Name</th>
+                            <th>Score</th>
+                            <th>Total Points</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <th:block th:each="newUserList : ${scores}">
+                            <tr>
+                                <td ></td>
+                                <td th:text="${newUserList.getMachine().id}">John</td>
+                                <td th:text="${newUserList.getMachine().name}">John</td>
+                                <td th:text="${newUserList.score}">John</td>
+                                <td >
                                     <div class="input-field">
-                                        <input th:hidden="${scoreinput.id}" name="score" id="input_text" type="text" data-length="12" />
-                                        <label for="input_text">Score</label>
+                                        <input placeholder="enter points" name="Tpoints" id="points" type="text" class="validate"/>
+                                        <label for="points"></label>
                                     </div>
-                                </tr>
-                            </th:block>
-                            </tbody>
-                        </table>
-                    </th:block>
-
-<!--                    <table class="responsive-table centered highlight">-->
-<!--                            <thead>-->
-<!--                            <tr>-->
-<!--                                <th></th>-->
-<!--                                <th>Total Points</th>-->
-<!--                            </tr>-->
-<!--                            </thead>-->
-<!--                            <tbody>-->
-<!--                            <th:block th:each="totalpoints : ${newUsersList}">-->
-<!--                                <tr>-->
-<!--                                    <td th:text="${totalpoints.id}">1</td>-->
-<!--                                    <td th:text="${CALCULATED VALUE}">16</td>-->
-<!--                                </tr>-->
-<!--                            </th:block>-->
-<!--                            </tbody>-->
-<!--                        </table>-->
+                                </td>
+                            </tr>
+                        </th:block>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
-</div>
+    </div>
 </div>
 
 <footer>
     <div th:replace="partials/footer :: footer"></div>
-    <th:block th:include="partials/footer :: scripts" />
+    <th:block th:include="partials/footer :: scripts"/>
 </footer>
 
 </body>
