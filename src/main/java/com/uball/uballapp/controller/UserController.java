@@ -5,7 +5,6 @@ import com.uball.uballapp.models.League;
 import com.uball.uballapp.repos.LeagueRepository;
 import com.uball.uballapp.repos.MachineRepository;
 import com.uball.uballapp.repos.ScoreRepository;
-import org.codehaus.groovy.transform.SourceURIASTTransformation;
 
 import org.springframework.security.core.context.SecurityContextHolder;
 import com.uball.uballapp.models.User;
