@@ -18,10 +18,50 @@
         <div class="col s12">
             <div class="row">
                 <div class="col s12 m4 l4">
-                    <div class="card-panel yellow darken-4">
-                        <span class="white-text">I am a very simple solid color card. I am good at containing small bits of information.I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.</span>
+                    <div class="card-panel">
+<!--                        <span>I am a very simple solid color card. I am good at containing small bits of information.I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.</span>-->
+                        <div class="card-content center">
+                            <span class="card-title grey-text text-darken-4"><h2><span th:text="${users.username}"></span></h2></span>
+                            <p>
+                                <i class="material-icons">perm_identity</i> <span th:text=" ${users.firstName}"></span> <span th:text=" ${users.lastName}"></span></p>
+                            <p>
+<!--                                <i class="material-icons">perm_identity</i> <span th:text=" ${users.lastName}"></span></p>-->
+<!--                            <p>-->
+                                <i class="material-icons">wc</i> <span th:text=" ${users.gender}"></span></p>
+                            <p>
+                                <i class="material-icons">email</i> <span th:text=" ${users.email}"></span></p>
+                        </div>
+                        <div class="row center">
+                            <a th:href="@{'/edituser/' + ${users.id}}" id="edit-button"
+                               class="btn-floating activator btn-move-up waves-effect waves-light red accent-2 z-depth-4"><i class="material-icons">edit</i></a>
+                        </div>
                     </div>
                 </div>
+                <div class="card">
+                <div class="card-content col s12 m8 l8">
+                    <div id="Indiv">
+                        <table class="responsive-table centered">
+                            <thead>
+                            <tr>
+                                <th>Machine Name</th>
+                                <th>Date Played</th>
+                                <th>Score</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <th:block th:each="score : ${scores}">
+                                <tr>
+                                    <td th:text="${score.getMachine().name}"></td>
+                                    <td th:text="${score.date}"></td>
+                                    <td th:text="${score.score}"></td>
+                                </tr>
+                            </th:block>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                </div>
+            </div>
             </div>
         </div>
 
@@ -79,37 +119,17 @@
 
 <!--<div class="right col container one">-->
 
-    <div class="card col s12">
-<!--        <div class="card-content">-->
-            <div class="card-content">
-<!--                <div class="card-tabs">-->
-<!--                    <ul class="tabs tabs-fixed-width">-->
-<!--                        <li class="tab"><a href="#Indiv">INDIVIDUAL</a></li>-->
-<!--                        <li class="tab"><a class="active" href="#OvA">OVERALL</a></li>-->
-<!--                        <li class="tab"><a href="#Mach">MACHINE</a></li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-                <div id="Indiv">
-                    <table class="responsive-table centered">
-                        <thead>
-                        <tr>
-                            <th>Machine Name</th>
-                            <th>Date Played</th>
-                            <th>Score</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <th:block th:each="score : ${scores}">
-                            <tr>
-                                <td th:text="${score.getMachine().name}"></td>
-                                <td th:text="${score.date}"></td>
-                                <td th:text="${score.score}"></td>
-                            </tr>
-                        </th:block>
-                        </tbody>
-                    </table>
-                </div>
-<!--                <div id="OvA">-->
+<!--    <div class="card col s12">-->
+<!--&lt;!&ndash;        <div class="card-content">&ndash;&gt;-->
+<!--            <div class="card-content">-->
+<!--&lt;!&ndash;                <div class="card-tabs">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <ul class="tabs tabs-fixed-width">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <li class="tab"><a href="#Indiv">INDIVIDUAL</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <li class="tab"><a class="active" href="#OvA">OVERALL</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <li class="tab"><a href="#Mach">MACHINE</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </ul>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--                <div id="Indiv">-->
 <!--                    <table class="responsive-table centered">-->
 <!--                        <thead>-->
 <!--                        <tr>-->
@@ -129,27 +149,47 @@
 <!--                        </tbody>-->
 <!--                    </table>-->
 <!--                </div>-->
-<!--                <div id="Mach">-->
-<!--                    <table class="responsive-table centered">-->
-<!--                        <thead>-->
-<!--                        <tr>-->
-<!--                            <th>Machine Name</th>-->
-<!--                            <th>Score</th>-->
-<!--                        </tr>-->
-<!--                        </thead>-->
-<!--                        <tbody>-->
-<!--                        <th:block th:each="machines : ${machines1}">-->
-<!--                            <tr>-->
-<!--                                <td th:text="${machines.name}"></td>-->
-<!--                                <td th:text="${machines.getScores()}"></td>-->
-<!--                            </tr>-->
-<!--                        </th:block>-->
-<!--                        </tbody>-->
-<!--                    </table>-->
-<!--                </div>-->
-            </div>
-        </div>
-    </div>
+<!--&lt;!&ndash;                <div id="OvA">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <table class="responsive-table centered">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <thead>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <tr>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <th>Machine Name</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <th>Date Played</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <th>Score</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </tr>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </thead>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <tbody>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <th:block th:each="score : ${scores}">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <tr>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <td th:text="${score.getMachine().name}"></td>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <td th:text="${score.date}"></td>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <td th:text="${score.score}"></td>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </tr>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </th:block>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </tbody>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </table>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                <div id="Mach">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <table class="responsive-table centered">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <thead>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <tr>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <th>Machine Name</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <th>Score</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </tr>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </thead>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <tbody>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <th:block th:each="machines : ${machines1}">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <tr>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <td th:text="${machines.name}"></td>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <td th:text="${machines.getScores()}"></td>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </tr>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </th:block>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </tbody>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </table>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 <!--</div>-->
 <!--</div>-->
 
