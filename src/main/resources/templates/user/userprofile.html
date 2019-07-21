@@ -11,31 +11,43 @@
 
 <div class="container">
 
-    <div class="row">
+<!--    <div class="row">-->
 
         <br />
+
         <div class="col s12">
-            <div class="card horizontal">
-                <div class="card-image responsive-img">
-                    <img src="/img/pinball-up-close.jpg" />
-                </div>
-                <div class="card-stacked">
-                    <div class="card-content">
-                        <span class="card-title grey-text text-darken-4"><h2><span th:text="${users.username}"></span></h2></span>
-                        <p>
-                           <i class="material-icons">perm_identity</i> <span th:text=" ${users.firstName}"></span></p>
-                        <p>
-                            <i class="material-icons">wc</i> <span th:text=" ${users.gender}"></span></p>
-                        <p>
-                            <i class="material-icons">email</i> <span th:text=" ${users.email}"></span></p>
-                    </div>
-                    <div class="row center">
-                        <a th:href="@{'/edituser/' + ${users.id}}" id="edit-button"
-                           class="btn-floating activator btn-move-up waves-effect waves-light red accent-2 z-depth-4"><i class="material-icons">edit</i></a>
+            <div class="row">
+                <div class="col s12 m4 l4">
+                    <div class="card-panel yellow darken-4">
+                        <span class="white-text">I am a very simple solid color card. I am good at containing small bits of information.I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.</span>
                     </div>
                 </div>
             </div>
         </div>
+
+
+<!--        <div class="col s12">-->
+<!--            <div class="card horizontal">-->
+<!--                <div class="card-image responsive-img">-->
+<!--                    <img src="/img/pinball-up-close.jpg" />-->
+<!--                </div>-->
+<!--                <div class="card-stacked">-->
+<!--                    <div class="card-content">-->
+<!--                        <span class="card-title grey-text text-darken-4"><h2><span th:text="${users.username}"></span></h2></span>-->
+<!--                        <p>-->
+<!--                           <i class="material-icons">perm_identity</i> <span th:text=" ${users.firstName}"></span></p>-->
+<!--                        <p>-->
+<!--                            <i class="material-icons">wc</i> <span th:text=" ${users.gender}"></span></p>-->
+<!--                        <p>-->
+<!--                            <i class="material-icons">email</i> <span th:text=" ${users.email}"></span></p>-->
+<!--                    </div>-->
+<!--                    <div class="row center">-->
+<!--                        <a th:href="@{'/edituser/' + ${users.id}}" id="edit-button"-->
+<!--                           class="btn-floating activator btn-move-up waves-effect waves-light red accent-2 z-depth-4"><i class="material-icons">edit</i></a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
 
 
 
@@ -138,7 +150,7 @@
             </div>
         </div>
     </div>
-</div>
+<!--</div>-->
 <!--</div>-->
 
 </main>
