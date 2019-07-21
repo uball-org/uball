@@ -4,13 +4,11 @@ package com.uball.uballapp.controller;
 import com.uball.uballapp.models.Machine;
 import com.uball.uballapp.models.Score;
 import com.uball.uballapp.repos.*;
-import org.springframework.security.core.context.SecurityContextHolder;
 import com.uball.uballapp.models.User;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 
-import javax.validation.Valid;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -80,6 +78,22 @@ public class AdminController {
         System.out.println("size of new users list divide by two= " + newU.size()/2);
         System.out.println("size of users in group 1 = " + groupDao.findOne(1L).getUsers().size());
         System.out.println("size of new machines list divide by two= " + newM.size()/2);
+
+        return "redirect:/admindashboard";
+    }
+
+    @RequestMapping(value = "/week-scores", method = RequestMethod.POST)
+    public String weeksScores(@ModelAttribute Score score,
+                              @RequestParam(name = "user") User newUser,
+                              @RequestParam(name = "machine") Machine newMachine,
+                              @RequestParam(name = "newScore") Long scoreAmount) {
+        score.setUser(newUser);
+        System.out.println(newUser.getId());
+        score.setMachine(newMachine);
+        System.out.println(newMachine);
+        score.setScore(scoreAmount);
+        System.out.println(scoreAmount);
+        System.out.println(scoreDao.updateScore(newUser.getId(), newMachine.getId(), scoreAmount));
 
         return "redirect:/admindashboard";
     }

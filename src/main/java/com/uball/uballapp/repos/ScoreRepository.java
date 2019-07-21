@@ -48,5 +48,7 @@ public interface ScoreRepository extends CrudRepository <Score, Long> {
 
     List<Score> findDistinctByAddedscoredateAndScore( LocalDate addedscoredate, long score);
 
+    @Query(value = "update scores SET score = ?1 WHERE machine_id = ?2 AND user_id = ?3 AND score = 0", nativeQuery = true)
+    Score updateScore( Long score, Long machinIed, Long userId);
 
 }

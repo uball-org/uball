@@ -237,36 +237,29 @@
 
 
                     <div class="container" id="ScoreForm">
-                        <form th:action="@{/weeks-scores}" method="POST" th:object="${scores}">
-
+                        <form th:action="@{/week-scores}" method="post">
 
                             <label>Player</label>
                             <select class="browser-default">
                                 <th:block th:each="newUser : ${userselect}">
-                                    <option th:value="${newUser.id}"
+                                    <option name="user" th:value="${newUser.id}"
                                             th:text="${newUser.username}"></option>
                                 </th:block>
                             </select>
+
                             <label>Machine</label>
                             <select class="browser-default">
                                 <th:block th:each="newMachine : ${machiness}">
-                                    <option th:value="${newMachine.id}"
+                                    <option name="machine" th:value="${newMachine.id}"
                                             th:text="${newMachine.name}"></option>
                                 </th:block>
                             </select>
+
                             <div class="input-field col s6">
                                 <label for="first_name">New Score</label>
-                                <input placeholder="Score" id="first_name" name="newScore" type="text" class="validate" />
+                                <input placeholder="Score" id="first_name" name="newScore" type="text" class="validate"/>
                             </div>
-<!--                            <label>Score</label>-->
-<!--                            <select class="browser-default">-->
-<!--                                <th:block th:each="newMachine : ${machiness}">-->
-<!--                                    <option th:value="${newMachine.id}"-->
-<!--                                            th:text="${newMachine.name}"></option>-->
-<!--                                </th:block>-->
-<!--                            </select>-->
 
-                            <!--        <p th:if="${#fields.hasErrors('league')}" th:errors="*{league}" style="color: red;"/>-->
                             <br/>
                             <br/>
                             <!--<input value="Sign me up!" type="submit" /> -->

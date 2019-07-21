@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head th:replace="partials/head :: head('Admin Dashboard')">
+</head>
+<body>
+
+<nav th:replace="partials/navbar :: nav"></nav>
+<main>
+
+    <h1>This Weeks Scores</h1>
+
+<div class="container">
+
+    <table class="responsive-table centered highlight">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Item Name</th>
+            <th>Item Price</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td>Alvin</td>
+            <td>Eclair</td>
+            <td>$0.87</td>
+        </tr>
+        <tr>
+            <td>Alan</td>
+            <td>Jellybean</td>
+            <td>$3.76</td>
+        </tr>
+        <tr>
+            <td>Jonathan</td>
+            <td>Lollipop</td>
+            <td>$7.00</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</main>
+
+
+<footer>
+    <div th:replace="partials/footer :: footer"></div>
+    <th:block th:include="partials/footer :: scripts"/>
+</footer>
+
+</body>
+</html>
