@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import javax.crypto.Mac;
 import java.util.List;
 
 
@@ -60,5 +61,7 @@ public interface MachineRepository extends CrudRepository <Machine, Long> {
 /**ToDo: End here
  * working on League page data**/
 
-//List<Machine> findDistinctByScoresInAddedscoredateInScores_AddedscoredateEquals(Score scores_addedscoredate);
+@Query(value = "select DISTINCT m.id from machines m join scores s on m.id = s.machine_id where s.score = ?1", nativeQuery = true)
+List<Machine> findAllByMachine_Id(long score);
+
 }

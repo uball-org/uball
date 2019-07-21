@@ -41,8 +41,8 @@ public class AdminController {
         model.addAttribute("users", adminDao.findAll());
         model.addAttribute("machines", machineDao.findAll());
         model.addAttribute("scores", scoreDao.findDistinctByAddedscoredateAndScore(LocalDate.now(), 0));
-        model.addAttribute("usernames", scoreDao.findDistinctByAddedscoredateAndScore(LocalDate.now(), 0));
-        model.addAttribute("machine", scoreDao.findDistinctByAddedscoredateAndScore(LocalDate.now(), 0));
+        model.addAttribute("machiness", machineDao.findAllByMachine_Id(0));
+        model.addAttribute("userselect", userDao.findAllByUserId(0));
         return "admin/admindashboard";
     }
 

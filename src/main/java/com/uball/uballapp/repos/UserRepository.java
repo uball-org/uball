@@ -89,5 +89,7 @@ public interface UserRepository extends CrudRepository <User, Long> {
     //    Example of adding users to joining users_groups table
     //    @Query("insert into users_groups (user_id, group_id) VALUES (?1, ?2)")
 
+    @Query(value = "select DISTINCT u.id from users u join scores s on u.id = s.machine_id where s.score = ?1", nativeQuery = true)
+    List<User> findAllByUserId(long score);
 
 }

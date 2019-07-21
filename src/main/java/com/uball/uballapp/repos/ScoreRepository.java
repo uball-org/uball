@@ -42,12 +42,11 @@ public interface ScoreRepository extends CrudRepository <Score, Long> {
 /**ToDo: End here
  * working on League page data**/
 
-    List <Score> findDistinctTopByMachineAndUser_Id(Iterable<Machine> machine, long user_id);
 
     List<Score> findAllByUser_Id(long user_id);
 
+
     List<Score> findDistinctByAddedscoredateAndScore( LocalDate addedscoredate, long score);
 
-    List<Score> findDistinctByMachineAndAddedscoredateAndScore(Machine machine, LocalDate addedscoredate, long score);
 
 }
