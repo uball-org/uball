@@ -53,6 +53,8 @@
         <li sec:authorize="isAuthenticated()">
             <a href="/admindashboard">Admin Dashboard</a>
         </li>
+        <li sec:authorize="isAnonymous()"><a href="/about">About</a></li>
+        <li sec:authorize="isAuthenticated()"><a href="/about">About</a></li>
         <li sec:authorize="isAuthenticated()">
             <form th:action="@{/logout}" th:method="post">
                 <button class="btn-link btn">Logout</button>
