@@ -15,6 +15,9 @@ public class AuthenticationController {
         return "user/login";
     }
 
-
+    @GetMapping("/about")
+    public String aboutPage() {
+        return "user/about";
+    }
 
 }

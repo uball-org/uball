@@ -2,37 +2,114 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/head :: head('UBall')">
 </head>
-<body class="teal lighten-5">
+<body class="grey lighten-2">
 <nav th:replace="partials/navbar :: nav"></nav>
+<main>
 
-<div class="card-box col s12 m4 l4">
-    <div class="card">
-        <div class="header">
-            <img src="https://placeholder.pics/svg/300" />
-
-            <div class="social-line social-line-visible" data-buttons="4">
-                <button class="btn btn-social btn-github">
-                    <i class="material-icons public"></i>
-                </button>
-                <button class="btn btn-social btn-linkedin">
-                    <i class="material-icons people"></i>
-                </button>
-                <button class="btn btn-social btn-resume">
-                    <i class="material-icons attachment"></i>
-                </button>
+    <div class="row">
+        <h1 class="center">Contributors</h1>
+        <div class="col s12 m3 l3">
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://avatars3.githubusercontent.com/u/48695461" />
+                    <span class="card-title">Matthew Alaniz</span>
+                </div>
+<!--                <div class="card-content">-->
+<!--                    <p>I am a very simple card. I am good at containing small bits of information.-->
+<!--                        I am convenient because I require little markup to use effectively.</p>-->
+<!--                </div>-->
+                <div class="card-action center">
+                    <a href="#">Github</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Resume</a>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m3 l3">
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://avatars0.githubusercontent.com/u/48695564" />
+                    <span class="card-title">Ali Baraka</span>
+                </div>
+<!--                <div class="card-content">-->
+<!--                    <p>I am a very simple card. I am good at containing small bits of information.-->
+<!--                        I am convenient because I require little markup to use effectively.</p>-->
+<!--                </div>-->
+                <div class="card-action center">
+                    <a href="#">Github</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Resume</a>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m3 l3">
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://avatars2.githubusercontent.com/u/48695247" />
+                    <span class="card-title">Nadia Botello</span>
+                </div>
+<!--                <div class="card-content">-->
+<!--                    <p>I am a very simple card. I am good at containing small bits of information.-->
+<!--                        I am convenient because I require little markup to use effectively.</p>-->
+<!--                </div>-->
+                <div class="card-action center">
+                    <a href="#">Github</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Resume</a>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m3 l3">
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://avatars0.githubusercontent.com/u/38838812" />
+                    <span class="card-title">Mykal Clinard</span>
+                </div>
+<!--                <div class="card-content">-->
+<!--                    <p>I am a very simple card. I am good at containing small bits of information.-->
+<!--                        I am convenient because I require little markup to use effectively.</p>-->
+<!--                </div>-->
+                <div class="card-action center">
+                    <a href="#">Github</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Resume</a>
+                </div>
             </div>
         </div>
 
-        <div class="content">
-            <h4 class="title">Team Member</h4>
-<!--            <p class="description">When selling products it's always a good idea to go with commanding fonts that are good at showing authority and security. I feel like Raleway and Roboto do just that.</p>-->
-        </div>
-    </div> <!-- end card -->
-</div>
+    </div>
 
 
 
 
+<!--<div class="card-box col s12 m4 l4">-->
+<!--    <div class="card">-->
+<!--        <div class="header">-->
+<!--            <img src="https://placeholder.pics/svg/300" />-->
+
+<!--            <div class="social-line social-line-visible" data-buttons="4">-->
+<!--                <button class="btn btn-social btn-github">-->
+<!--                    <i class="material-icons public"></i>-->
+<!--                </button>-->
+<!--                <button class="btn btn-social btn-linkedin">-->
+<!--                    <i class="material-icons people"></i>-->
+<!--                </button>-->
+<!--                <button class="btn btn-social btn-resume">-->
+<!--                    <i class="material-icons attachment"></i>-->
+<!--                </button>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        <div class="content">-->
+<!--            <h4 class="title">Team Member</h4>-->
+<!--&lt;!&ndash;            <p class="description">When selling products it's always a good idea to go with commanding fonts that are good at showing authority and security. I feel like Raleway and Roboto do just that.</p>&ndash;&gt;-->
+<!--        </div>-->
+<!--    </div> &lt;!&ndash; end card &ndash;&gt;-->
+<!--</div>-->
+
+
+
+</main>
 
 <div th:replace="partials/footer :: footer"></div>
 <th:block th:include="partials/footer :: scripts" />

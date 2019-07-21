@@ -5,30 +5,8 @@
 </head>
 <body>
 
-<style>
-    /*div.col.s4.card-panel.hoverable{*/
-    /*    width: 18%;*/
-    /*}*/
-    /*div.row{*/
-    /*    position:relative;*/
-    /*}*/
-    /*a.waves-effect.waves-light.btn-small{*/
-    /*    float: right;*/
-    /*}*/
-
-    /* A TEMPORARY FIX FOR FOOTER*/
-    /* In doing this, the footer is positioned to the bottom of the page*/
-    footer.page-footer.grey.darken-4 {
-        position: relative;
-        top: 2500px;
-    }
-
-    /* A TEMPORARY FIX*/
-
-</style>
-
 <nav th:replace="partials/navbar :: nav"></nav>
-
+<main>
 
 <!--Need to verify ADMIN-->
 <!--<div sec:authorize="isAuthenticated()">-->
@@ -255,6 +233,8 @@
         </div>
     </div>
 </div>
+
+</main>
 
 <footer>
     <div th:replace="partials/footer :: footer"></div>

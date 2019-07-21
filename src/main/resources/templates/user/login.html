@@ -2,10 +2,10 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/head :: head('Log in')">
 </head>
-<body>
+<body class="grey lighten-2">
 
 <nav th:replace="partials/navbar :: nav"></nav>
-<main>
+
 <h1 class="center">Log In</h1>
 <div th:if="${param.error}" class="center" style="color: red;">
     Invalid Username and Password.
@@ -26,18 +26,19 @@
         <label for="password">Password</label>
         <input id="password" name="password" type="password" />
     </div>
+    <br />
     <div class="center-align">
-        <button type="submit" class="btn btn-primary" >Log In</button>
+        <button type="submit" class="btn btn-primary light-blue darken-2" >Log In</button>
     </div>
+    <br />
 </form>
+    <br />
 </main>
-<br />
-<br />
 <footer>
     <div th:replace="partials/footer :: footer"></div>
-    <th:block th:include="partials/footer :: scripts" />
+    <th:block th:include="partials/footer :: scripts"/>
 </footer>
-</main>
+
 
 </body>
 </html>
