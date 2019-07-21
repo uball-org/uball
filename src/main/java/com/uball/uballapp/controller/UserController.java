@@ -80,6 +80,15 @@ public class UserController<leagueRepository> {
         return "league/leaguedashboard";
     }
 
+    @GetMapping("/league_stats")
+    public String leagueStats(Model model){
+        //data by league(SAPL)
+        model.addAttribute("oneLeagueScores",scoreDao.Top4ScoresByLeague(1));
+        //data by league(Belles & Chimes)
+        model.addAttribute("twoLeagueScores",scoreDao.Top4ScoresByLeague(2));
+        return "league/league_stats";
+    }
+
     //Show User Profile, by ID #
     @GetMapping("/userprofile/{id}")
     public String userProfileView(@PathVariable long id, Model model){

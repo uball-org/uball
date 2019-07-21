@@ -57,7 +57,7 @@
                         <table class="responsive-table centered highlight">
                             <thead>
                             <tr>
-                                <th>Place</th>
+                                <th></th>
                                 <th>Machine Name</th>
                                 <th>Score</th>
                                 <th>Date</th>
@@ -69,6 +69,10 @@
                                 <tr th:each="oneLS : ${oneLeagueScores}">
                                     <td># <span th:text="${oneLeagueScores.indexOf(oneLS) + 1 } "></span> Place</td>
                                     <td><span th:text="${oneLS.getMachine().name}"></span>Name</td>
+                                    <!--<th:block th:each=" lUser: ${oneLeagueUsers}">-->
+                                        <!--<td th:text="${lUser.scores}"> Score</td>-->
+                                        <!--<td th:text="${lUser.getDOB()}">Date</td>-->
+                                    <!--</th:block>-->
                                     <td th:text="${oneLS.score}"> Score</td>
                                     <td th:text="${oneLS.date}">Date</td>
                                 </tr>
@@ -87,7 +91,7 @@
                         <table class="responsive-table centered highlight">
                             <thead>
                             <tr>
-                                <th>Place</th>
+                                <th></th>
                                 <th>Machine Name</th>
                                 <th>Points</th>
                                 <th>Date</th>
@@ -120,6 +124,5 @@
     <div th:replace="partials/footer :: footer"></div>
     <th:block th:include="partials/footer :: scripts" />
 </footer>
-
 </body>
 </html>
