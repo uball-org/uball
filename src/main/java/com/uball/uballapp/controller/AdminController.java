@@ -1,7 +1,6 @@
 package com.uball.uballapp.controller;
 
 
-import com.uball.uballapp.models.Group;
 import com.uball.uballapp.models.Machine;
 import com.uball.uballapp.models.Score;
 import com.uball.uballapp.repos.*;
@@ -51,9 +50,6 @@ public class AdminController {
     public String newUsersForGroups(Model model,
                                     @RequestParam(name = "uchecked") List<User> newU,
                                     @RequestParam(name = "mchecked") List<Machine> newM) {
-
-//        model.addAttribute("machines2", newM);
-
 
         for(User users : newU){
             System.out.println("users = " +

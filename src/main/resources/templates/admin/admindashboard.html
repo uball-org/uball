@@ -237,7 +237,7 @@
 
 
                     <div class="container" id="ScoreForm">
-                        <form th:action="@{/admindashboard/newscore}" method="POST" th:object="${scores}">
+                        <form th:action="@{/weeks-scores}" method="POST" th:object="${scores}">
 
 
                             <label>Player</label>
@@ -254,6 +254,10 @@
                                             th:text="${newMachine.name}"></option>
                                 </th:block>
                             </select>
+                            <div class="input-field col s6">
+                                <label for="first_name">New Score</label>
+                                <input placeholder="Score" id="first_name" name="newScore" type="text" class="validate" />
+                            </div>
 <!--                            <label>Score</label>-->
 <!--                            <select class="browser-default">-->
 <!--                                <th:block th:each="newMachine : ${machiness}">-->
@@ -267,7 +271,7 @@
                             <br/>
                             <!--<input value="Sign me up!" type="submit" /> -->
                             <div class="center-align">
-                                <button type="submit" class="btn btn-primary">Register</button>
+                                <button type="submit" class="btn btn-primary">Submit Score</button>
                             </div>
                         </form>
                         <br/>
