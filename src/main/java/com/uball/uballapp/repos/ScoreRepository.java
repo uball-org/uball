@@ -46,6 +46,8 @@ public interface ScoreRepository extends CrudRepository <Score, Long> {
 
     List<Score> findAllByUser_Id(long user_id);
 
-    List<Score> findDistinctByAddedscoredateAndScore(LocalDate date, long score);
+    List<Score> findDistinctByAddedscoredateAndScore( LocalDate addedscoredate, long score);
+
+    List<Score> findDistinctByMachineAndAddedscoredateAndScore(Machine machine, LocalDate addedscoredate, long score);
 
 }

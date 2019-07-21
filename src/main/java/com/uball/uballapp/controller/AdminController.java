@@ -38,12 +38,11 @@ public class AdminController {
             //All Machines and Users
     @GetMapping("/admindashboard")
     public String all(Model model){
-        System.out.println(LocalDate.now());
-        System.out.println(LocalDate.now());
-
         model.addAttribute("users", adminDao.findAll());
         model.addAttribute("machines", machineDao.findAll());
         model.addAttribute("scores", scoreDao.findDistinctByAddedscoredateAndScore(LocalDate.now(), 0));
+        model.addAttribute("usernames", scoreDao.findDistinctByAddedscoredateAndScore(LocalDate.now(), 0));
+        model.addAttribute("machine", scoreDao.findDistinctByAddedscoredateAndScore(LocalDate.now(), 0));
         return "admin/admindashboard";
     }
 
@@ -52,7 +51,8 @@ public class AdminController {
     public String newUsersForGroups(Model model,
                                     @RequestParam(name = "uchecked") List<User> newU,
                                     @RequestParam(name = "mchecked") List<Machine> newM) {
-        model.addAttribute("machines2", newM);
+
+//        model.addAttribute("machines2", newM);
 
 
         for(User users : newU){
