@@ -6,19 +6,20 @@
 
 <nav th:replace="partials/navbar :: nav"></nav>
 
-
-<div class="container">
+<main>
+<div class="container col s12 m4 l4">
     <br />
 <div>
-    <div class="col s12 m4 center error">
-        <img src="img/500error.jpg" alt="500 error image" />
+    <div class="col s12 m4 l4 center error">
+<!--        <img src="img/500error.jpg" class="circle" alt="500 error image" />-->
+        <h1><strong>500 Error</strong></h1>
     </div>
     <br />
 </div>
 </div>
 
 
-
+</main>
 <footer>
     <div th:replace="partials/footer :: footer"></div>
     <th:block th:include="partials/footer :: scripts" />

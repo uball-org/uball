@@ -2,27 +2,30 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" >
 <head th:replace="partials/head :: head(${error})">
 </head>
-<body>
+<body class="grey lighten-2">
 
 <nav th:replace="partials/navbar :: nav"></nav>
 
-<div class="container">
+<main>
+<div class="container col s12 m4 l4">
 <th:block th:switch="${error}">
     <div th:case="'Not Found'">
         <div class="col s12 m4 l4 center error">
-            <img src="img/404ufo.png" alt="404 error image" />
+            <h1><strong>404 Error</strong></h1>
+<!--            <img src="img/logo.png" class="circle" alt="404 error image" />-->
         </div>
     </div>
     <div th:case="'Forbidden'">
-        <div class="col s12 m4 center error">
-            <img src="img/403error.jpg" alt="403 error image" />
+        <div class="col s12 m4 l4 center error">
+            <h1><strong>403 Error</strong></h1>
+<!--            <img src="img/logo.png" class="circle" alt="403 error image" />-->
         </div>
     </div>
 </th:block>
 </div>
 
 
-
+</main>
 <footer>
     <div th:replace="partials/footer :: footer"></div>
     <th:block th:include="partials/footer :: scripts" />
