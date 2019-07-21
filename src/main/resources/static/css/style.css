@@ -1,6 +1,25 @@
 /* Custom Stylesheet */
 
 
+/*div.col.s4.card-panel.hoverable{*/
+/*    width: 18%;*/
+/*}*/
+/*div.row{*/
+/*    position:relative;*/
+/*}*/
+/*a.waves-effect.waves-light.btn-small{*/
+/*    float: right;*/
+/*}*/
+
+/* A TEMPORARY FIX FOR FOOTER*/
+/* In doing this, the footer is positioned to the bottom of the page*/
+/*footer.page-footer.grey.darken-4 {*/
+/*  position: relative;*/
+/*  top: 2500px;*/
+/*}*/
+
+/* A TEMPORARY FIX*/
+
 body {
   display: flex;
   min-height: 100vh;
@@ -402,11 +421,11 @@ p {
 
 @media only screen and (max-width : 992px) {
   .parallax-container .section {
-    position: absolute;
-    top: 40%;
+    /*position: absolute;*/
+    /*top: 40%;*/
   }
   #index-banner .section {
-    top: 10%;
+    /*top: 10%;*/
   }
 }
 
