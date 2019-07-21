@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head th:replace="partials/head :: head('UBall')">
 </head>
 <body class="grey lighten-2">
@@ -17,7 +17,7 @@
                 </div>
 
                 <div class="row center">
-                    <a href="/register" id="register-button"
+                    <a href="/register" id="register-button" sec:authorize="isAnonymous()"
                        class="btn-large waves-effect waves-light light-blue darken-2">Register</a>
                 </div>
                 <br/><br/>
