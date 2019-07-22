@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="partials/head :: head('League Dashboard')">
-</head>
+<head th:replace="partials/head :: head('League Dashboard')"></head>
 <body>
 <nav th:replace="partials/navbar :: nav"></nav>
 
 <!-- Page Layout here -->
 <div class="row">
-    <div class=" container parallax  " style="background-image: url(https://picsum.photos/id/215/1999/600)">
+    <div class=" parallax-container " style="background-image: url('/img/pinball._800x600.png')">
         <div>
-            <div class="col s4 offset-s8">
+            <div class="col s4 offset-s7 #grad1" >
                 <table class="responsive-table centered highlight">
                     <thead>
                     <tr>
@@ -57,7 +56,7 @@
                         <table class="responsive-table centered highlight">
                             <thead>
                             <tr>
-                                <th></th>
+                                <th>Place</th>
                                 <th>Machine Name</th>
                                 <th>Score</th>
                                 <th>Date</th>
@@ -69,10 +68,6 @@
                                 <tr th:each="oneLS : ${oneLeagueScores}">
                                     <td># <span th:text="${oneLeagueScores.indexOf(oneLS) + 1 } "></span> Place</td>
                                     <td><span th:text="${oneLS.getMachine().name}"></span>Name</td>
-                                    <!--<th:block th:each=" lUser: ${oneLeagueUsers}">-->
-                                        <!--<td th:text="${lUser.scores}"> Score</td>-->
-                                        <!--<td th:text="${lUser.getDOB()}">Date</td>-->
-                                    <!--</th:block>-->
                                     <td th:text="${oneLS.score}"> Score</td>
                                     <td th:text="${oneLS.date}">Date</td>
                                 </tr>
@@ -91,7 +86,7 @@
                         <table class="responsive-table centered highlight">
                             <thead>
                             <tr>
-                                <th></th>
+                                <th>Place</th>
                                 <th>Machine Name</th>
                                 <th>Points</th>
                                 <th>Date</th>
@@ -116,7 +111,6 @@
             </div>
         </div> <!-- end section container-->
     </div> <!-- end league section -->
-
 </div>
 
 
