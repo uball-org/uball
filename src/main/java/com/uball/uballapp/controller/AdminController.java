@@ -5,6 +5,7 @@ import com.uball.uballapp.models.Machine;
 import com.uball.uballapp.models.Score;
 import com.uball.uballapp.repos.*;
 import com.uball.uballapp.models.User;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -40,7 +41,8 @@ public class AdminController {
         model.addAttribute("machines", machineDao.findAll());
         model.addAttribute("scores", scoreDao.findDistinctByAddedscoredateAndScore(LocalDate.now(), 0));
         model.addAttribute("machiness", machineDao.findAllByMachine_Id(0));
-        model.addAttribute("userselect", userDao.findAllByUserId(0));
+        model.addAttribute("userselect", userDao.findAllByUserId());
+        model.addAttribute("score", new Score());
         return "admin/admindashboard";
     }
 
@@ -83,15 +85,29 @@ public class AdminController {
         return "redirect:/admindashboard";
     }
 
-    @RequestMapping(value = "/week-scores", method = RequestMethod.POST)
-    public String weeksScores(@Valid Score score,
+    @PostMapping("/week-scores")
+    public String weeksScores(@ModelAttribute Score score,
+                              Model m,
                               @RequestParam(name = "user") Long newUser,
                               @RequestParam(name = "machine") Long newMachine,
-                              @RequestParam(name = "newScore") Long scoreAmount) {
-//        score.setUser(newUser);
-//        score.setMachine(newMachine);
-        score.setScore(scoreAmount);
-        scoreDao.save(score);
+                              @RequestParam(name = "score") Long scoreAmount) {
+
+//        scoreDao.updateScore(scoreAmount, newMachine, newUser);
+
+//        if (validation.hasErrors()) {
+//            m.addAttribute("errors", validation);
+//            m.addAttribute("score", score);
+//            return "admin/admindashboard";
+//        }
+
+        Machine machine = score.getMachine();
+        System.out.println("Machine " + machine.getId());
+        User user = score.getUser();
+        System.out.println("User" + user.getId());
+//        Score scoretobeupdated = scoreDao.findByUserAndMachine(user, machine);
+        long scored = score.getScore();
+        score.setScore(scored);
+        scoreDao.updateScore(scoreAmount, machine, user);
         return "redirect:/admindashboard";
     }
 

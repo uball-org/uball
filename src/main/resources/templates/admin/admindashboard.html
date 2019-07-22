@@ -242,7 +242,7 @@
                             <label>Player</label>
                             <select class="browser-default" th:field="*{user}">
                                 <th:block th:each="newUser : ${userselect}">
-                                    <option name="user" th:value="${newUser.id}"
+                                    <option name="user" th:value="${newUser.getId()}"
                                             th:text="${newUser.username}"></option>
                                 </th:block>
                             </select>
@@ -257,7 +257,7 @@
 
                             <div class="input-field col s6">
                                 <label for="score">New Score</label>
-                                <input th:field="*{score}" placeholder="Score" id="score" name="newScore" type="text" class="validate"/>
+                                <input th:field="*{score}" placeholder="0" id="score" type="text" class="validate"/>
                             </div>
 
                             <br/>
