@@ -2,8 +2,10 @@ package com.uball.uballapp.controller;
 
 import com.uball.uballapp.models.Group;
 import com.uball.uballapp.models.League;
+import com.uball.uballapp.models.User;
 import com.uball.uballapp.repos.GroupRepository;
 import com.uball.uballapp.repos.LeagueRepository;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,8 +28,19 @@ public class LeagueController {
      * */
     @GetMapping("/createleague")
     public String index(Model model) {
+
+        User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        long userId = userSession.getId();
+        boolean isAdmin = userSession.isAdmin();
+
         model.addAttribute("leaguesList", leagueDao.findAll());
-        return "leagues/index";
+
+        if (isAdmin) {
+            return "leagues/index";
+        } else {
+            return "redirect:/userprofile";
+        }
+
     }
     /**
      * returns create machine form
