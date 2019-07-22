@@ -4,9 +4,12 @@ package com.uball.uballapp.repos;
 
 import com.uball.uballapp.models.Machine;
 import com.uball.uballapp.models.Score;
+import com.uball.uballapp.models.User;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.util.Date;
@@ -47,6 +50,18 @@ public interface ScoreRepository extends CrudRepository <Score, Long> {
 
 
     List<Score> findDistinctByAddedscoredateAndScore( LocalDate addedscoredate, long score);
+
+    Score findByUserAndMachine(User user, Machine machine);
+
+//    @Modifying
+//    @Query(value = "update scores SET score = ?1 WHERE machine_id = ?2 AND user_id = ?3 AND score = 0", nativeQuery = true)
+//    void updateScore( Long score, Long machineId, Long userId);
+
+    @Transactional
+    @Modifying
+    @Query(value = "UPDATE scores s SET s.score = ?1 WHERE machine_id = ?2 AND user_id = ?3 AND s.score = 0", nativeQuery = true)
+    void updateScore( long score, Machine machineId, User userId);
+
 
 
 }

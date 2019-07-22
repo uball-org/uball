@@ -125,4 +125,10 @@ public class UserController<leagueRepository> {
     }
 
 
+//    @GetMapping("/weeks-scores")
+//    public String weeksScores(Model model){
+//        model.addAttribute("user", new User());
+//        return "admin/weeks-scores";
+//    }
+
 }

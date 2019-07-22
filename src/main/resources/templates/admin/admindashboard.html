@@ -84,8 +84,8 @@
             <div class="card row" style="position: inherit;">
                 <div class="card-tabs" style="height: 20px;">
                     <ul class="tabs tabs-fixed-width">
-                        <li class="tab"><a href="#CreateGroups">Create Groups</a></li>
-                        <li class="tab"><a href="#CreateMachines" class="active">Create Machines</a></li>
+                        <li class="tab"><a href="#CreateGroups">Groups</a></li>
+                        <li class="tab"><a href="#CreateMachines" class="active">Machines</a></li>
                         <li class="tab"><a href="#ScoreForm">Competition Day Score Form</a></li>
                     </ul>
                 </div>
@@ -237,37 +237,34 @@
 
 
                     <div class="container" id="ScoreForm">
-                        <form th:action="@{/admindashboard/newscore}" method="POST" th:object="${scores}">
-
+                        <form th:action="@{/week-scores}" method="POST" th:object="${score}">
 
                             <label>Player</label>
-                            <select class="browser-default">
+                            <select class="browser-default" th:field="*{user}">
                                 <th:block th:each="newUser : ${userselect}">
-                                    <option th:value="${newUser.id}"
+                                    <option name="user" th:value="${newUser.getId()}"
                                             th:text="${newUser.username}"></option>
                                 </th:block>
                             </select>
+
                             <label>Machine</label>
-                            <select class="browser-default">
+                            <select class="browser-default" th:field="*{machine}">
                                 <th:block th:each="newMachine : ${machiness}">
-                                    <option th:value="${newMachine.id}"
+                                    <option name="machine" th:value="${newMachine.id}"
                                             th:text="${newMachine.name}"></option>
                                 </th:block>
                             </select>
-<!--                            <label>Score</label>-->
-<!--                            <select class="browser-default">-->
-<!--                                <th:block th:each="newMachine : ${machiness}">-->
-<!--                                    <option th:value="${newMachine.id}"-->
-<!--                                            th:text="${newMachine.name}"></option>-->
-<!--                                </th:block>-->
-<!--                            </select>-->
 
-                            <!--        <p th:if="${#fields.hasErrors('league')}" th:errors="*{league}" style="color: red;"/>-->
+                            <div class="input-field col s6">
+                                <label for="score">New Score</label>
+                                <input th:field="*{score}" placeholder="0" id="score" type="text" class="validate"/>
+                            </div>
+
                             <br/>
                             <br/>
                             <!--<input value="Sign me up!" type="submit" /> -->
                             <div class="center-align">
-                                <button type="submit" class="btn btn-primary">Register</button>
+                                <button type="submit" class="btn btn-primary">Submit Score</button>
                             </div>
                         </form>
                         <br/>

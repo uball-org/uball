@@ -1,12 +1,11 @@
 package com.uball.uballapp.controller;
 
 
-import com.uball.uballapp.models.Group;
 import com.uball.uballapp.models.Machine;
 import com.uball.uballapp.models.Score;
 import com.uball.uballapp.repos.*;
-import org.springframework.security.core.context.SecurityContextHolder;
 import com.uball.uballapp.models.User;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -42,7 +41,8 @@ public class AdminController {
         model.addAttribute("machines", machineDao.findAll());
         model.addAttribute("scores", scoreDao.findDistinctByAddedscoredateAndScore(LocalDate.now(), 0));
         model.addAttribute("machiness", machineDao.findAllByMachine_Id(0));
-        model.addAttribute("userselect", userDao.findAllByUserId(0));
+        model.addAttribute("userselect", userDao.findAllByUserId());
+        model.addAttribute("score", new Score());
         return "admin/admindashboard";
     }
 
@@ -51,9 +51,6 @@ public class AdminController {
     public String newUsersForGroups(Model model,
                                     @RequestParam(name = "uchecked") List<User> newU,
                                     @RequestParam(name = "mchecked") List<Machine> newM) {
-
-//        model.addAttribute("machines2", newM);
-
 
         for(User users : newU){
             System.out.println("users = " +
@@ -85,6 +82,32 @@ public class AdminController {
         System.out.println("size of users in group 1 = " + groupDao.findOne(1L).getUsers().size());
         System.out.println("size of new machines list divide by two= " + newM.size()/2);
 
+        return "redirect:/admindashboard";
+    }
+
+    @PostMapping("/week-scores")
+    public String weeksScores(@ModelAttribute Score score,
+                              Model m,
+                              @RequestParam(name = "user") Long newUser,
+                              @RequestParam(name = "machine") Long newMachine,
+                              @RequestParam(name = "score") Long scoreAmount) {
+
+//        scoreDao.updateScore(scoreAmount, newMachine, newUser);
+
+//        if (validation.hasErrors()) {
+//            m.addAttribute("errors", validation);
+//            m.addAttribute("score", score);
+//            return "admin/admindashboard";
+//        }
+
+        Machine machine = score.getMachine();
+        System.out.println("Machine " + machine.getId());
+        User user = score.getUser();
+        System.out.println("User" + user.getId());
+//        Score scoretobeupdated = scoreDao.findByUserAndMachine(user, machine);
+        long scored = score.getScore();
+        score.setScore(scored);
+        scoreDao.updateScore(scoreAmount, machine, user);
         return "redirect:/admindashboard";
     }
 

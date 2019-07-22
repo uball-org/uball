@@ -50,6 +50,15 @@ public class Score {
         this.addedscoredate = addedscoredate;
     }
 
+    public Score(Long id, long score, Date date, LocalDate addedscoredate, User user, Machine machine) {
+        this.id = id;
+        this.score = score;
+        this.date = date;
+        this.addedscoredate = addedscoredate;
+        this.user = user;
+        this.machine = machine;
+    }
+
     public long getId() {
         return id;
     }
