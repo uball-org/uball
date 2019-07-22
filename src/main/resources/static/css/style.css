@@ -485,7 +485,7 @@ li a {
 }
 
 li:hover {
-  background: grey;
+  /*background: grey;*/
   cursor: pointer;
 }
 
@@ -512,4 +512,12 @@ ul li ul:hover {
 ul li ul li {
   clear: both;
   width: 100%;
+}
+
+button.btn-link.btn{
+    background-color: red;
+}
+
+.dropdown-content li>a, .dropdown-content li>span {
+    color: black;
 }
