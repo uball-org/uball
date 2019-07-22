@@ -32,7 +32,7 @@
         </ul>
     </div>
     <ul id="dropdown1" class="dropdown-content grey lighten-2">
-        <li><a href="/userprofile/1">Profile</a></li>
+        <li><a href="/userprofile">Profile</a></li>
         <li><a href="/leagues">League</a></li>
         <li sec:authorize="isAuthenticated()">
             <a href="/admindashboard">Admin Dashboard</a>
@@ -49,7 +49,7 @@
         <li sec:authorize="isAnonymous()"><a href="/register">Register</a></li>
         <li sec:authorize="isAnonymous()"><a href="/login">Login</a></li>
         <!--        <li sec:authorize="isAuthenticated()"><a class="dropdown-trigger" href="#" data-target="dropdown2">User<i class="material-icons right">arrow_drop_down</i></a></li>-->
-        <li sec:authorize="isAuthenticated()"><a href="/userprofile/1">Profile</a></li>
+        <li sec:authorize="isAuthenticated()"><a href="/userprofile">Profile</a></li>
         <li sec:authorize="isAuthenticated()"><a href="/leagues">League</a></li>
         <li sec:authorize="isAuthenticated()">
             <a href="/admindashboard">Admin</a>
