@@ -1,6 +1,7 @@
 package com.uball.uballapp.controller;
 
 
+import com.uball.uballapp.models.Group;
 import com.uball.uballapp.models.Machine;
 import com.uball.uballapp.models.Score;
 import com.uball.uballapp.repos.*;
@@ -37,20 +38,24 @@ public class AdminController {
             //All Machines and Users
     @GetMapping("/admindashboard")
     public String all(Model model){
+        model.addAttribute("groups", groupDao.findAll());
         model.addAttribute("users", adminDao.findAll());
         model.addAttribute("machines", machineDao.findAll());
         model.addAttribute("scores", scoreDao.findDistinctByAddedscoredateAndScore(LocalDate.now(), 0));
         model.addAttribute("machiness", machineDao.findAllByMachine_Id(0));
         model.addAttribute("userselect", userDao.findAllByUserId());
         model.addAttribute("score", new Score());
+        model.addAttribute("group", new Group());
         return "admin/admindashboard";
     }
 
             //Value of user selected on view is : "uchecked" / "mchecked"
     @RequestMapping(value = "/admindashboard/creategrouping", method = RequestMethod.POST)
-    public String newUsersForGroups(Model model,
+    public String newUsersForGroups(@ModelAttribute Group group,
                                     @RequestParam(name = "uchecked") List<User> newU,
+                                    @RequestParam(name = "group_id") long groupId,
                                     @RequestParam(name = "mchecked") List<Machine> newM) {
+
 
         for(User users : newU){
             System.out.println("users = " +
@@ -73,13 +78,12 @@ public class AdminController {
                 blankscore.setUser(users);
                 scoreDao.save(blankscore);
             }
-
-            users.getGroups().add(groupDao.findOne(2L));
+            System.out.println(groupId);
+            users.getGroups().add(groupDao.findOne(groupId));
             userDao.save(users);
         }
 
         System.out.println("size of new users list divide by two= " + newU.size()/2);
-        System.out.println("size of users in group 1 = " + groupDao.findOne(1L).getUsers().size());
         System.out.println("size of new machines list divide by two= " + newM.size()/2);
 
         return "redirect:/admindashboard";
@@ -89,11 +93,8 @@ public class AdminController {
     public String weeksScores(@ModelAttribute Score score,
                               @RequestParam(name = "score") Long scoreAmount) {
 
-
         Machine machine = score.getMachine();
-        System.out.println("Machine " + machine.getId());
         User user = score.getUser();
-        System.out.println("User" + user.getId());
         long scored = score.getScore();
         score.setScore(scored);
         scoreDao.updateScore(scoreAmount, machine, user);
