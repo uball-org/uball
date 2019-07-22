@@ -5,6 +5,7 @@ import com.uball.uballapp.models.Machine;
 import com.uball.uballapp.models.Score;
 import com.uball.uballapp.repos.*;
 import com.uball.uballapp.models.User;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.stereotype.Controller;
@@ -37,13 +38,24 @@ public class AdminController {
             //All Machines and Users
     @GetMapping("/admindashboard")
     public String all(Model model){
+
+        User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        long userId = userSession.getId();
+        boolean isAdmin = userSession.isAdmin();
+
         model.addAttribute("users", adminDao.findAll());
         model.addAttribute("machines", machineDao.findAll());
         model.addAttribute("scores", scoreDao.findDistinctByAddedscoredateAndScore(LocalDate.now(), 0));
         model.addAttribute("machiness", machineDao.findAllByMachine_Id(0));
         model.addAttribute("userselect", userDao.findAllByUserId());
         model.addAttribute("score", new Score());
-        return "admin/admindashboard";
+
+        if (isAdmin) {
+            return "admin/admindashboard";
+        } else {
+            return "redirect:/userprofile";
+        }
+
     }
 
             //Value of user selected on view is : "uchecked" / "mchecked"
