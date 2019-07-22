@@ -84,16 +84,16 @@ public class AdminController {
 
     @RequestMapping(value = "/week-scores", method = RequestMethod.POST)
     public String weeksScores(@ModelAttribute Score score,
-                              @RequestParam(name = "user") User newUser,
-                              @RequestParam(name = "machine") Machine newMachine,
+                              @RequestParam(name = "user") Long newUser,
+                              @RequestParam(name = "machine") Long newMachine,
                               @RequestParam(name = "newScore") Long scoreAmount) {
-        score.setUser(newUser);
-        System.out.println(newUser.getId());
-        score.setMachine(newMachine);
+//        score.setUser(newUser);
+        System.out.println(newUser);
+//        score.setMachine(newMachine);
         System.out.println(newMachine);
         score.setScore(scoreAmount);
         System.out.println(scoreAmount);
-        System.out.println(scoreDao.updateScore(newUser.getId(), newMachine.getId(), scoreAmount));
+        System.out.println(scoreDao.updateScore(newUser, newMachine, scoreAmount));
 
         return "redirect:/admindashboard";
     }
