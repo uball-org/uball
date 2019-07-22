@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 
+import javax.validation.Valid;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -83,18 +84,14 @@ public class AdminController {
     }
 
     @RequestMapping(value = "/week-scores", method = RequestMethod.POST)
-    public String weeksScores(@ModelAttribute Score score,
+    public String weeksScores(@Valid Score score,
                               @RequestParam(name = "user") Long newUser,
                               @RequestParam(name = "machine") Long newMachine,
                               @RequestParam(name = "newScore") Long scoreAmount) {
 //        score.setUser(newUser);
-        System.out.println(newUser);
 //        score.setMachine(newMachine);
-        System.out.println(newMachine);
         score.setScore(scoreAmount);
-        System.out.println(scoreAmount);
-        System.out.println(scoreDao.updateScore(newUser, newMachine, scoreAmount));
-
+        scoreDao.save(score);
         return "redirect:/admindashboard";
     }
 

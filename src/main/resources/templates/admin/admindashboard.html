@@ -84,8 +84,8 @@
             <div class="card row" style="position: inherit;">
                 <div class="card-tabs" style="height: 20px;">
                     <ul class="tabs tabs-fixed-width">
-                        <li class="tab"><a href="#CreateGroups">Create Groups</a></li>
-                        <li class="tab"><a href="#CreateMachines" class="active">Create Machines</a></li>
+                        <li class="tab"><a href="#CreateGroups">Groups</a></li>
+                        <li class="tab"><a href="#CreateMachines" class="active">Machines</a></li>
                         <li class="tab"><a href="#ScoreForm">Competition Day Score Form</a></li>
                     </ul>
                 </div>
@@ -237,10 +237,10 @@
 
 
                     <div class="container" id="ScoreForm">
-                        <form th:action="@{/week-scores}" method="post">
+                        <form th:action="@{/week-scores}" method="POST" th:object="${score}">
 
                             <label>Player</label>
-                            <select class="browser-default">
+                            <select class="browser-default" th:field="*{user}">
                                 <th:block th:each="newUser : ${userselect}">
                                     <option name="user" th:value="${newUser.id}"
                                             th:text="${newUser.username}"></option>
@@ -248,7 +248,7 @@
                             </select>
 
                             <label>Machine</label>
-                            <select class="browser-default">
+                            <select class="browser-default" th:field="*{machine}">
                                 <th:block th:each="newMachine : ${machiness}">
                                     <option name="machine" th:value="${newMachine.id}"
                                             th:text="${newMachine.name}"></option>
@@ -256,8 +256,8 @@
                             </select>
 
                             <div class="input-field col s6">
-                                <label for="first_name">New Score</label>
-                                <input placeholder="Score" id="first_name" name="newScore" type="text" class="validate"/>
+                                <label for="score">New Score</label>
+                                <input th:field="*{score}" placeholder="Score" id="score" name="newScore" type="text" class="validate"/>
                             </div>
 
                             <br/>
