@@ -87,24 +87,13 @@ public class AdminController {
 
     @PostMapping("/week-scores")
     public String weeksScores(@ModelAttribute Score score,
-                              Model m,
-                              @RequestParam(name = "user") Long newUser,
-                              @RequestParam(name = "machine") Long newMachine,
                               @RequestParam(name = "score") Long scoreAmount) {
 
-//        scoreDao.updateScore(scoreAmount, newMachine, newUser);
-
-//        if (validation.hasErrors()) {
-//            m.addAttribute("errors", validation);
-//            m.addAttribute("score", score);
-//            return "admin/admindashboard";
-//        }
 
         Machine machine = score.getMachine();
         System.out.println("Machine " + machine.getId());
         User user = score.getUser();
         System.out.println("User" + user.getId());
-//        Score scoretobeupdated = scoreDao.findByUserAndMachine(user, machine);
         long scored = score.getScore();
         score.setScore(scored);
         scoreDao.updateScore(scoreAmount, machine, user);
