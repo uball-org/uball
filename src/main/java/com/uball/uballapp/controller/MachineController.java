@@ -1,7 +1,9 @@
 package com.uball.uballapp.controller;
 
 import com.uball.uballapp.models.Machine;
+import com.uball.uballapp.models.User;
 import com.uball.uballapp.repos.MachineRepository;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -21,8 +23,19 @@ public class MachineController {
      * */
     @GetMapping("/createmachine")
     public String index(Model model) {
+
+        User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        long userId = userSession.getId();
+        boolean isAdmin = userSession.isAdmin();
+
         model.addAttribute("machines", machineDao.findAll());
-        return "machines/index";
+
+        if (isAdmin) {
+            return "machines/index";
+        } else {
+            return "redirect:/userprofile";
+        }
+
     }
     /**
      * returns create machine form
