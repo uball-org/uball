@@ -442,6 +442,10 @@ p {
   font-size: inherit;
 }
 
+.sidenav-trigger .material-icons{
+  color: black;
+}
+
 footer.page-footer {
   margin: 0;
   padding-bottom: .5em;
