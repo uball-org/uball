@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="partials/head :: head('League Dashboard')">
-</head>
+<head th:replace="partials/head :: head('League Dashboard')"></head>
 <body>
 <nav th:replace="partials/navbar :: nav"></nav>
 
 <!-- Page Layout here -->
 <div class="row">
-    <div class=" container parallax  " style="background-image: url(https://picsum.photos/id/215/1999/600)">
+    <div class=" parallax-container " style="background-image: url('/img/pinball._800x600.png')">
         <div>
-            <div class="col s4 offset-s8">
+            <div class="col s4 offset-s7 #grad1" >
                 <table class="responsive-table centered highlight">
                     <thead>
                     <tr>
@@ -112,7 +111,6 @@
             </div>
         </div> <!-- end section container-->
     </div> <!-- end league section -->
-
 </div>
 
 
@@ -120,6 +118,5 @@
     <div th:replace="partials/footer :: footer"></div>
     <th:block th:include="partials/footer :: scripts" />
 </footer>
-
 </body>
 </html>

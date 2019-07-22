@@ -7,8 +7,12 @@
 <nav th:replace="partials/navbar :: nav"></nav>
 
 <main>
-<div class="container" >
+
     <h1 class="center">Edit Profile</h1>
+
+<div class="container" >
+    <div class="card">
+        <div class="card-content">
     <form th:action="@{'/edituser/' + ${user.id}}" method="POST" th:object="${user}" >
         <label for="firstName">First Name</label>
         <br/>
@@ -45,6 +49,8 @@
         </div>
         <br />
     </form>
+        </div>
+    </div>
     <br />
 <!--    <br class="mb-1" />-->
 

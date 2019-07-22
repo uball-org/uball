@@ -80,14 +80,26 @@ public class UserController<leagueRepository> {
         return "league/leaguedashboard";
     }
 
+    @GetMapping("/league_stats")
+    public String leagueStats(Model model){
+        //data by league(SAPL)
+        model.addAttribute("oneLeagueScores",scoreDao.Top4ScoresByLeague(1));
+        //data by league(Belles & Chimes)
+        model.addAttribute("twoLeagueScores",scoreDao.Top4ScoresByLeague(2));
+        return "league/league_stats";
+    }
+
     //Show User Profile, by ID #
-    @GetMapping("/userprofile/{id}")
-    public String userProfileView(@PathVariable long id, Model model){
-        System.out.println(SecurityContextHolder.getContext().getAuthentication().getPrincipal());
-        model.addAttribute("users", userDao.findOne(id));
-        model.addAttribute("machines", machineDao.findOne(id));
+    @GetMapping("/userprofile")
+    public String userProfileView(Model model){
+
+        User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        long userId = userSession.getId();
+
+        model.addAttribute("user", userDao.findOne(userId));
+//        model.addAttribute("machines", machineDao.findOne(id));
 //        model.addAttribute("machines1", machineDao.findDistinctTopByScoresAnd_User_Id(id));
-        model.addAttribute("scores", scoreDao.findAllByUser_Id(id));
+//        model.addAttribute("scores", scoreDao.findAllByUser_Id(id));
 //        model.addAttribute("scores1", scoresDao.findDistinctTopByMachineAndUser_Id(machineDao.findAll(), id));
         return "user/userprofile";
     }
@@ -109,15 +121,9 @@ public class UserController<leagueRepository> {
         user.setPassword(original.getPassword());
         user.setUsername(original.getUsername());
         userDao.save(user);
-        return "redirect:/userprofile/{id}";
+        return "redirect:/userprofile";
     }
 
-
-    @GetMapping("/userprofile")
-    public String userPro(Model model){
-            model.addAttribute("msg", "what can you see");
-            return "/userprofile";
-        }
 
 //    @GetMapping("/weeks-scores")
 //    public String weeksScores(Model model){

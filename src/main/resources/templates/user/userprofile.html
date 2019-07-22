@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head th:replace="partials/head :: head('User Profile')">
 </head>
 <body class="grey lighten-2">
@@ -11,31 +11,86 @@
 
 <div class="container">
 
-    <div class="row">
+<!--    <div class="row">-->
 
-        <br />
+
+    <br />
         <div class="col s12">
-            <div class="card horizontal">
-                <div class="card-image responsive-img">
-                    <img src="/img/pinball-up-close.jpg" />
+            <div class="row">
+                <div class="col s12 m4 l4">
+                    <div class="card-panel gradient-45deg-blue-grey-blue-grey">
+<!--                        <span>I am a very simple solid color card. I am good at containing small bits of information.I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.</span>-->
+                        <div class="card-content center">
+                            <span class="card-title grey-text text-darken-4"><h2><em><span th:text="${user.username}"></span></em></h2></span>
+                            <p>
+                                <i class="material-icons">perm_identity</i> <span th:text="${user.firstName}"></span> <span th:text="${#authentication.principal.lastName}"></span></p>
+                            <p>
+                                <i class="material-icons">import_contacts</i> <span th:text=" ${user.DOB}"></span></p>
+                            <p>
+                                <i class="material-icons">wc</i> <span th:text=" ${user.gender}"></span></p>
+                            <p>
+                                <i class="material-icons">email</i> <span th:text=" ${user.email}"></span></p>
+                        </div>
+                        <div class="row center">
+                            <a th:href="@{'/edituser/' + ${user.id}}" id="edit-button"
+                               class="btn-floating activator btn-move-up waves-effect waves-light red accent-2 z-depth-4"><i class="material-icons">edit</i></a>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-stacked">
-                    <div class="card-content">
-                        <span class="card-title grey-text text-darken-4"><h2><span th:text="${users.username}"></span></h2></span>
-                        <p>
-                           <i class="material-icons">perm_identity</i> <span th:text=" ${users.firstName}"></span></p>
-                        <p>
-                            <i class="material-icons">wc</i> <span th:text=" ${users.gender}"></span></p>
-                        <p>
-                            <i class="material-icons">email</i> <span th:text=" ${users.email}"></span></p>
+
+<!--                <div class="container">-->
+                <div class="card s12 m8 l8">
+                <div class="card-content col s12 m8 l8">
+                    <div id="Indiv">
+                        <table class="responsive-table centered">
+                            <thead>
+                            <tr>
+                                <th>Machine Name</th>
+                                <th>Date Played</th>
+                                <th>Score</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <th:block th:each="score : ${scores}">
+                                <tr>
+                                    <td th:text="${score.getMachine().name}"></td>
+                                    <td th:text="${score.date}"></td>
+                                    <td th:text="${score.score}"></td>
+                                </tr>
+                            </th:block>
+                            </tbody>
+                        </table>
                     </div>
-                    <div class="row center">
-                        <a th:href="@{'/edituser/' + ${users.id}}" id="edit-button"
-                           class="btn-floating activator btn-move-up waves-effect waves-light red accent-2 z-depth-4"><i class="material-icons">edit</i></a>
-                    </div>
+                </div>
                 </div>
             </div>
-        </div>
+            </div>
+            </div>
+<!--        </div>-->
+
+
+<!--        <div class="col s12">-->
+<!--            <div class="card horizontal">-->
+<!--                <div class="card-image responsive-img">-->
+<!--                    <img src="/img/pinball-up-close.jpg" />-->
+<!--                </div>-->
+<!--                <div class="card-stacked">-->
+<!--                    <div class="card-content">-->
+<!--                        <span class="card-title grey-text text-darken-4"><h2><span th:text="${users.username}"></span></h2></span>-->
+<!--                        <p>-->
+<!--                           <i class="material-icons">perm_identity</i> <span th:text=" ${users.firstName}"></span></p>-->
+<!--                        <p>-->
+<!--                            <i class="material-icons">wc</i> <span th:text=" ${users.gender}"></span></p>-->
+<!--                        <p>-->
+<!--                            <i class="material-icons">email</i> <span th:text=" ${users.email}"></span></p>-->
+<!--                    </div>-->
+<!--                    <div class="row center">-->
+<!--                        <a th:href="@{'/edituser/' + ${users.id}}" id="edit-button"-->
+<!--                           class="btn-floating activator btn-move-up waves-effect waves-light red accent-2 z-depth-4"><i class="material-icons">edit</i></a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
 
 
 
@@ -67,36 +122,36 @@
 
 <!--<div class="right col container one">-->
 
-    <div class="card col s12">
-<!--        <div class="card-content">-->
-            <div class="card-content">
-<!--                <div class="card-tabs">-->
-<!--                    <ul class="tabs tabs-fixed-width">-->
-<!--                        <li class="tab"><a href="#Indiv">INDIVIDUAL</a></li>-->
-<!--                        <li class="tab"><a class="active" href="#OvA">OVERALL</a></li>-->
-<!--                        <li class="tab"><a href="#Mach">MACHINE</a></li>-->
-<!--                    </ul>-->
+<!--    <div class="card col s12">-->
+<!--&lt;!&ndash;        <div class="card-content">&ndash;&gt;-->
+<!--            <div class="card-content">-->
+<!--&lt;!&ndash;                <div class="card-tabs">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <ul class="tabs tabs-fixed-width">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <li class="tab"><a href="#Indiv">INDIVIDUAL</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <li class="tab"><a class="active" href="#OvA">OVERALL</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <li class="tab"><a href="#Mach">MACHINE</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </ul>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--                <div id="Indiv">-->
+<!--                    <table class="responsive-table centered">-->
+<!--                        <thead>-->
+<!--                        <tr>-->
+<!--                            <th>Machine Name</th>-->
+<!--                            <th>Date Played</th>-->
+<!--                            <th>Score</th>-->
+<!--                        </tr>-->
+<!--                        </thead>-->
+<!--                        <tbody>-->
+<!--                        <th:block th:each="score : ${scores}">-->
+<!--                            <tr>-->
+<!--                                <td th:text="${score.getMachine().name}"></td>-->
+<!--                                <td th:text="${score.date}"></td>-->
+<!--                                <td th:text="${score.score}"></td>-->
+<!--                            </tr>-->
+<!--                        </th:block>-->
+<!--                        </tbody>-->
+<!--                    </table>-->
 <!--                </div>-->
-                <div id="Indiv">
-                    <table class="responsive-table centered">
-                        <thead>
-                        <tr>
-                            <th>Machine Name</th>
-                            <th>Date Played</th>
-                            <th>Score</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <th:block th:each="score : ${scores}">
-                            <tr>
-                                <td th:text="${score.getMachine().name}"></td>
-                                <td th:text="${score.date}"></td>
-                                <td th:text="${score.score}"></td>
-                            </tr>
-                        </th:block>
-                        </tbody>
-                    </table>
-                </div>
 <!--                <div id="OvA">-->
 <!--                    <table class="responsive-table centered">-->
 <!--                        <thead>-->
@@ -134,11 +189,11 @@
 <!--                        </th:block>-->
 <!--                        </tbody>-->
 <!--                    </table>-->
-<!--                </div>-->
-            </div>
-        </div>
-    </div>
-</div>
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 <!--</div>-->
 
 </main>
