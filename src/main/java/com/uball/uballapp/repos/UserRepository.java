@@ -6,9 +6,11 @@ import com.uball.uballapp.models.League;
 import com.uball.uballapp.models.Machine;
 import com.uball.uballapp.models.Score;
 import com.uball.uballapp.models.User;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -79,12 +81,16 @@ public interface UserRepository extends CrudRepository <User, Long> {
     User updatePointsSub(long id, long points);
 
     //    set admin
+    @Transactional
+    @Modifying
     @Query(value = "update users set is_admin = true where id = ?1", nativeQuery = true)
-    User isNewAdmin (long id);
+    void isNewAdmin (long id);
 
     //    set NON admin
+    @Transactional
+    @Modifying
     @Query(value = "update users set is_admin = false where id = ?1", nativeQuery = true)
-    User isNewNonAdmin (long id);
+    void isNewNonAdmin (long id);
 
 
     //    Example of adding users to joining users_groups table

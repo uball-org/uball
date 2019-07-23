@@ -60,6 +60,21 @@ public class AdminController {
         }
     }
 
+    @GetMapping ("/isNotAdmin/{id}")
+    public String notAdminNow(@ModelAttribute User user,
+                              @PathVariable long id) {
+        userDao.isNewNonAdmin(id);
+        return "redirect:/admindashboard";
+    }
+
+    @GetMapping("/isAdmin/{id}")
+    public String isAdminNow(@ModelAttribute User user,
+                              @PathVariable long id) {
+        userDao.isNewAdmin(id);
+        return "redirect:/admindashboard";
+    }
+
+
             //Value of user selected on view is : "uchecked" / "mchecked"
     @RequestMapping(value = "/admindashboard/creategrouping", method = RequestMethod.POST)
     public String newUsersForGroups(@ModelAttribute Group group,
