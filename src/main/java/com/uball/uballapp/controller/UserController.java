@@ -15,6 +15,8 @@ import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.util.Date;
 
@@ -91,16 +93,21 @@ public class UserController<leagueRepository> {
 
     //Show User Profile, by ID #
     @GetMapping("/userprofile")
-    public String userProfileView(Model model){
+    public String userProfileView(Model model, HttpServletRequest request){
 
         User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         long userId = userSession.getId();
+        User userDB = userDao.findOne(userId);
 
-        model.addAttribute("user", userDao.findOne(userId));
-//        model.addAttribute("machines", machineDao.findOne(id));
-//        model.addAttribute("machines1", machineDao.findDistinctTopByScoresAnd_User_Id(id));
+        HttpSession session = request.getSession();
+        session.setAttribute("isAdmin", userDB.isAdmin());
+
+        model.addAttribute("user", userDB);
+//        model.addAttribute("admin", )
+//        model.addAttribute("machines", machineDao.findOne(userId));
+//        model.addAttribute("machines1", machineDao.findDistinctTopByScoresAnd_User_Id(userId));
 //        model.addAttribute("scores", scoreDao.findAllByUser_Id(1));
-//        model.addAttribute("scores1", scoresDao.findDistinctTopByMachineAndUser_Id(machineDao.findAll(), 2));
+//        model.addAttribute("scores1", scoreDao.findDistinctTopByMachineAndUser_Id(machineDao.findAll(), 2));
         return "user/userprofile";
     }
 

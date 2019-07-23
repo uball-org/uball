@@ -34,9 +34,12 @@
     <ul id="dropdown1" class="dropdown-content grey lighten-2">
         <li><a href="/userprofile">Profile</a></li>
         <li><a href="/leagues">League</a></li>
-        <li sec:authorize="isAuthenticated()">
+        <th:block th:if="${#httpSession != null}">
+        <li th:if="${#httpSession.getAttribute('isAdmin')}">
             <a href="/admindashboard">Admin Dashboard</a>
         </li>
+        </th:block>
+
     </ul>
     <!--    <ul id="dropdown2" class="dropdown-content">-->
     <!--        <li><a href="/userprofile/1">Profile</a></li>-->
