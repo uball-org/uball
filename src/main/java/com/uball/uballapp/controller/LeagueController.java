@@ -77,7 +77,7 @@ public class LeagueController {
         return "redirect:/creategroup";
     }
 
-    @PostMapping("/leagues/{id}/delete")
+    @GetMapping("/leagues/{id}/delete")
     public String deleteLeague(@PathVariable long id, @ModelAttribute League league) {
         leagueDao.delete(id);
         return "redirect:/createleague";
