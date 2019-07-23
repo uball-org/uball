@@ -97,10 +97,11 @@ public class UserController<leagueRepository> {
         long userId = userSession.getId();
 
         model.addAttribute("user", userDao.findOne(userId));
-//        model.addAttribute("machines", machineDao.findOne(id));
-//        model.addAttribute("machines1", machineDao.findDistinctTopByScoresAnd_User_Id(id));
+//        model.addAttribute("admin", )
+//        model.addAttribute("machines", machineDao.findOne(userId));
+//        model.addAttribute("machines1", machineDao.findDistinctTopByScoresAnd_User_Id(userId));
 //        model.addAttribute("scores", scoreDao.findAllByUser_Id(1));
-//        model.addAttribute("scores1", scoresDao.findDistinctTopByMachineAndUser_Id(machineDao.findAll(), 2));
+//        model.addAttribute("scores1", scoreDao.findDistinctTopByMachineAndUser_Id(machineDao.findAll(), 2));
         return "user/userprofile";
     }
 

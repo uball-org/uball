@@ -35,8 +35,9 @@
         <li><a href="/userprofile">Profile</a></li>
         <li><a href="/leagues">League</a></li>
         <li sec:authorize="isAuthenticated()">
-            <a href="/admindashboard">Admin Dashboard</a>
+            <span th:if="${#authentication.principal.id} == ${2}"><a href="/admindashboard">Admin Dashboard</a></span>
         </li>
+
     </ul>
     <!--    <ul id="dropdown2" class="dropdown-content">-->
     <!--        <li><a href="/userprofile/1">Profile</a></li>-->
