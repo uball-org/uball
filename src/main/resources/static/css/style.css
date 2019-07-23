@@ -501,6 +501,7 @@ ul li ul {
   display: none;
 }
 
+/*This is the portion responsible for dropdown hover */
 ul li:hover > ul,
 ul li:focus-within > ul, /* this is the line we add */
 ul li ul:hover {
