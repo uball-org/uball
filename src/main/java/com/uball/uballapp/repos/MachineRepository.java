@@ -9,6 +9,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import javax.crypto.Mac;
+import java.time.LocalDate;
 import java.util.List;
 
 
@@ -63,5 +64,15 @@ public interface MachineRepository extends CrudRepository <Machine, Long> {
 
 @Query(value = "select DISTINCT m.id from machines m join scores s on m.id = s.machine_id where s.score = ?1", nativeQuery = true)
 List<Machine> findAllByMachine_Id(long score);
+
+    @Query(value = "select distinct m.name, m.id from machines m " +
+            "join scores s on s.machine_id = m.id " +
+            "join users u on s.user_id = u.id " +
+            "join users_groups ug on u.id = ug.user_id " +
+            "join `groups` g on ug.group_id = g.id " +
+            "where ug.group_id = ?1 " +
+            "  and s.addedscoredate = ?2 " +
+            "      and s.score != 0 ", nativeQuery = true)
+    List<Machine> findAllInGroup(long id, LocalDate now);
 
 }

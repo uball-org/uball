@@ -1,15 +1,28 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-<head th:replace="partials/head :: head('Admin Machines')">
+<head th:replace="partials/head :: head('Create Machines')">
 </head>
-<body>
+<body class="grey lighten-2">
     <nav th:replace="partials/navbar :: nav"></nav>
 
+
+
+    <main class="container">
+
+        <h1 class="center">Machines List</h1>
+        <div class="center-align">
+            <a class="waves-effect waves-light btn center light-blue darken-2" th:href="@{'/machines/create'}">Create New Machine</a>
+        </div>
+        <br/>
+
+        <div class="card">
+            <div class="card-content">
+
     <div align="center">
-        <h1>Machines List</h1>
-        <a class="waves-effect waves-light btn " th:href="@{'/machines/create'}">Create New Machine</a>
-        <br/><br/>
+<!--        <h1>Machines List</h1>-->
+<!--        <a class="waves-effect waves-light btn " th:href="@{'/machines/create'}">Create New Machine</a>-->
+<!--        <br/><br/>-->
         <table border="1" cellpadding="10">
             <thead>
             <tr>
@@ -38,6 +51,13 @@
             </tbody>
         </table>
     </div>
+
+            </div>
+        </div>
+        <br/>
+        <br/>
+    </main>
+
     <footer>
         <div th:replace="partials/footer :: footer"></div>
         <th:block th:include="partials/footer :: scripts" />

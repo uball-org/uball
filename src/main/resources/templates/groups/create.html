@@ -1,28 +1,40 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="partials/head :: head('UBall create machine')">
+<head th:replace="partials/head :: head('Create Group')">
 </head>
-<body>
+<body class="grey lighten-2">
 <nav th:replace="partials/navbar :: nav"></nav>
 
-<div align="center">
-    <h1>Create New Group</h1>
-    <br />
-    <div>
-        <form  th:action="@{/groups/create}" method="POST" th:object="${groupsForm}">
+<main class="container">
 
-            <table border="0" cellpadding="10">
-                <tr>
-                    <td>Group Name:</td>
-                    <td><input type="text" th:field="*{name}" />Enter group name</td>
-                </tr>
-                <tr>
-                    <td colspan="2"><button  class="waves-effect waves-light btn " type="submit">Save</button> </td>
-                </tr>
-            </table>
+    <h3 class="center">Create New Group</h3>
+
+    <div class="card">
+        <div class="card-content">
+        <form  th:action="@{/groups/create}" method="POST" th:object="${groupsForm}">
+            <div class="form-group">
+                <label for="name">Group Name</label>
+                <input id="name" type="text" th:field="*{name}" />
+            </div>
+            <div class="center-align">
+                <button type="submit" class="btn btn-primary waves-effect waves-light light-blue darken-2" >Save</button>
+            </div>
         </form>
+
+<!--            <table border="0" cellpadding="10">-->
+<!--                <tr>-->
+<!--                    <td>Group Name:</td>-->
+<!--                    <td><input type="text" th:field="*{name}" />Enter group name</td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                    <td colspan="2"><button  class="waves-effect waves-light btn " type="submit">Save</button> </td>-->
+<!--                </tr>-->
+<!--            </table>-->
+<!--        </form>-->
+            <br />
+        </div>
     </div>
-</div>
+</main>
 <footer>
     <div th:replace="partials/footer :: footer"></div>
     <th:block th:include="partials/footer :: scripts" />
