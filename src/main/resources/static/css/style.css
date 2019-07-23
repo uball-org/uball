@@ -463,11 +463,11 @@ a {
 }
 
 nav {
-  font-family: monospace;
+  /*font-family: monospace;*/
 }
 
 ul {
-  background: #26c6da;
+  /*background: #26c6da;*/
   list-style: none;
   margin: 0;
   padding-left: 0;
@@ -475,7 +475,7 @@ ul {
 
 li {
   color: #fff;
-  background: #26c6da;
+  /*background: #26c6da;*/
   display: block;
   float: left;
   padding: 1rem;
@@ -494,7 +494,7 @@ li:hover {
 }
 
 ul li ul {
-  background: #26c6da;
+  /*background: #26c6da;*/
   visibility: hidden;
   opacity: 0;
   min-width: 5rem;
@@ -520,9 +520,19 @@ ul li ul li {
 }
 
 button.btn-link.btn{
-    background-color: red;
+    /*background-color: red;*/
 }
 
-.dropdown-content li>a, .dropdown-content li>span {
-    color: black;
-}
+/*ul li:hover > ul,*/
+/*ul li:focus-within > ul, !* this is the line we add *!*/
+/*ul li ul:hover {*/
+/*  visibility: visible;*/
+/*  opacity: 1;*/
+/*  display: block;*/
+/*}*/
+
+/*.dropdown-content li>a, .dropdown-content li>span {*/
+/*  color: black;*/
+/*}*/
+
+
