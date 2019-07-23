@@ -12,7 +12,7 @@
 
     <div class="container">
         <div>
-        <form th:action="@{/admindashboard/updatepoints}" method="post">
+<!--        <form th:action="@{/admindashboard/updatepoints}" method="post">-->
             <h2 class="center-align">Group 1</h2>
             <br />
             <div>
@@ -35,7 +35,11 @@
                             <td th:text="${scored.score}"></td>
                             <td>
                                 <div class="input-field">
-                                    <input th:placeholder="${scored.getUser().points}" th:hidden="${scored.getUser().id}" name="points" type="text" class="validate"/>
+                                    <input th:placeholder="${scored.getUser().points}" name="points" type="text" class="validate"/>
+                                    <a class="btn-floating waves-effect waves-light amber darken-4"
+                                       th:href="@{'/admindashboard/updatepoints/'+${scored.getUser().id}}">
+                                        <i class="material-icons">add</i>
+                                    </a>
                                 </div>
                             </td>
                         </tr>
@@ -44,8 +48,8 @@
                 </table>
             </div>
             <br/>
-            <button type="submit" class="btn btn-primary mt-1 ">Submit Final Scores</button>
-        </form>
+<!--            <button type="submit" class="btn btn-primary mt-1 ">Submit Final Scores</button>-->
+<!--        </form>-->
         </div>
 
         <div>

@@ -65,12 +65,16 @@ public interface UserRepository extends CrudRepository <User, Long> {
 
 
     //  update total points for user (ADDING)
-    @Query(value = "update users set points = points + ?2 where id = ?1", nativeQuery = true)
-    User updatePointsAdd(long id, long points);
+    @Transactional
+    @Modifying
+    @Query(value = "update users set points = points + ?1 where id = ?2", nativeQuery = true)
+    void updatePointsAdd(Long points, Long id);
 
     //  update total points for user (Subtracting)
-    @Query(value = "update users set points = points - ?2 where id = ?1", nativeQuery = true)
-    User updatePointsSub(long id, long points);
+    @Transactional
+    @Modifying
+    @Query(value = "update users set points = points - ?1 where id = ?2", nativeQuery = true)
+    User updatePointsSub(long points, long id);
 
     //    set admin
     @Transactional

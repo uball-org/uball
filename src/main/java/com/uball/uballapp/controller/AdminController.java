@@ -82,7 +82,6 @@ public class AdminController {
                                     @RequestParam(name = "group_id") long groupId,
                                     @RequestParam(name = "mchecked") List<Machine> newM) {
 
-
         for(User users : newU){
             System.out.println("users = " +
                     newU.indexOf(users) + " " +
@@ -145,12 +144,14 @@ public class AdminController {
 
     }
 
-    @PostMapping("/admindashboard/updatepoints")
+    @GetMapping("/admindashboard/updatepoints/{id}")
     public String updatepoints(@ModelAttribute User user,
-                              @RequestParam(name = "points") Long newPoints) {
+                               @PathVariable long id,
+                               @RequestParam(name = "points") long newPoints) {
 
-        User newAddPoints = user.setId(newPoints);
-        userDao.updatePointsAdd(newAddPoints, newPoints);
+        System.out.println("userId = " + id);
+        System.out.println("newPoints = " + newPoints);
+        userDao.updatePointsAdd(newPoints, id);
         return "redirect:/weeks-scores";
     }
 
