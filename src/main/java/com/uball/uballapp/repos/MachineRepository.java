@@ -46,19 +46,21 @@ public interface MachineRepository extends CrudRepository <Machine, Long> {
     @Query(value = "select m.*" +
             " from machines m" +
             " join scores s  on s.machine_id = m.id" +
-            " order by s.score desc" +
+            " order by s.score desc " +
             " limit 4 ", nativeQuery = true)
     List<Machine> findTop4ScoringMachines();
     /**Top All time scorers by league(id)*/
 // Top 4 of machines by league(id)
-    @Query(value = "select m.*" +
-            " from machines m" +
-            " join scores s on s.machine_id = m.id" +
-            " join users u  on u.id = s.user_id" +
-            " where league_id in (select id from leagues where id = ?1 )" +
-            " order by s.score desc" +
-            " limit 4", nativeQuery = true)
+
+    @Query(value = "select * " +
+            "from machines m " +
+            "join scores s on s.machine_id = m.id " +
+            "join users u  on u.id = s.user_id " +
+            "where u.league_id = ?1 " +
+            "order by s.score desc " +
+            "limit 4;", nativeQuery = true)
     List<Machine> Top4ScoringMachinesByLeague(long id);
+
 /**ToDo: End here
  * working on League page data**/
 

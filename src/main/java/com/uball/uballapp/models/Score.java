@@ -1,11 +1,11 @@
 package com.uball.uballapp.models;
 
 
-import org.hibernate.annotations.CreationTimestamp;
+//import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import java.time.LocalDate;
+//import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -21,13 +21,13 @@ public class Score {
 
     @Column(nullable = false)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @CreationTimestamp
-    @Temporal(TemporalType.TIMESTAMP)
+//    @CreationTimestamp
+//    @Temporal(TemporalType.TIMESTAMP)
     private Date date;
 
-    @Column(nullable = false)
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate addedscoredate;
+//    @Column(nullable = false)
+//    @DateTimeFormat(pattern = "yyyy-MM-dd")
+//    private LocalDate addedscoredate;
 
     @ManyToOne
     @JoinColumn (name = "user_id")
@@ -45,19 +45,19 @@ public class Score {
         this.date = date;
     }
 
-    public Score(long score, LocalDate addedscoredate) {
-        this.score = score;
-        this.addedscoredate = addedscoredate;
-    }
-
-    public Score(Long id, long score, Date date, LocalDate addedscoredate, User user, Machine machine) {
-        this.id = id;
-        this.score = score;
-        this.date = date;
-        this.addedscoredate = addedscoredate;
-        this.user = user;
-        this.machine = machine;
-    }
+//    public Score(long score, LocalDate addedscoredate) {
+//        this.score = score;
+//        this.addedscoredate = addedscoredate;
+//    }
+//
+//    public Score(Long id, long score, Date date, LocalDate addedscoredate, User user, Machine machine) {
+//        this.id = id;
+//        this.score = score;
+//        this.date = date;
+//        this.addedscoredate = addedscoredate;
+//        this.user = user;
+//        this.machine = machine;
+//    }
 
     public long getId() {
         return id;
@@ -99,11 +99,11 @@ public class Score {
         this.machine = machine;
     }
 
-    public LocalDate getAddedscoredate() {
-        return addedscoredate;
-    }
-
-    public void setAddedscoredate(LocalDate addedscoredate) {
-        this.addedscoredate = addedscoredate;
-    }
+//    public LocalDate getAddedscoredate() {
+//        return addedscoredate;
+//    }
+//
+//    public void setAddedscoredate(LocalDate addedscoredate) {
+//        this.addedscoredate = addedscoredate;
+//    }
 }

@@ -47,7 +47,7 @@ public class AdminController {
         model.addAttribute("groups", groupDao.findAll());
         model.addAttribute("users", adminDao.findAll());
         model.addAttribute("machines", machineDao.findAll());
-        model.addAttribute("scores", scoreDao.findDistinctByAddedscoredateAndScore(LocalDate.now(), 0));
+//        model.addAttribute("scores", scoreDao.findDistinctByAddedscoredateAndScore(LocalDate.now(), 0));
         model.addAttribute("machiness", machineDao.findAllByMachine_Id(0));
         model.addAttribute("userselect", userDao.findAllByUserId());
         model.addAttribute("score", new Score());
@@ -99,7 +99,7 @@ public class AdminController {
 
                 Score blankscore = new Score(); // New score object to use to add new scores tied to the user_id and machine_id just added
                 blankscore.setScore(0);
-                blankscore.setAddedscoredate(LocalDate.now());
+//                blankscore.setAddedscoredate(LocalDate.now());
                 blankscore.setMachine(machine);
                 blankscore.setUser(users);
                 scoreDao.save(blankscore);
@@ -128,22 +128,22 @@ public class AdminController {
     }
 
 
-    @GetMapping ("/weeks-scores")
-    public String groupWeek(Model model){
-
-        User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        long userId = userSession.getId();
-        boolean isAdmin = userSession.isAdmin();
-
-        model.addAttribute("scores1", scoreDao.findAllInGroup(1L, LocalDate.now()));
-        model.addAttribute("scores2", scoreDao.findAllInGroup(2L, LocalDate.now()));
-        model.addAttribute("scores3", scoreDao.findAllInGroup(3L, LocalDate.now()));
-        model.addAttribute("scores4", scoreDao.findAllInGroup(4L, LocalDate.now()));
-        model.addAttribute("group1", groupDao.findAllInGroup(LocalDate.now()));
-
-        return "admin/weeks-scores";
-
-    }
+//    @GetMapping ("/weeks-scores")
+//    public String groupWeek(Model model){
+//
+//        User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//        long userId = userSession.getId();
+//        boolean isAdmin = userSession.isAdmin();
+//
+//        model.addAttribute("scores1", scoreDao.findAllInGroup(1L, LocalDate.now()));
+//        model.addAttribute("scores2", scoreDao.findAllInGroup(2L, LocalDate.now()));
+//        model.addAttribute("scores3", scoreDao.findAllInGroup(3L, LocalDate.now()));
+//        model.addAttribute("scores4", scoreDao.findAllInGroup(4L, LocalDate.now()));
+//        model.addAttribute("group1", groupDao.findAllInGroup(LocalDate.now()));
+//
+//        return "admin/weeks-scores";
+//
+//    }
 
 
     // disable button

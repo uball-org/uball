@@ -42,11 +42,11 @@
     </div>
 
 
-    <!--&lt;!&ndash; start league section&ndash;&gt;-->
-    <!--<div class="section white container">-->
-        <!--&lt;!&ndash; start section container&ndash;&gt;-->
-        <!--<div class="row">-->
-                            <!--&lt;!&ndash;machine #1 Tab&ndash;&gt;-->
+    <!-- start league section-->
+    <div class="section white container">
+        <!-- start section container-->
+        <div class="row">
+                            <!--machine #1 Tab-->
             <!--<div class="col m6 l6 s12 ">-->
                 <!--<div class="col m6 l6 s12" id="machine1">-->
                     <!--<a class="waves-effect waves-light btn-large">Belles and Chimes</a>-->
@@ -64,10 +64,10 @@
                             <!--<tbody>-->
                             <!--<th:block>-->
                                 <!--<tr th:each="oneLM : ${oneLeagueMachines}">-->
-                                    <!--<td># <span th:text="${oneLeagueMachines.indexOf(oneLS) + 1 } "></span> Place</td>-->
+                                    <!--<td># <span th:text="${oneLeagueMachines.indexOf(oneLM) + 1 } "></span> Place</td>-->
                                     <!--<td><span th:text="${oneLM.name}"></span>Name</td>-->
-                                    <!--<td th:text="${oneLM.score}"> Score</td>-->
-                                    <!--<td th:text="${oneLM.date}">Date</td>-->
+                                    <!--<td th:text="${oneLM.getScores()}"> Score</td>-->
+                                    <!--<td th:text="${oneLM.getScores()}">Date</td>-->
                                 <!--</tr>-->
                             <!--</th:block>-->
                             <!--</tbody>-->
@@ -76,39 +76,39 @@
                 <!--</div>-->
             <!--</div>-->
 
-            <!--&lt;!&ndash;                machine #2 Tab&ndash;&gt;-->
-            <!--<div class="col m6 l6 s12 ">-->
-                <!--<div class="col m6 l6 s12" id="machine2">-->
-                    <!--<a class="waves-effect waves-light btn-large">SAPL</a>-->
-                    <!--<div class="col" style=" border: 2px solid black">-->
-                        <!--<table class="responsive-table centered highlight">-->
-                            <!--<thead>-->
-                            <!--<tr>-->
-                                <!--<th>Place</th>-->
-                                <!--<th>Machine Name</th>-->
-                                <!--<th>Points</th>-->
-                                <!--<th>Date</th>-->
-                            <!--</tr>-->
-                            <!--</thead>-->
+            <!--                machine #2 Tab-->
+            <div class="col m6 l6 s12 ">
+                <div class="col m6 l6 s12" id="machine2">
+                    <a class="waves-effect waves-light btn-large">SAPL</a>
+                    <div class="col" style=" border: 2px solid black">
+                        <table class="responsive-table centered highlight">
+                            <thead>
+                            <tr>
+                                <th>Place</th>
+                                <th>Machine Name</th>
+                                <th>Points</th>
+                                <th>Date</th>
+                            </tr>
+                            </thead>
 
-                            <!--&lt;!&ndash;                            forEach will generate this&ndash;&gt;-->
+                            <!--                            forEach will generate this-->
 
-                            <!--<tbody>-->
-                            <!--<th:block>-->
-                                <!--<tr th:each="twoLS : ${twoLeagueScores}">-->
-                                    <!--<td># <span th:text="${twoLeagueScores.indexOf(twoLS) + 1 } "></span> Place</td>-->
-                                    <!--<td><span th:text="${twoLS.getMachine().name}"></span>Name</td>-->
-                                    <!--<td th:text="${twoLS.score}"> Score</td>-->
-                                    <!--<td th:text="${twoLS.date}">Date</td>-->
-                                <!--</tr>-->
-                            <!--</th:block>-->
-                            <!--</tbody>-->
-                        <!--</table>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div> &lt;!&ndash; end section container&ndash;&gt;-->
-    <!--</div> &lt;!&ndash; end league section &ndash;&gt;-->
+                            <tbody>
+                            <th:block>
+                                <tr th:each="twoLS : ${twoLeagueScores}">
+                                    <td># <span th:text="${twoLeagueScores.indexOf(twoLS) + 1 } "></span> Place</td>
+                                    <td><span th:text="${twoLS.getMachine().name}"></span>Name</td>
+                                    <td th:text="${twoLS.score}"> Score</td>
+                                    <td th:text="${twoLS.date}">Date</td>
+                                </tr>
+                            </th:block>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- end section container-->
+    </div> <!-- end league section -->
 </div>
 
 
