@@ -145,6 +145,17 @@ public class AdminController {
 
     }
 
+    @PostMapping("/admindashboard/updatepoints")
+    public String updatepoints(@ModelAttribute User user,
+                              @RequestParam(name = "points") Long newPoints) {
+
+        User newAddPoints = user.setId(newPoints);
+        userDao.updatePointsAdd(newAddPoints, newPoints);
+        return "redirect:/weeks-scores";
+    }
+
+
+
 
     // disable button
 //

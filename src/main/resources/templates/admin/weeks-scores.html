@@ -35,7 +35,7 @@
                             <td th:text="${scored.score}"></td>
                             <td>
                                 <div class="input-field">
-                                    <input th:placeholder="${scored.getUser().points}" name="points" type="text" class="validate"/>
+                                    <input th:placeholder="${scored.getUser().points}" th:hidden="${scored.getUser().id}" name="points" type="text" class="validate"/>
                                 </div>
                             </td>
                         </tr>
