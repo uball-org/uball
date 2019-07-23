@@ -33,12 +33,11 @@ public interface ScoreRepository extends CrudRepository <Score, Long> {
 
     /**Top All time scorers by league(id)*/
 // Top 4 of scores by league(id)
-    @Query(value = "select s.*" +
-            "from  scores s" +
-            " join users u on u.id = s.user_id" +
-            "  join machines m on s.machine_id = m.id" +
-            " where league_id in (select id from leagues where id = ?1 )" +
-            "order by s.score desc" +
+    @Query(value = "select s.* " +
+            "from  scores s " +
+            "join users u on u.id = s.user_id " +
+            "where league_id in (select id from leagues where id = ?1 ) " +
+            "order by s.score desc " +
             " limit 4", nativeQuery = true)
     List<Score> Top4ScoresByLeague(long id);
 

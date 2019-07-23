@@ -74,8 +74,8 @@ public class UserController<leagueRepository> {
     public String all(Model model){
         model.addAttribute("users",userDao.findTop4ScoringUsers());
         //data by league
-        model.addAttribute("oneLeagueScores",scoreDao.Top4ScoresByLeague(1));
-        model.addAttribute("twoLeagueScores",scoreDao.Top4ScoresByLeague(2));
+//        model.addAttribute("oneLeagueScores",scoreDao.Top4ScoresByLeague(1));
+//        model.addAttribute("twoLeagueScores",scoreDao.Top4ScoresByLeague(2));
 
         return "league/leaguedashboard";
     }
@@ -83,9 +83,9 @@ public class UserController<leagueRepository> {
     @GetMapping("/league_stats")
     public String leagueStats(Model model){
         //data by league(SAPL)
-        model.addAttribute("oneLeagueScores",scoreDao.Top4ScoresByLeague(1));
+//        model.addAttribute("oneLeagueScores",scoreDao.Top4ScoresByLeague(1));
         //data by league(Belles & Chimes)
-        model.addAttribute("twoLeagueScores",scoreDao.Top4ScoresByLeague(2));
+//        model.addAttribute("twoLeagueScores",scoreDao.Top4ScoresByLeague(2));
         return "league/league_stats";
     }
 
@@ -99,8 +99,8 @@ public class UserController<leagueRepository> {
         model.addAttribute("user", userDao.findOne(userId));
 //        model.addAttribute("machines", machineDao.findOne(id));
 //        model.addAttribute("machines1", machineDao.findDistinctTopByScoresAnd_User_Id(id));
-//        model.addAttribute("scores", scoreDao.findAllByUser_Id(id));
-//        model.addAttribute("scores1", scoresDao.findDistinctTopByMachineAndUser_Id(machineDao.findAll(), id));
+//        model.addAttribute("scores", scoreDao.findAllByUser_Id(1));
+//        model.addAttribute("scores1", scoresDao.findDistinctTopByMachineAndUser_Id(machineDao.findAll(), 2));
         return "user/userprofile";
     }
 
