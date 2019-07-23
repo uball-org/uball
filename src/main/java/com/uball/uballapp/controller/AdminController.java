@@ -60,6 +60,21 @@ public class AdminController {
         }
     }
 
+    @GetMapping ("/isNotAdmin/{id}")
+    public String notAdminNow(@ModelAttribute User user,
+                              @PathVariable long id) {
+        userDao.isNewNonAdmin(id);
+        return "redirect:/admindashboard";
+    }
+
+    @GetMapping("/isAdmin/{id}")
+    public String isAdminNow(@ModelAttribute User user,
+                              @PathVariable long id) {
+        userDao.isNewAdmin(id);
+        return "redirect:/admindashboard";
+    }
+
+
             //Value of user selected on view is : "uchecked" / "mchecked"
     @RequestMapping(value = "/admindashboard/creategrouping", method = RequestMethod.POST)
     public String newUsersForGroups(@ModelAttribute Group group,
@@ -110,6 +125,24 @@ public class AdminController {
         score.setScore(scored);
         scoreDao.updateScore(scoreAmount, machine, user);
         return "redirect:/admindashboard";
+    }
+
+
+    @GetMapping ("/weeks-scores")
+    public String groupWeek(Model model){
+
+        User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        long userId = userSession.getId();
+        boolean isAdmin = userSession.isAdmin();
+
+        model.addAttribute("scores1", scoreDao.findAllInGroup(1L, LocalDate.now()));
+        model.addAttribute("scores2", scoreDao.findAllInGroup(2L, LocalDate.now()));
+        model.addAttribute("scores3", scoreDao.findAllInGroup(3L, LocalDate.now()));
+        model.addAttribute("scores4", scoreDao.findAllInGroup(4L, LocalDate.now()));
+        model.addAttribute("group1", groupDao.findAllInGroup(LocalDate.now()));
+
+        return "admin/weeks-scores";
+
     }
 
 

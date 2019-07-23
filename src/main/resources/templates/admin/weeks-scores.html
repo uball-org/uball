@@ -10,37 +10,130 @@
 
     <h1>This Weeks Scores</h1>
 
-<div class="container">
+    <div class="container">
+        <div>
+        <form th:action="@{/admindashboard/creategrouping}" method="post">
+            <div th:each="groups0 : ${group1[0]}">
+                <table class="responsive-table centered highlight">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td th:text="${groups0.name}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br />
+            <div>
+                <table class="responsive-table centered highlight">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>Player</th>
+                        <th>Machine</th>
+                        <th>Score</th>
+                        <th>Points For Place</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <th:block th:each="scored : ${scores1}">
+                        <tr>
+                            <td th:text="${scores1.indexOf(scored) +1}"></td>
+                            <td th:text="${scored.getUser().username}"></td>
+                            <td th:text="${scored.getMachine().name}"></td>
+                            <td th:text="${scored.score}"></td>
+                            <td>
+                                <div class="input-field">
+                                    <input th:placeholder="${scored.getUser().points}" type="text" class="validate"/>
+                                </div>
+                            </td>
+                        </tr>
+                    </th:block>
+                    </tbody>
+                </table>
+            </div>
+            </div>
+            <br/>
+            <button type="submit" class="btn btn-primary mt-1">Submit Final Scores</button>
+        </form>
+        </div>
 
-    <table class="responsive-table centered highlight">
-        <thead>
-        <tr>
-            <th>Name</th>
-            <th>Item Name</th>
-            <th>Item Price</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        <tr>
-            <td>Alvin</td>
-            <td>Eclair</td>
-            <td>$0.87</td>
-        </tr>
-        <tr>
-            <td>Alan</td>
-            <td>Jellybean</td>
-            <td>$3.76</td>
-        </tr>
-        <tr>
-            <td>Jonathan</td>
-            <td>Lollipop</td>
-            <td>$7.00</td>
-        </tr>
-        </tbody>
-    </table>
-</div>
-
+        <div>
+        <form th:action="@{/admindashboard/creategrouping}" method="post">
+            <div th:each="groups1 : ${group1[1]}">
+                <table class="responsive-table centered highlight">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td th:text="${groups1.name}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br />
+            <div>
+                <table class="responsive-table centered highlight">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>Player</th>
+                        <th>Machine</th>
+                        <th>Score</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <th:block th:each="scored : ${scores2}">
+                        <tr>
+                            <td th:text="${scores2.indexOf(scored) +1}"></td>
+                            <td th:text="${scored.getUser().username}"></td>
+                            <td th:text="${scored.getMachine().name}"></td>
+                            <td th:text="${scored.score}"></td>
+                        </tr>
+                    </th:block>
+                    </tbody>
+                </table>
+            </div>
+            </div>
+            <br/>
+            <button type="submit" class="btn btn-primary mt-1">Submit Final Scores</button>
+        </form>
+        </div>
+    </div>
+        <div class="legend" style="width: 5rem;">
+                <h6>Points Legend</h6>
+            <table class="responsive-table centered highlight">
+                <thead>
+                <tr>
+                    <th>Place</th>
+                    <th>Points</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td >1</td>
+                        <td >4</td>
+                    </tr>
+                    <tr>
+                        <td >2</td>
+                        <td >3</td>
+                    </tr>
+                    <tr>
+                        <td >3</td>
+                        <td >2</td>
+                    </tr>
+                    <tr>
+                        <td >4</td>
+                        <td >1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 </main>
 
 
