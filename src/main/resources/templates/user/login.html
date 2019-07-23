@@ -2,11 +2,11 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/head :: head('Log in')">
 </head>
-<body class="grey lighten-2" style="background-image: url('img/background7.jpg')">
+<body class="grey lighten-2">
 
 <nav th:replace="partials/navbar :: nav"></nav>
 
-<h2 class="center white-text">Log In</h2>
+<h2 class="center">Log In</h2>
 <div th:if="${param.error}" class="center" style="color: red;">
     Invalid Username and Password.
 </div>
