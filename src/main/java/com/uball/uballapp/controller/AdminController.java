@@ -113,6 +113,24 @@ public class AdminController {
     }
 
 
+    @GetMapping ("/weeks-scores")
+    public String groupWeek(Model model){
+
+        User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        long userId = userSession.getId();
+        boolean isAdmin = userSession.isAdmin();
+
+        model.addAttribute("scores1", scoreDao.findAllInGroup(1L, LocalDate.now()));
+        model.addAttribute("scores2", scoreDao.findAllInGroup(2L, LocalDate.now()));
+        model.addAttribute("scores3", scoreDao.findAllInGroup(3L, LocalDate.now()));
+        model.addAttribute("scores4", scoreDao.findAllInGroup(4L, LocalDate.now()));
+        model.addAttribute("group1", groupDao.findAllInGroup(LocalDate.now()));
+
+        return "admin/weeks-scores";
+
+    }
+
+
     // disable button
 //
 //    @PostMapping("/user/{id}/disable") //This will actually be to disable NOT DELETE
