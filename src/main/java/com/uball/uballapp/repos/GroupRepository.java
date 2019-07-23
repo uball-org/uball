@@ -25,7 +25,4 @@ public interface GroupRepository extends CrudRepository <Group, Long> {
             "      and s.score != 0 ", nativeQuery = true)
     List<Group> findAllInGroup(LocalDate now);
 
-//    @Query(value = "insert into users_groups (user_id, group_id) values (?1, ?2)", nativeQuery = true)
-//    List<Group> addToUserGroupsTable();
-
 }

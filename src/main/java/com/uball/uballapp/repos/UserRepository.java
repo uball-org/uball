@@ -3,8 +3,6 @@ package com.uball.uballapp.repos;
 
 
 import com.uball.uballapp.models.League;
-import com.uball.uballapp.models.Machine;
-import com.uball.uballapp.models.Score;
 import com.uball.uballapp.models.User;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -18,14 +16,8 @@ import java.util.List;
 @Repository
 public interface UserRepository extends CrudRepository <User, Long> {
 
-    //------------------------------
 
     User findByUsername(String username);
-
-//    @Query("from users where username = ?1")
-//    User findByUsername(String username);
-    //------------------------------
-
 
     //    Get a User by their ID
     User getUserById(long id);
@@ -92,9 +84,6 @@ public interface UserRepository extends CrudRepository <User, Long> {
     @Query(value = "update users set is_admin = false where id = ?1", nativeQuery = true)
     void isNewNonAdmin (long id);
 
-
-    //    Example of adding users to joining users_groups table
-    //    @Query("insert into users_groups (user_id, group_id) VALUES (?1, ?2)")
 
     @Query(value = "select DISTINCT s.user_id as id, u.username from users u join scores s on u.id = s.user_id where s.score = 0", nativeQuery = true)
     List<User> findAllByUserId();
