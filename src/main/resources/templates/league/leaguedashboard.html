@@ -47,34 +47,34 @@
         <!-- start section container-->
         <div class="row">
                             <!--machine #1 Tab-->
-            <!--<div class="col m6 l6 s12 ">-->
-                <!--<div class="col m6 l6 s12" id="machine1">-->
-                    <!--<a class="waves-effect waves-light btn-large">Belles and Chimes</a>-->
-                    <!--<div class="col" style=" border: 2px solid black">-->
-                        <!--<table class="responsive-table centered highlight">-->
-                            <!--<thead>-->
-                            <!--<tr>-->
-                                <!--<th>Place</th>-->
-                                <!--<th>Machine Name</th>-->
-                                <!--<th>Score</th>-->
-                                <!--<th>Date</th>-->
-                            <!--</tr>-->
-                            <!--</thead>-->
-                            <!--&lt;!&ndash;                            forEach will generate this&ndash;&gt;-->
-                            <!--<tbody>-->
-                            <!--<th:block>-->
-                                <!--<tr th:each="oneLM : ${oneLeagueMachines}">-->
-                                    <!--<td># <span th:text="${oneLeagueMachines.indexOf(oneLM) + 1 } "></span> Place</td>-->
-                                    <!--<td><span th:text="${oneLM.name}"></span>Name</td>-->
-                                    <!--<td th:text="${oneLM.getScores()}"> Score</td>-->
-                                    <!--<td th:text="${oneLM.getScores()}">Date</td>-->
-                                <!--</tr>-->
-                            <!--</th:block>-->
-                            <!--</tbody>-->
-                        <!--</table>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
+            <div class="col m6 l6 s12 ">
+                <div class="col m6 l6 s12" id="machine1">
+                    <a class="waves-effect waves-light btn-large">Belles and Chimes</a>
+                    <div class="col" style=" border: 2px solid black">
+                        <table class="responsive-table centered highlight">
+                            <thead>
+                            <tr>
+                                <th>Place</th>
+                                <th>Machine Name</th>
+                                <th>Score</th>
+                                <th>Date</th>
+                            </tr>
+                            </thead>
+                            <!--                            forEach will generate this-->
+                            <tbody>
+                            <th:block>
+                                <tr th:each="oneLS : ${oneLeagueScores}">
+                                    <td># <span th:text="${oneLeagueScores.indexOf(oneLS) + 1 } "></span> Place</td>
+                                    <td><span th:text="${oneLS.getMachine().name}"></span>Name</td>
+                                    <td th:text="${oneLS.score}"> Score</td>
+                                    <td th:text="${oneLS.date}">Date</td>
+                                </tr>
+                            </th:block>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
 
             <!--                machine #2 Tab-->
             <div class="col m6 l6 s12 ">
@@ -86,7 +86,7 @@
                             <tr>
                                 <th>Place</th>
                                 <th>Machine Name</th>
-                                <th>Points</th>
+                                <th>Score</th>
                                 <th>Date</th>
                             </tr>
                             </thead>

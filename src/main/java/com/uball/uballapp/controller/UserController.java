@@ -74,8 +74,8 @@ public class UserController<leagueRepository> {
     public String all(Model model){
         model.addAttribute("users",userDao.findTop4ScoringUsers());
         //data by league
-//        model.addAttribute("oneLeagueMachines",machineDao.Top4ScoringMachinesByLeague(1L));
-        model.addAttribute("twoLeagueScores",scoreDao.findAll());
+        model.addAttribute("oneLeagueScores",scoreDao.Top4ScoresByLeague(1L));
+        model.addAttribute("twoLeagueScores",scoreDao.Top4ScoresByLeague(2L));
 
         return "league/leaguedashboard";
     }
