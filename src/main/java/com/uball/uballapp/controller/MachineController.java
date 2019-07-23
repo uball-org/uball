@@ -73,6 +73,16 @@ public class MachineController {
     }
 
 
+    @PostMapping("/machines/{id}/delete")
+    public String delete(@PathVariable long id) {
+        machineDao.delete(id);
+        return "redirect:/createmachine";
+    }
+
+
+
+
+
 
 
 

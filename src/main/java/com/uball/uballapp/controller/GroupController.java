@@ -74,6 +74,14 @@ public class GroupController {
         return "redirect:/creategroup";
     }
 
+    @PostMapping("/groups/{id}/delete")
+    public String delete(@PathVariable long id) {
+        groupDao.delete(id);
+        return "redirect:/creategroup";
+    }
+
+
+
 
 
 
