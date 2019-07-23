@@ -1,34 +1,55 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="partials/head :: head('UBall create machine')">
+<head th:replace="partials/head :: head('Edit Machine')">
 </head>
 <body class="grey lighten-2">
     <nav th:replace="partials/navbar :: nav"></nav>
 
-    <div align="center">
-        <h1>Edit Machine</h1>
-        <br />
+    <main class="container">
+
+        <h3 class="center">Edit Machine</h3>
+
+        <div class="card">
+            <div class="card-content">
         <form th:action="@{'/machines/' + ${thisMachine.id} + '/edit'}" th:object="${thisMachine}" method="post">
 
-            <table border="0" cellpadding="10">
-                <tr>
-                    <td>Machine ID:</td>
-                    <td>
-                        <input type="text" th:field="*{id}" readonly="readonly" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>Machine Name:</td>
-                    <td>
-                        <input type="text" th:field="*{name}" />
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2"><button  class="waves-effect waves-light btn " type="submit">Save</button> </td>
-                </tr>
-            </table>
+            <div class="form-group">
+                <label for="id">Machine ID</label>
+                <input id="id" type="text" th:field="*{id}" readonly="readonly" />
+            </div>
+            <div class="form-group">
+                <label for="name">Machine Name</label>
+                <input id="name" type="text" th:field="*{name}" />
+            </div>
+            <div class="center-align">
+                <button type="submit" class="btn btn-primary waves-effect waves-light light-blue darken-2" >Save</button>
+            </div>
+
+<!--            <table border="0" cellpadding="10">-->
+<!--                <tr>-->
+<!--                    <td>Machine ID:</td>-->
+<!--                    <td>-->
+<!--                        <input type="text" th:field="*{id}" readonly="readonly" />-->
+<!--                    </td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                    <td>Machine Name:</td>-->
+<!--                    <td>-->
+<!--                        <input type="text" th:field="*{name}" />-->
+<!--                    </td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                    <td colspan="2"><button  class="waves-effect waves-light btn " type="submit">Save</button> </td>-->
+<!--                </tr>-->
+<!--            </table>-->
         </form>
     </div>
+        </div>
+
+
+        <br />
+
+    </main>
     <footer>
         <div th:replace="partials/footer :: footer"></div>
         <th:block th:include="partials/footer :: scripts" />

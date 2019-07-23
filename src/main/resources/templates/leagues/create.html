@@ -1,28 +1,44 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="partials/head :: head('UBall create League')">
+<head th:replace="partials/head :: head('Create League')">
 </head>
 <body class="grey lighten-2">
     <nav th:replace="partials/navbar :: nav"></nav>
 
-    <div align="center">
-        <h1>Create New League</h1>
-        <br />
-        <div>
+
+    <main class="container">
+
+        <h3 class="center">Create New League</h3>
+
+        <div class="card">
+            <div class="card-content">
+
             <form  th:action="@{/leagues/create}" method="POST" th:object="${leaguesForm}">
 
-                <table border="0" cellpadding="10">
-                    <tr>
-                        <td>League Name:</td>
-                        <td><input type="text" th:field="*{name}" />Enter league name:</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><button  class="waves-effect waves-light btn " type="submit">Save</button> </td>
-                    </tr>
-                </table>
+                <div class="form-group">
+                    <label for="name">League Name</label>
+                    <input id="name" type="text" th:field="*{name}" />
+                </div>
+                <div class="center-align">
+                    <button type="submit" class="btn btn-primary waves-effect waves-light light-blue darken-2" >Save</button>
+                </div>
             </form>
+
+
+<!--                <table border="0" cellpadding="10">-->
+<!--                    <tr>-->
+<!--                        <td>League Name:</td>-->
+<!--                        <td><input type="text" th:field="*{name}" />Enter league name:</td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td colspan="2"><button  class="waves-effect waves-light btn " type="submit">Save</button> </td>-->
+<!--                    </tr>-->
+<!--                </table>-->
+<!--            </form>-->
+                <br />
         </div>
     </div>
+    </main>
     <footer>
         <div th:replace="partials/footer :: footer"></div>
         <th:block th:include="partials/footer :: scripts" />
