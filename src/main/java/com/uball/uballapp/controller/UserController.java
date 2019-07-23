@@ -102,12 +102,15 @@ public class UserController<leagueRepository> {
         HttpSession session = request.getSession();
         session.setAttribute("isAdmin", userDB.isAdmin());
 
+        System.out.println("userId = " + userId);
+        System.out.println("userDB = " + userDB);
+        System.out.println("userDB Id = " + userDB.getId());
+
         model.addAttribute("user", userDB);
-//        model.addAttribute("admin", )
-//        model.addAttribute("machines", machineDao.findOne(userId));
-//        model.addAttribute("machines1", machineDao.findDistinctTopByScoresAnd_User_Id(userId));
-//        model.addAttribute("scores", scoreDao.findAllByUser_Id(1));
-//        model.addAttribute("scores1", scoreDao.findDistinctTopByMachineAndUser_Id(machineDao.findAll(), 2));
+        model.addAttribute("scores", scoreDao.findAllByUser_Id(userDB.getId()));
+        model.addAttribute("scoremach", scoreDao.findTopScoresOnMachines(userDB.getId()));
+        model.addAttribute("machines", machineDao.findTopScoresOnMachines(userDB.getId()));
+
         return "user/userprofile";
     }
 

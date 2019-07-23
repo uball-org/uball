@@ -71,6 +71,11 @@ public interface ScoreRepository extends CrudRepository <Score, Long> {
             "      and s.score != 0 order BY s.machine_id, s.score desc", nativeQuery = true)
     List<Score> findAllInGroup(long id, LocalDate now);
 
-
+    @Query(value = "select DISTINCT m.name, s.* from machines m " +
+            "join scores s on m.id = s.machine_id " +
+            "join users u on s.user_id = u.id " +
+            "where u.id = ?1  " +
+            "order by s.score desc", nativeQuery = true)
+    List<Score> findTopScoresOnMachines(long id);
 
 }
