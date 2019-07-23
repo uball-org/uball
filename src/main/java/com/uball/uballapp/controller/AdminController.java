@@ -82,7 +82,6 @@ public class AdminController {
                                     @RequestParam(name = "group_id") long groupId,
                                     @RequestParam(name = "mchecked") List<Machine> newM) {
 
-
         for(User users : newU){
             System.out.println("users = " +
                     newU.indexOf(users) + " " +
@@ -144,6 +143,19 @@ public class AdminController {
         return "admin/weeks-scores";
 
     }
+
+    @GetMapping("/admindashboard/updatepoints/{id}")
+    public String updatepoints(@ModelAttribute User user,
+                               @PathVariable long id,
+                               @RequestParam(name = "points") long newPoints) {
+
+        System.out.println("userId = " + id);
+        System.out.println("newPoints = " + newPoints);
+        userDao.updatePointsAdd(newPoints, id);
+        return "redirect:/weeks-scores";
+    }
+
+
 
 
     // disable button
