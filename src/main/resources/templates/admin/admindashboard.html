@@ -31,6 +31,7 @@
                         <th>League</th>
                         <th>Date of Birth</th>
                         <th>Manage</th>
+                        <th>Admin</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -55,6 +56,14 @@
                                 <!--                           th:href="@{'/userprofile/'+${user.id} + '/disable'}">-->
                                 <!--                           <a sec:authorize="isAuthenticated()"-->
                             </td>
+                            <td th:if="${user.isAdmin()}"><a class="btn-floating waves-effect waves-light amber darken-4" th:hidden="${user.id}"
+                                    th:href="@{'/isNotAdmin/'+${user.id}}">
+                                <i class="material-icons">clear</i>
+                            </a></td>
+                            <td th:if ="${!user.isAdmin()}"><a class="btn-floating waves-effect waves-light amber darken-4" th:hidden="${user.id}"
+                                    th:href="@{'/isAdmin/'+${user.id}}">
+                                <i class="material-icons">add</i>
+                            </a></td>
                         </tr>
                     </th:block>
                     </tbody>
