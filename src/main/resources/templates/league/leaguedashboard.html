@@ -6,7 +6,7 @@
 
 <main>
 <div>
-    <div class=" parallax-container ">
+    <div class=" parallax-container " style=" background-size:cover; background-image: url('/img/tnacoreidoor.jpg')">
         <h4 class="center-align" style="border: 3px double white;">Welcome to League View <span th:text="${userName}"></span></h4>
             <div class="row" style="margin-top: 2rem;">
                 <table class=" col m6 s12 offset-m3 responsive-table  header-shadow highlight">
@@ -24,7 +24,7 @@
                     <th:block th:each="user : ${users}">
                         <tr>
                             <td>
-                                <img src="img/logo.png" alt="" class="circle" />
+                                <img src="img/logo.png" alt="" class="circle"  style="width: 30px; height: 30px;"/>
                             </td>
                             <td>
                                 <span>#</span><span th:text="${users.indexOf(user)} + 1"></span><span> Place</span>
