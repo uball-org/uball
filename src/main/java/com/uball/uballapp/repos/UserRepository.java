@@ -44,11 +44,11 @@ public interface UserRepository extends CrudRepository <User, Long> {
      * working on League page data**/
     /**  Top 4 all times #*/
     //  Top 4 of all time users
-    @Query(value = "select u.*" +
-            " from users u" +
-            " join scores s on u.id = s.user_id" +
-            " order by s.score desc" +
-            " limit 4", nativeQuery = true)
+    @Query(value = "select u.*\n" +
+            "from users u\n" +
+            "join scores s on u.id = s.user_id\n" +
+            "order by u.points desc\n" +
+            "limit 4;", nativeQuery = true)
     List<User> findTop4ScoringUsers();
     /**Top All time scorers by league(id)*/
     //  Top 4 of users by league(id)

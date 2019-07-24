@@ -7,38 +7,38 @@
 <!-- Page Layout here -->
 <div >
     <div class=" parallax-container " style=" background-size:cover; background-image: url('/img/tnacoreidoor.jpg')">
-            <div class="row">
-                <table class=" col m6 s12 offset-m6 responsive-table  header-shadow ">
-                    <thead>
+        <div class="row">
+            <table class=" col m6 s12 offset-m6 responsive-table  header-shadow ">
+                <thead>
+                <tr>
+                    <th>Profile</th>
+                    <th>Place</th>
+                    <th>Points</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>League</th>
+                </tr>
+                </thead>
+                <tbody class="collection">
+                <th:block th:each="user : ${users}">
                     <tr>
-                        <th>Profile</th>
-                        <th>Place</th>
-                        <th>Points</th>
-                        <th>Name</th>
-                        <th>Gender</th>
-                        <th>League</th>
+                        <td> <!--player photo-->
+                            <img src="https://placeholder.pics/svg/50" alt="" class="circle" />
+                        </td>
+                        <td> <!--place-->
+                            <span>#</span><span th:text="${users.indexOf(user)} + 1">1</span><span> Place</span>
+                        </td>
+                        <td th:text="${user.points}">points</td>
+                        <td th:text="${user.firstName + ' ' + user.lastName}">Name</td>
+                        <!--gender-->
+                        <td th:text="${user.gender}">Gender</td>
+                        <td th:text="${user.getLeague().name}">League</td>
                     </tr>
-                    </thead>
-                    <tbody class="collection">
-                    <th:block th:each="user : ${users}">
-                        <tr>
-                            <td> <!--player photo-->
-                                <img src="https://placeholder.pics/svg/50" alt="" class="circle" />
-                            </td>
-                            <td> <!--place-->
-                                <span>#</span><span th:text="${users.indexOf(user)} + 1">1</span><span> Place</span>
-                            </td>
-                            <td th:text="${user.points}">points</td>
-                            <td th:text="${user.firstName + ' ' + user.lastName}">Name</td>
-                            <!--gender-->
-                            <td th:text="${user.gender}">Gender</td>
-                            <td th:text="${user.getLeague().name}">League</td>
-                        </tr>
-                    </th:block>
-                    </tbody>
-                </table>
+                </th:block>
+                </tbody>
+            </table>
 
-            </div>
+        </div>
     </div>
 
 
@@ -46,7 +46,7 @@
     <!--<div class="section white container">-->
         <!--&lt;!&ndash; start section container&ndash;&gt;-->
         <!--<div class="row">-->
-                            <!--&lt;!&ndash;machine #1 Tab&ndash;&gt;-->
+            <!--&lt;!&ndash;machine #1 Tab&ndash;&gt;-->
             <!--<div class="col m6 l6 s12 ">-->
                 <!--<div class="col m6 l6 s12" id="machine1">-->
                     <!--<a class="waves-effect waves-light btn-large">Belles and Chimes</a>-->
@@ -63,11 +63,11 @@
                             <!--&lt;!&ndash;                            forEach will generate this&ndash;&gt;-->
                             <!--<tbody>-->
                             <!--<th:block>-->
-                                <!--<tr th:each="oneLM : ${oneLeagueMachines}">-->
-                                    <!--<td># <span th:text="${oneLeagueMachines.indexOf(oneLS) + 1 } "></span> Place</td>-->
-                                    <!--<td><span th:text="${oneLM.name}"></span>Name</td>-->
-                                    <!--<td th:text="${oneLM.score}"> Score</td>-->
-                                    <!--<td th:text="${oneLM.date}">Date</td>-->
+                                <!--<tr th:each="oneLS : ${oneLeagueScores}">-->
+                                    <!--<td># <span th:text="${oneLeagueScores.indexOf(oneLS) + 1 } "></span> Place</td>-->
+                                    <!--<td><span th:text="${oneLS.getMachine().name}"></span>Name</td>-->
+                                    <!--<td th:text="${oneLS.score}"> Score</td>-->
+                                    <!--<td th:text="${oneLS.date}">Date</td>-->
                                 <!--</tr>-->
                             <!--</th:block>-->
                             <!--</tbody>-->
@@ -86,7 +86,7 @@
                             <!--<tr>-->
                                 <!--<th>Place</th>-->
                                 <!--<th>Machine Name</th>-->
-                                <!--<th>Points</th>-->
+                                <!--<th>Score</th>-->
                                 <!--<th>Date</th>-->
                             <!--</tr>-->
                             <!--</thead>-->
@@ -118,3 +118,4 @@
 </footer>
 </body>
 </html>
+
