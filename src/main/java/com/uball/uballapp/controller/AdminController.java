@@ -77,6 +77,12 @@ public class AdminController {
         return "redirect:/admindashboard";
     }
 
+    @GetMapping("/deleteUGTable")
+    public String truncateTableUG(){
+        adminDao.eliminateTableUG();
+        return "redirect:/admindashboard";
+    }
+
 
     //Value of user selected on view is : "uchecked" / "mchecked"
     @RequestMapping(value = "/admindashboard/creategrouping", method = RequestMethod.POST)

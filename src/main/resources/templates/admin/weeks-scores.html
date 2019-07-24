@@ -39,11 +39,7 @@
                                                name="user" type="text" class="validate"/>
                                         <input th:placeholder="${scored.getUser().points}" name="points" type="text"
                                                class="validate"/>
-                                        <!--                                    <a class="btn-floating waves-effect waves-light amber darken-4"-->
-                                        <!--                                       th:href="@{'/admindashboard/updatepoints/'+${scored.getUser().id}}">-->
-                                        <!--                                        <i class="material-icons">add</i>-->
-                                        <!--                                    </a>-->
-                                    </div>
+                                      </div>
                                 </td>
                             </tr>
                         </th:block>
@@ -75,7 +71,7 @@
                         <tbody>
                         <th:block th:each="scored : ${scores2}">
                             <tr>
-                                <td th:text="${scores1.indexOf(scored) +1}"></td>
+                                <td th:text="${scores2.indexOf(scored) +1}"></td>
                                 <td th:text="${scored.getUser().username}"></td>
                                 <td th:text="${scored.getMachine().name}"></td>
                                 <td th:text="${scored.score}"></td>
@@ -85,11 +81,7 @@
                                                name="user" type="text" class="validate"/>
                                         <input th:placeholder="${scored.getUser().points}" name="points" type="text"
                                                class="validate"/>
-                                        <!--                                    <a class="btn-floating waves-effect waves-light amber darken-4"-->
-                                        <!--                                       th:href="@{'/admindashboard/updatepoints/'+${scored.getUser().id}}">-->
-                                        <!--                                        <i class="material-icons">add</i>-->
-                                        <!--                                    </a>-->
-                                    </div>
+                                     </div>
                                 </td>
                             </tr>
                         </th:block>
@@ -121,7 +113,7 @@
                         <tbody>
                         <th:block th:each="scored : ${scores3}">
                             <tr>
-                                <td th:text="${scores1.indexOf(scored) +1}"></td>
+                                <td th:text="${scores3.indexOf(scored) +1}"></td>
                                 <td th:text="${scored.getUser().username}"></td>
                                 <td th:text="${scored.getMachine().name}"></td>
                                 <td th:text="${scored.score}"></td>
@@ -131,11 +123,7 @@
                                                name="user" type="text" class="validate"/>
                                         <input th:placeholder="${scored.getUser().points}" name="points" type="text"
                                                class="validate"/>
-                                        <!--                                    <a class="btn-floating waves-effect waves-light amber darken-4"-->
-                                        <!--                                       th:href="@{'/admindashboard/updatepoints/'+${scored.getUser().id}}">-->
-                                        <!--                                        <i class="material-icons">add</i>-->
-                                        <!--                                    </a>-->
-                                    </div>
+                                     </div>
                                 </td>
                             </tr>
                         </th:block>
@@ -167,7 +155,7 @@
                         <tbody>
                         <th:block th:each="scored : ${scores4}">
                             <tr>
-                                <td th:text="${scores1.indexOf(scored) +1}"></td>
+                                <td th:text="${scores4.indexOf(scored) +1}"></td>
                                 <td th:text="${scored.getUser().username}"></td>
                                 <td th:text="${scored.getMachine().name}"></td>
                                 <td th:text="${scored.score}"></td>
@@ -177,11 +165,7 @@
                                                name="user" type="text" class="validate"/>
                                         <input th:placeholder="${scored.getUser().points}" name="points" type="text"
                                                class="validate"/>
-                                        <!--                                    <a class="btn-floating waves-effect waves-light amber darken-4"-->
-                                        <!--                                       th:href="@{'/admindashboard/updatepoints/'+${scored.getUser().id}}">-->
-                                        <!--                                        <i class="material-icons">add</i>-->
-                                        <!--                                    </a>-->
-                                    </div>
+                                      </div>
                                 </td>
                             </tr>
                         </th:block>
@@ -193,6 +177,8 @@
                     Submit Final Scores
                 </button>
             </form>
+            <br />
+            <br />
         </div>
     </div>
 </main>
