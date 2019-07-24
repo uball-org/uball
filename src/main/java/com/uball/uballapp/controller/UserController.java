@@ -98,7 +98,6 @@ public class UserController<leagueRepository> {
         model.addAttribute("user", userDB);
         model.addAttribute("scores", scoreDao.findAllByUser_Id(userDB.getId()));
         model.addAttribute("scoremach", scoreDao.findTopScoresOnMachines(userDB.getId()));
-        model.addAttribute("machines", machineDao.findTopScoresOnMachines(userDB.getId()));
 
         return "user/userprofile";
     }
