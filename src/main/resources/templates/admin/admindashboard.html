@@ -8,17 +8,13 @@
 <nav th:replace="partials/navbar :: nav"></nav>
 <main>
 
-    <h2 class="center">Welcome, Admin</h2>
+    <h2 class="center">Welcome, <span th:text="${adminname}"></span></h2>
 
     <div class="container">
 
         <div class="row">
 
-            <!--        profile picture of Admin-->
-
             <div class="col s12 m4 l4" ><img src="img/pinball-icons.jpg" alt="Unsplashed background img 1" class="admin-img responsive-img"/></div>
-
-            <!--        table of users-->
 
             <div class="col s12 m8 l8">
                 <table class="responsive-table centered highlight">
@@ -73,18 +69,13 @@
             </div>
         </div>
 
-        <!--Buttons-->
         <br />
         <div class="center">
+            <a class="waves-effect waves-light btn light-blue darken-2" th:href="@{'/creategroup'}">Manage Groups</a>
             <a class="waves-effect waves-light btn light-blue darken-2 " th:href="@{'/createmachine'}">Manage Machines</a>
             <a class="waves-effect waves-light btn light-blue darken-2" th:href="@{'/createleague'}">Manage Leagues</a>
-            <a class="waves-effect waves-light btn light-blue darken-2" th:href="@{'/creategroup'}">Manage Groups</a>
         </div>
         <br />
-
-        <!--*****************-->
-        <!--                Bottom Nav Card Below              -->
-        <!--*****************-->
 
 
         <div class="container" style="width: 100%;">
@@ -109,6 +100,7 @@
                                     <th>Name</th>
                                     <th>Gender</th>
                                     <th>League</th>
+                                    <th>Points</th>
                                     <th>Active Today</th>
                                 </tr>
                                 </thead>
@@ -119,6 +111,7 @@
                                         <td th:text="${user.firstName + ' ' + user.lastName}"></td>
                                         <td th:text="${user.gender}"></td>
                                         <td th:text="${user.getLeague().name}"></td>
+                                        <td th:text="${user.points}"></td>
                                         <td>
                                             <p>
                                                 <label>

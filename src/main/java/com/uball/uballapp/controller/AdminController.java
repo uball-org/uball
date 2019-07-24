@@ -43,6 +43,9 @@ public class AdminController {
         User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         long userId = userSession.getId();
         boolean isAdmin = userSession.isAdmin();
+        String isAdminName = userSession.getUsername();
+
+        model.addAttribute("adminname", isAdminName);
 
         model.addAttribute("groups", groupDao.findAll());
         model.addAttribute("users", adminDao.findAll());
