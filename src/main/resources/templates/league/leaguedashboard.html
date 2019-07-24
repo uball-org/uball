@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/head :: head('League Dashboard')"></head>
-<body>
+<body class="grey lighten-2">
 <nav th:replace="partials/navbar :: nav"></nav>
 
-<!-- Page Layout here -->
-<div >
+<main>
+<div>
     <div class=" parallax-container " style=" background-size:cover; background-image: url('/img/tnacoreidoor.jpg')">
-            <div class="row">
-                <table class=" col m6 s12 offset-m6 responsive-table  header-shadow ">
+        <h4 class="center-align" style="border: 3px double white;">Welcome to League View <span th:text="${userName}"></span></h4>
+            <div class="row" style="margin-top: 2rem;">
+                <table class=" col m6 s12 offset-m3 responsive-table  header-shadow highlight">
                     <thead>
                     <tr>
                         <th>Profile</th>
@@ -22,15 +23,14 @@
                     <tbody class="collection">
                     <th:block th:each="user : ${users}">
                         <tr>
-                            <td> <!--player photo-->
+                            <td>
                                 <img src="https://placeholder.pics/svg/50" alt="" class="circle" />
                             </td>
-                            <td> <!--place-->
-                                <span>#</span><span th:text="${users.indexOf(user)} + 1">1</span><span> Place</span>
+                            <td>
+                                <span>#</span><span th:text="${users.indexOf(user)} + 1"></span><span> Place</span>
                             </td>
                             <td th:text="${user.points}">points</td>
                             <td th:text="${user.firstName + ' ' + user.lastName}">Name</td>
-                            <!--gender-->
                             <td th:text="${user.gender}">Gender</td>
                             <td th:text="${user.getLeague().name}">League</td>
                         </tr>
@@ -40,77 +40,92 @@
 
             </div>
     </div>
+    <div class="grey lighten-3">
+    <div class="center">
+        <br />
+        <h5>Want To See The Live Standings For The Groups Playing?</h5>
+        <a class="waves-effect waves-light btn light-blue darken-2" th:href="@{'/weeks-scores'}">Let's See</a>
+        <br />
+    </div>
+    <br />
 
+    <div align="center">
+    </div>
+        <div class="container" style= "width: 90%;">
+            <div class="card row" style="position: inherit;">
+                <div class="card-tabs" style="height: 20px;">
+                    <ul class="tabs tabs-fixed-width">
+                        <li class="tab"><a href="#SAPL">San Antonio Pinball League</a></li>
+                        <li class="tab"><a href="#Belles_Chimes" class="active">Belles and Chimes </a></li>
+                    </ul>
+                </div>
 
-    <!--&lt;!&ndash; start league section&ndash;&gt;-->
-    <!--<div class="section white container">-->
-        <!--&lt;!&ndash; start section container&ndash;&gt;-->
-        <!--<div class="row">-->
-                            <!--&lt;!&ndash;machine #1 Tab&ndash;&gt;-->
-            <!--<div class="col m6 l6 s12 ">-->
-                <!--<div class="col m6 l6 s12" id="machine1">-->
-                    <!--<a class="waves-effect waves-light btn-large">Belles and Chimes</a>-->
-                    <!--<div class="col" style=" border: 2px solid black">-->
-                        <!--<table class="responsive-table centered highlight">-->
-                            <!--<thead>-->
-                            <!--<tr>-->
-                                <!--<th>Place</th>-->
-                                <!--<th>Machine Name</th>-->
-                                <!--<th>Score</th>-->
-                                <!--<th>Date</th>-->
-                            <!--</tr>-->
-                            <!--</thead>-->
-                            <!--&lt;!&ndash;                            forEach will generate this&ndash;&gt;-->
-                            <!--<tbody>-->
-                            <!--<th:block>-->
-                                <!--<tr th:each="oneLM : ${oneLeagueMachines}">-->
-                                    <!--<td># <span th:text="${oneLeagueMachines.indexOf(oneLS) + 1 } "></span> Place</td>-->
-                                    <!--<td><span th:text="${oneLM.name}"></span>Name</td>-->
-                                    <!--<td th:text="${oneLM.score}"> Score</td>-->
-                                    <!--<td th:text="${oneLM.date}">Date</td>-->
-                                <!--</tr>-->
-                            <!--</th:block>-->
-                            <!--</tbody>-->
-                        <!--</table>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
+                <div class="card-content grey lighten-4" >
+                    <div id="SAPL">
+                        <div align="center">
+                            <h4>SAPL Stats</h4>
+                            <br/><br/>
+                            <table class="responsive-table centered highlight">
+                                <thead>
+                                <tr>
+                                    <th>Place</th>
+                                    <th>Name</th>
+                                    <th>Machine Name</th>
+                                    <th>Score</th>
+                                    <th>Date</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <th:block>
+                                    <tr th:each="oneLS : ${oneLeagueScores}">
+                                        <td># <span th:text="${oneLeagueScores.indexOf(oneLS) + 1 } "></span> Place</td>
+                                        <td><span th:text="${oneLS.getUser().username}"></span></td>
+                                        <td><span th:text="${oneLS.getMachine().name}"></span></td>
+                                        <td><span th:text="${oneLS.score}"></span></td>
+                                        <td th:text="${oneLS.addedscoredate}"></td>
+                                    </tr>
+                                </th:block>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br />
+                    </div>
 
-            <!--&lt;!&ndash;                machine #2 Tab&ndash;&gt;-->
-            <!--<div class="col m6 l6 s12 ">-->
-                <!--<div class="col m6 l6 s12" id="machine2">-->
-                    <!--<a class="waves-effect waves-light btn-large">SAPL</a>-->
-                    <!--<div class="col" style=" border: 2px solid black">-->
-                        <!--<table class="responsive-table centered highlight">-->
-                            <!--<thead>-->
-                            <!--<tr>-->
-                                <!--<th>Place</th>-->
-                                <!--<th>Machine Name</th>-->
-                                <!--<th>Points</th>-->
-                                <!--<th>Date</th>-->
-                            <!--</tr>-->
-                            <!--</thead>-->
-
-                            <!--&lt;!&ndash;                            forEach will generate this&ndash;&gt;-->
-
-                            <!--<tbody>-->
-                            <!--<th:block>-->
-                                <!--<tr th:each="twoLS : ${twoLeagueScores}">-->
-                                    <!--<td># <span th:text="${twoLeagueScores.indexOf(twoLS) + 1 } "></span> Place</td>-->
-                                    <!--<td><span th:text="${twoLS.getMachine().name}"></span>Name</td>-->
-                                    <!--<td th:text="${twoLS.score}"> Score</td>-->
-                                    <!--<td th:text="${twoLS.date}">Date</td>-->
-                                <!--</tr>-->
-                            <!--</th:block>-->
-                            <!--</tbody>-->
-                        <!--</table>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div> &lt;!&ndash; end section container&ndash;&gt;-->
-    <!--</div> &lt;!&ndash; end league section &ndash;&gt;-->
+                    <div id="Belles_Chimes">
+                        <div align="center">
+                            <h4>Belles and Chimes Stats</h4>
+                            <br/><br/>
+                            <table class="responsive-table centered highlight">
+                                <thead>
+                                <tr>
+                                    <th>Place</th>
+                                    <th>Name</th>
+                                    <th>Machine Name</th>
+                                    <th>Points</th>
+                                    <th>Date</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <th:block>
+                                    <tr th:each="twoLS : ${twoLeagueScores}">
+                                        <td># <span th:text="${twoLeagueScores.indexOf(twoLS) + 1 } "></span> Place</td>
+                                        <td><span th:text="${twoLS.getUser().username}"></span></td>
+                                        <td><span th:text="${twoLS.getMachine().name}"></span></td>
+                                        <td th:text="${twoLS.score}"></td>
+                                        <td th:text="${twoLS.addedscoredate}"></td>
+                                    </tr>
+                                </th:block>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
+</main>
 
 <footer>
     <div th:replace="partials/footer :: footer"></div>

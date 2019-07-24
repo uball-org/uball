@@ -75,4 +75,11 @@ List<Machine> findAllByMachine_Id(long score);
             "      and s.score != 0 ", nativeQuery = true)
     List<Machine> findAllInGroup(long id, LocalDate now);
 
+
+    @Query(value = "select DISTINCT m.name, s.* from machines m " +
+            "join scores s on m.id = s.machine_id " +
+            "join users u on s.user_id = u.id " +
+            "where u.id = ?1  " +
+            "order by s.score desc", nativeQuery = true)
+    List<Machine> findTopScoresOnMachines(long id);
 }

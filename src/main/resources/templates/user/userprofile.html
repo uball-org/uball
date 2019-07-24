@@ -13,11 +13,10 @@
             <div class="row">
                 <div class="col s12 m4 l4">
                     <div class="card-panel gradient-45deg-blue-grey-blue-grey">
-<!--                        <span>I am a very simple solid color card. I am good at containing small bits of information.I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.</span>-->
                         <div class="card-content center">
                             <span class="card-title grey-text text-darken-4"><h2><em><span th:text="${user.username}"></span></em></h2></span>
                             <p>
-                                <i class="material-icons">perm_identity</i> <span th:text="${user.firstName}"></span> <span th:text="${#authentication.principal.lastName}"></span></p>
+                                <i class="material-icons">perm_identity</i> <span th:text="${user.firstName}"></span> <span th:text="${user.lastName}"></span></p>
                             <p>
                                 <i class="material-icons">import_contacts</i> <span th:text=" ${user.DOB}"></span></p>
                             <p>
@@ -31,7 +30,6 @@
                         </div>
                     </div>
                 </div>
-
 
     <div class="card s12 m8 l8">
         <div class="card-content col s12 m8 l8">
@@ -56,7 +54,7 @@
                         <th:block th:each="score : ${scores}">
                             <tr>
                                 <td th:text="${score.getMachine().name}"></td>
-                                <td th:text="${score.date}"></td>
+                                <td th:text="${score.getAddedscoredate()}"></td>
                                 <td th:text="${score.score}"></td>
                             </tr>
                         </th:block>
@@ -67,17 +65,19 @@
                     <table class="responsive-table centered">
                         <thead>
                         <tr>
+                            <th></th>
                             <th>Machine Name</th>
                             <th>Date Played</th>
                             <th>Score</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <th:block th:each="score : ${scores}">
+                        <th:block th:each="scoremachine : ${scoremach}">
                             <tr>
-                                <td th:text="${score.getMachine().name}"></td>
-                                <td th:text="${score.date}"></td>
-                                <td th:text="${score.score}"></td>
+                                <td th:text="${scoremach.indexOf(scoremachine) + 1 }"></td>
+                                <td th:text="${scoremachine.getMachine().name}"></td>
+                                <td th:text="${scoremachine.addedscoredate}"></td>
+                                <td th:text="${scoremachine.score}"></td>
                             </tr>
                         </th:block>
                         </tbody>
@@ -87,20 +87,21 @@
                     <table class="responsive-table centered">
                         <thead>
                         <tr>
+                            <th></th>
                             <th>Machine Name</th>
                             <th>Score</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <th:block th:each="machines : ${machines1}">
+                        <th:block th:each="machine : ${machines}">
                             <tr>
-                                <td th:text="${machines.name}"></td>
-                                <td th:text="${machines.getScores()}"></td>
+                                <td th:text="${machines.indexOf(machine) + 1 }"></td>
+                                <td th:text="${machine.name}"></td>
+                                <td th:text="${machine.getScores()}"></td>
                             </tr>
                         </th:block>
                         </tbody>
                     </table>
-<!--                </div>-->
             </div>
         </div>
     </div>

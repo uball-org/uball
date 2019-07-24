@@ -22,10 +22,9 @@ public class LeagueController {
         this.leagueDao = leagueDao;
     }
 
-
     /**
      * ounces URI accessed, displays machines page
-     * */
+     */
     @GetMapping("/createleague")
     public String index(Model model) {
 
@@ -42,52 +41,93 @@ public class LeagueController {
         }
 
     }
+
     /**
      * returns create machine form
-     * */
+     */
     @GetMapping("/leagues/create")
     public String create(Model model) {
-        model.addAttribute("leaguesForm", new League());
-        return "leagues/create";
+
+        User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        long userId = userSession.getId();
+        boolean isAdmin = userSession.isAdmin();
+
+        if (isAdmin) {
+            model.addAttribute("leaguesForm", new League());
+            return "leagues/create";
+        } else {
+            return "redirect:/userprofile";
+        }
     }
+
     /**
      * accessed through create machine form and inserts into DB before redirecting to machines index page
-     * */
+     */
     @PostMapping("/leagues/create")
     public String insert(@ModelAttribute League league) {
-        leagueDao.save(league);
-        return "redirect:/createleague";
+
+        User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        long userId = userSession.getId();
+        boolean isAdmin = userSession.isAdmin();
+
+        if (isAdmin) {
+            leagueDao.save(league);
+            return "redirect:/createleague";
+        } else {
+            return "redirect:/userprofile";
+        }
     }
 
     /**
      * when URI accessed from machines index page, displays edit machine page by id
-     * */
+     */
     @GetMapping("/leagues/{id}/edit")
     public String edit(@PathVariable long id, Model model) {
-        model.addAttribute("thisLeague", leagueDao.findOne(id));
-        return "leagues/edit";
+
+        User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        long userId = userSession.getId();
+        boolean isAdmin = userSession.isAdmin();
+
+        if (isAdmin) {
+            model.addAttribute("thisLeague", leagueDao.findOne(id));
+            return "leagues/edit";
+        } else {
+            return "redirect:/userprofile";
+        }
     }
 
     /**
      * accessed through edit machine form and inserts into DB before redirecting to machines index page
-     * */
+     */
     @PostMapping("/leagues/{id}/edit")
     public String update(@PathVariable long id, @ModelAttribute League league) {
-        leagueDao.save(league);
-        return "redirect:/creategroup";
+
+        User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        long userId = userSession.getId();
+        boolean isAdmin = userSession.isAdmin();
+
+        if (isAdmin) {
+            leagueDao.save(league);
+            return "redirect:/creategroup";
+        } else {
+            return "redirect:/userprofile";
+        }
     }
 
     @GetMapping("/leagues/{id}/delete")
     public String deleteLeague(@PathVariable long id, @ModelAttribute League league) {
-        leagueDao.delete(id);
-        return "redirect:/createleague";
+
+        User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        long userId = userSession.getId();
+        boolean isAdmin = userSession.isAdmin();
+
+        if (isAdmin) {
+            leagueDao.delete(id);
+            return "redirect:/createleague";
+        } else {
+            return "redirect:/userprofile";
+        }
     }
-
-
-
-
-
-
 
 
 }

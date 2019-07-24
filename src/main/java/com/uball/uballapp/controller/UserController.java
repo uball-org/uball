@@ -70,28 +70,21 @@ public class UserController<leagueRepository> {
         return "redirect:/login";
     }
 
-    //Getting all Users!
-
-    @GetMapping("/leagues") // this will be the method that shows all members of the league page
+    @GetMapping("/leagues")
     public String all(Model model){
+
+        User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        long userId = userSession.getId();
+        String username = userSession.getUsername();
+
+        model.addAttribute("userName", username);
         model.addAttribute("users",userDao.findTop4ScoringUsers());
-        //data by league
-//        model.addAttribute("oneLeagueScores",scoreDao.Top4ScoresByLeague(1));
-//        model.addAttribute("twoLeagueScores",scoreDao.Top4ScoresByLeague(2));
+        model.addAttribute("oneLeagueScores",scoreDao.Top4ScoresByLeague(1));
+        model.addAttribute("twoLeagueScores",scoreDao.Top4ScoresByLeague(2));
 
         return "league/leaguedashboard";
     }
 
-    @GetMapping("/league_stats")
-    public String leagueStats(Model model){
-        //data by league(SAPL)
-//        model.addAttribute("oneLeagueScores",scoreDao.Top4ScoresByLeague(1));
-        //data by league(Belles & Chimes)
-//        model.addAttribute("twoLeagueScores",scoreDao.Top4ScoresByLeague(2));
-        return "league/league_stats";
-    }
-
-    //Show User Profile, by ID #
     @GetMapping("/userprofile")
     public String userProfileView(Model model, HttpServletRequest request){
 
@@ -103,15 +96,13 @@ public class UserController<leagueRepository> {
         session.setAttribute("isAdmin", userDB.isAdmin());
 
         model.addAttribute("user", userDB);
-//        model.addAttribute("admin", )
-//        model.addAttribute("machines", machineDao.findOne(userId));
-//        model.addAttribute("machines1", machineDao.findDistinctTopByScoresAnd_User_Id(userId));
-//        model.addAttribute("scores", scoreDao.findAllByUser_Id(1));
-//        model.addAttribute("scores1", scoreDao.findDistinctTopByMachineAndUser_Id(machineDao.findAll(), 2));
+        model.addAttribute("scores", scoreDao.findAllByUser_Id(userDB.getId()));
+        model.addAttribute("scoremach", scoreDao.findTopScoresOnMachines(userDB.getId()));
+        model.addAttribute("machines", machineDao.findTopScoresOnMachines(userDB.getId()));
+
         return "user/userprofile";
     }
 
-    //Editing a User from user side
     @GetMapping("/edituser/{id}")
     public String edit ( @PathVariable long id, Model model){
         model.addAttribute("user", userDao.findOne(id));

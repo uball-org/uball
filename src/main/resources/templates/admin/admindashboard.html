@@ -8,17 +8,13 @@
 <nav th:replace="partials/navbar :: nav"></nav>
 <main>
 
-    <h2 class="center">Welcome, Admin</h2>
+    <h2 class="center">Welcome, <span th:text="${adminname}"></span></h2>
 
     <div class="container">
 
         <div class="row">
 
-            <!--        profile picture of Admin-->
-
             <div class="col s12 m4 l4" ><img src="img/pinball-icons.jpg" alt="Unsplashed background img 1" class="admin-img responsive-img"/></div>
-
-            <!--        table of users-->
 
             <div class="col s12 m8 l8">
                 <table class="responsive-table centered highlight">
@@ -73,18 +69,13 @@
             </div>
         </div>
 
-        <!--Buttons-->
         <br />
         <div class="center">
+            <a class="waves-effect waves-light btn light-blue darken-2" th:href="@{'/creategroup'}">Manage Groups</a>
             <a class="waves-effect waves-light btn light-blue darken-2 " th:href="@{'/createmachine'}">Manage Machines</a>
             <a class="waves-effect waves-light btn light-blue darken-2" th:href="@{'/createleague'}">Manage Leagues</a>
-            <a class="waves-effect waves-light btn light-blue darken-2" th:href="@{'/creategroup'}">Manage Groups</a>
         </div>
         <br />
-
-        <!--*****************-->
-        <!--                Bottom Nav Card Below              -->
-        <!--*****************-->
 
 
         <div class="container" style="width: 100%;">
@@ -102,6 +93,12 @@
                         <div id="CreateGroups">
                             <h4>Select Users for Today's Groups</h4>
                             <p><em>(Remember 4 Users Per Group)</em></p>
+                            <span><em>Before creating your first group of the day eliminate the previous weeks</em></span>
+                            <span>
+                                <a class="btn btn-small red darken-2 center" th:href="@{'/deleteUGTable'}">
+                                Eliminate groups
+                                </a>
+                            </span>
                             <table class="responsive-table centered highlight">
                                 <thead>
                                 <tr>
@@ -109,6 +106,7 @@
                                     <th>Name</th>
                                     <th>Gender</th>
                                     <th>League</th>
+                                    <th>Points</th>
                                     <th>Active Today</th>
                                 </tr>
                                 </thead>
@@ -119,6 +117,7 @@
                                         <td th:text="${user.firstName + ' ' + user.lastName}"></td>
                                         <td th:text="${user.gender}"></td>
                                         <td th:text="${user.getLeague().name}"></td>
+                                        <td th:text="${user.points}"></td>
                                         <td>
                                             <p>
                                                 <label>
@@ -140,7 +139,6 @@
                                             th:text="${group.name}"></option>
                                 </th:block>
                             </select>
-<!--                            <a class="tab waves-effect waves-light btn " href="#CreateMachines" >Get Todays Machines</a>-->
                         </div>
                         <div id="CreateMachines">
                             <h3>Select Your Machines</h3>
