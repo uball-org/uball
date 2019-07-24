@@ -1,5 +1,9 @@
 select * from users;
 
+use uball_db;
+
+drop database uball_db;
+
 
 insert into leagues
 (
@@ -133,4 +137,4 @@ values (7,
 
 UPDATE users
 SET is_admin = true
-WHERE id = 5;
+WHERE id = 2;
