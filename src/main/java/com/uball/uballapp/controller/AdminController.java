@@ -155,6 +155,23 @@ public class AdminController {
         return "redirect:/weeks-scores";
     }
 
+    @PostMapping("/admindashboard/updatepoints")
+    public String insertNewPoints(
+            @RequestParam (name = "points") List<Long> addPoints) {
+//        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//        if (!user.getRole().equals("instructor")) {
+//            return "redirect:/";
+//        }
+        Iterable<User> userPointsUpdate = userDao.findAllByUserId();
+        int i = 0;
+        for (User userpointsupdate : userPointsUpdate) {
+            userpointsupdate.setPoints(addPoints.get(i));
+            i++;
+        }
+        userDao.save(userPointsUpdate);
+        return "redirect:/weeks-scores";
+    }
+
 
 
 
