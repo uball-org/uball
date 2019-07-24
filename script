@@ -1,0 +1,55 @@
+Intro / About -- Nadia
+Reg / Login / Profile Page + Edit Profile -- Matthew
+Admin Page Functionality w Scores View -- Mykal
+Create / Edit / Delete on Admin -- Ali
+Conclusion -- Nadia or Mykal
+
+Nadia -->
+Introduction
+Hello everyone, my name is Nadia Botello and joining me today are Matthew Alaniz, Ali Baraka, and Mykal Clinard. We’re here to present our application UBall.
+About
+
+UBall is a score management system for pinball leagues. As a member of San Antonio’s lady pinball league Belles & Chimes, I saw the need for a more streamlined, digitized administration process for competitions. UBall keeps track of player scores and their ranking for league match play on a minimal, mobile responsive interface.
+
+Mention these terms within the individual walk-throughs -->
+
+The application was built utilizing:
+Java and Spring Boot Framework on the back end
+Thymeleaf
+JavaScript ES6
+Materialize on the front end
+Hibernate
+MySQL
+Spring Security
+
+Matthew -->
+
+Registration page
+
+Now here is the registration form, equipped with all necessary fields present and ready to allow a person to become a new UBall member. The form itself is also ready to check for a strong password and duplicate users from the backend.
+
+Login page
+
+The registration page will then redirect the new user to the login page. Upon filling in the credentials  you will be directed to the profile page. If the user is not registered they will receive an error message indicating that they are using an invalid username or password
+
+User Profile + Edit page
+
+After redirection, you will have an official profile page complete with your user information separated in a card and a profile picture of your choice and your machine usage and scores.
+Should you decide the information is not correct or just needs to be changed, the edit function is available on the user profile card and ready to redirect you to a form to change any information about yourself..
+
+Mykal -->
+
+About Admin
+
+Admin on the UBall application will have the authority to edit and delete users (players) or create a new status of “Admin” for a user. The admin will use the application as not only a player in one of the leagues if they choose too, but can also be the official scorer or judge of the groups playing, officiating the standings and creation of the daily matches.
+
+The admin has the ability to create, delete and edit a number of entities in the database structure to include: Game Machines, Groups, and the Official Leagues.
+
+The admin will be given a list of each entity in its own view on the application to help track the available machines, groups, or leagues in which they will be able to dynamically manage.
+
+Ali -->
+
+
+Nadia -->
+Conclusion
+If you'd like to know more about any of our site's features or the build process, come see us at table X. And if you’d like to try your hand at pinball, visit uball.org/play!
