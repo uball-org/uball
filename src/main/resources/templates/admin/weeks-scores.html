@@ -12,157 +12,189 @@
 
     <div class="container">
         <div>
-        <form th:action="@{/admindashboard/updatepoints}" method="post">
-            <h2 class="center-align">Group 1</h2>
-            <br />
-            <div>
-                <table class="responsive-table centered highlight">
-                    <thead>
-                    <tr>
-                        <th></th>
-                        <th>Player</th>
-                        <th>Machine</th>
-                        <th>Score</th>
-                        <th>Points For Place</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <th:block th:each="scored : ${scores1}">
+            <form th:action="@{/admindashboard/updatepoints}" method="post">
+                <h2 class="center-align">Group 1</h2>
+                <br/>
+                <div>
+                    <table class="responsive-table centered highlight">
+                        <thead>
                         <tr>
-                            <td th:text="${scores1.indexOf(scored) +1}"></td>
-<!--                            <td name="userId" th:hidden="${scored.getUser().id}"></td>-->
-                            <td th:text="${scored.getUser().username}"></td>
-                            <td th:text="${scored.getMachine().name}"></td>
-                            <td th:text="${scored.score}"></td>
-                            <td>
-                                <div class="input-field">
-                                    <input th:placeholder="${scored.getUser().id}" th:value="${scored.getUser().id}" name="user" type="text" class="validate"/>
-                                    <input th:placeholder="${scored.getUser().points}" name="points" type="text" class="validate"/>
-<!--                                    <a class="btn-floating waves-effect waves-light amber darken-4"-->
-<!--                                       th:href="@{'/admindashboard/updatepoints/'+${scored.getUser().id}}">-->
-<!--                                        <i class="material-icons">add</i>-->
-<!--                                    </a>-->
-                                </div>
-                            </td>
+                            <th></th>
+                            <th>Player</th>
+                            <th>Machine</th>
+                            <th>Score</th>
+                            <th th:if="${#httpSession.getAttribute('isAdmin')}">Points For Place</th>
                         </tr>
-                    </th:block>
-                    </tbody>
-                </table>
-            </div>
-            <br/>
-            <button type="submit" class="btn btn-primary mt-1 ">Submit Final Scores</button>
-        </form>
+                        </thead>
+                        <tbody>
+                        <th:block th:each="scored : ${scores1}">
+                            <tr>
+                                <td th:text="${scores1.indexOf(scored) +1}"></td>
+                                <td th:text="${scored.getUser().username}"></td>
+                                <td th:text="${scored.getMachine().name}"></td>
+                                <td th:text="${scored.score}"></td>
+                                <td>
+                                    <div class="input-field" th:if="${#httpSession.getAttribute('isAdmin')}">
+                                        <input th:placeholder="${scored.getUser().id}" th:value="${scored.getUser().id}"
+                                               name="user" type="text" class="validate"/>
+                                        <input th:placeholder="${scored.getUser().points}" name="points" type="text"
+                                               class="validate"/>
+                                        <!--                                    <a class="btn-floating waves-effect waves-light amber darken-4"-->
+                                        <!--                                       th:href="@{'/admindashboard/updatepoints/'+${scored.getUser().id}}">-->
+                                        <!--                                        <i class="material-icons">add</i>-->
+                                        <!--                                    </a>-->
+                                    </div>
+                                </td>
+                            </tr>
+                        </th:block>
+                        </tbody>
+                    </table>
+                </div>
+                <br/>
+                <button th:if="${#httpSession.getAttribute('isAdmin')}" type="submit" class="btn btn-primary mt-1 ">
+                    Submit Final Scores
+                </button>
+            </form>
         </div>
 
         <div>
-        <form th:action="@{/admindashboard/updatepoints}" method="post">
-            <h2 class="center-align">Group 2</h2>
-            <br />
-            <div>
-                <table class="responsive-table centered highlight">
-                    <thead>
-                    <tr>
-                        <th></th>
-                        <th>Player</th>
-                        <th>Machine</th>
-                        <th>Score</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <th:block th:each="scored : ${scores2}">
+            <form th:action="@{/admindashboard/updatepoints}" method="post">
+                <h2 class="center-align">Group 2</h2>
+                <br/>
+                <div>
+                    <table class="responsive-table centered highlight">
+                        <thead>
                         <tr>
-                            <td th:text="${scores2.indexOf(scored) +1}"></td>
-                            <td th:text="${scored.getUser().username}"></td>
-                            <td th:text="${scored.getMachine().name}"></td>
-                            <td th:text="${scored.score}"></td>
+                            <th></th>
+                            <th>Player</th>
+                            <th>Machine</th>
+                            <th>Score</th>
+                            <th th:if="${#httpSession.getAttribute('isAdmin')}">Points For Place</th>
                         </tr>
-                    </th:block>
-                    </tbody>
-                </table>
-            </div>
-            <br/>
-            <button type="submit" class="btn btn-primary mt-1 ">Submit Final Scores</button>
-        </form>
+                        </thead>
+                        <tbody>
+                        <th:block th:each="scored : ${scores2}">
+                            <tr>
+                                <td th:text="${scores1.indexOf(scored) +1}"></td>
+                                <td th:text="${scored.getUser().username}"></td>
+                                <td th:text="${scored.getMachine().name}"></td>
+                                <td th:text="${scored.score}"></td>
+                                <td>
+                                    <div class="input-field" th:if="${#httpSession.getAttribute('isAdmin')}">
+                                        <input th:placeholder="${scored.getUser().id}" th:value="${scored.getUser().id}"
+                                               name="user" type="text" class="validate"/>
+                                        <input th:placeholder="${scored.getUser().points}" name="points" type="text"
+                                               class="validate"/>
+                                        <!--                                    <a class="btn-floating waves-effect waves-light amber darken-4"-->
+                                        <!--                                       th:href="@{'/admindashboard/updatepoints/'+${scored.getUser().id}}">-->
+                                        <!--                                        <i class="material-icons">add</i>-->
+                                        <!--                                    </a>-->
+                                    </div>
+                                </td>
+                            </tr>
+                        </th:block>
+                        </tbody>
+                    </table>
+                </div>
+                <br/>
+                <button th:if="${#httpSession.getAttribute('isAdmin')}" type="submit" class="btn btn-primary mt-1 ">
+                    Submit Final Scores
+                </button>
+            </form>
         </div>
 
         <div>
-            <h2 class="center-align">Group 3</h2>
-            <table class="responsive-table centered highlight">
-                <thead>
-                <tr>
-                    <th></th>
-                    <th>Player</th>
-                    <th>Machine</th>
-                    <th>Score</th>
-                </tr>
-                </thead>
-                <tbody>
-                <th:block th:each="scored : ${scores3}">
-                    <tr>
-                        <td th:text="${scores3.indexOf(scored) +1}"></td>
-                        <td th:text="${scored.getUser().username}"></td>
-                        <td th:text="${scored.getMachine().name}"></td>
-                        <td th:text="${scored.score}"></td>
-                    </tr>
-                </th:block>
-                </tbody>
-            </table>
+            <form th:action="@{/admindashboard/updatepoints}" method="post">
+                <h2 class="center-align">Group 3</h2>
+                <br/>
+                <div>
+                    <table class="responsive-table centered highlight">
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th>Player</th>
+                            <th>Machine</th>
+                            <th>Score</th>
+                            <th th:if="${#httpSession.getAttribute('isAdmin')}">Points For Place</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <th:block th:each="scored : ${scores3}">
+                            <tr>
+                                <td th:text="${scores1.indexOf(scored) +1}"></td>
+                                <td th:text="${scored.getUser().username}"></td>
+                                <td th:text="${scored.getMachine().name}"></td>
+                                <td th:text="${scored.score}"></td>
+                                <td>
+                                    <div class="input-field" th:if="${#httpSession.getAttribute('isAdmin')}">
+                                        <input th:placeholder="${scored.getUser().id}" th:value="${scored.getUser().id}"
+                                               name="user" type="text" class="validate"/>
+                                        <input th:placeholder="${scored.getUser().points}" name="points" type="text"
+                                               class="validate"/>
+                                        <!--                                    <a class="btn-floating waves-effect waves-light amber darken-4"-->
+                                        <!--                                       th:href="@{'/admindashboard/updatepoints/'+${scored.getUser().id}}">-->
+                                        <!--                                        <i class="material-icons">add</i>-->
+                                        <!--                                    </a>-->
+                                    </div>
+                                </td>
+                            </tr>
+                        </th:block>
+                        </tbody>
+                    </table>
+                </div>
+                <br/>
+                <button th:if="${#httpSession.getAttribute('isAdmin')}" type="submit" class="btn btn-primary mt-1 ">
+                    Submit Final Scores
+                </button>
+            </form>
         </div>
 
         <div>
-            <h2 class="center-align">Group 4</h2>
-            <table class="responsive-table centered highlight">
-                <thead>
-                <tr>
-                    <th></th>
-                    <th>Player</th>
-                    <th>Machine</th>
-                    <th>Score</th>
-                </tr>
-                </thead>
-                <tbody>
-                <th:block th:each="scored : ${scores4}">
-                    <tr>
-                        <td th:text="${scores4.indexOf(scored) +1}"></td>
-                        <td th:text="${scored.getUser().username}"></td>
-                        <td th:text="${scored.getMachine().name}"></td>
-                        <td th:text="${scored.score}"></td>
-                    </tr>
-                </th:block>
-                </tbody>
-            </table>
+            <form th:action="@{/admindashboard/updatepoints}" method="post">
+                <h2 class="center-align">Group 4</h2>
+                <br/>
+                <div>
+                    <table class="responsive-table centered highlight">
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th>Player</th>
+                            <th>Machine</th>
+                            <th>Score</th>
+                            <th th:if="${#httpSession.getAttribute('isAdmin')}">Points For Place</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <th:block th:each="scored : ${scores4}">
+                            <tr>
+                                <td th:text="${scores1.indexOf(scored) +1}"></td>
+                                <td th:text="${scored.getUser().username}"></td>
+                                <td th:text="${scored.getMachine().name}"></td>
+                                <td th:text="${scored.score}"></td>
+                                <td>
+                                    <div class="input-field" th:if="${#httpSession.getAttribute('isAdmin')}">
+                                        <input th:placeholder="${scored.getUser().id}" th:value="${scored.getUser().id}"
+                                               name="user" type="text" class="validate"/>
+                                        <input th:placeholder="${scored.getUser().points}" name="points" type="text"
+                                               class="validate"/>
+                                        <!--                                    <a class="btn-floating waves-effect waves-light amber darken-4"-->
+                                        <!--                                       th:href="@{'/admindashboard/updatepoints/'+${scored.getUser().id}}">-->
+                                        <!--                                        <i class="material-icons">add</i>-->
+                                        <!--                                    </a>-->
+                                    </div>
+                                </td>
+                            </tr>
+                        </th:block>
+                        </tbody>
+                    </table>
+                </div>
+                <br/>
+                <button th:if="${#httpSession.getAttribute('isAdmin')}" type="submit" class="btn btn-primary mt-1 ">
+                    Submit Final Scores
+                </button>
+            </form>
         </div>
-
     </div>
-        <div class="legend" style="width: 5rem;">
-                <h6>Points Legend</h6>
-            <table class="responsive-table centered highlight">
-                <thead>
-                <tr>
-                    <th>Place</th>
-                    <th>Points</th>
-                </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td >1</td>
-                        <td >4</td>
-                    </tr>
-                    <tr>
-                        <td >2</td>
-                        <td >3</td>
-                    </tr>
-                    <tr>
-                        <td >3</td>
-                        <td >2</td>
-                    </tr>
-                    <tr>
-                        <td >4</td>
-                        <td >1</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
 </main>
 
 <footer>

@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 
-import javax.validation.Valid;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -36,9 +35,10 @@ public class AdminController {
         this.userDao = userDao;
         this.scoreDao = scoreDao;
     }
-            //All Machines and Users
+
+    //All Machines and Users
     @GetMapping("/admindashboard")
-    public String all(Model model){
+    public String all(Model model) {
 
         User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         long userId = userSession.getId();
@@ -60,7 +60,7 @@ public class AdminController {
         }
     }
 
-    @GetMapping ("/isNotAdmin/{id}")
+    @GetMapping("/isNotAdmin/{id}")
     public String notAdminNow(@ModelAttribute User user,
                               @PathVariable long id) {
         userDao.isNewNonAdmin(id);
@@ -69,20 +69,20 @@ public class AdminController {
 
     @GetMapping("/isAdmin/{id}")
     public String isAdminNow(@ModelAttribute User user,
-                              @PathVariable long id) {
+                             @PathVariable long id) {
         userDao.isNewAdmin(id);
         return "redirect:/admindashboard";
     }
 
 
-            //Value of user selected on view is : "uchecked" / "mchecked"
+    //Value of user selected on view is : "uchecked" / "mchecked"
     @RequestMapping(value = "/admindashboard/creategrouping", method = RequestMethod.POST)
     public String newUsersForGroups(@ModelAttribute Group group,
                                     @RequestParam(name = "uchecked") List<User> newU,
                                     @RequestParam(name = "group_id") long groupId,
                                     @RequestParam(name = "mchecked") List<Machine> newM) {
 
-        for(User users : newU){
+        for (User users : newU) {
             System.out.println("users = " +
                     newU.indexOf(users) + " " +
                     users.isAdmin() + " " +
@@ -90,11 +90,9 @@ public class AdminController {
                     users.getFirstName() + " " +
                     users.getLastName() + " " + users.getId());
 
-            //Create logic for making group amount and number of groups
-
-            for(Machine machine : newM){
+            for (Machine machine : newM) {
                 System.out.println(machine.getId() + " " +
-                        machine.getName() );
+                        machine.getName());
 
                 Score blankscore = new Score(); // New score object to use to add new scores tied to the user_id and machine_id just added
                 blankscore.setScore(0);
@@ -103,15 +101,26 @@ public class AdminController {
                 blankscore.setUser(users);
                 scoreDao.save(blankscore);
             }
-            System.out.println(groupId);
             users.getGroups().add(groupDao.findOne(groupId));
             userDao.save(users);
         }
-
-        System.out.println("size of new users list divide by two= " + newU.size()/2);
-        System.out.println("size of new machines list divide by two= " + newM.size()/2);
-
         return "redirect:/admindashboard";
+    }
+
+    @GetMapping("/weeks-scores")
+    public String groupWeek(Model model) {
+
+        User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        long userId = userSession.getId();
+        boolean isAdmin = userSession.isAdmin();
+
+        model.addAttribute("scores1", scoreDao.findAllInGroup(1L, LocalDate.now()));
+        model.addAttribute("scores2", scoreDao.findAllInGroup(2L, LocalDate.now()));
+        model.addAttribute("scores3", scoreDao.findAllInGroup(3L, LocalDate.now()));
+        model.addAttribute("scores4", scoreDao.findAllInGroup(4L, LocalDate.now()));
+        model.addAttribute("group1", groupDao.findAllInGroup(LocalDate.now()));
+
+        return "admin/weeks-scores";
     }
 
     @PostMapping("/week-scores")
@@ -127,42 +136,11 @@ public class AdminController {
     }
 
 
-    @GetMapping ("/weeks-scores")
-    public String groupWeek(Model model){
-
-        User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        long userId = userSession.getId();
-        boolean isAdmin = userSession.isAdmin();
-
-        model.addAttribute("scores1", scoreDao.findAllInGroup(1L, LocalDate.now()));
-        model.addAttribute("scores2", scoreDao.findAllInGroup(2L, LocalDate.now()));
-        model.addAttribute("scores3", scoreDao.findAllInGroup(3L, LocalDate.now()));
-        model.addAttribute("scores4", scoreDao.findAllInGroup(4L, LocalDate.now()));
-        model.addAttribute("group1", groupDao.findAllInGroup(LocalDate.now()));
-
-        return "admin/weeks-scores";
-
-    }
-
-    @GetMapping("/admindashboard/updatepoints/{id}")
-    public String updatepoints(@ModelAttribute User user,
-                               @PathVariable long id,
-                               @RequestParam(name = "points") long newPoints) {
-
-        System.out.println("userId = " + id);
-        System.out.println("newPoints = " + newPoints);
-        userDao.updatePointsAdd(newPoints, id);
-        return "redirect:/weeks-scores";
-    }
-
     @PostMapping("/admindashboard/updatepoints")
     public String insertNewPoints(
-            @RequestParam (name = "points") List<Long> addPoints,
-            @RequestParam (name = "user") List<Long> userIds) {
-//        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//        if (!user.getRole().equals("instructor")) {
-//            return "redirect:/";
-//        }
+            @RequestParam(name = "points") List<Long> addPoints,
+            @RequestParam(name = "user") List<Long> userIds) {
+
         System.out.println("addPoints = " + addPoints);
         System.out.println("userIds = " + userIds);
         Iterable<User> userPointsUpdate = userDao.findAll(userIds);
@@ -172,7 +150,7 @@ public class AdminController {
             System.out.println("userpointsupdate.getPoints() = " + userpointsupdate.getPoints());
             userpointsupdate.setPoints(userpointsupdate.getPoints() + addPoints.get(i));
             System.out.println("userpointsupdate.getId() = " + userpointsupdate.getId());
-            System.out.println("userpointsupdate.getId() = " + userpointsupdate.getPoints());
+            System.out.println("userpointsupdate.getPoints() = " + userpointsupdate.getPoints());
             i++;
         }
         userDao.save(userPointsUpdate);
@@ -180,6 +158,16 @@ public class AdminController {
     }
 
 
+    //    @GetMapping("/admindashboard/updatepoints/{id}")
+//    public String updatepoints(@ModelAttribute User user,
+//                               @PathVariable long id,
+//                               @RequestParam(name = "points") long newPoints) {
+//
+//        System.out.println("userId = " + id);
+//        System.out.println("newPoints = " + newPoints);
+//        userDao.updatePointsAdd(newPoints, id);
+//        return "redirect:/weeks-scores";
+//    }
 
 
     // disable button

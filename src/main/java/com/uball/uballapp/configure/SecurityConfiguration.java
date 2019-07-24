@@ -61,6 +61,16 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/userprofile/{id}",
                         "/admindashboard",
                         "/edituser/{id}",
+                        "/weeks-scores",
+                        "/groups/create",
+                        "/groups/{id}/edit",
+                        "/groups/{id}/delete",
+                        "/machines/create",
+                        "/machines/{id}/edit",
+                        "/machines/{id}/delete",
+                        "/leagues/create",
+                        "/leagues/{id}/edit",
+                        "/leagues/{id}/delete",
                         "/leagues"
                 )
                 .authenticated()
