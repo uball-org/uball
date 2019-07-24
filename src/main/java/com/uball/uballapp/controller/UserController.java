@@ -70,12 +70,9 @@ public class UserController<leagueRepository> {
         return "redirect:/login";
     }
 
-    //Getting all Users!
-
-    @GetMapping("/leagues") // this will be the method that shows all members of the league page
+    @GetMapping("/leagues")
     public String all(Model model){
         model.addAttribute("users",userDao.findTop4ScoringUsers());
-        //data by league
         model.addAttribute("oneLeagueScores",scoreDao.Top4ScoresByLeague(1));
         model.addAttribute("twoLeagueScores",scoreDao.Top4ScoresByLeague(2));
 
@@ -91,7 +88,6 @@ public class UserController<leagueRepository> {
         return "league/league_stats";
     }
 
-    //Show User Profile, by ID #
     @GetMapping("/userprofile")
     public String userProfileView(Model model, HttpServletRequest request){
 
@@ -102,10 +98,6 @@ public class UserController<leagueRepository> {
         HttpSession session = request.getSession();
         session.setAttribute("isAdmin", userDB.isAdmin());
 
-        System.out.println("userId = " + userId);
-        System.out.println("userDB = " + userDB);
-        System.out.println("userDB Id = " + userDB.getId());
-
         model.addAttribute("user", userDB);
         model.addAttribute("scores", scoreDao.findAllByUser_Id(userDB.getId()));
         model.addAttribute("scoremach", scoreDao.findTopScoresOnMachines(userDB.getId()));
@@ -114,7 +106,6 @@ public class UserController<leagueRepository> {
         return "user/userprofile";
     }
 
-    //Editing a User from user side
     @GetMapping("/edituser/{id}")
     public String edit ( @PathVariable long id, Model model){
         model.addAttribute("user", userDao.findOne(id));

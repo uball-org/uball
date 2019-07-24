@@ -4,11 +4,10 @@
 <body>
 <nav th:replace="partials/navbar :: nav"></nav>
 
-<!-- Page Layout here -->
 <div >
     <div class=" parallax-container " style=" background-size:cover; background-image: url('/img/tnacoreidoor.jpg')">
-            <div class="row">
-                <table class=" col m6 s12 offset-m6 responsive-table  header-shadow ">
+            <div class="row" style="margin-top: 2rem;">
+                <table class=" col m6 s12 offset-m3 responsive-table  header-shadow highlight">
                     <thead>
                     <tr>
                         <th>Profile</th>
@@ -22,15 +21,14 @@
                     <tbody class="collection">
                     <th:block th:each="user : ${users}">
                         <tr>
-                            <td> <!--player photo-->
+                            <td>
                                 <img src="https://placeholder.pics/svg/50" alt="" class="circle" />
                             </td>
-                            <td> <!--place-->
-                                <span>#</span><span th:text="${users.indexOf(user)} + 1">1</span><span> Place</span>
+                            <td>
+                                <span>#</span><span th:text="${users.indexOf(user)} + 1"></span><span> Place</span>
                             </td>
                             <td th:text="${user.points}">points</td>
                             <td th:text="${user.firstName + ' ' + user.lastName}">Name</td>
-                            <!--gender-->
                             <td th:text="${user.gender}">Gender</td>
                             <td th:text="${user.getLeague().name}">League</td>
                         </tr>
@@ -44,13 +42,11 @@
 
     <!-- start league section-->
     <div class="section white container">
-        <!-- start section container-->
         <div class="row">
-                            <!--league #1 Tab-->
             <div class="col m6 l6 s12 ">
-                <div class="col m6 l6 s12" id="machine1">
-                    <a class="waves-effect waves-light btn-large">Belles and Chimes</a>
-                    <div class="col" style=" border: 2px solid black">
+                <div>
+                    <a class="waves-effect waves-light btn-large">SAPL</a>
+                    <div style=" border: 2px solid black">
                         <table class="responsive-table centered highlight">
                             <thead>
                             <tr>
@@ -77,15 +73,13 @@
                 </div>
             </div>
 
-            <!--                machine #2 Tab-->
             <div class="col m6 l6 s12 ">
-                <div class="col m6 l6 s12" id="machine2">
-                    <a class="waves-effect waves-light btn-large">SAPL</a>
-                    <div class="col" style=" border: 2px solid black">
+                <div>
+                    <a class="waves-effect waves-light btn-large">Belles and Chimes</a>
+                    <div style=" border: 2px solid black">
                         <table class="responsive-table centered highlight">
                             <thead>
                             <tr>
-
                                 <th>Place</th>
                                 <th>Name</th>
                                 <th>Machine Name</th>
@@ -108,8 +102,8 @@
                     </div>
                 </div>
             </div>
-        </div> <!-- end section container-->
-    </div> <!-- end league section -->
+        </div>
+    </div>
 </div>
 
 

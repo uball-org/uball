@@ -59,6 +59,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 
                         "/userprofile/{id}",
+                        "/userprofile",
                         "/admindashboard",
                         "/edituser/{id}",
                         "/weeks-scores",
