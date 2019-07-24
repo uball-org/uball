@@ -78,13 +78,12 @@ public class AdminController {
     }
 
     @GetMapping("/deleteUGTable")
-    public String truncateTableUG(){
+    public String truncateTableUG() {
         adminDao.eliminateTableUG();
         return "redirect:/admindashboard";
     }
 
 
-    //Value of user selected on view is : "uchecked" / "mchecked"
     @RequestMapping(value = "/admindashboard/creategrouping", method = RequestMethod.POST)
     public String newUsersForGroups(@ModelAttribute Group group,
                                     @RequestParam(name = "uchecked") List<User> newU,
@@ -144,48 +143,26 @@ public class AdminController {
         return "redirect:/admindashboard";
     }
 
-
     @PostMapping("/admindashboard/updatepoints")
     public String insertNewPoints(
             @RequestParam(name = "points") List<Long> addPoints,
             @RequestParam(name = "user") List<Long> userIds) {
 
-        System.out.println("addPoints = " + addPoints);
-        System.out.println("userIds = " + userIds);
-        Iterable<User> userPointsUpdate = userDao.findAll(userIds);
-        System.out.println("userPointsUpdate = " + userPointsUpdate);
         int i = 0;
-        for (User userpointsupdate : userPointsUpdate) {
-            System.out.println("userpointsupdate.getPoints() = " + userpointsupdate.getPoints());
-            userpointsupdate.setPoints(userpointsupdate.getPoints() + addPoints.get(i));
-            System.out.println("userpointsupdate.getId() = " + userpointsupdate.getId());
-            System.out.println("userpointsupdate.getPoints() = " + userpointsupdate.getPoints());
+        for (Long userId : userIds) {
+            User user = userDao.findOne(userId);
+            user.setPoints(user.getPoints() + addPoints.get(i));
+            userDao.save(user);
             i++;
         }
-        userDao.save(userPointsUpdate);
         return "redirect:/weeks-scores";
     }
 
-
-    //    @GetMapping("/admindashboard/updatepoints/{id}")
-//    public String updatepoints(@ModelAttribute User user,
-//                               @PathVariable long id,
-//                               @RequestParam(name = "points") long newPoints) {
-//
-//        System.out.println("userId = " + id);
-//        System.out.println("newPoints = " + newPoints);
-//        userDao.updatePointsAdd(newPoints, id);
-//        return "redirect:/weeks-scores";
-//    }
-
-
-    // disable button
-//
-//    @PostMapping("/user/{id}/disable") //This will actually be to disable NOT DELETE
-//    public String delete(@PathVariable long id) {
-//        adminDao.delete(id);
-//        return "redirect:/admindashboard";
-//    }
+    @GetMapping("/user/{id}/delete")
+    public String delete(@PathVariable long id) {
+        adminDao.delete(id);
+        return "redirect:/admindashboard";
+    }
 
 
 }
