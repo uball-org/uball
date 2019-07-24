@@ -4,6 +4,7 @@
 <body>
 <nav th:replace="partials/navbar :: nav"></nav>
 
+<main>
 <div >
     <div class=" parallax-container " style=" background-size:cover; background-image: url('/img/tnacoreidoor.jpg')">
             <div class="row" style="margin-top: 2rem;">
@@ -40,72 +41,89 @@
     </div>
 
 
-    <!-- start league section-->
-    <div class="section white container">
-        <div class="row">
-            <div class="col m6 l6 s12 ">
-                <div>
-                    <a class="waves-effect waves-light btn-large">SAPL</a>
-                    <div style=" border: 2px solid black">
-                        <table class="responsive-table centered highlight">
-                            <thead>
-                            <tr>
-                                <th>Place</th>
-                                <th>Name</th>
-                                <th>Machine Name</th>
-                                <th>Score</th>
-                                <th>Date</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <th:block>
-                                <tr th:each="oneLS : ${oneLeagueScores}">
-                                    <td># <span th:text="${oneLeagueScores.indexOf(oneLS) + 1 } "></span> Place</td>
-                                    <td><span th:text="${oneLS.getUser().username}"></span></td>
-                                    <td><span th:text="${oneLS.getMachine().name}"></span></td>
-                                    <td><span th:text="${oneLS.score}"></span></td>
-                                    <td th:text="${oneLS.addedscoredate}"></td>
-                                </tr>
-                            </th:block>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+    <div class="center">
+        <h4>Want To See The Live Standings For The Groups Playing?</h4>
+        <a class="waves-effect waves-light btn light-blue darken-2" th:href="@{'/weeks-scores'}">Let's See</a>
+    </div>
 
-            <div class="col m6 l6 s12 ">
-                <div>
-                    <a class="waves-effect waves-light btn-large">Belles and Chimes</a>
-                    <div style=" border: 2px solid black">
-                        <table class="responsive-table centered highlight">
-                            <thead>
-                            <tr>
-                                <th>Place</th>
-                                <th>Name</th>
-                                <th>Machine Name</th>
-                                <th>Points</th>
-                                <th>Date</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <th:block>
-                                <tr th:each="twoLS : ${twoLeagueScores}">
-                                    <td># <span th:text="${twoLeagueScores.indexOf(twoLS) + 1 } "></span> Place</td>
-                                    <td><span th:text="${twoLS.getUser().username}"></span></td>
-                                    <td><span th:text="${twoLS.getMachine().name}"></span></td>
-                                    <td th:text="${twoLS.score}"></td>
-                                    <td th:text="${twoLS.addedscoredate}"></td>
+    <div align="center">
+    </div>
+    <div class="container" style="position: absolute; margin-left: 5%; width: 90%;">
+        <div class="container" style= "width: 100%;">
+            <div class="card row" style="position: inherit;">
+                <div class="card-tabs" style="height: 20px;">
+                    <ul class="tabs tabs-fixed-width">
+                        <li class="tab"><a href="#SAPL">San Antonio Pinball League</a></li>
+                        <li class="tab"><a href="#Belles_Chimes" class="active">Belles and Chimes </a></li>
+                    </ul>
+                </div>
+
+                <div class="card-content grey lighten-4" >
+                    <div id="SAPL">
+                        <div align="center">
+                            <h1>SAPL Stats</h1>
+                            <br/><br/>
+                            <table class="responsive-table centered highlight">
+                                <thead>
+                                <tr>
+                                    <th>Place</th>
+                                    <th>Name</th>
+                                    <th>Machine Name</th>
+                                    <th>Score</th>
+                                    <th>Date</th>
                                 </tr>
-                            </th:block>
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                <th:block>
+                                    <tr th:each="oneLS : ${oneLeagueScores}">
+                                        <td># <span th:text="${oneLeagueScores.indexOf(oneLS) + 1 } "></span> Place</td>
+                                        <td><span th:text="${oneLS.getUser().username}"></span></td>
+                                        <td><span th:text="${oneLS.getMachine().name}"></span></td>
+                                        <td><span th:text="${oneLS.score}"></span></td>
+                                        <td th:text="${oneLS.addedscoredate}"></td>
+                                    </tr>
+                                </th:block>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br />
+                    </div>
+
+                    <div id="Belles_Chimes">
+                        <div align="center">
+                            <h1>Belles and Chimes Stats</h1>
+                            <br/><br/>
+                            <table class="responsive-table centered highlight">
+                                <thead>
+                                <tr>
+                                    <th>Place</th>
+                                    <th>Name</th>
+                                    <th>Machine Name</th>
+                                    <th>Points</th>
+                                    <th>Date</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <th:block>
+                                    <tr th:each="twoLS : ${twoLeagueScores}">
+                                        <td># <span th:text="${twoLeagueScores.indexOf(twoLS) + 1 } "></span> Place</td>
+                                        <td><span th:text="${twoLS.getUser().username}"></span></td>
+                                        <td><span th:text="${twoLS.getMachine().name}"></span></td>
+                                        <td th:text="${twoLS.score}"></td>
+                                        <td th:text="${twoLS.addedscoredate}"></td>
+                                    </tr>
+                                </th:block>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br />
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
+</main>
 
 <footer>
     <div th:replace="partials/footer :: footer"></div>
