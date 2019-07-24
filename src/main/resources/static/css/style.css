@@ -1,24 +1,153 @@
 /* Custom Stylesheet */
 
+.tabs .tab a:hover, .tabs .tab a.active {
+  background-color: inherit;
+  color: #26a69a;
+}
 
-/*div.col.s4.card-panel.hoverable{*/
-/*    width: 18%;*/
-/*}*/
-/*div.row{*/
-/*    position:relative;*/
-/*}*/
-/*a.waves-effect.waves-light.btn-small{*/
-/*    float: right;*/
+
+/*.tabs .tab a:hover, .tabs .tab a.active {*/
+
+/*  !*background-color: transparent;*!*/
+/*  color: #26a69a;*/
+
 /*}*/
 
-/* A TEMPORARY FIX FOR FOOTER*/
-/* In doing this, the footer is positioned to the bottom of the page*/
-/*footer.page-footer.grey.darken-4 {*/
+/*.card-panel {*/
+/*  -webkit-transition: -webkit-box-shadow .25s;*/
+/*  transition: -webkit-box-shadow .25s;*/
+/*  transition: box-shadow .25s;*/
+/*  transition: box-shadow .25s, -webkit-box-shadow .25s;*/
+/*  padding: 24px;*/
+/*  margin: 0.5rem 0 1rem 0;*/
+/*  border-radius: 2px;*/
+/*  background-color: #fff;*/
+/*}*/
+
+/*.card {*/
 /*  position: relative;*/
-/*  top: 2500px;*/
+/*  margin: 0.5rem 0 1rem 0;*/
+/*  background-color: #fff;*/
+/*  -webkit-transition: -webkit-box-shadow .25s;*/
+/*  transition: -webkit-box-shadow .25s;*/
+/*  transition: box-shadow .25s;*/
+/*  transition: box-shadow .25s, -webkit-box-shadow .25s;*/
+/*  border-radius: 2px;*/
 /*}*/
 
-/* A TEMPORARY FIX*/
+/*.card .card-image .card-title {*/
+/*  color: #fff;*/
+/*  position: absolute;*/
+/*  bottom: 0;*/
+/*  left: 0;*/
+/*  max-width: 100%;*/
+/*  padding: 24px;*/
+/*}*/
+
+/*.card .card-reveal {*/
+/*  padding: 24px;*/
+/*  position: absolute;*/
+/*  background-color: #fff;*/
+/*  width: 100%;*/
+/*  overflow-y: auto;*/
+/*  left: 0;*/
+/*  top: 100%;*/
+/*  height: 100%;*/
+/*  z-index: 3;*/
+/*  display: none;*/
+/*}*/
+
+.tabs {
+  position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 48px;
+  width: 100%;
+  background-color: #fff;
+  margin: 0 auto;
+  white-space: nowrap;
+}
+
+.tabs.tabs-transparent {
+  background-color: transparent;
+}
+
+.tabs.tabs-transparent .tab a,
+.tabs.tabs-transparent .tab.disabled a,
+.tabs.tabs-transparent .tab.disabled a:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.tabs.tabs-transparent .tab a:hover,
+.tabs.tabs-transparent .tab a.active {
+  color: #e0e0e0;
+}
+
+.tabs.tabs-transparent .indicator {
+  background-color: #e0e0e0;
+}
+
+.tabs.tabs-fixed-width {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.tabs.tabs-fixed-width .tab {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.tabs .tab {
+  display: inline-block;
+  text-align: center;
+  line-height: 48px;
+  height: 48px;
+  padding: 0;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.tabs .tab a {
+  color: #26a69a;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0 24px;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-transition: color .28s ease, background-color .28s ease;
+  transition: color .28s ease, background-color .28s ease;
+}
+
+.tabs .tab a:focus, .tabs .tab a:focus.active {
+  /*background-color: white;*/
+  outline: none;
+}
+
+.tabs .tab a:hover, .tabs .tab a.active {
+  background-color: transparent;
+  color: #26a69a;
+}
+
+.tabs .tab.disabled a,
+.tabs .tab.disabled a:hover {
+  color: rgba(238, 110, 115, 0.4);
+  cursor: default;
+}
+
+.tabs .indicator {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  background-color: #26a69a;
+  will-change: left, right;
+}
+
 
 body {
   display: flex;
@@ -459,6 +588,7 @@ p {
 footer.page-footer {
   margin: 0;
   padding-bottom: .5em;
+  padding-top: .5em;
 }
 
 
