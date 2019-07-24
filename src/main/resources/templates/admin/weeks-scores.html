@@ -30,11 +30,13 @@
                     <th:block th:each="scored : ${scores1}">
                         <tr>
                             <td th:text="${scores1.indexOf(scored) +1}"></td>
+<!--                            <td name="userId" th:hidden="${scored.getUser().id}"></td>-->
                             <td th:text="${scored.getUser().username}"></td>
                             <td th:text="${scored.getMachine().name}"></td>
                             <td th:text="${scored.score}"></td>
                             <td>
                                 <div class="input-field">
+                                    <input th:placeholder="${scored.getUser().id}" th:value="${scored.getUser().id}" name="user" type="text" class="validate"/>
                                     <input th:placeholder="${scored.getUser().points}" name="points" type="text" class="validate"/>
 <!--                                    <a class="btn-floating waves-effect waves-light amber darken-4"-->
 <!--                                       th:href="@{'/admindashboard/updatepoints/'+${scored.getUser().id}}">-->

@@ -157,15 +157,22 @@ public class AdminController {
 
     @PostMapping("/admindashboard/updatepoints")
     public String insertNewPoints(
-            @RequestParam (name = "points") List<Long> addPoints) {
+            @RequestParam (name = "points") List<Long> addPoints,
+            @RequestParam (name = "user") List<Long> userIds) {
 //        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 //        if (!user.getRole().equals("instructor")) {
 //            return "redirect:/";
 //        }
-        Iterable<User> userPointsUpdate = userDao.findAllByUserId();
+        System.out.println("addPoints = " + addPoints);
+        System.out.println("userIds = " + userIds);
+        Iterable<User> userPointsUpdate = userDao.findAll(userIds);
+        System.out.println("userPointsUpdate = " + userPointsUpdate);
         int i = 0;
         for (User userpointsupdate : userPointsUpdate) {
-            userpointsupdate.setPoints(addPoints.get(i));
+            System.out.println("userpointsupdate.getPoints() = " + userpointsupdate.getPoints());
+            userpointsupdate.setPoints(userpointsupdate.getPoints() + addPoints.get(i));
+            System.out.println("userpointsupdate.getId() = " + userpointsupdate.getId());
+            System.out.println("userpointsupdate.getId() = " + userpointsupdate.getPoints());
             i++;
         }
         userDao.save(userPointsUpdate);

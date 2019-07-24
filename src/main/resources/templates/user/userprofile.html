@@ -74,7 +74,7 @@
                         <tbody>
                         <th:block th:each="scoremachine : ${scoremach}">
                             <tr>
-                                <td th:text="${scoremach.indexOf(scoremachine)}"></td>
+                                <td th:text="${scoremach.indexOf(scoremachine) + 1 }"></td>
                                 <td th:text="${scoremachine.getMachine().name}"></td>
                                 <td th:text="${scoremachine.date}"></td>
                                 <td th:text="${scoremachine.score}"></td>
@@ -95,9 +95,9 @@
                         <tbody>
                         <th:block th:each="machine : ${machines}">
                             <tr>
-                                <td th:text="${machines.indexOf(machine)}"></td>
-                                <td th:text="${machine.getMachine().name}"></td>
-                                <td th:text="${machine.score}"></td>
+                                <td th:text="${machines.indexOf(machine) + 1 }"></td>
+                                <td th:text="${machine.name}"></td>
+                                <td th:text="${machine.getScores()}"></td>
                             </tr>
                         </th:block>
                         </tbody>
