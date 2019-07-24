@@ -72,20 +72,17 @@ public class UserController<leagueRepository> {
 
     @GetMapping("/leagues")
     public String all(Model model){
+
+        User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        long userId = userSession.getId();
+        String username = userSession.getUsername();
+
+        model.addAttribute("userName", username);
         model.addAttribute("users",userDao.findTop4ScoringUsers());
         model.addAttribute("oneLeagueScores",scoreDao.Top4ScoresByLeague(1));
         model.addAttribute("twoLeagueScores",scoreDao.Top4ScoresByLeague(2));
 
         return "league/leaguedashboard";
-    }
-
-    @GetMapping("/league_stats")
-    public String leagueStats(Model model){
-        //data by league(SAPL)
-//        model.addAttribute("oneLeagueScores",scoreDao.Top4ScoresByLeague(1));
-        //data by league(Belles & Chimes)
-//        model.addAttribute("twoLeagueScores",scoreDao.Top4ScoresByLeague(2));
-        return "league/league_stats";
     }
 
     @GetMapping("/userprofile")

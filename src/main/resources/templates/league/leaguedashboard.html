@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/head :: head('League Dashboard')"></head>
-<body>
+<body class="grey lighten-2">
 <nav th:replace="partials/navbar :: nav"></nav>
 
 <main>
-<div >
+<div>
     <div class=" parallax-container " style=" background-size:cover; background-image: url('/img/tnacoreidoor.jpg')">
+        <h4 class="center-align" style="border: 3px double white;">Welcome to League View <span th:text="${userName}"></span></h4>
             <div class="row" style="margin-top: 2rem;">
                 <table class=" col m6 s12 offset-m3 responsive-table  header-shadow highlight">
                     <thead>
@@ -39,17 +40,18 @@
 
             </div>
     </div>
-
-
+    <div class="grey lighten-3">
     <div class="center">
-        <h4>Want To See The Live Standings For The Groups Playing?</h4>
+        <br />
+        <h5>Want To See The Live Standings For The Groups Playing?</h5>
         <a class="waves-effect waves-light btn light-blue darken-2" th:href="@{'/weeks-scores'}">Let's See</a>
+        <br />
     </div>
+    <br />
 
     <div align="center">
     </div>
-    <div class="container" style="position: absolute; margin-left: 5%; width: 90%;">
-        <div class="container" style= "width: 100%;">
+        <div class="container" style= "width: 90%;">
             <div class="card row" style="position: inherit;">
                 <div class="card-tabs" style="height: 20px;">
                     <ul class="tabs tabs-fixed-width">
@@ -61,7 +63,7 @@
                 <div class="card-content grey lighten-4" >
                     <div id="SAPL">
                         <div align="center">
-                            <h1>SAPL Stats</h1>
+                            <h4>SAPL Stats</h4>
                             <br/><br/>
                             <table class="responsive-table centered highlight">
                                 <thead>
@@ -91,7 +93,7 @@
 
                     <div id="Belles_Chimes">
                         <div align="center">
-                            <h1>Belles and Chimes Stats</h1>
+                            <h4>Belles and Chimes Stats</h4>
                             <br/><br/>
                             <table class="responsive-table centered highlight">
                                 <thead>
