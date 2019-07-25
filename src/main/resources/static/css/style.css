@@ -5,6 +5,24 @@
   color: #26a69a;
 }
 
+h1, h2, h3 {
+  font-family: 'Bungee Shade', cursive;
+  /*font-weight: bold;*/
+  color: red;
+}
+
+nav {
+  font-family: 'Bungee', cursive;
+}
+
+button .btn {
+  font-family: 'Bungee', cursive;
+}
+
+.header-text {
+  color: white;
+}
+
 .about-link{
   color: #1a237e;
 }
@@ -583,7 +601,9 @@ p {
     /*top: 10%;*/
   }
   .admin-buttons{
-    padding: 1em;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 5px;
   }
 }
 
@@ -592,7 +612,9 @@ p {
     top: 0;
   }
   .admin-buttons{
-    padding: 1em;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 5px;
   }
 }
 

@@ -4493,23 +4493,27 @@ html {
   color: rgba(0, 0, 0, 0.87);
 }
 
+/* changed */
+
 @media only screen and (min-width: 0) {
   html {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
 @media only screen and (min-width: 992px) {
   html {
-    font-size: 14.5px;
+    font-size: 16.5px;
   }
 }
 
 @media only screen and (min-width: 1200px) {
   html {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
+
+/* changed */
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
@@ -6555,7 +6559,7 @@ textarea.materialize-textarea + label:after, .select-wrapper + label:after {
   position: relative;
   min-height: 18px;
   display: block;
-  font-size: 12px;
+  font-size: 16px;
   color: rgba(0, 0, 0, 0.54);
 }
 
