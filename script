@@ -1,55 +1,91 @@
-Intro / About -- Nadia
-Reg / Login / Profile Page + Edit Profile -- Matthew
-Admin Page Functionality w Scores View -- Mykal
-Create / Edit / Delete on Admin -- Ali
-Conclusion -- Nadia or Mykal
-
 Nadia -->
 Introduction
 Hello everyone, my name is Nadia Botello and joining me today are Matthew Alaniz, Ali Baraka, and Mykal Clinard. We’re here to present our application UBall.
 About
 
-UBall is a score management system for pinball leagues. As a member of San Antonio’s lady pinball league Belles & Chimes, I saw the need for a more streamlined, digitized administration process for competitions. UBall keeps track of player scores and their ranking for league match play on a minimal, mobile responsive interface.
+UBall is a score management system for pinball leagues. 
 
-Mention these terms within the individual walk-throughs -->
+As a member of San Antonio’s lady pinball league Belles & Chimes, I saw the need for a more streamlined administration process for competitions. UBall keeps track of player scores and their ranking for league match play on a minimal, mobile responsive interface. 
 
-The application was built utilizing:
-Java and Spring Boot Framework on the back end
-Thymeleaf
-JavaScript ES6
-Materialize on the front end
-Hibernate
-MySQL
-Spring Security
+Now, here to walk us through the registration and login process is Matthew…
 
 Matthew -->
 
 Registration page
-
-Now here is the registration form, equipped with all necessary fields present and ready to allow a person to become a new UBall member. The form itself is also ready to check for a strong password and duplicate users from the backend.
+(View Registration form, don’t fill out)
+Now here is the registration form styled with Materialize on the frontend
+and equipped with all necessary fields present and ready to allow a person to become a new UBall member. The registration page will then redirect the new user to the login page. 
 
 Login page
-
-The registration page will then redirect the new user to the login page. Upon filling in the credentials  you will be directed to the profile page. If the user is not registered they will receive an error message indicating that they are using an invalid username or password
+(View login form, fill out and log in)
+Upon filling in the credentials  you will be directed to the profile page.  Thanks to Mykal, should you do anything that is not jiving well with Spring Security, you will be thrown an error if there are invalid inputs on users or passwords.
 
 User Profile + Edit page
+(View profile, and show tabs.  - Then show edit functionality  -Then go “back” to userprofile)
+After redirection, you will have an official profile page complete with your user information separated in a card done by yours truly, as well as, your machine usage and scores. Now should you decide the information on your profile card is not correct or just needs to be changed, the edit function is available on the user profile card and ready to redirect you to a form to change any information you see fit.
+Ali→
+League page->
 
-After redirection, you will have an official profile page complete with your user information separated in a card and a profile picture of your choice and your machine usage and scores.
-Should you decide the information is not correct or just needs to be changed, the edit function is available on the user profile card and ready to redirect you to a form to change any information about yourself..
+(View league page, highlight top 4 up top)
+-user ranking(points)
+Owing to the Team’s use of the standard industry approach for Mapping to the database, we were able to customly select the top 4 ranking users by their total points. Thus, passing the data to the views by instructing Thymeleaf to iterate over each user displaying their stats.
+
+(Scroll down on league page, show tabs for the two leagues)
+ -Scoring(league)
+With the added interaction/specification to automatically generate an identifier for each entity in MySQL database, we were able to display the top 4 scoring machines by a user on a leagues.
+
+(Now press “LETS SEE” button)
+(Show off the league view with scrolling down and highlight the machine groups)
+(Log Out of user into Admin)
+(Go back to Weeks-Score Page)
+-This Weeks Scores(user role)
+“Unlike the admin, the user can only see The Live Standings For The Groups Playing”
+This week’s current 
+
+Talk about how they are grouped and the places
 
 Mykal -->
+About Admin 
 
-About Admin
+(Managed in the weeks-scores form)
 
-Admin on the UBall application will have the authority to edit and delete users (players) or create a new status of “Admin” for a user. The admin will use the application as not only a player in one of the leagues if they choose too, but can also be the official scorer or judge of the groups playing, officiating the standings and creation of the daily matches.
+(Show the use admin has on “Weeks-Score” form)
+Talk about Users management in competition day
 
-The admin has the ability to create, delete and edit a number of entities in the database structure to include: Game Machines, Groups, and the Official Leagues.
+The admin will have a similar view as a user in the competition standing page, however integrating Spring Security and Thymeleaf injection with form-model binding, the admin will be able to generate the points allocated to the users for their position in the group they are playing in and the machine they played on.
 
-The admin will be given a list of each entity in its own view on the application to help track the available machines, groups, or leagues in which they will be able to dynamically manage.
 
-Ali -->
+
+
+(All managed in the dashboard)
+
+(Switch over to admin dashboard)
+Admin on the UBall application have CRUD functionality 
+
+(Show the admin dashboard from top view THROUGH machine/group/leagues buttons)
+Admin on the UBall application will have the authority to edit and delete users (players) or create a new status of “Admin” for a user, as well as the ability to create, delete and edit a number of entities in the database structure to include: Game Machines, Groups, and the Official Leagues. 
+
+(Click button to show a list view)
+(Show off Edit Feature and Create Feature and Delete Feature)
+(Return to admin dashboard)
+With Ali’s structured flow, the admin will be given a list of each entity in its own view on the application to help track the available machines, groups, or leagues in which they will be able to dynamically manage. 
+
+
+
+(Show off bottom navs)
+(Make a list of Users in a group and Machines used)
+The admin will use the application as not only a player in one of the leagues if they choose too, but can also be the official scorer or judge of the groups playing, officiating the standings and creation of the daily matches. This is very fluid due to Nadia’s MVC model structure and database relationships, creating ease on the relations between tables in the database.
+
+Creating lists
+
+(Create a score live as Admin would do)
+The daily competition list of users split into groups will be managed by the admin as the “Scorer and Judge” to log the current players attending and split the groups as needed. This will correlate with the machines as well, giving the admin the ability to choose what machines they would like to use for the groups to play on. This will lead into the ability of the admin “Scorer and Judge” to then log the scores on each machine by the players and dynamically update the competition standings.
+
 
 
 Nadia -->
 Conclusion
-If you'd like to know more about any of our site's features or the build process, come see us at table X. And if you’d like to try your hand at pinball, visit uball.org/play!
+(GO TO ABOUT PAGE NOW)
+If you'd like to know more about any of our site's features or the process, come see us at table X. 
+
+And if you’d like to try your hand at pinball, visit uball.org/play!
