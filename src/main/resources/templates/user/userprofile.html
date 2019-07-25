@@ -14,12 +14,11 @@
                 <div class="col s12 m4 l4">
                     <div class="card-panel gradient-45deg-light-blue-cyan">
                         <div class="card-content center">
-                            <span class="card-title grey-text text-darken-4"><h2><em><span th:text="${user.username}"></span></em></h2></span>
+                            <span class="card-title grey-text text-darken-4"><h3><em><span th:text="${user.username}"></span></em></h3></span>
                             <p>
                                 <i class="material-icons">perm_identity</i> <span th:text="${user.firstName}"></span> <span th:text="${user.lastName}"></span></p>
                             <p>
                                 <i class="material-icons">import_contacts</i> <span th:text=" ${#dates.format(user.DOB, 'dd-MMM-yyyy')}"></span></p>
-                            <p>   <!--#dates.format(user.DOB, 'dd-MMM-yyyy') -->
                                 <i class="material-icons">wc</i> <span th:text=" ${user.gender}"></span></p>
                             <p>
                                 <i class="material-icons">email</i> <span th:text=" ${user.email}"></span></p>
@@ -44,6 +43,7 @@
                     <table class="responsive-table centered highlight">
                         <thead>
                         <tr>
+                            <th></th>
                             <th>Machine Name</th>
                             <th>Date Played</th>
                             <th>Score</th>
@@ -52,6 +52,7 @@
                         <tbody>
                         <th:block th:each="score : ${scores}">
                             <tr>
+                                <td th:text="${scores.indexOf(score) + 1 }"></td>
                                 <td th:text="${score.getMachine().name}"></td>
                                 <td th:text="${score.getAddedscoredate()}"></td>
                                 <td th:text="${score.score}"></td>

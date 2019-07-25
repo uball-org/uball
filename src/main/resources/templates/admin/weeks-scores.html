@@ -23,7 +23,7 @@
                             <th>Player</th>
                             <th>Machine</th>
                             <th>Score</th>
-                            <th th:if="${#httpSession.getAttribute('isAdmin')}">Points For Place</th>
+                            <th style="text-align: right;" th:if="${#httpSession.getAttribute('isAdmin')}">Points For Place</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -34,10 +34,10 @@
                                 <td th:text="${scored.getMachine().name}"></td>
                                 <td th:text="${scored.score}"></td>
                                 <td>
-                                    <div class="input-field" th:if="${#httpSession.getAttribute('isAdmin')}">
-                                        <input th:placeholder="${scored.getUser().id}" th:value="${scored.getUser().id}"
+                                    <div style="margin: 0; text-align: right;" class="input-field" th:if="${#httpSession.getAttribute('isAdmin')}">
+                                        <input style="width: 15%;" th:placeholder="${scored.getUser().id}" th:value="${scored.getUser().id}"
                                                name="user" type="text" class="validate" th:readonly="readonly"/>
-                                        <input th:placeholder="${scored.getUser().points}" name="points" type="text"
+                                        <input style="width: 15%;" th:placeholder="${scored.getUser().points}" name="points" type="text"
                                                class="validate"/>
                                       </div>
                                 </td>
@@ -69,7 +69,7 @@
                             <th>Player</th>
                             <th>Machine</th>
                             <th>Score</th>
-                            <th th:if="${#httpSession.getAttribute('isAdmin')}">Points For Place</th>
+                            <th style="text-align: right;" th:if="${#httpSession.getAttribute('isAdmin')}">Points For Place</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -80,10 +80,10 @@
                                 <td th:text="${scored.getMachine().name}"></td>
                                 <td th:text="${scored.score}"></td>
                                 <td>
-                                    <div class="input-field" th:if="${#httpSession.getAttribute('isAdmin')}">
-                                        <input th:placeholder="${scored.getUser().id}" th:value="${scored.getUser().id}"
+                                    <div style="margin: 0; text-align: right;" class="input-field" th:if="${#httpSession.getAttribute('isAdmin')}">
+                                        <input style="width: 15%;" th:placeholder="${scored.getUser().id}" th:value="${scored.getUser().id}"
                                                name="user" type="text" th:readonly="readonly"/>
-                                        <input th:placeholder="${scored.getUser().points}" name="points" type="text"
+                                        <input style="width: 15%;" th:placeholder="${scored.getUser().points}" name="points" type="text"
                                                class="validate"/>
                                      </div>
                                 </td>
@@ -113,7 +113,7 @@
                             <th>Player</th>
                             <th>Machine</th>
                             <th>Score</th>
-                            <th th:if="${#httpSession.getAttribute('isAdmin')}">Points For Place</th>
+                            <th style="text-align: right;" th:if="${#httpSession.getAttribute('isAdmin')}">Points For Place</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -124,10 +124,10 @@
                                 <td th:text="${scored.getMachine().name}"></td>
                                 <td th:text="${scored.score}"></td>
                                 <td>
-                                    <div class="input-field" th:if="${#httpSession.getAttribute('isAdmin')}">
-                                        <input th:placeholder="${scored.getUser().id}" th:value="${scored.getUser().id}"
+                                    <div style="margin: 0; text-align: right;" class="input-field" th:if="${#httpSession.getAttribute('isAdmin')}">
+                                        <input style="width: 15%;" th:placeholder="${scored.getUser().id}" th:value="${scored.getUser().id}"
                                                name="user" type="text" class="validate" th:readonly="readonly"/>
-                                        <input th:placeholder="${scored.getUser().points}" name="points" type="text"
+                                        <input style="width: 15%;" th:placeholder="${scored.getUser().points}" name="points" type="text"
                                                class="validate"/>
                                      </div>
                                 </td>
@@ -158,7 +158,7 @@
                             <th>Player</th>
                             <th>Machine</th>
                             <th>Score</th>
-                            <th th:if="${#httpSession.getAttribute('isAdmin')}">Points For Place</th>
+                            <th style="text-align: right;" th:if="${#httpSession.getAttribute('isAdmin')}">Points For Place</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -169,10 +169,10 @@
                                 <td th:text="${scored.getMachine().name}"></td>
                                 <td th:text="${scored.score}"></td>
                                 <td>
-                                    <div class="input-field" th:if="${#httpSession.getAttribute('isAdmin')}">
-                                        <input th:placeholder="${scored.getUser().id}" th:value="${scored.getUser().id}"
+                                    <div style="margin: 0; text-align: right;" class="input-field" th:if="${#httpSession.getAttribute('isAdmin')}">
+                                        <input style="width: 15%;" th:placeholder="${scored.getUser().id}" th:value="${scored.getUser().id}"
                                                name="user" type="text" class="validate" th:readonly="readonly"/>
-                                        <input th:placeholder="${scored.getUser().points}" name="points" type="text"
+                                        <input style="width: 15%;" th:placeholder="${scored.getUser().points}" name="points" type="text"
                                                class="validate"/>
                                       </div>
                                 </td>
