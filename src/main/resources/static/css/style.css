@@ -583,7 +583,9 @@ p {
     /*top: 10%;*/
   }
   .admin-buttons{
-    padding: 1em;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 5px;
   }
 }
 
@@ -592,7 +594,9 @@ p {
     top: 0;
   }
   .admin-buttons{
-    padding: 1em;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 5px;
   }
 }
 
