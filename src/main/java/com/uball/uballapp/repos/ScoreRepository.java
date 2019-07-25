@@ -37,7 +37,7 @@ public interface ScoreRepository extends CrudRepository <Score, Long> {
             "from  scores s " +
             "join users u on u.id = s.user_id " +
             "where league_id in (select id from leagues where id = ?1 ) " +
-            "order by u.points desc " +
+            "order by s.score desc " +
             " limit 4", nativeQuery = true)
     List<Score> Top4ScoresByLeague(long id);
 

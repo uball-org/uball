@@ -70,7 +70,7 @@
                                     <th>Place</th>
                                     <th>Name</th>
                                     <th>Machine Name</th>
-                                    <th>Points</th>
+                                    <th>Score</th>
                                     <th>Date</th>
                                 </tr>
                                 </thead>
@@ -80,7 +80,7 @@
                                         <td># <span th:text="${oneLeagueScores.indexOf(oneLS) + 1 } "></span> Place</td>
                                         <td><span th:text="${oneLS.getUser().username}"></span></td>
                                         <td><span th:text="${oneLS.getMachine().name}"></span></td>
-                                        <td><span th:text="${oneLS.getUser().points}"></span></td>
+                                        <td><span th:text="${oneLS.score}"></span></td>
                                         <td th:text="${oneLS.addedscoredate}"></td>
                                     </tr>
                                 </th:block>
@@ -100,7 +100,7 @@
                                     <th>Place</th>
                                     <th>Name</th>
                                     <th>Machine Name</th>
-                                    <th>Points</th>
+                                    <th>Score</th>
                                     <th>Date</th>
                                 </tr>
                                 </thead>
@@ -110,7 +110,7 @@
                                         <td># <span th:text="${twoLeagueScores.indexOf(twoLS) + 1 } "></span> Place</td>
                                         <td><span th:text="${twoLS.getUser().username}"></span></td>
                                         <td><span th:text="${twoLS.getMachine().name}"></span></td>
-                                        <td th:text="${twoLS.getUser().points}"></td>
+                                        <td th:text="${twoLS.score}"></td>
                                         <td th:text="${twoLS.addedscoredate}"></td>
                                     </tr>
                                 </th:block>
