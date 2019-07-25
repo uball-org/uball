@@ -20,9 +20,7 @@
             <div class="card-content">
 
     <div align="center">
-<!--        <h1>Machines List</h1>-->
-<!--        <a class="waves-effect waves-light btn " th:href="@{'/machines/create'}">Create New Machine</a>-->
-<!--        <br/><br/>-->
+
         <table border="1" cellpadding="10">
             <thead>
             <tr>
@@ -36,12 +34,6 @@
                 <td th:text="${machine.id}">Product ID</td>
                 <td th:text="${machine.name}">Name</td>
                 <td>
-                    <!--<form th:action="@{'/edit/'+'edit/'+${product.id}}" th:method="GET">-->
-                    <!--<button th:id="${product.id}">Edit</button>-->
-                    <!--</form>-->
-                    <!--<form th:action="@{'/delete/'+'delete/'+${product.id}}" th:method="POST">-->
-                    <!--<button id="${product.id}">Delete</button>-->
-                    <!--</form>-->
                     <a th:href="@{'/machines/' + ${machine.id} +'/edit'}">Edit</a>
                     &nbsp;&nbsp;&nbsp;
                     <a th:href="@{'/machines/' + ${machine.id} + '/delete'}">Delete</a>
