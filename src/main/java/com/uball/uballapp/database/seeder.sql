@@ -121,20 +121,20 @@ insert into users
     username,
     league_id
 )
-values (7,
-        '1986-01-26',
-        'nadbot99@uball.org',
-        'Nadia',
+values (1,
+        '2001-01-01',
+        'admin@uball.org',
+        'Lauren',
         'F',
         1,
-        'Botello',
+        'Grey',
         'password',
-        0,
-        'nadbot99',
+        78,
+        'admin',
         2
        );
 
 
 UPDATE users
 SET is_admin = true
-WHERE id = 2;
+WHERE id = 1;

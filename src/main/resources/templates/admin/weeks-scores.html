@@ -3,19 +3,19 @@
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head th:replace="partials/head :: head('Admin Dashboard')">
 </head>
-<body>
+<body class="grey lighten-2">
 
 <nav th:replace="partials/navbar :: nav"></nav>
 <main>
 
-    <h1>This Weeks Scores</h1>
-
     <div class="container">
-        <div>
+        <h3 class="center">This Week's Scores</h3>
+        <div class="card">
+            <div class="card-content center">
             <form th:action="@{/admindashboard/updatepoints}" method="post">
-                <h2 class="center-align">Group 1</h2>
+                <h4 class="center-align blue-grey-text">Group 1</h4>
                 <br/>
-                <div>
+                <div class="center">
                     <table class="responsive-table centered highlight">
                         <thead>
                         <tr>
@@ -36,7 +36,7 @@
                                 <td>
                                     <div class="input-field" th:if="${#httpSession.getAttribute('isAdmin')}">
                                         <input th:placeholder="${scored.getUser().id}" th:value="${scored.getUser().id}"
-                                               name="user" type="text" class="validate"/>
+                                               name="user" type="text" class="validate" th:readonly="readonly"/>
                                         <input th:placeholder="${scored.getUser().points}" name="points" type="text"
                                                class="validate"/>
                                       </div>
@@ -47,17 +47,21 @@
                     </table>
                 </div>
                 <br/>
-                <button th:if="${#httpSession.getAttribute('isAdmin')}" type="submit" class="btn btn-primary mt-1 ">
+                <button th:if="${#httpSession.getAttribute('isAdmin')}" type="submit" class="btn btn-primary mt-1 light-blue darken-2 center-align">
                     Submit Final Scores
                 </button>
             </form>
         </div>
+        </div>
+
 
         <div>
+            <div class="card">
+                <div class="card-content center">
             <form th:action="@{/admindashboard/updatepoints}" method="post">
-                <h2 class="center-align">Group 2</h2>
+                <h4 class="center-align blue-grey-text">Group 2</h4>
                 <br/>
-                <div>
+                <div class="center">
                     <table class="responsive-table centered highlight">
                         <thead>
                         <tr>
@@ -78,7 +82,7 @@
                                 <td>
                                     <div class="input-field" th:if="${#httpSession.getAttribute('isAdmin')}">
                                         <input th:placeholder="${scored.getUser().id}" th:value="${scored.getUser().id}"
-                                               name="user" type="text" class="validate"/>
+                                               name="user" type="text" th:readonly="readonly"/>
                                         <input th:placeholder="${scored.getUser().points}" name="points" type="text"
                                                class="validate"/>
                                      </div>
@@ -89,17 +93,19 @@
                     </table>
                 </div>
                 <br/>
-                <button th:if="${#httpSession.getAttribute('isAdmin')}" type="submit" class="btn btn-primary mt-1 ">
+                <button th:if="${#httpSession.getAttribute('isAdmin')}" type="submit" class="btn btn-primary mt-1 light-blue darken-2">
                     Submit Final Scores
                 </button>
             </form>
         </div>
+            </div>
 
-        <div>
+            <div class="card">
+                <div class="card-content center">
             <form th:action="@{/admindashboard/updatepoints}" method="post">
-                <h2 class="center-align">Group 3</h2>
+                <h4 class="center-align blue-grey-text">Group 3</h4>
                 <br/>
-                <div>
+                <div class="center">
                     <table class="responsive-table centered highlight">
                         <thead>
                         <tr>
@@ -120,7 +126,7 @@
                                 <td>
                                     <div class="input-field" th:if="${#httpSession.getAttribute('isAdmin')}">
                                         <input th:placeholder="${scored.getUser().id}" th:value="${scored.getUser().id}"
-                                               name="user" type="text" class="validate"/>
+                                               name="user" type="text" class="validate" th:readonly="readonly"/>
                                         <input th:placeholder="${scored.getUser().points}" name="points" type="text"
                                                class="validate"/>
                                      </div>
@@ -131,17 +137,20 @@
                     </table>
                 </div>
                 <br/>
-                <button th:if="${#httpSession.getAttribute('isAdmin')}" type="submit" class="btn btn-primary mt-1 ">
+                <button th:if="${#httpSession.getAttribute('isAdmin')}" type="submit" class="btn btn-primary mt-1 light-blue darken-2">
                     Submit Final Scores
                 </button>
             </form>
         </div>
+            </div>
 
-        <div>
+
+            <div class="card">
+                <div class="card-content center">
             <form th:action="@{/admindashboard/updatepoints}" method="post">
-                <h2 class="center-align">Group 4</h2>
+                <h4 class="center-align blue-grey-text">Group 4</h4>
                 <br/>
-                <div>
+                <div class="center">
                     <table class="responsive-table centered highlight">
                         <thead>
                         <tr>
@@ -162,7 +171,7 @@
                                 <td>
                                     <div class="input-field" th:if="${#httpSession.getAttribute('isAdmin')}">
                                         <input th:placeholder="${scored.getUser().id}" th:value="${scored.getUser().id}"
-                                               name="user" type="text" class="validate"/>
+                                               name="user" type="text" class="validate" th:readonly="readonly"/>
                                         <input th:placeholder="${scored.getUser().points}" name="points" type="text"
                                                class="validate"/>
                                       </div>
@@ -173,13 +182,15 @@
                     </table>
                 </div>
                 <br/>
-                <button th:if="${#httpSession.getAttribute('isAdmin')}" type="submit" class="btn btn-primary mt-1 ">
+                <button th:if="${#httpSession.getAttribute('isAdmin')}" type="submit" class="btn btn-primary mt-1 light-blue darken-2">
                     Submit Final Scores
                 </button>
             </form>
-            <br />
-            <br />
         </div>
+    </div>
+        </div>
+        <br />
+        <br />
     </div>
 </main>
 

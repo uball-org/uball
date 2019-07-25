@@ -1,12 +1,25 @@
 /* Custom Stylesheet */
 
 .tabs .tab a:hover, .tabs .tab a.active {
-  background-color: inherit;
+  background-color: transparent;
   color: #26a69a;
 }
 
 .about-link{
   color: #1a237e;
+}
+
+.footer-color{
+  background-color: transparent;
+}
+
+.admin-mng-btns{
+  background-color: #EA4F4D;
+}
+
+.nav-btn{
+  background-color: transparent;
+  margin-right: .5em;
 }
 
 /*.tabs .tab a:hover, .tabs .tab a.active {*/

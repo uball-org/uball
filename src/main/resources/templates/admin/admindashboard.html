@@ -51,12 +51,12 @@
                                 </a>
                             </td>
                             <td th:if="${user.isAdmin()}"><a
-                                    class="btn-floating waves-effect waves-light amber darken-4" th:hidden="${user.id}"
+                                    class="btn-floating waves-effect waves-light admin-mng-btns" th:hidden="${user.id}"
                                     th:href="@{'/isNotAdmin/'+${user.id}}">
                                 <i class="material-icons">clear</i>
                             </a></td>
                             <td th:if="${!user.isAdmin()}"><a
-                                    class="btn-floating waves-effect waves-light amber darken-4" th:hidden="${user.id}"
+                                    class="btn-floating waves-effect waves-light light-blue darken-2" th:hidden="${user.id}"
                                     th:href="@{'/isAdmin/'+${user.id}}">
                                 <i class="material-icons">add</i>
                             </a></td>
@@ -94,9 +94,9 @@
                         <div id="CreateGroups">
                             <h4>Select Users for Today's Groups</h4>
                             <p><em>(Remember: 4 Users Per Group.)</em></p>
-                            <span><em>Before creating your first group of the day, eliminate the previous week's.</em></span>
+                            <span><em class="red-text">Before creating your first group of the day, eliminate the previous week's.</em></span>
                             <span>
-                                <a class="btn btn-small red darken-2 right" th:href="@{'/deleteUGTable'}">
+                                <a class="btn btn-small red right" th:href="@{'/deleteUGTable'}">
                                 Eliminate Groups
                                 </a>
                             </span>
