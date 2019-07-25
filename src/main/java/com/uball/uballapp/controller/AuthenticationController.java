@@ -20,4 +20,8 @@ public class AuthenticationController {
         return "user/about";
     }
 
+    @GetMapping("/play")
+    public String playPage() {
+        return "user/play";
+    }
 }
