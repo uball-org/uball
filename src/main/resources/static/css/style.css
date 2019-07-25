@@ -15,6 +15,10 @@ nav {
   font-family: 'Bungee', cursive;
 }
 
+button .btn {
+  font-family: 'Bungee', cursive;
+}
+
 .header-text {
   color: white;
 }
