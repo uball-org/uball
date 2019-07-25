@@ -14,11 +14,9 @@
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
             <li sec:authorize="isAnonymous()"><a href="/register">Register</a></li>
-<!--            <li sec:authorize="isAnonymous()"><a href="/about">About</a></li>-->
             <li sec:authorize="isAnonymous()"><a href="/login">Login</a></li>
             <li sec:authorize="isAuthenticated()"><a class="dropdown-trigger" href="/" data-target="dropdown1">User<i
                     class="material-icons right">arrow_drop_down</i></a></li>
-<!--            <li sec:authorize="isAuthenticated()"><a href="/about">About</a></li>-->
             <li sec:authorize="isAuthenticated()">
                 <form th:action="@{/logout}" th:method="post">
                     <button class="btn-link btn nav-btn">Logout</button>
