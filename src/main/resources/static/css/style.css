@@ -5,8 +5,18 @@
   color: #26a69a;
 }
 
-h1, h2, h3, h4, h5 {
-  font-family: 'VT323', monospace;
+h1, h2, h3 {
+  font-family: 'Bungee Shade', cursive;
+  /*font-weight: bold;*/
+  color: red;
+}
+
+nav {
+  font-family: 'Bungee', cursive;
+}
+
+.header-text {
+  color: white;
 }
 
 .about-link{
