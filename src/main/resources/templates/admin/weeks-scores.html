@@ -36,7 +36,7 @@
                                 <td>
                                     <div class="input-field" th:if="${#httpSession.getAttribute('isAdmin')}">
                                         <input th:placeholder="${scored.getUser().id}" th:value="${scored.getUser().id}"
-                                               name="user" type="text" class="validate"/>
+                                               name="user" type="text" class="validate" th:readonly="readonly"/>
                                         <input th:placeholder="${scored.getUser().points}" name="points" type="text"
                                                class="validate"/>
                                       </div>
