@@ -41,9 +41,11 @@
         <li sec:authorize="isAnonymous()"><a href="/login">Login</a></li>
         <li sec:authorize="isAuthenticated()"><a href="/userprofile">Profile</a></li>
         <li sec:authorize="isAuthenticated()"><a href="/leagues">League</a></li>
-        <li th:if="${#httpSession.getAttribute('isAdmin')}">
-            <a href="/admindashboard">Admin Dashboard</a>
-        </li>
+        <th:block th:if="${#httpSession != null}">
+            <li th:if="${#httpSession.getAttribute('isAdmin')}">
+                <a href="/admindashboard">Admin Dashboard</a>
+            </li>
+        </th:block>
         <li sec:authorize="isAnonymous()"><a href="/about">About</a></li>
         <li sec:authorize="isAuthenticated()"><a href="/about">About</a></li>
         <li sec:authorize="isAuthenticated()">
