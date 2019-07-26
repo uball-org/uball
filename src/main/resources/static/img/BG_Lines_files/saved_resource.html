@@ -1,0 +1,1805 @@
+<!DOCTYPE html>
+<!-- saved from url=(0156)https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&preview=7b24df444dc81689c71376769606845c&mode=preview -->
+<html class="site-scrollbar allow-drag-cursor wf-design-mode wf-read-only" lang="en" spellcheck="true" data-wf-site="5ce4c573a62d23ea7b6f53bc" data-wf-page="5ce4c573a62d2361ee6f53bb"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Designer</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" type="text/css" href="./canvas-imports.css"><style>.w-commerce-commerceaddtocartform {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 15px;
+  margin-left: 0px;
+}
+.w-commerce-commerceaddtocartbutton {
+  background-color: rgba(56, 152, 236, 1);
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-top-width: 0px;
+  color: rgba(255, 255, 255, 1);
+  cursor: pointer;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  appearance: none;
+}
+.w-commerce-commerceaddtocartquantityinput {
+  background-color: rgba(250, 250, 250, 1);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: rgba(221, 221, 221, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: rgba(221, 221, 221, 1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(221, 221, 221, 1);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: rgba(221, 221, 221, 1);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  display: block;
+  height: 38px;
+  line-height: 20px;
+  margin-bottom: 10px;
+  padding-top: 8px;
+  padding-right: 6px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  width: 60px;
+  appearance: none;
+}
+.w-commerce-commerceaddtocartquantityinput::placeholder {
+  color: rgba(153, 153, 153, 1);
+}
+.w-commerce-commerceaddtocartquantityinput:focus {
+  border-top-color: rgba(56, 152, 236, 1);
+  border-right-color: rgba(56, 152, 236, 1);
+  border-bottom-color: rgba(56, 152, 236, 1);
+  border-left-color: rgba(56, 152, 236, 1);
+  outline-style: none;
+}
+.w-commerce-commerceaddtocarterror {
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: rgba(255, 222, 222, 1);
+}
+.w-commerce-commerceaddtocartoutofstock {
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: rgba(221, 221, 221, 1);
+}
+.w-commerce-commercecartwrapper {
+  display: inline-block;
+  position: relative;
+}
+.w-commerce-commercecartopenlink {
+  background-color: rgba(56, 152, 236, 1);
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-top-width: 0px;
+  color: rgba(255, 255, 255, 1);
+  cursor: pointer;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  appearance: none;
+}
+.w-commerce-commercecartopenlinkcount {
+  display: inline-block;
+  height: 18px;
+  min-width: 18px;
+  margin-left: 8px;
+  padding-right: 6px;
+  padding-left: 6px;
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+  background-color: rgba(255, 255, 255, 1);
+  color: rgba(56, 152, 236, 1);
+  font-size: 11px;
+  line-height: 18px;
+  font-weight: 700;
+  text-align: center;
+}
+.w-commerce-commercecartopenlinkicon {
+  margin-right: 8px;
+}
+.w-commerce-commercecartcontainerwrapper {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.w-commerce-commercecartcontainerwrapper--cartType-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.w-commerce-commercecartcontainerwrapper--cartType-leftSidebar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.w-commerce-commercecartcontainerwrapper--cartType-rightSidebar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: stretch;
+}
+.w-commerce-commercecartcontainerwrapper--cartType-leftDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  right: auto;
+  bottom: auto;
+  background-color: rgba(0, 0, 0, 0);
+}
+.w-commerce-commercecartcontainerwrapper--cartType-rightDropdown {
+  position: absolute;
+  left: auto;
+  top: 100%;
+  right: 0px;
+  bottom: auto;
+  background-color: rgba(0, 0, 0, 0);
+}
+.w-commerce-commercecartcontainer {
+  display: flex;
+  width: 100%;
+  max-width: 480px;
+  min-width: 320px;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.25);
+}
+.w-commerce-commercecartheader {
+  position: relative;
+  display: flex;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 24px;
+  padding-right: 24px;
+  justify-content: space-between;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(230, 230, 230, 1);
+  align-items: center;
+}
+.w-commerce-commercecartheading {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.w-commerce-commercecartformwrapper {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
+}
+.w-commerce-commercecartform {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
+}
+.w-commerce-commercecartemptystate {
+  display: flex;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
+}
+.w-commerce-commercecarterrorstate {
+  margin-top: 0px;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  margin-left: 24px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+  background-color: rgba(255, 222, 222, 1);
+}
+.w-commerce-commercecartlist {
+  overflow: auto;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 24px;
+  padding-right: 24px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
+  -webkit-overflow-scrolling: touch;
+}
+.w-commerce-commercecartfooter {
+  display: flex;
+  padding-top: 16px;
+  padding-bottom: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+  flex-direction: column;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: rgba(230, 230, 230, 1);
+}
+.w-commerce-commercecartlineitem {
+  display: flex;
+  margin-bottom: 16px;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+}
+.w-commerce-commercecartcheckoutbutton {
+  background-color: rgba(56, 152, 236, 1);
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-top-width: 0px;
+  color: rgba(255, 255, 255, 1);
+  cursor: pointer;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-decoration: none;
+  display: block;
+  align-items: center;
+  appearance: none;
+  text-align: center;
+}
+.w-commerce-commercecartitem {
+  display: flex;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  align-items: flex-start;
+}
+.w-commerce-commercecartitemimage {
+  width: 60px;
+  height: 0%;
+}
+.w-commerce-commercecartiteminfo {
+  display: flex;
+  margin-right: 16px;
+  margin-left: 16px;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
+}
+.w-commerce-commercecartproductname {
+  font-weight: 700;
+}
+.w-commerce-commercecartquantity {
+  background-color: rgba(250, 250, 250, 1);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: rgba(221, 221, 221, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: rgba(221, 221, 221, 1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(221, 221, 221, 1);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: rgba(221, 221, 221, 1);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  display: block;
+  height: 38px;
+  line-height: 20px;
+  margin-bottom: 10px;
+  padding-top: 8px;
+  padding-right: 6px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  width: 60px;
+  appearance: none;
+}
+.w-commerce-commercecartquantity::placeholder {
+  color: rgba(153, 153, 153, 1);
+}
+.w-commerce-commercecartquantity:focus {
+  border-top-color: rgba(56, 152, 236, 1);
+  border-right-color: rgba(56, 152, 236, 1);
+  border-bottom-color: rgba(56, 152, 236, 1);
+  border-left-color: rgba(56, 152, 236, 1);
+  outline-style: none;
+}
+.w-commerce-commercecartcloselink {
+  width: 16px;
+  height: 16px;
+}
+.w-commerce-commercecartordervalue {
+  font-weight: 700;
+}
+.w-commerce-commercecartoptionlist {
+  text-decoration: none;
+  padding-left: 0px;
+  margin-bottom: 0px;
+  list-style-type: none;
+}
+.w-commerce-commercecartquickcheckoutbutton {
+  background-color: rgba(0, 0, 0, 1);
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-top-width: 0px;
+  color: rgba(255, 255, 255, 1);
+  cursor: pointer;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  appearance: none;
+  justify-content: center;
+  margin-bottom: 8px;
+  height: 38px;
+}
+.w-commerce-commercecartapplepaybutton {
+  background-color: rgba(0, 0, 0, 1);
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-top-width: 0px;
+  color: rgba(255, 255, 255, 1);
+  cursor: pointer;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  appearance: none;
+  margin-bottom: 8px;
+  height: 38px;
+  min-height: 30px;
+}
+.w-commerce-commercecartapplepayicon {
+  width: 100%;
+  height: 50%;
+  min-height: 20px;
+}
+.w-commerce-commercequickcheckoutgoogleicon {
+  display: block;
+  margin-right: 8px;
+}
+.w-commerce-commercequickcheckoutmicrosofticon {
+  display: block;
+  margin-right: 8px;
+}
+.w-commerce-commercecheckoutblockcontent {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(230, 230, 230, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: rgba(230, 230, 230, 1);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: rgba(230, 230, 230, 1);
+  background-color: rgba(255, 255, 255, 1);
+}
+.w-commerce-commercecheckoutblockheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: rgba(230, 230, 230, 1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(230, 230, 230, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: rgba(230, 230, 230, 1);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: rgba(230, 230, 230, 1);
+  background-color: rgba(255, 255, 255, 1);
+}
+.w-commerce-commercecheckoutcolumn {
+  padding-right: 8px;
+  padding-left: 8px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
+}
+.w-commerce-commercecheckoutformcontainer {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  background-color: rgba(245, 245, 245, 1);
+}
+.w-commerce-commercecheckoutrow {
+  display: flex;
+  margin-right: -8px;
+  margin-left: -8px;
+}
+.w-commerce-commercecheckoutlabel {
+  margin-bottom: 8px;
+}
+.w-commerce-commercecheckoutcardexpirationdate, .w-commerce-commercecheckoutcardexpirationdate {
+  background-color: rgba(250, 250, 250, 1);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: rgba(221, 221, 221, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: rgba(221, 221, 221, 1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(221, 221, 221, 1);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: rgba(221, 221, 221, 1);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  display: block;
+  height: 38px;
+  line-height: 20px;
+  margin-bottom: 16px;
+  padding-top: 8px;
+  padding-right: 12px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  width: 100%;
+  appearance: none;
+}
+.w-commerce-commercecheckoutcardexpirationdate::placeholder, .w-commerce-commercecheckoutcardexpirationdate::placeholder {
+  color: rgba(153, 153, 153, 1);
+}
+.w-commerce-commercecheckoutcardexpirationdate:focus, .w-commerce-commercecheckoutcardexpirationdate.-wfp-focus {
+  border-top-color: rgba(56, 152, 236, 1);
+  border-right-color: rgba(56, 152, 236, 1);
+  border-bottom-color: rgba(56, 152, 236, 1);
+  border-left-color: rgba(56, 152, 236, 1);
+  outline-style: none;
+}
+.w-commerce-commercecheckoutcardnumber, .w-commerce-commercecheckoutcardnumber {
+  background-color: rgba(250, 250, 250, 1);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: rgba(221, 221, 221, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: rgba(221, 221, 221, 1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(221, 221, 221, 1);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: rgba(221, 221, 221, 1);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  display: block;
+  height: 38px;
+  line-height: 20px;
+  margin-bottom: 16px;
+  padding-top: 8px;
+  padding-right: 12px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  width: 100%;
+  appearance: none;
+}
+.w-commerce-commercecheckoutcardnumber::placeholder, .w-commerce-commercecheckoutcardnumber::placeholder {
+  color: rgba(153, 153, 153, 1);
+}
+.w-commerce-commercecheckoutcardnumber:focus, .w-commerce-commercecheckoutcardnumber.-wfp-focus {
+  border-top-color: rgba(56, 152, 236, 1);
+  border-right-color: rgba(56, 152, 236, 1);
+  border-bottom-color: rgba(56, 152, 236, 1);
+  border-left-color: rgba(56, 152, 236, 1);
+  outline-style: none;
+}
+.w-commerce-commercecheckoutcardsecuritycode, .w-commerce-commercecheckoutcardsecuritycode {
+  background-color: rgba(250, 250, 250, 1);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: rgba(221, 221, 221, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: rgba(221, 221, 221, 1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(221, 221, 221, 1);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: rgba(221, 221, 221, 1);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  display: block;
+  height: 38px;
+  line-height: 20px;
+  margin-bottom: 16px;
+  padding-top: 8px;
+  padding-right: 12px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  width: 100%;
+  appearance: none;
+}
+.w-commerce-commercecheckoutcardsecuritycode::placeholder, .w-commerce-commercecheckoutcardsecuritycode::placeholder {
+  color: rgba(153, 153, 153, 1);
+}
+.w-commerce-commercecheckoutcardsecuritycode:focus, .w-commerce-commercecheckoutcardsecuritycode.-wfp-focus {
+  border-top-color: rgba(56, 152, 236, 1);
+  border-right-color: rgba(56, 152, 236, 1);
+  border-bottom-color: rgba(56, 152, 236, 1);
+  border-left-color: rgba(56, 152, 236, 1);
+  outline-style: none;
+}
+.w-commerce-commercecheckoutcustomerinfowrapper {
+  margin-bottom: 20px;
+}
+.w-commerce-commercecheckouterrorstate {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding-top: 10px;
+  padding-right: 16px;
+  padding-bottom: 10px;
+  padding-left: 16px;
+  background-color: rgba(255, 222, 222, 1);
+}
+.w-commerce-commercecheckoutpaymentinfowrapper {
+  margin-bottom: 20px;
+}
+.w-commerce-commercecheckoutplaceorderbutton {
+  background-color: rgba(56, 152, 236, 1);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-top-width: 0px;
+  color: rgba(255, 255, 255, 1);
+  cursor: pointer;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-decoration: none;
+  display: block;
+  align-items: center;
+  appearance: none;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.w-commerce-commercecheckoutemailinput {
+  background-color: rgba(250, 250, 250, 1);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: rgba(221, 221, 221, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: rgba(221, 221, 221, 1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(221, 221, 221, 1);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: rgba(221, 221, 221, 1);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  display: block;
+  height: 38px;
+  line-height: 20px;
+  margin-bottom: 0px;
+  padding-top: 8px;
+  padding-right: 12px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  width: 100%;
+  appearance: none;
+}
+.w-commerce-commercecheckoutemailinput::placeholder {
+  color: rgba(153, 153, 153, 1);
+}
+.w-commerce-commercecheckoutemailinput:focus {
+  border-top-color: rgba(56, 152, 236, 1);
+  border-right-color: rgba(56, 152, 236, 1);
+  border-bottom-color: rgba(56, 152, 236, 1);
+  border-left-color: rgba(56, 152, 236, 1);
+  outline-style: none;
+}
+.w-commerce-commercecheckoutshippingaddresswrapper {
+  margin-bottom: 20px;
+}
+.w-commerce-commercecheckoutshippingcountryselector {
+  background-color: rgba(250, 250, 250, 1);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: rgba(221, 221, 221, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: rgba(221, 221, 221, 1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(221, 221, 221, 1);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: rgba(221, 221, 221, 1);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  display: block;
+  height: 38px;
+  line-height: 20px;
+  margin-bottom: 0px;
+  padding-top: 8px;
+  padding-right: 12px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  width: 100%;
+  appearance: none;
+}
+.w-commerce-commercecheckoutshippingcountryselector::placeholder {
+  color: rgba(153, 153, 153, 1);
+}
+.w-commerce-commercecheckoutshippingcountryselector:focus {
+  border-top-color: rgba(56, 152, 236, 1);
+  border-right-color: rgba(56, 152, 236, 1);
+  border-bottom-color: rgba(56, 152, 236, 1);
+  border-left-color: rgba(56, 152, 236, 1);
+  outline-style: none;
+}
+.w-commerce-commercecheckoutshippingfullname {
+  background-color: rgba(250, 250, 250, 1);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: rgba(221, 221, 221, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: rgba(221, 221, 221, 1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(221, 221, 221, 1);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: rgba(221, 221, 221, 1);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  display: block;
+  height: 38px;
+  line-height: 20px;
+  margin-bottom: 16px;
+  padding-top: 8px;
+  padding-right: 12px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  width: 100%;
+  appearance: none;
+}
+.w-commerce-commercecheckoutshippingfullname::placeholder {
+  color: rgba(153, 153, 153, 1);
+}
+.w-commerce-commercecheckoutshippingfullname:focus {
+  border-top-color: rgba(56, 152, 236, 1);
+  border-right-color: rgba(56, 152, 236, 1);
+  border-bottom-color: rgba(56, 152, 236, 1);
+  border-left-color: rgba(56, 152, 236, 1);
+  outline-style: none;
+}
+.w-commerce-commercecheckoutshippingstreetaddress {
+  background-color: rgba(250, 250, 250, 1);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: rgba(221, 221, 221, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: rgba(221, 221, 221, 1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(221, 221, 221, 1);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: rgba(221, 221, 221, 1);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  display: block;
+  height: 38px;
+  line-height: 20px;
+  margin-bottom: 16px;
+  padding-top: 8px;
+  padding-right: 12px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  width: 100%;
+  appearance: none;
+}
+.w-commerce-commercecheckoutshippingstreetaddress::placeholder {
+  color: rgba(153, 153, 153, 1);
+}
+.w-commerce-commercecheckoutshippingstreetaddress:focus {
+  border-top-color: rgba(56, 152, 236, 1);
+  border-right-color: rgba(56, 152, 236, 1);
+  border-bottom-color: rgba(56, 152, 236, 1);
+  border-left-color: rgba(56, 152, 236, 1);
+  outline-style: none;
+}
+.w-commerce-commercecheckoutshippingstreetaddressoptional {
+  background-color: rgba(250, 250, 250, 1);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: rgba(221, 221, 221, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: rgba(221, 221, 221, 1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(221, 221, 221, 1);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: rgba(221, 221, 221, 1);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  display: block;
+  height: 38px;
+  line-height: 20px;
+  margin-bottom: 16px;
+  padding-top: 8px;
+  padding-right: 12px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  width: 100%;
+  appearance: none;
+}
+.w-commerce-commercecheckoutshippingstreetaddressoptional::placeholder {
+  color: rgba(153, 153, 153, 1);
+}
+.w-commerce-commercecheckoutshippingstreetaddressoptional:focus {
+  border-top-color: rgba(56, 152, 236, 1);
+  border-right-color: rgba(56, 152, 236, 1);
+  border-bottom-color: rgba(56, 152, 236, 1);
+  border-left-color: rgba(56, 152, 236, 1);
+  outline-style: none;
+}
+.w-commerce-commercecheckoutshippingcity {
+  background-color: rgba(250, 250, 250, 1);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: rgba(221, 221, 221, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: rgba(221, 221, 221, 1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(221, 221, 221, 1);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: rgba(221, 221, 221, 1);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  display: block;
+  height: 38px;
+  line-height: 20px;
+  margin-bottom: 16px;
+  padding-top: 8px;
+  padding-right: 12px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  width: 100%;
+  appearance: none;
+}
+.w-commerce-commercecheckoutshippingcity::placeholder {
+  color: rgba(153, 153, 153, 1);
+}
+.w-commerce-commercecheckoutshippingcity:focus {
+  border-top-color: rgba(56, 152, 236, 1);
+  border-right-color: rgba(56, 152, 236, 1);
+  border-bottom-color: rgba(56, 152, 236, 1);
+  border-left-color: rgba(56, 152, 236, 1);
+  outline-style: none;
+}
+.w-commerce-commercecheckoutshippingzippostalcode {
+  background-color: rgba(250, 250, 250, 1);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: rgba(221, 221, 221, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: rgba(221, 221, 221, 1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(221, 221, 221, 1);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: rgba(221, 221, 221, 1);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  display: block;
+  height: 38px;
+  line-height: 20px;
+  margin-bottom: 16px;
+  padding-top: 8px;
+  padding-right: 12px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  width: 100%;
+  appearance: none;
+}
+.w-commerce-commercecheckoutshippingzippostalcode::placeholder {
+  color: rgba(153, 153, 153, 1);
+}
+.w-commerce-commercecheckoutshippingzippostalcode:focus {
+  border-top-color: rgba(56, 152, 236, 1);
+  border-right-color: rgba(56, 152, 236, 1);
+  border-bottom-color: rgba(56, 152, 236, 1);
+  border-left-color: rgba(56, 152, 236, 1);
+  outline-style: none;
+}
+.w-commerce-commercecheckoutshippingstateprovince {
+  background-color: rgba(250, 250, 250, 1);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: rgba(221, 221, 221, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: rgba(221, 221, 221, 1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(221, 221, 221, 1);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: rgba(221, 221, 221, 1);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  display: block;
+  height: 38px;
+  line-height: 20px;
+  margin-bottom: 16px;
+  padding-top: 8px;
+  padding-right: 12px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  width: 100%;
+  appearance: none;
+}
+.w-commerce-commercecheckoutshippingstateprovince::placeholder {
+  color: rgba(153, 153, 153, 1);
+}
+.w-commerce-commercecheckoutshippingstateprovince:focus {
+  border-top-color: rgba(56, 152, 236, 1);
+  border-right-color: rgba(56, 152, 236, 1);
+  border-bottom-color: rgba(56, 152, 236, 1);
+  border-left-color: rgba(56, 152, 236, 1);
+  outline-style: none;
+}
+.w-commerce-commerceorderconfirmationcontainer {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  background-color: rgba(245, 245, 245, 1);
+}
+.w-commerce-commercecheckoutbillingaddresswrapper {
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+.w-commerce-commercecheckoutbillingcountryselector {
+  background-color: rgba(250, 250, 250, 1);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: rgba(221, 221, 221, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: rgba(221, 221, 221, 1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(221, 221, 221, 1);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: rgba(221, 221, 221, 1);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  display: block;
+  height: 38px;
+  line-height: 20px;
+  margin-bottom: 0px;
+  padding-top: 8px;
+  padding-right: 12px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  width: 100%;
+  appearance: none;
+}
+.w-commerce-commercecheckoutbillingcountryselector::placeholder {
+  color: rgba(153, 153, 153, 1);
+}
+.w-commerce-commercecheckoutbillingcountryselector:focus {
+  border-top-color: rgba(56, 152, 236, 1);
+  border-right-color: rgba(56, 152, 236, 1);
+  border-bottom-color: rgba(56, 152, 236, 1);
+  border-left-color: rgba(56, 152, 236, 1);
+  outline-style: none;
+}
+.w-commerce-commercecheckoutbillingfullname {
+  background-color: rgba(250, 250, 250, 1);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: rgba(221, 221, 221, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: rgba(221, 221, 221, 1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(221, 221, 221, 1);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: rgba(221, 221, 221, 1);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  display: block;
+  height: 38px;
+  line-height: 20px;
+  margin-bottom: 16px;
+  padding-top: 8px;
+  padding-right: 12px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  width: 100%;
+  appearance: none;
+}
+.w-commerce-commercecheckoutbillingfullname::placeholder {
+  color: rgba(153, 153, 153, 1);
+}
+.w-commerce-commercecheckoutbillingfullname:focus {
+  border-top-color: rgba(56, 152, 236, 1);
+  border-right-color: rgba(56, 152, 236, 1);
+  border-bottom-color: rgba(56, 152, 236, 1);
+  border-left-color: rgba(56, 152, 236, 1);
+  outline-style: none;
+}
+.w-commerce-commercecheckoutbillingstreetaddress {
+  background-color: rgba(250, 250, 250, 1);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: rgba(221, 221, 221, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: rgba(221, 221, 221, 1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(221, 221, 221, 1);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: rgba(221, 221, 221, 1);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  display: block;
+  height: 38px;
+  line-height: 20px;
+  margin-bottom: 16px;
+  padding-top: 8px;
+  padding-right: 12px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  width: 100%;
+  appearance: none;
+}
+.w-commerce-commercecheckoutbillingstreetaddress::placeholder {
+  color: rgba(153, 153, 153, 1);
+}
+.w-commerce-commercecheckoutbillingstreetaddress:focus {
+  border-top-color: rgba(56, 152, 236, 1);
+  border-right-color: rgba(56, 152, 236, 1);
+  border-bottom-color: rgba(56, 152, 236, 1);
+  border-left-color: rgba(56, 152, 236, 1);
+  outline-style: none;
+}
+.w-commerce-commercecheckoutbillingstreetaddressoptional {
+  background-color: rgba(250, 250, 250, 1);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: rgba(221, 221, 221, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: rgba(221, 221, 221, 1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(221, 221, 221, 1);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: rgba(221, 221, 221, 1);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  display: block;
+  height: 38px;
+  line-height: 20px;
+  margin-bottom: 16px;
+  padding-top: 8px;
+  padding-right: 12px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  width: 100%;
+  appearance: none;
+}
+.w-commerce-commercecheckoutbillingstreetaddressoptional::placeholder {
+  color: rgba(153, 153, 153, 1);
+}
+.w-commerce-commercecheckoutbillingstreetaddressoptional:focus {
+  border-top-color: rgba(56, 152, 236, 1);
+  border-right-color: rgba(56, 152, 236, 1);
+  border-bottom-color: rgba(56, 152, 236, 1);
+  border-left-color: rgba(56, 152, 236, 1);
+  outline-style: none;
+}
+.w-commerce-commercecheckoutbillingcity {
+  background-color: rgba(250, 250, 250, 1);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: rgba(221, 221, 221, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: rgba(221, 221, 221, 1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(221, 221, 221, 1);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: rgba(221, 221, 221, 1);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  display: block;
+  height: 38px;
+  line-height: 20px;
+  margin-bottom: 16px;
+  padding-top: 8px;
+  padding-right: 12px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  width: 100%;
+  appearance: none;
+}
+.w-commerce-commercecheckoutbillingcity::placeholder {
+  color: rgba(153, 153, 153, 1);
+}
+.w-commerce-commercecheckoutbillingcity:focus {
+  border-top-color: rgba(56, 152, 236, 1);
+  border-right-color: rgba(56, 152, 236, 1);
+  border-bottom-color: rgba(56, 152, 236, 1);
+  border-left-color: rgba(56, 152, 236, 1);
+  outline-style: none;
+}
+.w-commerce-commercecheckoutbillingzippostalcode {
+  background-color: rgba(250, 250, 250, 1);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: rgba(221, 221, 221, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: rgba(221, 221, 221, 1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(221, 221, 221, 1);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: rgba(221, 221, 221, 1);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  display: block;
+  height: 38px;
+  line-height: 20px;
+  margin-bottom: 16px;
+  padding-top: 8px;
+  padding-right: 12px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  width: 100%;
+  appearance: none;
+}
+.w-commerce-commercecheckoutbillingzippostalcode::placeholder {
+  color: rgba(153, 153, 153, 1);
+}
+.w-commerce-commercecheckoutbillingzippostalcode:focus {
+  border-top-color: rgba(56, 152, 236, 1);
+  border-right-color: rgba(56, 152, 236, 1);
+  border-bottom-color: rgba(56, 152, 236, 1);
+  border-left-color: rgba(56, 152, 236, 1);
+  outline-style: none;
+}
+.w-commerce-commercecheckoutbillingstateprovince {
+  background-color: rgba(250, 250, 250, 1);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: rgba(221, 221, 221, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: rgba(221, 221, 221, 1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(221, 221, 221, 1);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: rgba(221, 221, 221, 1);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  display: block;
+  height: 38px;
+  line-height: 20px;
+  margin-bottom: 16px;
+  padding-top: 8px;
+  padding-right: 12px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  width: 100%;
+  appearance: none;
+}
+.w-commerce-commercecheckoutbillingstateprovince::placeholder {
+  color: rgba(153, 153, 153, 1);
+}
+.w-commerce-commercecheckoutbillingstateprovince:focus {
+  border-top-color: rgba(56, 152, 236, 1);
+  border-right-color: rgba(56, 152, 236, 1);
+  border-bottom-color: rgba(56, 152, 236, 1);
+  border-left-color: rgba(56, 152, 236, 1);
+  outline-style: none;
+}
+.w-commerce-commercecheckoutbillingaddresstogglewrapper {
+  display: flex;
+  flex-direction: row;
+}
+.w-commerce-commercecheckoutbillingaddresstogglecheckbox {
+  margin-top: 4px;
+}
+.w-commerce-commercecheckoutbillingaddresstogglelabel {
+  font-weight: 400;
+  margin-left: 8px;
+}
+.w-commerce-commercecheckoutorderitemswrapper {
+  margin-bottom: 20px;
+}
+.w-commerce-commercecheckoutorderitemslist {
+  margin-bottom: -20px;
+}
+.w-commerce-commercecheckoutorderitem {
+  margin-bottom: 20px;
+  display: flex;
+}
+.w-commerce-commerceboldtextblock {
+  font-weight: 700;
+}
+.w-commerce-commercecheckoutorderitemdescriptionwrapper {
+  margin-left: 16px;
+  margin-right: 16px;
+  flex-grow: 1;
+}
+.w-commerce-commercecheckoutorderitemquantitywrapper {
+  display: flex;
+  white-space: pre-wrap;
+}
+.w-commerce-commercecheckoutorderitemoptionlist {
+  text-decoration: none;
+  padding-left: 0px;
+  margin-bottom: 0px;
+  list-style-type: none;
+}
+.w-commerce-commercecheckoutshippingmethodswrapper {
+  margin-bottom: 20px;
+}
+.w-commerce-commercecheckoutshippingmethodsemptystate {
+  text-align: center;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 64px;
+  padding-bottom: 64px;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: rgba(230, 230, 230, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: rgba(230, 230, 230, 1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(230, 230, 230, 1);
+  background-color: rgba(255, 255, 255, 1);
+}
+.w-commerce-commercecheckoutshippingmethodslist {
+  border-left-color: rgba(230, 230, 230, 1);
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-right-color: rgba(230, 230, 230, 1);
+  border-right-width: 1px;
+  border-right-style: solid;
+}
+.w-commerce-commercecheckoutshippingmethoditem {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-right: 16px;
+  padding-left: 16px;
+  font-weight: 400;
+  display: flex;
+  flex-direction: row;
+  border-bottom-color: rgba(230, 230, 230, 1);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  margin-bottom: 0px;
+  background-color: rgba(255, 255, 255, 1);
+  align-items: baseline;
+}
+.w-commerce-commercecheckoutshippingmethoddescriptionblock {
+  margin-left: 12px;
+  margin-right: 12px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.w-commerce-commercecheckoutshippingmethodnameblock {
+  font-weight: 700;
+}
+.w-commerce-commercecheckoutcustomerinfosummarywrapper {
+  margin-bottom: 20px;
+}
+.w-commerce-commercecheckoutshippingsummarywrapper {
+  margin-bottom: 20px;
+}
+.w-commerce-commercecheckoutpaymentsummarywrapper {
+  margin-bottom: 20px;
+}
+.w-commerce-commercecheckoutordersummarywrapper {
+  margin-bottom: 20px;
+}
+.w-commerce-commercecheckoutsummaryitem {
+  margin-bottom: 8px;
+}
+.w-commerce-commercecheckoutsummarylabel {
+  margin-bottom: 8px;
+}
+.w-commerce-commercecheckoutsummaryblockheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: rgba(230, 230, 230, 1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(230, 230, 230, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: rgba(230, 230, 230, 1);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: rgba(230, 230, 230, 1);
+  background-color: rgba(255, 255, 255, 1);
+}
+.w-commerce-commercecheckoutsummarylineitem {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 8px;
+  justify-content: space-between;
+}
+.w-commerce-commercecheckoutsummarytotal {
+  font-weight: 700;
+}
+.w-commerce-commercecheckoutsummarytextspacingondiv {
+  margin-right: 0.33em;
+}
+.w-commerce-commercecheckoutsummaryflexboxdiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.w-commerce-commercecheckoutorderitemdescriptionprice {
+
+}
+.w-commerce-commercecheckoutordersummaryextraitemslistitem {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 8px;
+  justify-content: space-between;
+}
+.w-commerce-commercelayoutmain {
+  flex-basis: 800px;
+  flex-grow: 0;
+  flex-shrink: 1;
+  margin-right: 20px;
+}
+.w-commerce-commercelayoutsidebar {
+  flex-basis: 320px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  position: sticky;
+  top: 20px;
+}
+.w-commerce-commercelayoutcontainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.w-embed-youtubevideo {
+  width: 100%;
+  position: relative;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  background-image: url(https://d3e54v103j8qbb.cloudfront.net/static/youtube-placeholder.2b05e7d68d.svg);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.w-embed-youtubevideo:empty {
+  min-height: 75px;
+  padding-bottom: 56.25%;
+}
+.w-checkbox-input {
+  float: left;
+  margin-bottom: 0px;
+  margin-left: -20px;
+  margin-right: 0px;
+  margin-top: 4px;
+  line-height: normal;
+}
+.w-checkbox {
+  display: block;
+  margin-bottom: 5px;
+  padding-left: 20px;
+}
+.w-checkbox:before {
+  content: ' ';
+  display: table;
+  grid-column-end: 2;
+  grid-column-start: 1;
+  grid-row-end: 2;
+  grid-row-start: 1;
+}
+.w-checkbox:after {
+  content: ' ';
+  display: table;
+  grid-column-end: 2;
+  grid-column-start: 1;
+  grid-row-end: 2;
+  grid-row-start: 1;
+  clear: both;
+}
+.w-form-formrecaptcha {
+  margin-bottom: 8px;
+}
+.w-layout-grid {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-row-gap: 16px;
+  grid-column-gap: 16px;
+}
+.w-pagination-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.w-pagination-previous {
+  display: block;
+  color: rgba(51, 51, 51, 1);
+  font-size: 14px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-right: 20px;
+  padding-left: 20px;
+  background-color: rgba(250, 250, 250, 1);
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  border-top-color: rgba(204, 204, 204, 1);
+  border-right-color: rgba(204, 204, 204, 1);
+  border-bottom-color: rgba(204, 204, 204, 1);
+  border-left-color: rgba(204, 204, 204, 1);
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+.w-pagination-next {
+  display: block;
+  color: rgba(51, 51, 51, 1);
+  font-size: 14px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-right: 20px;
+  padding-left: 20px;
+  background-color: rgba(250, 250, 250, 1);
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  border-top-color: rgba(204, 204, 204, 1);
+  border-right-color: rgba(204, 204, 204, 1);
+  border-bottom-color: rgba(204, 204, 204, 1);
+  border-left-color: rgba(204, 204, 204, 1);
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+.w-pagination-previous-icon {
+  margin-right: 4px;
+}
+.w-pagination-next-icon {
+  margin-left: 4px;
+}
+.w-page-count {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+@media screen and (max-width: 767px) {
+  .w-commerce-commercelayoutmain {
+    margin-right: 0px;
+    flex-basis: auto;
+  }
+  .w-commerce-commercelayoutsidebar {
+    flex-basis: auto;
+  }
+  .w-commerce-commercelayoutcontainer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+@media screen and (max-width: 479px) {
+  .w-commerce-commerceaddtocartquantityinput {
+    font-size: 16px;
+  }
+  .w-commerce-commercecartcontainerwrapper--cartType-modal {
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+  }
+  .w-commerce-commercecartcontainerwrapper--cartType-leftDropdown {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+  }
+  .w-commerce-commercecartcontainerwrapper--cartType-rightDropdown {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+  }
+  .w-commerce-commercecartquantity {
+    font-size: 16px;
+  }
+  .w-commerce-commercecheckoutrow {
+    flex-direction: column;
+  }
+  .w-commerce-commercecheckoutcardexpirationdate, .w-commerce-commercecheckoutcardexpirationdate {
+    font-size: 16px;
+  }
+  .w-commerce-commercecheckoutcardnumber, .w-commerce-commercecheckoutcardnumber {
+    font-size: 16px;
+  }
+  .w-commerce-commercecheckoutcardsecuritycode, .w-commerce-commercecheckoutcardsecuritycode {
+    font-size: 16px;
+  }
+  .w-commerce-commercecheckoutemailinput {
+    font-size: 16px;
+  }
+  .w-commerce-commercecheckoutshippingcountryselector {
+    font-size: 16px;
+  }
+  .w-commerce-commercecheckoutshippingfullname {
+    font-size: 16px;
+  }
+  .w-commerce-commercecheckoutshippingstreetaddress {
+    font-size: 16px;
+  }
+  .w-commerce-commercecheckoutshippingstreetaddressoptional {
+    font-size: 16px;
+  }
+  .w-commerce-commercecheckoutshippingcity {
+    font-size: 16px;
+  }
+  .w-commerce-commercecheckoutshippingzippostalcode {
+    font-size: 16px;
+  }
+  .w-commerce-commercecheckoutshippingstateprovince {
+    font-size: 16px;
+  }
+  .w-commerce-commercecheckoutbillingcountryselector {
+    font-size: 16px;
+  }
+  .w-commerce-commercecheckoutbillingfullname {
+    font-size: 16px;
+  }
+  .w-commerce-commercecheckoutbillingstreetaddress {
+    font-size: 16px;
+  }
+  .w-commerce-commercecheckoutbillingstreetaddressoptional {
+    font-size: 16px;
+  }
+  .w-commerce-commercecheckoutbillingcity {
+    font-size: 16px;
+  }
+  .w-commerce-commercecheckoutbillingzippostalcode {
+    font-size: 16px;
+  }
+  .w-commerce-commercecheckoutbillingstateprovince {
+    font-size: 16px;
+  }
+}</style><script src="./jquery.min.js"></script><script src="./webflow.js"></script><style></style><link rel="stylesheet" type="text/css"><script type="text/javascript" src="./js"></script><noscript></noscript><script type="text/javascript" src="./saved_resource"></script><noscript></noscript><style id="__wf_sheet_id" type="text/css" rel="stylesheet"></style><style>
+#w-node-a228b2383f5d-ee6f53bb {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+
+#w-node-fcbcb9a2ef55-ee6f53bb {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+
+#w-node-e761ca1fa0f4-ee6f53bb {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+
+#w-node-042aec0ebadd-ee6f53bb {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+
+#w-node-26ca4acb459b-ee6f53bb {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+
+#w-node-13277628cd86-ee6f53bb {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+
+#w-node-13277628cd88-ee6f53bb {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+
+#w-node-8377e424b7fe-ee6f53bb {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+
+#w-node-5aca5250fc1a-ee6f53bb {
+  grid-column-start: 2;
+  grid-row-start: 1;
+  grid-column-end: 3;
+  grid-row-end: 2;
+}
+
+
+#w-node-8e781d4dd0f7-ee6f53bb {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+
+#w-node-372db4f8a958-ee6f53bb {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+
+#w-node-5daef155df16-ee6f53bb {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+
+#w-node-3378f8cd3340-ee6f53bb {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+
+#w-node-d89652e049cf-ee6f53bb {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+
+#w-node-d3ba81cbecaa-ee6f53bb {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+</style><style id="grid-inflators">[data-w-id="5fd13be2-0dfb-5979-9cfb-5d53b2dfae67"] {
+  grid-template-rows: auto !important;
+  grid-template-columns: 3fr 2.5fr 0.5fr !important;
+}
+
+
+[data-w-id="cc11fdf6-7075-7da8-9dc0-13277628cd85"] {
+  grid-template-rows: auto !important;
+  grid-template-columns: 3fr 2.5fr 0.5fr !important;
+}
+
+
+
+
+</style><link rel="stylesheet" type="text/css" href="./css(2)"></head><body data-w-id="5ce215d324b02e397053ef3f" data-wf-id="[&quot;5ce215d324b02e397053ef3f&quot;]"><div data-w-id="837c3050-b362-8eb9-4b84-a8b751d8a104" data-wf-id="[&quot;837c3050-b362-8eb9-4b84-a8b751d8a104&quot;]" class="preloader" style=""><img src="./5ce4ce5bc3f52cfb01c5ab4a_GREEN ARROWS.png" width="43" data-w-id="5baaed65-7b97-82f2-1c1f-0503d5f5302c" data-wf-id="[&quot;5baaed65-7b97-82f2-1c1f-0503d5f5302c&quot;]" alt="" class="image-7" style=""></div><div id="home" data-w-id="0fb6736e-f074-43ab-4b3f-a89c77bc16e8" data-wf-id="[&quot;0fb6736e-f074-43ab-4b3f-a89c77bc16e8&quot;]" class="section w-section"><div data-collapse="medium" data-animation="default" data-duration="400" data-w-id="b7164431-0559-4d7b-470c-2f863d999181" data-wf-id="[&quot;b7164431-0559-4d7b-470c-2f863d999181&quot;,&quot;b455eedc-86d7-b4e2-b3a3-445ba5fcad21&quot;]" class="navigation white_nav w-nav" style=""><div data-wf-id="[&quot;b7164431-0559-4d7b-470c-2f863d999181&quot;,&quot;b455eedc-86d7-b4e2-b3a3-445ba5fcad22&quot;]" class="wrapper" data-w-instance-of="b455eedc-86d7-b4e2-b3a3-445ba5fcad22"><a data-wf-id="[&quot;b7164431-0559-4d7b-470c-2f863d999181&quot;,&quot;b455eedc-86d7-b4e2-b3a3-445ba5fcad23&quot;]" href="https://preview.webflow.com/" class="brand_link w-inline-block w--current" data-w-instance-of="b455eedc-86d7-b4e2-b3a3-445ba5fcad23"><img src="./5ce4d4ccb7568a96942aee93_crossfit logo dark.png" width="293" data-wf-id="[&quot;b7164431-0559-4d7b-470c-2f863d999181&quot;,&quot;b455eedc-86d7-b4e2-b3a3-445ba5fcad24&quot;]" alt="" class="logo dark_logo" data-w-instance-of="b455eedc-86d7-b4e2-b3a3-445ba5fcad24"></a><nav role="navigation" data-wf-id="[&quot;b7164431-0559-4d7b-470c-2f863d999181&quot;,&quot;b455eedc-86d7-b4e2-b3a3-445ba5fcad25&quot;]" class="navigation_items w-nav-menu" data-w-instance-of="b455eedc-86d7-b4e2-b3a3-445ba5fcad25"><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#about" data-wf-id="[&quot;b7164431-0559-4d7b-470c-2f863d999181&quot;,&quot;b455eedc-86d7-b4e2-b3a3-445ba5fcad26&quot;]" class="navigation_item dark_text w-nav-link" data-w-instance-of="b455eedc-86d7-b4e2-b3a3-445ba5fcad26">ABOUT</a><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#classes" data-wf-id="[&quot;b7164431-0559-4d7b-470c-2f863d999181&quot;,&quot;b455eedc-86d7-b4e2-b3a3-445ba5fcad28&quot;]" class="navigation_item dark_text w-nav-link" data-w-instance-of="b455eedc-86d7-b4e2-b3a3-445ba5fcad28">classes</a><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#schedule" data-wf-id="[&quot;b7164431-0559-4d7b-470c-2f863d999181&quot;,&quot;b455eedc-86d7-b4e2-b3a3-445ba5fcad2a&quot;]" class="navigation_item dark_text w-nav-link" data-w-instance-of="b455eedc-86d7-b4e2-b3a3-445ba5fcad2a">schedule</a><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#team" data-wf-id="[&quot;b7164431-0559-4d7b-470c-2f863d999181&quot;,&quot;b455eedc-86d7-b4e2-b3a3-445ba5fcad2c&quot;]" class="navigation_item dark_text w-nav-link" data-w-instance-of="b455eedc-86d7-b4e2-b3a3-445ba5fcad2c">team</a><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#contact" data-wf-id="[&quot;b7164431-0559-4d7b-470c-2f863d999181&quot;,&quot;b455eedc-86d7-b4e2-b3a3-445ba5fcad2e&quot;]" class="navigation_item dark_text last-link w-nav-link" data-w-instance-of="b455eedc-86d7-b4e2-b3a3-445ba5fcad2e">contact</a></nav><div data-wf-id="[&quot;b7164431-0559-4d7b-470c-2f863d999181&quot;,&quot;b455eedc-86d7-b4e2-b3a3-445ba5fcad30&quot;]" class="menu-button w-nav-button" data-w-instance-of="b455eedc-86d7-b4e2-b3a3-445ba5fcad30"><img src="./5ce4c573a62d2313e36f53c9_hamburger dark.png" width="22" data-wf-id="[&quot;b7164431-0559-4d7b-470c-2f863d999181&quot;,&quot;b455eedc-86d7-b4e2-b3a3-445ba5fcad32&quot;]" alt="" class="dark-hamburger" data-w-instance-of="b455eedc-86d7-b4e2-b3a3-445ba5fcad32"></div></div></div><div data-collapse="medium" data-animation="default" data-duration="400" data-w-id="07d10e20-6e7c-b83a-fd6f-90295ac80b86" data-wf-id="[&quot;07d10e20-6e7c-b83a-fd6f-90295ac80b86&quot;,&quot;937f9ba2-e5ee-031c-0948-3450e0296df9&quot;]" class="navigation w-nav"><div data-wf-id="[&quot;07d10e20-6e7c-b83a-fd6f-90295ac80b86&quot;,&quot;937f9ba2-e5ee-031c-0948-3450e0296dfa&quot;]" class="wrapper" data-w-instance-of="937f9ba2-e5ee-031c-0948-3450e0296dfa"><a data-wf-id="[&quot;07d10e20-6e7c-b83a-fd6f-90295ac80b86&quot;,&quot;937f9ba2-e5ee-031c-0948-3450e0296dfb&quot;]" href="https://preview.webflow.com/" class="brand_link w-inline-block w--current" data-w-instance-of="937f9ba2-e5ee-031c-0948-3450e0296dfb"><img src="./5ce4ce5c7a1a2e51b5d8d5cf_CROSSFIT LOGO.png" width="293" data-wf-id="[&quot;07d10e20-6e7c-b83a-fd6f-90295ac80b86&quot;,&quot;937f9ba2-e5ee-031c-0948-3450e0296dfc&quot;]" alt="" class="logo" data-w-instance-of="937f9ba2-e5ee-031c-0948-3450e0296dfc"></a><nav role="navigation" data-wf-id="[&quot;07d10e20-6e7c-b83a-fd6f-90295ac80b86&quot;,&quot;937f9ba2-e5ee-031c-0948-3450e0296dfd&quot;]" class="navigation_items w-nav-menu" data-w-instance-of="937f9ba2-e5ee-031c-0948-3450e0296dfd"><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#about" data-wf-id="[&quot;07d10e20-6e7c-b83a-fd6f-90295ac80b86&quot;,&quot;937f9ba2-e5ee-031c-0948-3450e0296dfe&quot;]" class="navigation_item w-nav-link" data-w-instance-of="937f9ba2-e5ee-031c-0948-3450e0296dfe">ABOUT</a><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#classes" data-wf-id="[&quot;07d10e20-6e7c-b83a-fd6f-90295ac80b86&quot;,&quot;937f9ba2-e5ee-031c-0948-3450e0296e00&quot;]" class="navigation_item w-nav-link" data-w-instance-of="937f9ba2-e5ee-031c-0948-3450e0296e00">classes</a><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#schedule" data-wf-id="[&quot;07d10e20-6e7c-b83a-fd6f-90295ac80b86&quot;,&quot;937f9ba2-e5ee-031c-0948-3450e0296e02&quot;]" class="navigation_item w-nav-link" data-w-instance-of="937f9ba2-e5ee-031c-0948-3450e0296e02">schedule</a><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#team" data-wf-id="[&quot;07d10e20-6e7c-b83a-fd6f-90295ac80b86&quot;,&quot;937f9ba2-e5ee-031c-0948-3450e0296e04&quot;]" class="navigation_item w-nav-link" data-w-instance-of="937f9ba2-e5ee-031c-0948-3450e0296e04">team</a><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#contact" data-wf-id="[&quot;07d10e20-6e7c-b83a-fd6f-90295ac80b86&quot;,&quot;937f9ba2-e5ee-031c-0948-3450e0296e06&quot;]" class="navigation_item last-link w-nav-link" data-w-instance-of="937f9ba2-e5ee-031c-0948-3450e0296e06">contact</a></nav><div data-wf-id="[&quot;07d10e20-6e7c-b83a-fd6f-90295ac80b86&quot;,&quot;937f9ba2-e5ee-031c-0948-3450e0296e08&quot;]" class="menu-button w-nav-button" data-w-instance-of="937f9ba2-e5ee-031c-0948-3450e0296e08"><img src="./5ce4c573a62d23fdbc6f53c7_hamburger white.png" width="22" data-wf-id="[&quot;07d10e20-6e7c-b83a-fd6f-90295ac80b86&quot;,&quot;937f9ba2-e5ee-031c-0948-3450e0296e09&quot;]" alt="" class="light-hamburger" data-w-instance-of="937f9ba2-e5ee-031c-0948-3450e0296e09"><img src="./5ce4c573a62d2313e36f53c9_hamburger dark.png" width="22" data-wf-id="[&quot;07d10e20-6e7c-b83a-fd6f-90295ac80b86&quot;,&quot;937f9ba2-e5ee-031c-0948-3450e0296e0a&quot;]" alt="" class="dark-hamburger" data-w-instance-of="937f9ba2-e5ee-031c-0948-3450e0296e0a"></div></div></div><div data-w-id="096d855d-6d32-3148-df48-dd628bdf0dbe" data-wf-id="[&quot;096d855d-6d32-3148-df48-dd628bdf0dbe&quot;]" class="hero_bg_img w-clearfix"><img src="./5ce4cf6e02236903bc4f024e_BG_LINES.svg" data-w-id="57689f06-b083-85f0-a2ea-45d20ca52f34" data-wf-id="[&quot;57689f06-b083-85f0-a2ea-45d20ca52f34&quot;]" alt="" class="bg_lines" style=""><div data-w-id="5fd13be2-0dfb-5979-9cfb-5d53b2dfae67" data-wf-id="[&quot;5fd13be2-0dfb-5979-9cfb-5d53b2dfae67&quot;]" class="w-layout-grid grid_layout wf-grid"><div id="w-node-a228b2383f5d-ee6f53bb" data-w-id="67183d83-1c41-45c6-c3d1-a228b2383f5d" data-wf-id="[&quot;67183d83-1c41-45c6-c3d1-a228b2383f5d&quot;]" class="grid_col"><div data-w-id="c4260526-073a-44e6-c776-c58e59f98880" data-wf-id="[&quot;c4260526-073a-44e6-c776-c58e59f98880&quot;]" class="contrast_div initial_no_show" style=""></div></div><div id="w-node-fcbcb9a2ef55-ee6f53bb" data-w-id="11c6ee45-94c2-92ea-91b1-fcbcb9a2ef55" data-wf-id="[&quot;11c6ee45-94c2-92ea-91b1-fcbcb9a2ef55&quot;]" class="grid_col shorter"><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#" data-w-id="67af81ec-a93a-8ff8-cc40-507bd65fee2e" data-wf-id="[&quot;67af81ec-a93a-8ff8-cc40-507bd65fee2e&quot;]" class="lightbox-link w-inline-block w-lightbox" style=""><div data-w-id="ad7fc706-ac48-b42e-e9c5-cf0ee5883670" data-wf-id="[&quot;ad7fc706-ac48-b42e-e9c5-cf0ee5883670&quot;]" class="play_video_wrap"><div data-w-id="b69dd10b-6a58-57e6-4661-9f570212d317" data-wf-id="[&quot;b69dd10b-6a58-57e6-4661-9f570212d317&quot;]" class="div-block"><img src="./5ce4cef3fd92f1def649044d_Triangle 2.svg" width="12" data-w-id="de77d7e4-5001-97c1-de1c-b286c28abaa8" data-wf-id="[&quot;de77d7e4-5001-97c1-de1c-b286c28abaa8&quot;]" alt="" class="image-2"></div></div><script type="application/json" class="w-json">{
+  "items": [
+    {
+      "type": "video",
+      "originalUrl": "https://youtu.be/H6F5xjtFHc8?autoplay=1",
+      "url": "https://youtu.be/H6F5xjtFHc8?autoplay=1",
+      "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FH6F5xjtFHc8%3Ffeature%3Doembed%26autoplay%3D1&url=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DH6F5xjtFHc8&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FH6F5xjtFHc8%2Fhqdefault.jpg&args=autoplay%3D1&key=96f1f04c5f4143bcb0f2e68c87d65feb&autoplay=1&type=text%2Fhtml&schema=youtube\" width=\"940\" height=\"528\" scrolling=\"no\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\"></iframe>",
+      "thumbnailUrl": "https://i.ytimg.com/vi/H6F5xjtFHc8/hqdefault.jpg",
+      "width": 940,
+      "height": 528
+    }
+  ]
+}</script></a><div data-w-id="511c5abd-0f34-04bf-c465-72396fc53a6f" data-wf-id="[&quot;511c5abd-0f34-04bf-c465-72396fc53a6f&quot;]" class="contrast_div div-block-2" style=""></div></div></div><div data-w-id="b77f7d5d-6ab7-a359-a7e7-ad17467cccc6" data-wf-id="[&quot;b77f7d5d-6ab7-a359-a7e7-ad17467cccc6&quot;]" class="hero_wrapper" style=""><img src="./5ce4ce5b02236916b34efed8_365.png" width="497" data-w-id="6c519242-b7f1-c3d8-8287-66bbbee671fc" data-wf-id="[&quot;6c519242-b7f1-c3d8-8287-66bbbee671fc&quot;]" alt="" class="_365"><h1 data-w-id="6c519242-b7f1-c3d8-8287-66bbbee671fd" data-wf-id="[&quot;6c519242-b7f1-c3d8-8287-66bbbee671fd&quot;]" class="h1">start today, excel forever</h1><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#home" data-w-id="576f7fb3-011a-98cf-e0db-ef4c1cd26ba2" data-wf-id="[&quot;576f7fb3-011a-98cf-e0db-ef4c1cd26ba2&quot;,&quot;e218fef1-9b5a-4b8b-f314-b889f69b68ae&quot;]" class="button w-inline-block w--current"><div data-wf-id="[&quot;576f7fb3-011a-98cf-e0db-ef4c1cd26ba2&quot;,&quot;e218fef1-9b5a-4b8b-f314-b889f69b68af&quot;]" class="learn_more_wrap" data-w-instance-of="e218fef1-9b5a-4b8b-f314-b889f69b68af"><div data-wf-id="[&quot;576f7fb3-011a-98cf-e0db-ef4c1cd26ba2&quot;,&quot;e218fef1-9b5a-4b8b-f314-b889f69b68b0&quot;]" class="button_text" data-w-instance-of="e218fef1-9b5a-4b8b-f314-b889f69b68b0">Learn more</div></div><div data-wf-id="[&quot;576f7fb3-011a-98cf-e0db-ef4c1cd26ba2&quot;,&quot;e218fef1-9b5a-4b8b-f314-b889f69b68b2&quot;]" class="button_arrow_wrap" data-w-instance-of="e218fef1-9b5a-4b8b-f314-b889f69b68b2"><img src="./5ce63c75d716616e8aa6692d_crossfit_white_icon.png" width="20" data-wf-id="[&quot;576f7fb3-011a-98cf-e0db-ef4c1cd26ba2&quot;,&quot;9684f212-0b10-7003-49aa-65bfa632d0cf&quot;]" alt="" class="arrows" data-w-instance-of="9684f212-0b10-7003-49aa-65bfa632d0cf"></div></a></div></div></div><div data-w-id="82964e91-7540-0dab-d79a-87f7c96c53fd" data-wf-id="[&quot;82964e91-7540-0dab-d79a-87f7c96c53fd&quot;]" class="section w-section"><div data-w-id="aff4d880-5847-3c49-1580-1d1ce62345bb" data-wf-id="[&quot;aff4d880-5847-3c49-1580-1d1ce62345bb&quot;]" class="benefits_wrapper"><div data-w-id="d5454860-6355-1b70-93c3-247dc29fe4fc" data-wf-id="[&quot;d5454860-6355-1b70-93c3-247dc29fe4fc&quot;]" class="w-layout-grid _3_block_grid wf-grid"><div id="w-node-e761ca1fa0f4-ee6f53bb" data-w-id="5825d26b-06b6-39fc-2622-e761ca1fa0f4" data-wf-id="[&quot;5825d26b-06b6-39fc-2622-e761ca1fa0f4&quot;]" class="benefits_block"><div data-w-id="7e2b3f94-f58e-b717-43c2-fd3167c9a082" data-wf-id="[&quot;7e2b3f94-f58e-b717-43c2-fd3167c9a082&quot;]" class="benefits_overlay"><div data-w-id="fc933d7a-a419-4079-4add-bb9ec617a7d6" data-wf-id="[&quot;fc933d7a-a419-4079-4add-bb9ec617a7d6&quot;]" class="link_block_content" style=""><img src="./5cee4d64a019ce0e07db982f_noun_Muscle_689971.svg" width="59" data-w-id="fc933d7a-a419-4079-4add-bb9ec617a7d7" data-wf-id="[&quot;fc933d7a-a419-4079-4add-bb9ec617a7d7&quot;]" alt=""><h3 data-w-id="fc933d7a-a419-4079-4add-bb9ec617a7d8" data-wf-id="[&quot;fc933d7a-a419-4079-4add-bb9ec617a7d8&quot;]" class="link_block_h">define Muscle</h3><div data-w-id="94c9dcc2-cb96-9d7e-859b-b233c0927a6d" data-wf-id="[&quot;94c9dcc2-cb96-9d7e-859b-b233c0927a6d&quot;]" class="initial_block_content_hide" style=""><div data-w-id="fc933d7a-a419-4079-4add-bb9ec617a7da" data-wf-id="[&quot;fc933d7a-a419-4079-4add-bb9ec617a7da&quot;]" class="block_description">Join us for a Vinyasa yoga class focused on a passion for a &nbsp;healthy mind and body connection.</div><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#home" data-w-id="a3c2e545-7cc2-3458-046c-793385580ef3" data-wf-id="[&quot;a3c2e545-7cc2-3458-046c-793385580ef3&quot;]" class="read_more_link w-inline-block w--current"><div data-w-id="536c9d40-a907-ea85-7024-f31152b8d5eb" data-wf-id="[&quot;536c9d40-a907-ea85-7024-f31152b8d5eb&quot;]" class="read_more">read more</div><div data-w-id="35b05862-132f-ac7f-33ab-96df5264f5e1" data-wf-id="[&quot;35b05862-132f-ac7f-33ab-96df5264f5e1&quot;]" class="read_more_arrow_wrap"><img src="./5ce4ce5bc3f52cfb01c5ab4a_GREEN ARROWS.png" width="15" data-w-id="ac374e0a-0829-30a3-3a6a-fa59645a7b42" data-wf-id="[&quot;ac374e0a-0829-30a3-3a6a-fa59645a7b42&quot;]" alt="" class="read_more_arrows"></div></a></div></div></div></div><div id="w-node-042aec0ebadd-ee6f53bb" data-w-id="ad8595c3-73d1-c24e-1c29-042aec0ebadd" data-wf-id="[&quot;ad8595c3-73d1-c24e-1c29-042aec0ebadd&quot;]" class="benefits_block block_img_2"><div data-w-id="4abc043d-c67a-8fdd-b3c2-87f441cac385" data-wf-id="[&quot;4abc043d-c67a-8fdd-b3c2-87f441cac385&quot;]" class="benefits_overlay"><div data-w-id="9793f722-5107-27eb-9e36-70a4eb902a73" data-wf-id="[&quot;9793f722-5107-27eb-9e36-70a4eb902a73&quot;]" class="link_block_content" style=""><img src="./5cee4db98c10e5eef0614476_noun_confident_1926296.svg" width="59" data-w-id="9793f722-5107-27eb-9e36-70a4eb902a74" data-wf-id="[&quot;9793f722-5107-27eb-9e36-70a4eb902a74&quot;]" alt=""><h3 data-w-id="9793f722-5107-27eb-9e36-70a4eb902a75" data-wf-id="[&quot;9793f722-5107-27eb-9e36-70a4eb902a75&quot;]" class="link_block_h">gain confidence</h3><div data-w-id="9793f722-5107-27eb-9e36-70a4eb902a77" data-wf-id="[&quot;9793f722-5107-27eb-9e36-70a4eb902a77&quot;]" class="initial_block_content_hide" style=""><div data-w-id="9793f722-5107-27eb-9e36-70a4eb902a78" data-wf-id="[&quot;9793f722-5107-27eb-9e36-70a4eb902a78&quot;]" class="block_description">Join us for a Vinyasa yoga class focused on a passion for a &nbsp;healthy mind and body connection.</div><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#home" data-w-id="9793f722-5107-27eb-9e36-70a4eb902a7a" data-wf-id="[&quot;9793f722-5107-27eb-9e36-70a4eb902a7a&quot;]" class="read_more_link w-inline-block w--current"><div data-w-id="9793f722-5107-27eb-9e36-70a4eb902a7b" data-wf-id="[&quot;9793f722-5107-27eb-9e36-70a4eb902a7b&quot;]" class="read_more">read more</div><div data-w-id="9793f722-5107-27eb-9e36-70a4eb902a7d" data-wf-id="[&quot;9793f722-5107-27eb-9e36-70a4eb902a7d&quot;]" class="read_more_arrow_wrap"><img src="./5ce4ce5bc3f52cfb01c5ab4a_GREEN ARROWS.png" width="15" data-w-id="9793f722-5107-27eb-9e36-70a4eb902a7e" data-wf-id="[&quot;9793f722-5107-27eb-9e36-70a4eb902a7e&quot;]" alt="" class="read_more_arrows"></div></a></div></div></div></div><div id="w-node-26ca4acb459b-ee6f53bb" data-w-id="c2a222a4-3978-32de-0778-26ca4acb459b" data-wf-id="[&quot;c2a222a4-3978-32de-0778-26ca4acb459b&quot;]" class="benefits_block block_img_3"><div data-w-id="f7494f2c-16d2-be98-f912-ebf920f6fc16" data-wf-id="[&quot;f7494f2c-16d2-be98-f912-ebf920f6fc16&quot;]" class="benefits_overlay"><div data-w-id="e88b9081-20f2-3cd7-506b-b119b6cce233" data-wf-id="[&quot;e88b9081-20f2-3cd7-506b-b119b6cce233&quot;]" class="link_block_content" style=""><img src="./5ce4c573a62d236f7f6f53e2_noun_strong love_1996661.svg" width="59" data-w-id="e88b9081-20f2-3cd7-506b-b119b6cce234" data-wf-id="[&quot;e88b9081-20f2-3cd7-506b-b119b6cce234&quot;]" alt=""><h3 data-w-id="e88b9081-20f2-3cd7-506b-b119b6cce235" data-wf-id="[&quot;e88b9081-20f2-3cd7-506b-b119b6cce235&quot;]" class="link_block_h">build strength</h3><div data-w-id="e88b9081-20f2-3cd7-506b-b119b6cce237" data-wf-id="[&quot;e88b9081-20f2-3cd7-506b-b119b6cce237&quot;]" class="initial_block_content_hide" style=""><div data-w-id="e88b9081-20f2-3cd7-506b-b119b6cce238" data-wf-id="[&quot;e88b9081-20f2-3cd7-506b-b119b6cce238&quot;]" class="block_description">Join us for a Vinyasa yoga class focused on a passion for a &nbsp;healthy mind and body connection.</div><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#home" data-w-id="e88b9081-20f2-3cd7-506b-b119b6cce23a" data-wf-id="[&quot;e88b9081-20f2-3cd7-506b-b119b6cce23a&quot;]" class="read_more_link w-inline-block w--current"><div data-w-id="e88b9081-20f2-3cd7-506b-b119b6cce23b" data-wf-id="[&quot;e88b9081-20f2-3cd7-506b-b119b6cce23b&quot;]" class="read_more">read more</div><div data-w-id="e88b9081-20f2-3cd7-506b-b119b6cce23d" data-wf-id="[&quot;e88b9081-20f2-3cd7-506b-b119b6cce23d&quot;]" class="read_more_arrow_wrap"><img src="./5ce4ce5bc3f52cfb01c5ab4a_GREEN ARROWS.png" width="15" data-w-id="e88b9081-20f2-3cd7-506b-b119b6cce23e" data-wf-id="[&quot;e88b9081-20f2-3cd7-506b-b119b6cce23e&quot;]" alt="" class="read_more_arrows"></div></a></div></div></div></div></div></div></div><div id="about" data-w-id="b537718d-319b-b768-4f25-7983814a437d" data-wf-id="[&quot;b537718d-319b-b768-4f25-7983814a437d&quot;]" class="section about_section w-section"><div data-w-id="cc11fdf6-7075-7da8-9dc0-13277628cd85" data-wf-id="[&quot;cc11fdf6-7075-7da8-9dc0-13277628cd85&quot;]" class="w-layout-grid grid_layout wf-grid"><div id="w-node-13277628cd86-ee6f53bb" data-w-id="cc11fdf6-7075-7da8-9dc0-13277628cd86" data-wf-id="[&quot;cc11fdf6-7075-7da8-9dc0-13277628cd86&quot;]" class="grid_col"><div data-w-id="cc11fdf6-7075-7da8-9dc0-13277628cd87" data-wf-id="[&quot;cc11fdf6-7075-7da8-9dc0-13277628cd87&quot;]" class="contrast_div initial_no_show section_3_contrast_div_1" style=""></div><div data-w-id="5877a683-1eee-491c-ebcc-59377d2a5514" data-wf-id="[&quot;5877a683-1eee-491c-ebcc-59377d2a5514&quot;]" class="grid_section_wrapper"></div></div><div id="w-node-13277628cd88-ee6f53bb" data-w-id="cc11fdf6-7075-7da8-9dc0-13277628cd88" data-wf-id="[&quot;cc11fdf6-7075-7da8-9dc0-13277628cd88&quot;]" class="grid_col"><div data-w-id="cc11fdf6-7075-7da8-9dc0-13277628cd8d" data-wf-id="[&quot;cc11fdf6-7075-7da8-9dc0-13277628cd8d&quot;]" class="contrast_div section_3_contrast_div-2" style=""></div><div data-w-id="7742fc02-0dac-bedc-f5e3-93920aba3305" data-wf-id="[&quot;7742fc02-0dac-bedc-f5e3-93920aba3305&quot;]" class="grid_section_wrapper right_grid"></div></div></div><div data-w-id="2a29c626-d956-62b5-5f5b-ff3fcc25ca4c" data-wf-id="[&quot;2a29c626-d956-62b5-5f5b-ff3fcc25ca4c&quot;]" class="wrapper vertical"><div data-w-id="ab301f0a-31d1-0a52-1495-b35f5c751a6f" data-wf-id="[&quot;ab301f0a-31d1-0a52-1495-b35f5c751a6f&quot;]" class="about_section_div"><div data-w-id="4139cc49-28fc-c6a1-7e76-939ab26e1562" data-wf-id="[&quot;4139cc49-28fc-c6a1-7e76-939ab26e1562&quot;]" class="_1st_about_image_wrap"><img src="./5ce66a5d22f44f7cb1ef7364_5ce4cd61c3f52cbdd6c5a9ac_jesper-aggergaard-539127-unsplash.jpg" data-w-id="3b6e0287-5b98-14ca-5d10-aec35c8ca4ca" data-wf-id="[&quot;3b6e0287-5b98-14ca-5d10-aec35c8ca4ca&quot;]" alt=""></div><div data-w-id="e793a4f9-e9b1-3a45-f695-c8a9b86e7218" data-wf-id="[&quot;e793a4f9-e9b1-3a45-f695-c8a9b86e7218&quot;]" class="about_written_content"><h2 data-w-id="7742fc02-0dac-bedc-f5e3-93920aba3309" data-wf-id="[&quot;7742fc02-0dac-bedc-f5e3-93920aba3309&quot;]" class="h2">start your journey TODAY</h2><div data-w-id="7742fc02-0dac-bedc-f5e3-93920aba330e" data-wf-id="[&quot;7742fc02-0dac-bedc-f5e3-93920aba330e&quot;]" class="text-block">01</div><p data-w-id="7742fc02-0dac-bedc-f5e3-93920aba330b" data-wf-id="[&quot;7742fc02-0dac-bedc-f5e3-93920aba330b&quot;]" class="about_p">Enjoy our holistic programs with a world class studio, trainers and nutrition counselors to help you transform your body and health.</p><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#home" data-w-id="c2ed1866-6651-82c9-56e9-bae1a6ce1c08" data-wf-id="[&quot;c2ed1866-6651-82c9-56e9-bae1a6ce1c08&quot;,&quot;e218fef1-9b5a-4b8b-f314-b889f69b68ae&quot;]" class="button w-inline-block w--current"><div data-wf-id="[&quot;c2ed1866-6651-82c9-56e9-bae1a6ce1c08&quot;,&quot;e218fef1-9b5a-4b8b-f314-b889f69b68af&quot;]" class="learn_more_wrap" data-w-instance-of="e218fef1-9b5a-4b8b-f314-b889f69b68af"><div data-wf-id="[&quot;c2ed1866-6651-82c9-56e9-bae1a6ce1c08&quot;,&quot;e218fef1-9b5a-4b8b-f314-b889f69b68b0&quot;]" class="button_text" data-w-instance-of="e218fef1-9b5a-4b8b-f314-b889f69b68b0">Learn more</div></div><div data-wf-id="[&quot;c2ed1866-6651-82c9-56e9-bae1a6ce1c08&quot;,&quot;e218fef1-9b5a-4b8b-f314-b889f69b68b2&quot;]" class="button_arrow_wrap" data-w-instance-of="e218fef1-9b5a-4b8b-f314-b889f69b68b2"><img src="./5ce63c75d716616e8aa6692d_crossfit_white_icon.png" width="20" data-wf-id="[&quot;c2ed1866-6651-82c9-56e9-bae1a6ce1c08&quot;,&quot;9684f212-0b10-7003-49aa-65bfa632d0cf&quot;]" alt="" class="arrows" data-w-instance-of="9684f212-0b10-7003-49aa-65bfa632d0cf"></div></a></div></div><div data-w-id="584ce7e7-fab0-c078-156e-b20706f7b31e" data-wf-id="[&quot;584ce7e7-fab0-c078-156e-b20706f7b31e&quot;]" class="about_section_div reverse_layout_about_div"><div data-w-id="b55ee1e0-42ee-caf1-2fe8-f0ef339f3ab1" data-wf-id="[&quot;b55ee1e0-42ee-caf1-2fe8-f0ef339f3ab1&quot;]" class="double_images_wrapper"><div data-w-id="b55ee1e0-42ee-caf1-2fe8-f0ef339f3ab2" data-wf-id="[&quot;b55ee1e0-42ee-caf1-2fe8-f0ef339f3ab2&quot;]" class="horizontal_image_wraper"><img src="./5ce66a5d22f44f3959ef7365_5ce4cd617a1a2e7e7dd8d50d_victor-freitas-546919-unsplash.jpg" data-w-id="b55ee1e0-42ee-caf1-2fe8-f0ef339f3ab3" data-wf-id="[&quot;b55ee1e0-42ee-caf1-2fe8-f0ef339f3ab3&quot;]" alt="" class="box_shadow_on_image"></div><div data-w-id="b55ee1e0-42ee-caf1-2fe8-f0ef339f3ab4" data-wf-id="[&quot;b55ee1e0-42ee-caf1-2fe8-f0ef339f3ab4&quot;]" class="vertical_image_wrapper"><img src="./5ce66a5ed355eecebbe26b9d_5ce4cd63c3f52cc43bc5a9ad_charlotte-karlsen-585717-unsplash.jpg" data-w-id="b55ee1e0-42ee-caf1-2fe8-f0ef339f3ab5" data-wf-id="[&quot;b55ee1e0-42ee-caf1-2fe8-f0ef339f3ab5&quot;]" alt="" class="box_shadow_on_image"></div></div><div data-w-id="584ce7e7-fab0-c078-156e-b20706f7b321" data-wf-id="[&quot;584ce7e7-fab0-c078-156e-b20706f7b321&quot;]" class="about_written_content align_right"><h2 data-w-id="584ce7e7-fab0-c078-156e-b20706f7b322" data-wf-id="[&quot;584ce7e7-fab0-c078-156e-b20706f7b322&quot;]" class="h2 alight_right">What we have to offer</h2><div data-w-id="584ce7e7-fab0-c078-156e-b20706f7b324" data-wf-id="[&quot;584ce7e7-fab0-c078-156e-b20706f7b324&quot;]" class="text-block number_2">02</div><p data-w-id="584ce7e7-fab0-c078-156e-b20706f7b326" data-wf-id="[&quot;584ce7e7-fab0-c078-156e-b20706f7b326&quot;]" class="about_p">Enjoy our holistic programs with a world class studio, trainers and nutrition counselors to help you transform your body and health.</p><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#home" data-w-id="584ce7e7-fab0-c078-156e-b20706f7b328" data-wf-id="[&quot;584ce7e7-fab0-c078-156e-b20706f7b328&quot;,&quot;e218fef1-9b5a-4b8b-f314-b889f69b68ae&quot;]" class="button w-inline-block w--current"><div data-wf-id="[&quot;584ce7e7-fab0-c078-156e-b20706f7b328&quot;,&quot;e218fef1-9b5a-4b8b-f314-b889f69b68af&quot;]" class="learn_more_wrap" data-w-instance-of="e218fef1-9b5a-4b8b-f314-b889f69b68af"><div data-wf-id="[&quot;584ce7e7-fab0-c078-156e-b20706f7b328&quot;,&quot;e218fef1-9b5a-4b8b-f314-b889f69b68b0&quot;]" class="button_text" data-w-instance-of="e218fef1-9b5a-4b8b-f314-b889f69b68b0">Learn more</div></div><div data-wf-id="[&quot;584ce7e7-fab0-c078-156e-b20706f7b328&quot;,&quot;e218fef1-9b5a-4b8b-f314-b889f69b68b2&quot;]" class="button_arrow_wrap" data-w-instance-of="e218fef1-9b5a-4b8b-f314-b889f69b68b2"><img src="./5ce63c75d716616e8aa6692d_crossfit_white_icon.png" width="20" data-wf-id="[&quot;584ce7e7-fab0-c078-156e-b20706f7b328&quot;,&quot;9684f212-0b10-7003-49aa-65bfa632d0cf&quot;]" alt="" class="arrows" data-w-instance-of="9684f212-0b10-7003-49aa-65bfa632d0cf"></div></a></div></div></div></div><div data-w-id="6936fd0e-c5dd-9431-341c-7ba07de9be1b" data-wf-id="[&quot;6936fd0e-c5dd-9431-341c-7ba07de9be1b&quot;]" class="section w-section"><div data-w-id="4494f239-c393-5b78-7ea4-c00534d025c5" data-wf-id="[&quot;4494f239-c393-5b78-7ea4-c00534d025c5&quot;]" class="testimonial_image_wrap"><div data-animation="slide" data-duration="500" data-infinite="1" data-w-id="fbca0f34-d8ad-c5f8-a2e2-2d924b9fd7f0" data-wf-id="[&quot;fbca0f34-d8ad-c5f8-a2e2-2d924b9fd7f0&quot;]" class="testimonial_slider w-slider"><div data-w-id="fbca0f34-d8ad-c5f8-a2e2-2d924b9fd7f1" data-wf-id="[&quot;fbca0f34-d8ad-c5f8-a2e2-2d924b9fd7f1&quot;]" class="w-slider-mask"><div data-w-id="fbca0f34-d8ad-c5f8-a2e2-2d924b9fd7f2" data-wf-id="[&quot;fbca0f34-d8ad-c5f8-a2e2-2d924b9fd7f2&quot;]" class="w-slide" style="transform: translateX(0px); opacity: 1;"><div data-w-id="9fa17283-a8d0-bc3d-eb56-567b3f7d0c65" data-wf-id="[&quot;9fa17283-a8d0-bc3d-eb56-567b3f7d0c65&quot;]" class="testimonial_wrap" style=""><div data-w-id="b27217cd-f37b-c77c-b9c2-bbe91e93f321" data-wf-id="[&quot;b27217cd-f37b-c77c-b9c2-bbe91e93f321&quot;]" class="testimonial"><span data-w-id="2b70ff99-cb5f-587a-4bc7-44de2f5e1dc9" data-wf-id="[&quot;2b70ff99-cb5f-587a-4bc7-44de2f5e1dc9&quot;]">"</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, in voluptate velit esse cillum dolore eu fugiat nulla pariatur."</div></div></div><div data-w-id="fbca0f34-d8ad-c5f8-a2e2-2d924b9fd7f3" data-wf-id="[&quot;fbca0f34-d8ad-c5f8-a2e2-2d924b9fd7f3&quot;]" class="w-slide" style="transform: translateX(0px); opacity: 1;"><div data-w-id="c18960b8-8418-9e2c-818f-96b5ddf24c4d" data-wf-id="[&quot;c18960b8-8418-9e2c-818f-96b5ddf24c4d&quot;]" class="testimonial_wrap"><div data-w-id="c18960b8-8418-9e2c-818f-96b5ddf24c4e" data-wf-id="[&quot;c18960b8-8418-9e2c-818f-96b5ddf24c4e&quot;]" class="testimonial"><span data-w-id="c18960b8-8418-9e2c-818f-96b5ddf24c4f" data-wf-id="[&quot;c18960b8-8418-9e2c-818f-96b5ddf24c4f&quot;]">"</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor consectetur adipiscing elit."</div></div></div><div data-w-id="1f716197-0176-2721-62e2-e1cf88691385" data-wf-id="[&quot;1f716197-0176-2721-62e2-e1cf88691385&quot;]" class="w-slide" style="transform: translateX(0px); opacity: 1;"><div data-w-id="e0339364-30ef-2ec9-f729-9390268acfc5" data-wf-id="[&quot;e0339364-30ef-2ec9-f729-9390268acfc5&quot;]" class="testimonial_wrap"><div data-w-id="e0339364-30ef-2ec9-f729-9390268acfc6" data-wf-id="[&quot;e0339364-30ef-2ec9-f729-9390268acfc6&quot;]" class="testimonial"><span data-w-id="e0339364-30ef-2ec9-f729-9390268acfc7" data-wf-id="[&quot;e0339364-30ef-2ec9-f729-9390268acfc7&quot;]">"</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut enim ad minim veniam, in voluptate velit esse cillum dolore eu fugiat nulla pariatur."</div></div></div></div><div data-w-id="fbca0f34-d8ad-c5f8-a2e2-2d924b9fd7f4" data-wf-id="[&quot;fbca0f34-d8ad-c5f8-a2e2-2d924b9fd7f4&quot;]" class="left-arrow w-slider-arrow-left"><div data-w-id="fbca0f34-d8ad-c5f8-a2e2-2d924b9fd7f5" data-wf-id="[&quot;fbca0f34-d8ad-c5f8-a2e2-2d924b9fd7f5&quot;]" class="w-icon-slider-left"></div></div><div data-w-id="fbca0f34-d8ad-c5f8-a2e2-2d924b9fd7f6" data-wf-id="[&quot;fbca0f34-d8ad-c5f8-a2e2-2d924b9fd7f6&quot;]" class="right-arrow w-slider-arrow-right"><div data-w-id="fbca0f34-d8ad-c5f8-a2e2-2d924b9fd7f7" data-wf-id="[&quot;fbca0f34-d8ad-c5f8-a2e2-2d924b9fd7f7&quot;]" class="w-icon-slider-right"></div></div><div data-w-id="fbca0f34-d8ad-c5f8-a2e2-2d924b9fd7f8" data-wf-id="[&quot;fbca0f34-d8ad-c5f8-a2e2-2d924b9fd7f8&quot;]" class="slide-nav w-slider-nav w-round"><div class="w-slider-dot w-active" data-wf-ignore=""></div><div class="w-slider-dot" data-wf-ignore=""></div><div class="w-slider-dot" data-wf-ignore=""></div></div></div></div></div><div id="classes" data-w-id="17bcaa32-0767-9d43-d76d-e89bbe8f5e47" data-wf-id="[&quot;17bcaa32-0767-9d43-d76d-e89bbe8f5e47&quot;]" class="section w-section"><div data-w-id="dc10f8b6-734f-f4f1-9f62-624d4a6c90e5" data-wf-id="[&quot;dc10f8b6-734f-f4f1-9f62-624d4a6c90e5&quot;]" class="classses-wrapper"><div data-w-id="06176fb2-1d4e-dfc0-fc1a-d7d655193b93" data-wf-id="[&quot;06176fb2-1d4e-dfc0-fc1a-d7d655193b93&quot;]" class="centered_title_and_description"><h2 data-w-id="ae3ac802-5a62-bbf1-9197-e3c38fe83f5e" data-wf-id="[&quot;ae3ac802-5a62-bbf1-9197-e3c38fe83f5e&quot;]" class="h2 centered">our classes</h2><p data-w-id="f5f5d81e-89c1-751e-abe8-0984bccdf963" data-wf-id="[&quot;f5f5d81e-89c1-751e-abe8-0984bccdf963&quot;]" class="paragraph_centered">Let us take your yoga routines to the next level with our 365 day challenge and programs schedule. Find classes that best matches your needs.</p></div><div data-w-id="ae1c9778-f408-721b-dc08-d521e0744de8" data-wf-id="[&quot;ae1c9778-f408-721b-dc08-d521e0744de8&quot;]" class="w-layout-grid classes_grid wf-grid"><div id="w-node-8377e424b7fe-ee6f53bb" data-w-id="4d0c6bb2-8d9a-98d4-c659-8377e424b7fe" data-wf-id="[&quot;4d0c6bb2-8d9a-98d4-c659-8377e424b7fe&quot;]" class="programs_box dark_bg"><div data-w-id="5bdfe388-e65b-0142-ffee-dc7f7ff77b95" data-wf-id="[&quot;5bdfe388-e65b-0142-ffee-dc7f7ff77b95&quot;]" class="block_content"><div data-w-id="4b1d2670-bf2d-cd62-b9b0-2684e7a20dfb" data-wf-id="[&quot;4b1d2670-bf2d-cd62-b9b0-2684e7a20dfb&quot;]" class="programs_category green_text">level 2</div><h3 data-w-id="ed7daaf9-d81b-bd2a-271b-cdf733a9a0f5" data-wf-id="[&quot;ed7daaf9-d81b-bd2a-271b-cdf733a9a0f5&quot;]" class="h3">high intensity</h3><p data-w-id="7be7e35f-0562-db39-6261-c8d578cbe3ea" data-wf-id="[&quot;7be7e35f-0562-db39-6261-c8d578cbe3ea&quot;]" class="program_description">Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus maecenas</p><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#schedule" data-w-id="6f29ce4d-a91e-7443-2ff0-e6965936cc23" data-wf-id="[&quot;6f29ce4d-a91e-7443-2ff0-e6965936cc23&quot;]" class="read_more_link left_align w-inline-block"><div data-w-id="6f29ce4d-a91e-7443-2ff0-e6965936cc24" data-wf-id="[&quot;6f29ce4d-a91e-7443-2ff0-e6965936cc24&quot;]" class="read_more initial_white">read more</div><div data-w-id="6f29ce4d-a91e-7443-2ff0-e6965936cc26" data-wf-id="[&quot;6f29ce4d-a91e-7443-2ff0-e6965936cc26&quot;]" class="read_more_arrow_wrap"><img src="./5ce4c573a62d23619c6f53e5_Group 5.png" width="15" data-w-id="6f29ce4d-a91e-7443-2ff0-e6965936cc27" data-wf-id="[&quot;6f29ce4d-a91e-7443-2ff0-e6965936cc27&quot;]" alt="" class="read_more_arrows"></div></a></div></div><div id="w-node-5aca5250fc1a-ee6f53bb" data-w-id="5c1d7833-0a25-bda5-e39d-5aca5250fc1a" data-wf-id="[&quot;5c1d7833-0a25-bda5-e39d-5aca5250fc1a&quot;]" class="img_block"><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#schedule" data-w-id="55fec4ad-4944-f787-9c6c-c1667d49ba50" data-wf-id="[&quot;55fec4ad-4944-f787-9c6c-c1667d49ba50&quot;]" class="programs_box img_bg w-inline-block"></a></div><div id="w-node-8e781d4dd0f7-ee6f53bb" data-w-id="ffb8a133-3111-60f2-b80e-8e781d4dd0f7" data-wf-id="[&quot;ffb8a133-3111-60f2-b80e-8e781d4dd0f7&quot;]" class="programs_box green_bg"><div data-w-id="9dc7911b-da05-4d23-e9e3-f5f20b3a7fd5" data-wf-id="[&quot;9dc7911b-da05-4d23-e9e3-f5f20b3a7fd5&quot;]" class="block_content"><div data-w-id="9dc7911b-da05-4d23-e9e3-f5f20b3a7fd6" data-wf-id="[&quot;9dc7911b-da05-4d23-e9e3-f5f20b3a7fd6&quot;]" class="programs_category">level 1</div><h3 data-w-id="9dc7911b-da05-4d23-e9e3-f5f20b3a7fd8" data-wf-id="[&quot;9dc7911b-da05-4d23-e9e3-f5f20b3a7fd8&quot;]" class="h3">low-intensity</h3><p data-w-id="9dc7911b-da05-4d23-e9e3-f5f20b3a7fda" data-wf-id="[&quot;9dc7911b-da05-4d23-e9e3-f5f20b3a7fda&quot;]" class="program_description">Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus maecenas</p><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#schedule" data-w-id="9dc7911b-da05-4d23-e9e3-f5f20b3a7fdc" data-wf-id="[&quot;9dc7911b-da05-4d23-e9e3-f5f20b3a7fdc&quot;]" class="read_more_link left_align w-inline-block"><div data-w-id="9dc7911b-da05-4d23-e9e3-f5f20b3a7fdd" data-wf-id="[&quot;9dc7911b-da05-4d23-e9e3-f5f20b3a7fdd&quot;]" class="read_more initial_white">read more</div><div data-w-id="9dc7911b-da05-4d23-e9e3-f5f20b3a7fdf" data-wf-id="[&quot;9dc7911b-da05-4d23-e9e3-f5f20b3a7fdf&quot;]" class="read_more_arrow_wrap"><img src="./5ce4c573a62d23619c6f53e5_Group 5.png" width="15" data-w-id="9dc7911b-da05-4d23-e9e3-f5f20b3a7fe0" data-wf-id="[&quot;9dc7911b-da05-4d23-e9e3-f5f20b3a7fe0&quot;]" alt="" class="read_more_arrows"></div></a></div></div><div id="w-node-372db4f8a958-ee6f53bb" data-w-id="c17871d7-08de-88e2-47fd-372db4f8a958" data-wf-id="[&quot;c17871d7-08de-88e2-47fd-372db4f8a958&quot;]" class="img_block"><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#schedule" data-w-id="1764c88b-288a-807e-39bd-49e1b4a39b5e" data-wf-id="[&quot;1764c88b-288a-807e-39bd-49e1b4a39b5e&quot;]" class="programs_box img_bg block_img_2 w-inline-block"></a></div><div id="w-node-5daef155df16-ee6f53bb" data-w-id="2e976c4e-ad98-2c36-fde8-5daef155df16" data-wf-id="[&quot;2e976c4e-ad98-2c36-fde8-5daef155df16&quot;]" class="img_block hide_on_tablet"><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#schedule" data-w-id="43140ffb-da74-2f1a-f2a9-19581c950717" data-wf-id="[&quot;43140ffb-da74-2f1a-f2a9-19581c950717&quot;]" class="programs_box img_bg block_img_3 w-inline-block"></a></div><div id="w-node-3378f8cd3340-ee6f53bb" data-w-id="7f7645d4-8783-a5a9-3d43-3378f8cd3340" data-wf-id="[&quot;7f7645d4-8783-a5a9-3d43-3378f8cd3340&quot;]" class="programs_box green_bg"><div data-w-id="dad61c98-99e2-39e9-f068-fde53e5851d7" data-wf-id="[&quot;dad61c98-99e2-39e9-f068-fde53e5851d7&quot;]" class="block_content"><div data-w-id="dad61c98-99e2-39e9-f068-fde53e5851d8" data-wf-id="[&quot;dad61c98-99e2-39e9-f068-fde53e5851d8&quot;]" class="programs_category">advanced</div><h3 data-w-id="dad61c98-99e2-39e9-f068-fde53e5851da" data-wf-id="[&quot;dad61c98-99e2-39e9-f068-fde53e5851da&quot;]" class="h3">form</h3><p data-w-id="dad61c98-99e2-39e9-f068-fde53e5851dc" data-wf-id="[&quot;dad61c98-99e2-39e9-f068-fde53e5851dc&quot;]" class="program_description">Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus maecenas</p><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#schedule" data-w-id="dad61c98-99e2-39e9-f068-fde53e5851de" data-wf-id="[&quot;dad61c98-99e2-39e9-f068-fde53e5851de&quot;]" class="read_more_link left_align w-inline-block"><div data-w-id="dad61c98-99e2-39e9-f068-fde53e5851df" data-wf-id="[&quot;dad61c98-99e2-39e9-f068-fde53e5851df&quot;]" class="read_more initial_white">read more</div><div data-w-id="dad61c98-99e2-39e9-f068-fde53e5851e1" data-wf-id="[&quot;dad61c98-99e2-39e9-f068-fde53e5851e1&quot;]" class="read_more_arrow_wrap"><img src="./5ce4c573a62d23619c6f53e5_Group 5.png" width="15" data-w-id="dad61c98-99e2-39e9-f068-fde53e5851e2" data-wf-id="[&quot;dad61c98-99e2-39e9-f068-fde53e5851e2&quot;]" alt="" class="read_more_arrows"></div></a></div></div><div id="w-node-d89652e049cf-ee6f53bb" data-w-id="e77b638c-29cf-24a4-2d5d-d89652e049cf" data-wf-id="[&quot;e77b638c-29cf-24a4-2d5d-d89652e049cf&quot;]" class="img_block"><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#schedule" data-w-id="03cc9456-889a-b0ae-2e52-fe77abc0539a" data-wf-id="[&quot;03cc9456-889a-b0ae-2e52-fe77abc0539a&quot;]" class="programs_box img_bg block_img_4 w-inline-block"></a></div><div id="w-node-d3ba81cbecaa-ee6f53bb" data-w-id="c62a0e07-a8df-6d30-239e-d3ba81cbecaa" data-wf-id="[&quot;c62a0e07-a8df-6d30-239e-d3ba81cbecaa&quot;]" class="programs_box dark_bg"><div data-w-id="522455aa-9d05-1930-e3c5-e05d8dd49788" data-wf-id="[&quot;522455aa-9d05-1930-e3c5-e05d8dd49788&quot;]" class="block_content"><div data-w-id="522455aa-9d05-1930-e3c5-e05d8dd49789" data-wf-id="[&quot;522455aa-9d05-1930-e3c5-e05d8dd49789&quot;]" class="programs_category green_text">high intensity</div><h3 data-w-id="522455aa-9d05-1930-e3c5-e05d8dd4978b" data-wf-id="[&quot;522455aa-9d05-1930-e3c5-e05d8dd4978b&quot;]" class="h3">weekend warrior</h3><p data-w-id="522455aa-9d05-1930-e3c5-e05d8dd4978d" data-wf-id="[&quot;522455aa-9d05-1930-e3c5-e05d8dd4978d&quot;]" class="program_description">Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus maecenas</p><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#schedule" data-w-id="522455aa-9d05-1930-e3c5-e05d8dd4978f" data-wf-id="[&quot;522455aa-9d05-1930-e3c5-e05d8dd4978f&quot;]" class="read_more_link left_align w-inline-block"><div data-w-id="522455aa-9d05-1930-e3c5-e05d8dd49790" data-wf-id="[&quot;522455aa-9d05-1930-e3c5-e05d8dd49790&quot;]" class="read_more initial_white">read more</div><div data-w-id="522455aa-9d05-1930-e3c5-e05d8dd49792" data-wf-id="[&quot;522455aa-9d05-1930-e3c5-e05d8dd49792&quot;]" class="read_more_arrow_wrap"><img src="./5ce4c573a62d23619c6f53e5_Group 5.png" width="15" data-w-id="522455aa-9d05-1930-e3c5-e05d8dd49793" data-wf-id="[&quot;522455aa-9d05-1930-e3c5-e05d8dd49793&quot;]" alt="" class="read_more_arrows"></div></a></div></div></div></div></div><div data-w-id="8f11f3d6-c98f-3de1-cf6c-56d3e3c577d7" data-wf-id="[&quot;8f11f3d6-c98f-3de1-cf6c-56d3e3c577d7&quot;]" class="section w-section"><div data-w-id="55e373c0-a3d3-d5ae-8f89-6207b300efa0" data-wf-id="[&quot;55e373c0-a3d3-d5ae-8f89-6207b300efa0&quot;]" class="goals_wraper"><div data-w-id="53674628-3beb-bacd-c1fb-9dc300a07f69" data-wf-id="[&quot;53674628-3beb-bacd-c1fb-9dc300a07f69&quot;]" class="wrapper vertical"><div data-w-id="93233ee4-dba6-b273-b1db-a49aac819ecc" data-wf-id="[&quot;93233ee4-dba6-b273-b1db-a49aac819ecc&quot;]" class="centered_title_and_description"><h2 data-w-id="93233ee4-dba6-b273-b1db-a49aac819ecd" data-wf-id="[&quot;93233ee4-dba6-b273-b1db-a49aac819ecd&quot;]" class="h2 centered">set goals for yourself</h2><p data-w-id="93233ee4-dba6-b273-b1db-a49aac819ecf" data-wf-id="[&quot;93233ee4-dba6-b273-b1db-a49aac819ecf&quot;]" class="paragraph_centered">Let us take your workout routines to the next level with our 365 day challenge and programs schedule. Find classes that best matches your needs.</p></div><div data-w-id="cad9a0f8-a545-bbfb-a433-aaf9b807ccf5" data-wf-id="[&quot;cad9a0f8-a545-bbfb-a433-aaf9b807ccf5&quot;]" class="icons_description_wrap"><div data-w-id="b55d72f3-4b2c-06c6-36b6-2d75f67af24e" data-wf-id="[&quot;b55d72f3-4b2c-06c6-36b6-2d75f67af24e&quot;]" class="icon_item"><img src="./5ce4c573a62d23e8576f53f3_noun_stretching_29956.svg" data-w-id="b55d72f3-4b2c-06c6-36b6-2d75f67af24f" data-wf-id="[&quot;b55d72f3-4b2c-06c6-36b6-2d75f67af24f&quot;]" alt=""><div data-w-id="b55d72f3-4b2c-06c6-36b6-2d75f67af250" data-wf-id="[&quot;b55d72f3-4b2c-06c6-36b6-2d75f67af250&quot;]" class="icon_title">coaching and mentoring</div><p data-w-id="b55d72f3-4b2c-06c6-36b6-2d75f67af252" data-wf-id="[&quot;b55d72f3-4b2c-06c6-36b6-2d75f67af252&quot;]" class="paragraph_centered">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div><div data-w-id="8e9f41d5-7dab-1add-1c94-1b49a3902732" data-wf-id="[&quot;8e9f41d5-7dab-1add-1c94-1b49a3902732&quot;]" class="icon_item"><img src="./5ce4c573a62d234d306f53f1_noun_Jewelry_1964701.svg" data-w-id="8fe90491-e222-2186-5f01-c1a6093e50a4" data-wf-id="[&quot;8fe90491-e222-2186-5f01-c1a6093e50a4&quot;]" alt=""><div data-w-id="a328c941-9f01-e003-1cdb-176f089e58a6" data-wf-id="[&quot;a328c941-9f01-e003-1cdb-176f089e58a6&quot;]" class="icon_title">World-class studios</div><p data-w-id="4d95e4cf-d000-7dd9-9e83-d74e43dd6820" data-wf-id="[&quot;4d95e4cf-d000-7dd9-9e83-d74e43dd6820&quot;]" class="paragraph_centered">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div><div data-w-id="a0a8e237-d8e3-0b33-6429-309535ee3678" data-wf-id="[&quot;a0a8e237-d8e3-0b33-6429-309535ee3678&quot;]" class="icon_item"><img src="./5ce65973d71661a750a71803_noun_weightlifting_2428902.svg" data-w-id="a0a8e237-d8e3-0b33-6429-309535ee3679" data-wf-id="[&quot;a0a8e237-d8e3-0b33-6429-309535ee3679&quot;]" alt=""><div data-w-id="a0a8e237-d8e3-0b33-6429-309535ee367a" data-wf-id="[&quot;a0a8e237-d8e3-0b33-6429-309535ee367a&quot;]" class="icon_title">multi-level classes</div><p data-w-id="a0a8e237-d8e3-0b33-6429-309535ee367c" data-wf-id="[&quot;a0a8e237-d8e3-0b33-6429-309535ee367c&quot;]" class="paragraph_centered">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div><div data-w-id="3424bb30-a0d6-aa76-355e-8974e392d145" data-wf-id="[&quot;3424bb30-a0d6-aa76-355e-8974e392d145&quot;]" class="icon_item"><img src="./5ce4c573a62d2325ba6f53f0_noun_heart pulse_557985.svg" width="104" data-w-id="3424bb30-a0d6-aa76-355e-8974e392d146" data-wf-id="[&quot;3424bb30-a0d6-aa76-355e-8974e392d146&quot;]" alt=""><div data-w-id="3424bb30-a0d6-aa76-355e-8974e392d147" data-wf-id="[&quot;3424bb30-a0d6-aa76-355e-8974e392d147&quot;]" class="icon_title">unique to your needs</div><p data-w-id="3424bb30-a0d6-aa76-355e-8974e392d149" data-wf-id="[&quot;3424bb30-a0d6-aa76-355e-8974e392d149&quot;]" class="paragraph_centered">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div></div></div></div></div><div data-w-id="95c78197-016a-69fc-e2c0-282796d59e9e" data-wf-id="[&quot;95c78197-016a-69fc-e2c0-282796d59e9e&quot;]" class="section w-section"><div id="schedule" data-w-id="e5aa80fc-3707-9569-1e50-c55c71907db7" data-wf-id="[&quot;e5aa80fc-3707-9569-1e50-c55c71907db7&quot;]" class="class_schedule_wrapper"><h2 data-w-id="ef38a74e-b033-ec83-3904-ec5669198541" data-wf-id="[&quot;ef38a74e-b033-ec83-3904-ec5669198541&quot;]" class="h2 centered white_text">classes schedule</h2><div data-w-id="e46d922a-2706-0c49-bbe6-4c234d7fe4ef" data-wf-id="[&quot;e46d922a-2706-0c49-bbe6-4c234d7fe4ef&quot;]" class="wrapper schedule_wrapper"><div data-w-id="8e2266f2-d939-c579-4dae-6f8fb66ac5c6" data-wf-id="[&quot;8e2266f2-d939-c579-4dae-6f8fb66ac5c6&quot;]" class="timetable" style=""><div data-w-id="8a3f5500-df86-fc67-9ac3-7037323409cb" data-wf-id="[&quot;8a3f5500-df86-fc67-9ac3-7037323409cb&quot;]" class="day_wrapper"><div data-w-id="6deacc2c-666f-c2b7-050b-5b1e7026b970" data-wf-id="[&quot;6deacc2c-666f-c2b7-050b-5b1e7026b970&quot;]" class="w-layout-grid grid-2 wf-grid"><div data-w-id="0c3b2ef3-44d4-86e2-4cc0-70fb77b9603f" data-wf-id="[&quot;0c3b2ef3-44d4-86e2-4cc0-70fb77b9603f&quot;]" class="day_div"></div><div data-w-id="f3b96208-2334-858e-ad05-46a18851c487" data-wf-id="[&quot;f3b96208-2334-858e-ad05-46a18851c487&quot;]" class="day_div"><div data-w-id="0ac9db1c-00a8-d8fd-031c-2ca7a9e6d62c" data-wf-id="[&quot;0ac9db1c-00a8-d8fd-031c-2ca7a9e6d62c&quot;]" class="day">monday</div></div><div data-w-id="137b67c1-a4f8-cf18-65bc-a6ab7e916139" data-wf-id="[&quot;137b67c1-a4f8-cf18-65bc-a6ab7e916139&quot;]" class="day_div"><div data-w-id="d593e6a2-8c6e-a627-3ebe-2f65ecbea762" data-wf-id="[&quot;d593e6a2-8c6e-a627-3ebe-2f65ecbea762&quot;]" class="day">tuesday</div></div><div data-w-id="1f788b06-d69a-9368-0ff9-1c4606c3a352" data-wf-id="[&quot;1f788b06-d69a-9368-0ff9-1c4606c3a352&quot;]" class="day_div"><div data-w-id="915cd437-498b-103e-2035-0904c7866b81" data-wf-id="[&quot;915cd437-498b-103e-2035-0904c7866b81&quot;]" class="day">wednesday</div></div><div data-w-id="a6fdf320-05bd-3e11-854d-688daa038ad6" data-wf-id="[&quot;a6fdf320-05bd-3e11-854d-688daa038ad6&quot;]" class="day_div"><div data-w-id="c5316b36-8620-648b-62e8-fa1c98d4d26c" data-wf-id="[&quot;c5316b36-8620-648b-62e8-fa1c98d4d26c&quot;]" class="day">thursday</div></div><div data-w-id="07846312-4f3d-10ea-6bfc-b769d0b7fc3f" data-wf-id="[&quot;07846312-4f3d-10ea-6bfc-b769d0b7fc3f&quot;]" class="day_div"><div data-w-id="cbaf52a7-bfa4-a0a6-5e6b-4ee79f5bc9ed" data-wf-id="[&quot;cbaf52a7-bfa4-a0a6-5e6b-4ee79f5bc9ed&quot;]" class="day">friday</div></div><div data-w-id="fbdc99e8-7409-7e2c-c672-d9e97ec2cf84" data-wf-id="[&quot;fbdc99e8-7409-7e2c-c672-d9e97ec2cf84&quot;]" class="day_div"><div data-w-id="5f703e55-19fa-23f9-34da-1ccea627b0c6" data-wf-id="[&quot;5f703e55-19fa-23f9-34da-1ccea627b0c6&quot;]" class="day">saturday</div></div><div data-w-id="19291ba3-dd5c-56ee-eb46-16d4f0af405a" data-wf-id="[&quot;19291ba3-dd5c-56ee-eb46-16d4f0af405a&quot;]" class="day_div"><div data-w-id="c1bd0711-8a22-2dff-4aac-038c605cb2bb" data-wf-id="[&quot;c1bd0711-8a22-2dff-4aac-038c605cb2bb&quot;]" class="day">sunday</div></div></div></div><div data-w-id="1bdc9f27-61fc-69d9-e5d4-d410cacffef8" data-wf-id="[&quot;1bdc9f27-61fc-69d9-e5d4-d410cacffef8&quot;]" class="w-layout-grid grid wf-grid"><div data-w-id="3b1f5b31-6225-d31e-ace5-f969dbf0090e" data-wf-id="[&quot;3b1f5b31-6225-d31e-ace5-f969dbf0090e&quot;]" class="timetable_block first_block"><div data-w-id="1c22b576-ab91-164b-2cc1-a85a9268c3a0" data-wf-id="[&quot;1c22b576-ab91-164b-2cc1-a85a9268c3a0&quot;]" class="time">7am</div></div><div data-w-id="937b2f5f-f371-fd07-e2e0-c1a6b476597e" data-wf-id="[&quot;937b2f5f-f371-fd07-e2e0-c1a6b476597e&quot;]" class="timetable_block"><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#schedule" data-w-id="0abc8ea7-c860-5af0-f4a5-3c0fc3887902" data-wf-id="[&quot;0abc8ea7-c860-5af0-f4a5-3c0fc3887902&quot;]" class="time_table_link w-inline-block"><div data-w-id="39bc4d20-874e-c0da-51ed-9da10da49a8c" data-wf-id="[&quot;39bc4d20-874e-c0da-51ed-9da10da49a8c&quot;]" class="timetable_content"><h5 data-w-id="80709283-2f3f-1544-d26a-61efef5bbb70" data-wf-id="[&quot;80709283-2f3f-1544-d26a-61efef5bbb70&quot;]" class="timetable_h">low intensity</h5><div data-w-id="9aab9293-12e0-1ffc-caf2-b5122174555d" data-wf-id="[&quot;9aab9293-12e0-1ffc-caf2-b5122174555d&quot;]" class="time_content">7:00-8:30</div><div data-w-id="f3d0375c-ff64-042e-9d7d-220ef2d94f13" data-wf-id="[&quot;f3d0375c-ff64-042e-9d7d-220ef2d94f13&quot;]" class="trainers_name">Michalel Dem</div></div></a><div data-w-id="11191fad-351c-fa31-af06-6cf46ef1b14f" data-wf-id="[&quot;11191fad-351c-fa31-af06-6cf46ef1b14f&quot;]" class="level_wrapper"><div data-w-id="374455bb-6a15-60c3-7206-21b870ef5298" data-wf-id="[&quot;374455bb-6a15-60c3-7206-21b870ef5298&quot;]" class="level"><div data-w-id="5e6d6718-4477-9ebd-df2e-aeaf9753db38" data-wf-id="[&quot;5e6d6718-4477-9ebd-df2e-aeaf9753db38&quot;]" class="pointer"></div><div data-w-id="4a991c20-8c0f-2f94-bc34-9606c60a02aa" data-wf-id="[&quot;4a991c20-8c0f-2f94-bc34-9606c60a02aa&quot;]" class="level_text">level 2</div></div></div></div><div data-w-id="7168b45d-1f56-d193-62d1-b8c21dd9a550" data-wf-id="[&quot;7168b45d-1f56-d193-62d1-b8c21dd9a550&quot;]" class="timetable_block"><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#schedule" data-w-id="dad33c54-4d68-fb8f-b7c0-d2a5864ca1e2" data-wf-id="[&quot;dad33c54-4d68-fb8f-b7c0-d2a5864ca1e2&quot;]" class="time_table_link w-inline-block"><div data-w-id="3fe97c7b-aa73-702c-7e5b-70dc57e6ed02" data-wf-id="[&quot;3fe97c7b-aa73-702c-7e5b-70dc57e6ed02&quot;]" class="timetable_content"><h5 data-w-id="3fe97c7b-aa73-702c-7e5b-70dc57e6ed03" data-wf-id="[&quot;3fe97c7b-aa73-702c-7e5b-70dc57e6ed03&quot;]" class="timetable_h">beginners</h5><div data-w-id="3fe97c7b-aa73-702c-7e5b-70dc57e6ed05" data-wf-id="[&quot;3fe97c7b-aa73-702c-7e5b-70dc57e6ed05&quot;]" class="time_content">7:00-8:30</div><div data-w-id="3fe97c7b-aa73-702c-7e5b-70dc57e6ed07" data-wf-id="[&quot;3fe97c7b-aa73-702c-7e5b-70dc57e6ed07&quot;]" class="trainers_name">Michalel Dem</div></div></a><div data-w-id="d1c8d581-fe79-dbf0-6b61-dedc10e66051" data-wf-id="[&quot;d1c8d581-fe79-dbf0-6b61-dedc10e66051&quot;]" class="level_wrapper"><div data-w-id="d1c8d581-fe79-dbf0-6b61-dedc10e66052" data-wf-id="[&quot;d1c8d581-fe79-dbf0-6b61-dedc10e66052&quot;]" class="level"><div data-w-id="d1c8d581-fe79-dbf0-6b61-dedc10e66053" data-wf-id="[&quot;d1c8d581-fe79-dbf0-6b61-dedc10e66053&quot;]" class="pointer"></div><div data-w-id="d1c8d581-fe79-dbf0-6b61-dedc10e66054" data-wf-id="[&quot;d1c8d581-fe79-dbf0-6b61-dedc10e66054&quot;]" class="level_text">level 1</div></div></div></div><div data-w-id="a3c2bf7e-c75d-725e-3a2f-8fc7e753767e" data-wf-id="[&quot;a3c2bf7e-c75d-725e-3a2f-8fc7e753767e&quot;]" class="timetable_block"></div><div data-w-id="720da226-3bcd-b62b-2670-af5c022e04bb" data-wf-id="[&quot;720da226-3bcd-b62b-2670-af5c022e04bb&quot;]" class="timetable_block"><div data-w-id="2a78c5e5-618a-9782-8360-ee7dfb92d388" data-wf-id="[&quot;2a78c5e5-618a-9782-8360-ee7dfb92d388&quot;]" class="level_wrapper"><div data-w-id="2a78c5e5-618a-9782-8360-ee7dfb92d389" data-wf-id="[&quot;2a78c5e5-618a-9782-8360-ee7dfb92d389&quot;]" class="level"><div data-w-id="2a78c5e5-618a-9782-8360-ee7dfb92d38a" data-wf-id="[&quot;2a78c5e5-618a-9782-8360-ee7dfb92d38a&quot;]" class="pointer"></div><div data-w-id="2a78c5e5-618a-9782-8360-ee7dfb92d38b" data-wf-id="[&quot;2a78c5e5-618a-9782-8360-ee7dfb92d38b&quot;]" class="level_text">level 2</div></div></div><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#schedule" data-w-id="f6a04078-cc60-930d-2782-55b2282a436b" data-wf-id="[&quot;f6a04078-cc60-930d-2782-55b2282a436b&quot;]" class="time_table_link w-inline-block"><div data-w-id="ff1bf677-b229-8106-72ab-2da0bff9ba9f" data-wf-id="[&quot;ff1bf677-b229-8106-72ab-2da0bff9ba9f&quot;]" class="timetable_content"><h5 data-w-id="ff1bf677-b229-8106-72ab-2da0bff9baa0" data-wf-id="[&quot;ff1bf677-b229-8106-72ab-2da0bff9baa0&quot;]" class="timetable_h level-2">high INtensity</h5><div data-w-id="ff1bf677-b229-8106-72ab-2da0bff9baa2" data-wf-id="[&quot;ff1bf677-b229-8106-72ab-2da0bff9baa2&quot;]" class="time_content">7:00-8:30</div><div data-w-id="ff1bf677-b229-8106-72ab-2da0bff9baa4" data-wf-id="[&quot;ff1bf677-b229-8106-72ab-2da0bff9baa4&quot;]" class="trainers_name">Michalel Dem</div></div></a></div><div data-w-id="4d483e74-cd13-75a5-f62d-9787de84a26d" data-wf-id="[&quot;4d483e74-cd13-75a5-f62d-9787de84a26d&quot;]" class="timetable_block"><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#schedule" data-w-id="57163ba8-da7e-4de1-1599-133e55867ea4" data-wf-id="[&quot;57163ba8-da7e-4de1-1599-133e55867ea4&quot;]" class="time_table_link w-inline-block"><div data-w-id="dc05311b-73dd-61bc-76dd-54dd1302cff3" data-wf-id="[&quot;dc05311b-73dd-61bc-76dd-54dd1302cff3&quot;]" class="timetable_content"><h5 data-w-id="dc05311b-73dd-61bc-76dd-54dd1302cff4" data-wf-id="[&quot;dc05311b-73dd-61bc-76dd-54dd1302cff4&quot;]" class="timetable_h level-2">form</h5><div data-w-id="dc05311b-73dd-61bc-76dd-54dd1302cff6" data-wf-id="[&quot;dc05311b-73dd-61bc-76dd-54dd1302cff6&quot;]" class="time_content">7:00-8:30</div><div data-w-id="dc05311b-73dd-61bc-76dd-54dd1302cff8" data-wf-id="[&quot;dc05311b-73dd-61bc-76dd-54dd1302cff8&quot;]" class="trainers_name">Michalel Dem</div></div></a><div data-w-id="115910e6-fef1-ee42-4d3d-70688d94f381" data-wf-id="[&quot;115910e6-fef1-ee42-4d3d-70688d94f381&quot;]" class="level_wrapper"><div data-w-id="115910e6-fef1-ee42-4d3d-70688d94f382" data-wf-id="[&quot;115910e6-fef1-ee42-4d3d-70688d94f382&quot;]" class="level"><div data-w-id="115910e6-fef1-ee42-4d3d-70688d94f383" data-wf-id="[&quot;115910e6-fef1-ee42-4d3d-70688d94f383&quot;]" class="pointer"></div><div data-w-id="115910e6-fef1-ee42-4d3d-70688d94f384" data-wf-id="[&quot;115910e6-fef1-ee42-4d3d-70688d94f384&quot;]" class="level_text">advanced</div></div></div></div><div data-w-id="2afb07a8-f56e-6879-65b4-91d7e19581b3" data-wf-id="[&quot;2afb07a8-f56e-6879-65b4-91d7e19581b3&quot;]" class="timetable_block"><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#schedule" data-w-id="1aacddc4-165b-2b6a-2e2c-f7f5a890b812" data-wf-id="[&quot;1aacddc4-165b-2b6a-2e2c-f7f5a890b812&quot;]" class="time_table_link w-inline-block"><div data-w-id="e902b2d7-4ddd-1896-e11a-32dbed6db07c" data-wf-id="[&quot;e902b2d7-4ddd-1896-e11a-32dbed6db07c&quot;]" class="timetable_content"><h5 data-w-id="e902b2d7-4ddd-1896-e11a-32dbed6db07d" data-wf-id="[&quot;e902b2d7-4ddd-1896-e11a-32dbed6db07d&quot;]" class="timetable_h">beginners</h5><div data-w-id="e902b2d7-4ddd-1896-e11a-32dbed6db07f" data-wf-id="[&quot;e902b2d7-4ddd-1896-e11a-32dbed6db07f&quot;]" class="time_content">7:00-8:30</div><div data-w-id="e902b2d7-4ddd-1896-e11a-32dbed6db081" data-wf-id="[&quot;e902b2d7-4ddd-1896-e11a-32dbed6db081&quot;]" class="trainers_name">Michalel Dem</div></div></a><div data-w-id="5cecb6bd-5b4a-5aff-ba9b-11e31dc9a6c5" data-wf-id="[&quot;5cecb6bd-5b4a-5aff-ba9b-11e31dc9a6c5&quot;]" class="level_wrapper"><div data-w-id="5cecb6bd-5b4a-5aff-ba9b-11e31dc9a6c6" data-wf-id="[&quot;5cecb6bd-5b4a-5aff-ba9b-11e31dc9a6c6&quot;]" class="level"><div data-w-id="5cecb6bd-5b4a-5aff-ba9b-11e31dc9a6c7" data-wf-id="[&quot;5cecb6bd-5b4a-5aff-ba9b-11e31dc9a6c7&quot;]" class="pointer"></div><div data-w-id="5cecb6bd-5b4a-5aff-ba9b-11e31dc9a6c8" data-wf-id="[&quot;5cecb6bd-5b4a-5aff-ba9b-11e31dc9a6c8&quot;]" class="level_text">level 1</div></div></div></div><div data-w-id="0e9161cc-52ef-5b5b-4e23-b32a83d49097" data-wf-id="[&quot;0e9161cc-52ef-5b5b-4e23-b32a83d49097&quot;]" class="timetable_block"><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#schedule" data-w-id="51721507-d106-e183-1010-57fa9c4a4207" data-wf-id="[&quot;51721507-d106-e183-1010-57fa9c4a4207&quot;]" class="time_table_link w-inline-block"><div data-w-id="af96b94f-8435-2007-30b2-c0e39a84658f" data-wf-id="[&quot;af96b94f-8435-2007-30b2-c0e39a84658f&quot;]" class="timetable_content"><h5 data-w-id="af96b94f-8435-2007-30b2-c0e39a846590" data-wf-id="[&quot;af96b94f-8435-2007-30b2-c0e39a846590&quot;]" class="timetable_h">form</h5><div data-w-id="af96b94f-8435-2007-30b2-c0e39a846592" data-wf-id="[&quot;af96b94f-8435-2007-30b2-c0e39a846592&quot;]" class="time_content">7:00-8:30</div><div data-w-id="af96b94f-8435-2007-30b2-c0e39a846594" data-wf-id="[&quot;af96b94f-8435-2007-30b2-c0e39a846594&quot;]" class="trainers_name">Michalel Dem</div></div></a><div data-w-id="afce1e51-e047-e11e-7f64-ecada5b056a7" data-wf-id="[&quot;afce1e51-e047-e11e-7f64-ecada5b056a7&quot;]" class="level_wrapper"><div data-w-id="afce1e51-e047-e11e-7f64-ecada5b056a8" data-wf-id="[&quot;afce1e51-e047-e11e-7f64-ecada5b056a8&quot;]" class="level"><div data-w-id="afce1e51-e047-e11e-7f64-ecada5b056a9" data-wf-id="[&quot;afce1e51-e047-e11e-7f64-ecada5b056a9&quot;]" class="pointer"></div><div data-w-id="afce1e51-e047-e11e-7f64-ecada5b056aa" data-wf-id="[&quot;afce1e51-e047-e11e-7f64-ecada5b056aa&quot;]" class="level_text">advanced</div></div></div></div><div data-w-id="8351b4e6-f0e1-c711-a569-1d9445029700" data-wf-id="[&quot;8351b4e6-f0e1-c711-a569-1d9445029700&quot;]" class="timetable_block first_block"><div data-w-id="b9583386-fd3b-9f97-ddd8-fbd54fac14ea" data-wf-id="[&quot;b9583386-fd3b-9f97-ddd8-fbd54fac14ea&quot;]" class="time">9:30am</div></div><div data-w-id="30a6a4ed-f600-7697-6365-149f50f17e8c" data-wf-id="[&quot;30a6a4ed-f600-7697-6365-149f50f17e8c&quot;]" class="timetable_block"></div><div data-w-id="d987a80d-db5b-10a1-4001-7651f0c06e8f" data-wf-id="[&quot;d987a80d-db5b-10a1-4001-7651f0c06e8f&quot;]" class="timetable_block"><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#schedule" data-w-id="19890922-8cb2-074e-c02f-7d5ce8e21b95" data-wf-id="[&quot;19890922-8cb2-074e-c02f-7d5ce8e21b95&quot;]" class="time_table_link w-inline-block"><div data-w-id="e081e548-2a23-7fd0-e8c2-bc4755bd4e4b" data-wf-id="[&quot;e081e548-2a23-7fd0-e8c2-bc4755bd4e4b&quot;]" class="timetable_content"><h5 data-w-id="e081e548-2a23-7fd0-e8c2-bc4755bd4e4c" data-wf-id="[&quot;e081e548-2a23-7fd0-e8c2-bc4755bd4e4c&quot;]" class="timetable_h level-2">form</h5><div data-w-id="e081e548-2a23-7fd0-e8c2-bc4755bd4e4e" data-wf-id="[&quot;e081e548-2a23-7fd0-e8c2-bc4755bd4e4e&quot;]" class="time_content">9:30-11</div><div data-w-id="e081e548-2a23-7fd0-e8c2-bc4755bd4e50" data-wf-id="[&quot;e081e548-2a23-7fd0-e8c2-bc4755bd4e50&quot;]" class="trainers_name">Michalel Dem</div></div></a><div data-w-id="2d7dbe8c-070a-5cd6-734e-6ebfe5579782" data-wf-id="[&quot;2d7dbe8c-070a-5cd6-734e-6ebfe5579782&quot;]" class="level_wrapper"><div data-w-id="2d7dbe8c-070a-5cd6-734e-6ebfe5579783" data-wf-id="[&quot;2d7dbe8c-070a-5cd6-734e-6ebfe5579783&quot;]" class="level"><div data-w-id="2d7dbe8c-070a-5cd6-734e-6ebfe5579784" data-wf-id="[&quot;2d7dbe8c-070a-5cd6-734e-6ebfe5579784&quot;]" class="pointer"></div><div data-w-id="2d7dbe8c-070a-5cd6-734e-6ebfe5579785" data-wf-id="[&quot;2d7dbe8c-070a-5cd6-734e-6ebfe5579785&quot;]" class="level_text">level 2</div></div></div></div><div data-w-id="4a561e29-df8d-4a90-ed53-cd571278ce16" data-wf-id="[&quot;4a561e29-df8d-4a90-ed53-cd571278ce16&quot;]" class="timetable_block"><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#schedule" data-w-id="90734527-2fa9-260e-b28d-930925f072ae" data-wf-id="[&quot;90734527-2fa9-260e-b28d-930925f072ae&quot;]" class="time_table_link w-inline-block"><div data-w-id="8a274027-ea34-1ab1-21ae-1c5410894d2c" data-wf-id="[&quot;8a274027-ea34-1ab1-21ae-1c5410894d2c&quot;]" class="timetable_content"><h5 data-w-id="8a274027-ea34-1ab1-21ae-1c5410894d2d" data-wf-id="[&quot;8a274027-ea34-1ab1-21ae-1c5410894d2d&quot;]" class="timetable_h">beginners</h5><div data-w-id="8a274027-ea34-1ab1-21ae-1c5410894d2f" data-wf-id="[&quot;8a274027-ea34-1ab1-21ae-1c5410894d2f&quot;]" class="time_content">9:30-10:30</div><div data-w-id="8a274027-ea34-1ab1-21ae-1c5410894d31" data-wf-id="[&quot;8a274027-ea34-1ab1-21ae-1c5410894d31&quot;]" class="trainers_name">Michalel Dem</div></div></a><div data-w-id="79545573-1b0f-be8c-c0c9-d77b0e41043e" data-wf-id="[&quot;79545573-1b0f-be8c-c0c9-d77b0e41043e&quot;]" class="level_wrapper"><div data-w-id="79545573-1b0f-be8c-c0c9-d77b0e41043f" data-wf-id="[&quot;79545573-1b0f-be8c-c0c9-d77b0e41043f&quot;]" class="level"><div data-w-id="79545573-1b0f-be8c-c0c9-d77b0e410440" data-wf-id="[&quot;79545573-1b0f-be8c-c0c9-d77b0e410440&quot;]" class="pointer"></div><div data-w-id="79545573-1b0f-be8c-c0c9-d77b0e410441" data-wf-id="[&quot;79545573-1b0f-be8c-c0c9-d77b0e410441&quot;]" class="level_text">level 1</div></div></div></div><div data-w-id="9c5516c7-1101-43a9-68ec-aef7daec19ee" data-wf-id="[&quot;9c5516c7-1101-43a9-68ec-aef7daec19ee&quot;]" class="timetable_block"></div><div data-w-id="5af57e2f-b1d8-2507-633a-9a126afe59b4" data-wf-id="[&quot;5af57e2f-b1d8-2507-633a-9a126afe59b4&quot;]" class="timetable_block"><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#schedule" data-w-id="3ea3b1c3-cfd7-5150-f1e3-e7f8f4258525" data-wf-id="[&quot;3ea3b1c3-cfd7-5150-f1e3-e7f8f4258525&quot;]" class="time_table_link w-inline-block"><div data-w-id="fda8378c-f07c-4394-3e36-b5c37348d737" data-wf-id="[&quot;fda8378c-f07c-4394-3e36-b5c37348d737&quot;]" class="timetable_content"><h5 data-w-id="fda8378c-f07c-4394-3e36-b5c37348d738" data-wf-id="[&quot;fda8378c-f07c-4394-3e36-b5c37348d738&quot;]" class="timetable_h">high intensity</h5><div data-w-id="fda8378c-f07c-4394-3e36-b5c37348d73a" data-wf-id="[&quot;fda8378c-f07c-4394-3e36-b5c37348d73a&quot;]" class="time_content">9:30-11</div><div data-w-id="fda8378c-f07c-4394-3e36-b5c37348d73c" data-wf-id="[&quot;fda8378c-f07c-4394-3e36-b5c37348d73c&quot;]" class="trainers_name">Michalel Dem</div></div></a><div data-w-id="0b8bf60d-1bdb-f995-e5d7-e2e18ae49f39" data-wf-id="[&quot;0b8bf60d-1bdb-f995-e5d7-e2e18ae49f39&quot;]" class="level_wrapper"><div data-w-id="0b8bf60d-1bdb-f995-e5d7-e2e18ae49f3a" data-wf-id="[&quot;0b8bf60d-1bdb-f995-e5d7-e2e18ae49f3a&quot;]" class="level"><div data-w-id="0b8bf60d-1bdb-f995-e5d7-e2e18ae49f3b" data-wf-id="[&quot;0b8bf60d-1bdb-f995-e5d7-e2e18ae49f3b&quot;]" class="pointer"></div><div data-w-id="0b8bf60d-1bdb-f995-e5d7-e2e18ae49f3c" data-wf-id="[&quot;0b8bf60d-1bdb-f995-e5d7-e2e18ae49f3c&quot;]" class="level_text">level 2</div></div></div></div><div data-w-id="cfd49265-032a-e87d-d806-e86ef367e9d4" data-wf-id="[&quot;cfd49265-032a-e87d-d806-e86ef367e9d4&quot;]" class="timetable_block"><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#schedule" data-w-id="29a3da31-98d1-443e-9537-b4fc625f910f" data-wf-id="[&quot;29a3da31-98d1-443e-9537-b4fc625f910f&quot;]" class="time_table_link w-inline-block"><div data-w-id="f2bf3c42-1856-b4fe-b4c1-0d13d674c021" data-wf-id="[&quot;f2bf3c42-1856-b4fe-b4c1-0d13d674c021&quot;]" class="timetable_content"><h5 data-w-id="f2bf3c42-1856-b4fe-b4c1-0d13d674c022" data-wf-id="[&quot;f2bf3c42-1856-b4fe-b4c1-0d13d674c022&quot;]" class="timetable_h level-2">low intensity</h5><div data-w-id="f2bf3c42-1856-b4fe-b4c1-0d13d674c024" data-wf-id="[&quot;f2bf3c42-1856-b4fe-b4c1-0d13d674c024&quot;]" class="time_content">9:30-11</div><div data-w-id="f2bf3c42-1856-b4fe-b4c1-0d13d674c026" data-wf-id="[&quot;f2bf3c42-1856-b4fe-b4c1-0d13d674c026&quot;]" class="trainers_name">Michalel Dem</div></div></a><div data-w-id="3df7637d-859c-d2bd-e25e-0ba4c38437f9" data-wf-id="[&quot;3df7637d-859c-d2bd-e25e-0ba4c38437f9&quot;]" class="level_wrapper"><div data-w-id="3df7637d-859c-d2bd-e25e-0ba4c38437fa" data-wf-id="[&quot;3df7637d-859c-d2bd-e25e-0ba4c38437fa&quot;]" class="level"><div data-w-id="3df7637d-859c-d2bd-e25e-0ba4c38437fb" data-wf-id="[&quot;3df7637d-859c-d2bd-e25e-0ba4c38437fb&quot;]" class="pointer"></div><div data-w-id="3df7637d-859c-d2bd-e25e-0ba4c38437fc" data-wf-id="[&quot;3df7637d-859c-d2bd-e25e-0ba4c38437fc&quot;]" class="level_text">level 2</div></div></div></div><div data-w-id="531b4605-82c6-78e1-dbb6-fe28e828d74e" data-wf-id="[&quot;531b4605-82c6-78e1-dbb6-fe28e828d74e&quot;]" class="timetable_block"></div><div data-w-id="86bfcf98-841f-fb42-0caa-e8830240a1a6" data-wf-id="[&quot;86bfcf98-841f-fb42-0caa-e8830240a1a6&quot;]" class="timetable_block first_block"><div data-w-id="d908cd07-711e-a0a5-52a3-8603e14f6a88" data-wf-id="[&quot;d908cd07-711e-a0a5-52a3-8603e14f6a88&quot;]" class="time">1:30pm</div></div><div data-w-id="98ced91f-1874-0af3-dded-1f71d782c9f8" data-wf-id="[&quot;98ced91f-1874-0af3-dded-1f71d782c9f8&quot;]" class="timetable_block"><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#schedule" data-w-id="ad539384-651d-5dc8-743f-751eed09e814" data-wf-id="[&quot;ad539384-651d-5dc8-743f-751eed09e814&quot;]" class="time_table_link w-inline-block"><div data-w-id="0da288bc-eb32-4195-671c-5b995e8b708a" data-wf-id="[&quot;0da288bc-eb32-4195-671c-5b995e8b708a&quot;]" class="timetable_content"><h5 data-w-id="0da288bc-eb32-4195-671c-5b995e8b708b" data-wf-id="[&quot;0da288bc-eb32-4195-671c-5b995e8b708b&quot;]" class="timetable_h level-2">gradual</h5><div data-w-id="0da288bc-eb32-4195-671c-5b995e8b708d" data-wf-id="[&quot;0da288bc-eb32-4195-671c-5b995e8b708d&quot;]" class="time_content">1:30-3</div><div data-w-id="0da288bc-eb32-4195-671c-5b995e8b708f" data-wf-id="[&quot;0da288bc-eb32-4195-671c-5b995e8b708f&quot;]" class="trainers_name">Michalel Dem</div></div></a><div data-w-id="00788c74-97e3-0849-b887-1d52bdf3d356" data-wf-id="[&quot;00788c74-97e3-0849-b887-1d52bdf3d356&quot;]" class="level_wrapper"><div data-w-id="00788c74-97e3-0849-b887-1d52bdf3d357" data-wf-id="[&quot;00788c74-97e3-0849-b887-1d52bdf3d357&quot;]" class="level"><div data-w-id="00788c74-97e3-0849-b887-1d52bdf3d358" data-wf-id="[&quot;00788c74-97e3-0849-b887-1d52bdf3d358&quot;]" class="pointer"></div><div data-w-id="00788c74-97e3-0849-b887-1d52bdf3d359" data-wf-id="[&quot;00788c74-97e3-0849-b887-1d52bdf3d359&quot;]" class="level_text">advanced</div></div></div></div><div data-w-id="b9906129-5f71-b41c-32bf-49e5b574010a" data-wf-id="[&quot;b9906129-5f71-b41c-32bf-49e5b574010a&quot;]" class="timetable_block"></div><div data-w-id="9590d2f1-0ff1-1baa-5d90-a595e5dfd9df" data-wf-id="[&quot;9590d2f1-0ff1-1baa-5d90-a595e5dfd9df&quot;]" class="timetable_block"><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#schedule" data-w-id="74a472e5-6840-8b6a-51cc-2afa9fd28c8b" data-wf-id="[&quot;74a472e5-6840-8b6a-51cc-2afa9fd28c8b&quot;]" class="time_table_link w-inline-block"><div data-w-id="abe4b59f-29fb-0f4c-1b6d-71f1f664e4ac" data-wf-id="[&quot;abe4b59f-29fb-0f4c-1b6d-71f1f664e4ac&quot;]" class="timetable_content"><h5 data-w-id="abe4b59f-29fb-0f4c-1b6d-71f1f664e4ad" data-wf-id="[&quot;abe4b59f-29fb-0f4c-1b6d-71f1f664e4ad&quot;]" class="timetable_h level-2">low intensity</h5><div data-w-id="abe4b59f-29fb-0f4c-1b6d-71f1f664e4af" data-wf-id="[&quot;abe4b59f-29fb-0f4c-1b6d-71f1f664e4af&quot;]" class="time_content">1:30-3</div><div data-w-id="abe4b59f-29fb-0f4c-1b6d-71f1f664e4b1" data-wf-id="[&quot;abe4b59f-29fb-0f4c-1b6d-71f1f664e4b1&quot;]" class="trainers_name">Michalel Dem</div></div></a><div data-w-id="87de652e-97ad-7401-7544-e5ccb2a5b603" data-wf-id="[&quot;87de652e-97ad-7401-7544-e5ccb2a5b603&quot;]" class="level_wrapper"><div data-w-id="87de652e-97ad-7401-7544-e5ccb2a5b604" data-wf-id="[&quot;87de652e-97ad-7401-7544-e5ccb2a5b604&quot;]" class="level"><div data-w-id="87de652e-97ad-7401-7544-e5ccb2a5b605" data-wf-id="[&quot;87de652e-97ad-7401-7544-e5ccb2a5b605&quot;]" class="pointer"></div><div data-w-id="87de652e-97ad-7401-7544-e5ccb2a5b606" data-wf-id="[&quot;87de652e-97ad-7401-7544-e5ccb2a5b606&quot;]" class="level_text">level 1</div></div></div></div><div data-w-id="4c27d30f-87eb-ce63-1946-30b615031232" data-wf-id="[&quot;4c27d30f-87eb-ce63-1946-30b615031232&quot;]" class="timetable_block"><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#schedule" data-w-id="7130fbcd-afdc-7b79-0761-4edab5a906d3" data-wf-id="[&quot;7130fbcd-afdc-7b79-0761-4edab5a906d3&quot;]" class="time_table_link w-inline-block"><div data-w-id="cfc92f82-a10c-52f3-88f4-6ea77eeaf837" data-wf-id="[&quot;cfc92f82-a10c-52f3-88f4-6ea77eeaf837&quot;]" class="timetable_content"><h5 data-w-id="cfc92f82-a10c-52f3-88f4-6ea77eeaf838" data-wf-id="[&quot;cfc92f82-a10c-52f3-88f4-6ea77eeaf838&quot;]" class="timetable_h">beginners</h5><div data-w-id="cfc92f82-a10c-52f3-88f4-6ea77eeaf83a" data-wf-id="[&quot;cfc92f82-a10c-52f3-88f4-6ea77eeaf83a&quot;]" class="time_content">1:30-2:30</div><div data-w-id="cfc92f82-a10c-52f3-88f4-6ea77eeaf83c" data-wf-id="[&quot;cfc92f82-a10c-52f3-88f4-6ea77eeaf83c&quot;]" class="trainers_name">Michalel Dem</div></div></a><div data-w-id="69fbf46b-1e5c-242f-c297-3e2e182979d4" data-wf-id="[&quot;69fbf46b-1e5c-242f-c297-3e2e182979d4&quot;]" class="level_wrapper"><div data-w-id="69fbf46b-1e5c-242f-c297-3e2e182979d5" data-wf-id="[&quot;69fbf46b-1e5c-242f-c297-3e2e182979d5&quot;]" class="level"><div data-w-id="69fbf46b-1e5c-242f-c297-3e2e182979d6" data-wf-id="[&quot;69fbf46b-1e5c-242f-c297-3e2e182979d6&quot;]" class="pointer"></div><div data-w-id="69fbf46b-1e5c-242f-c297-3e2e182979d7" data-wf-id="[&quot;69fbf46b-1e5c-242f-c297-3e2e182979d7&quot;]" class="level_text">level 1</div></div></div></div><div data-w-id="b7513451-340e-eeac-019e-a58d1b273dc2" data-wf-id="[&quot;b7513451-340e-eeac-019e-a58d1b273dc2&quot;]" class="timetable_block"></div><div data-w-id="c15dc734-6239-c7b9-52d0-7b9fba12480a" data-wf-id="[&quot;c15dc734-6239-c7b9-52d0-7b9fba12480a&quot;]" class="timetable_block"><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#schedule" data-w-id="fb34b5bb-f99a-1c47-a91f-5051b57b879b" data-wf-id="[&quot;fb34b5bb-f99a-1c47-a91f-5051b57b879b&quot;]" class="time_table_link w-inline-block"><div data-w-id="c2eeeef2-7404-8005-e110-1aa51e3d0986" data-wf-id="[&quot;c2eeeef2-7404-8005-e110-1aa51e3d0986&quot;]" class="timetable_content"><h5 data-w-id="c2eeeef2-7404-8005-e110-1aa51e3d0987" data-wf-id="[&quot;c2eeeef2-7404-8005-e110-1aa51e3d0987&quot;]" class="timetable_h">form</h5><div data-w-id="c2eeeef2-7404-8005-e110-1aa51e3d0989" data-wf-id="[&quot;c2eeeef2-7404-8005-e110-1aa51e3d0989&quot;]" class="time_content">1:30-3</div><div data-w-id="c2eeeef2-7404-8005-e110-1aa51e3d098b" data-wf-id="[&quot;c2eeeef2-7404-8005-e110-1aa51e3d098b&quot;]" class="trainers_name">Michalel Dem</div></div></a><div data-w-id="29ba2b97-4260-1783-6ebf-5685d18f7b25" data-wf-id="[&quot;29ba2b97-4260-1783-6ebf-5685d18f7b25&quot;]" class="level_wrapper"><div data-w-id="29ba2b97-4260-1783-6ebf-5685d18f7b26" data-wf-id="[&quot;29ba2b97-4260-1783-6ebf-5685d18f7b26&quot;]" class="level"><div data-w-id="29ba2b97-4260-1783-6ebf-5685d18f7b27" data-wf-id="[&quot;29ba2b97-4260-1783-6ebf-5685d18f7b27&quot;]" class="pointer"></div><div data-w-id="29ba2b97-4260-1783-6ebf-5685d18f7b28" data-wf-id="[&quot;29ba2b97-4260-1783-6ebf-5685d18f7b28&quot;]" class="level_text">level 2</div></div></div></div><div data-w-id="a446efcb-f634-232a-61d1-6a4ca1b55305" data-wf-id="[&quot;a446efcb-f634-232a-61d1-6a4ca1b55305&quot;]" class="timetable_block"><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#schedule" data-w-id="5e53ecfa-fc86-cffa-aa18-192cfd528501" data-wf-id="[&quot;5e53ecfa-fc86-cffa-aa18-192cfd528501&quot;]" class="time_table_link w-inline-block"><div data-w-id="57a0090e-53ce-9d1d-9028-219e882c00e5" data-wf-id="[&quot;57a0090e-53ce-9d1d-9028-219e882c00e5&quot;]" class="timetable_content"><h5 data-w-id="57a0090e-53ce-9d1d-9028-219e882c00e6" data-wf-id="[&quot;57a0090e-53ce-9d1d-9028-219e882c00e6&quot;]" class="timetable_h level-2">form</h5><div data-w-id="57a0090e-53ce-9d1d-9028-219e882c00e8" data-wf-id="[&quot;57a0090e-53ce-9d1d-9028-219e882c00e8&quot;]" class="time_content">1:30-3</div><div data-w-id="57a0090e-53ce-9d1d-9028-219e882c00ea" data-wf-id="[&quot;57a0090e-53ce-9d1d-9028-219e882c00ea&quot;]" class="trainers_name">Michalel Dem</div></div></a><div data-w-id="521982fa-57da-5f9f-05b6-16c7e3aaf4e5" data-wf-id="[&quot;521982fa-57da-5f9f-05b6-16c7e3aaf4e5&quot;]" class="level_wrapper"><div data-w-id="521982fa-57da-5f9f-05b6-16c7e3aaf4e6" data-wf-id="[&quot;521982fa-57da-5f9f-05b6-16c7e3aaf4e6&quot;]" class="level"><div data-w-id="521982fa-57da-5f9f-05b6-16c7e3aaf4e7" data-wf-id="[&quot;521982fa-57da-5f9f-05b6-16c7e3aaf4e7&quot;]" class="pointer"></div><div data-w-id="521982fa-57da-5f9f-05b6-16c7e3aaf4e8" data-wf-id="[&quot;521982fa-57da-5f9f-05b6-16c7e3aaf4e8&quot;]" class="level_text">advanced</div></div></div></div><div data-w-id="9902d545-25d4-e798-56b4-a310c92fd957" data-wf-id="[&quot;9902d545-25d4-e798-56b4-a310c92fd957&quot;]" class="timetable_block first_block"><div data-w-id="9640fcdc-c862-03e5-2324-1e8455b06555" data-wf-id="[&quot;9640fcdc-c862-03e5-2324-1e8455b06555&quot;]" class="time">6:30pm</div></div><div data-w-id="8c7d8c98-3ce8-f52a-5038-e34b0b50c132" data-wf-id="[&quot;8c7d8c98-3ce8-f52a-5038-e34b0b50c132&quot;]" class="timetable_block"><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#schedule" data-w-id="3b955fa9-daa0-ca20-9a9a-3cdb4fa6286f" data-wf-id="[&quot;3b955fa9-daa0-ca20-9a9a-3cdb4fa6286f&quot;]" class="time_table_link w-inline-block"><div data-w-id="9958c1df-4f75-d637-8bf5-8435676abc3c" data-wf-id="[&quot;9958c1df-4f75-d637-8bf5-8435676abc3c&quot;]" class="timetable_content"><h5 data-w-id="9958c1df-4f75-d637-8bf5-8435676abc3d" data-wf-id="[&quot;9958c1df-4f75-d637-8bf5-8435676abc3d&quot;]" class="timetable_h">beginners</h5><div data-w-id="9958c1df-4f75-d637-8bf5-8435676abc3f" data-wf-id="[&quot;9958c1df-4f75-d637-8bf5-8435676abc3f&quot;]" class="time_content">6:30-7:30</div><div data-w-id="9958c1df-4f75-d637-8bf5-8435676abc41" data-wf-id="[&quot;9958c1df-4f75-d637-8bf5-8435676abc41&quot;]" class="trainers_name">Michalel Dem</div></div></a><div data-w-id="c7c0d376-6e3b-b926-23cc-4ce859999b73" data-wf-id="[&quot;c7c0d376-6e3b-b926-23cc-4ce859999b73&quot;]" class="level_wrapper"><div data-w-id="c7c0d376-6e3b-b926-23cc-4ce859999b74" data-wf-id="[&quot;c7c0d376-6e3b-b926-23cc-4ce859999b74&quot;]" class="level"><div data-w-id="c7c0d376-6e3b-b926-23cc-4ce859999b75" data-wf-id="[&quot;c7c0d376-6e3b-b926-23cc-4ce859999b75&quot;]" class="pointer"></div><div data-w-id="c7c0d376-6e3b-b926-23cc-4ce859999b76" data-wf-id="[&quot;c7c0d376-6e3b-b926-23cc-4ce859999b76&quot;]" class="level_text">level 1</div></div></div></div><div data-w-id="bbccf205-19f0-eeb3-4efc-6509c5cad1c5" data-wf-id="[&quot;bbccf205-19f0-eeb3-4efc-6509c5cad1c5&quot;]" class="timetable_block"><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#schedule" data-w-id="784d5451-8ac3-842b-6a4b-ec724f6e9526" data-wf-id="[&quot;784d5451-8ac3-842b-6a4b-ec724f6e9526&quot;]" class="time_table_link w-inline-block"><div data-w-id="402b0d00-8f28-4024-19df-e03931ad2743" data-wf-id="[&quot;402b0d00-8f28-4024-19df-e03931ad2743&quot;]" class="timetable_content"><h5 data-w-id="402b0d00-8f28-4024-19df-e03931ad2744" data-wf-id="[&quot;402b0d00-8f28-4024-19df-e03931ad2744&quot;]" class="timetable_h level-2">low intensity</h5><div data-w-id="402b0d00-8f28-4024-19df-e03931ad2746" data-wf-id="[&quot;402b0d00-8f28-4024-19df-e03931ad2746&quot;]" class="time_content">6:30-8</div><div data-w-id="402b0d00-8f28-4024-19df-e03931ad2748" data-wf-id="[&quot;402b0d00-8f28-4024-19df-e03931ad2748&quot;]" class="trainers_name">Michalel Dem</div></div></a><div data-w-id="7eb56228-5027-dac4-9e0e-52f3cdedb695" data-wf-id="[&quot;7eb56228-5027-dac4-9e0e-52f3cdedb695&quot;]" class="level_wrapper"><div data-w-id="7eb56228-5027-dac4-9e0e-52f3cdedb696" data-wf-id="[&quot;7eb56228-5027-dac4-9e0e-52f3cdedb696&quot;]" class="level"><div data-w-id="7eb56228-5027-dac4-9e0e-52f3cdedb697" data-wf-id="[&quot;7eb56228-5027-dac4-9e0e-52f3cdedb697&quot;]" class="pointer"></div><div data-w-id="7eb56228-5027-dac4-9e0e-52f3cdedb698" data-wf-id="[&quot;7eb56228-5027-dac4-9e0e-52f3cdedb698&quot;]" class="level_text">level 2</div></div></div></div><div data-w-id="869b639c-610e-5733-2670-cb38fa37e5b2" data-wf-id="[&quot;869b639c-610e-5733-2670-cb38fa37e5b2&quot;]" class="timetable_block"></div><div data-w-id="00efffd4-a43c-fc98-957f-fe00b8a4166e" data-wf-id="[&quot;00efffd4-a43c-fc98-957f-fe00b8a4166e&quot;]" class="timetable_block"><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#schedule" data-w-id="dd05d98b-7b7d-485e-2b40-11b18b08d922" data-wf-id="[&quot;dd05d98b-7b7d-485e-2b40-11b18b08d922&quot;]" class="time_table_link w-inline-block"><div data-w-id="7a615c55-477d-e256-4864-125b92f525b3" data-wf-id="[&quot;7a615c55-477d-e256-4864-125b92f525b3&quot;]" class="timetable_content"><h5 data-w-id="7a615c55-477d-e256-4864-125b92f525b4" data-wf-id="[&quot;7a615c55-477d-e256-4864-125b92f525b4&quot;]" class="timetable_h">low intensity</h5><div data-w-id="7a615c55-477d-e256-4864-125b92f525b6" data-wf-id="[&quot;7a615c55-477d-e256-4864-125b92f525b6&quot;]" class="time_content">6:30-8</div><div data-w-id="7a615c55-477d-e256-4864-125b92f525b8" data-wf-id="[&quot;7a615c55-477d-e256-4864-125b92f525b8&quot;]" class="trainers_name">Michalel Dem</div></div></a><div data-w-id="acee5e96-f61b-9f98-9cf9-f9e651b8920b" data-wf-id="[&quot;acee5e96-f61b-9f98-9cf9-f9e651b8920b&quot;]" class="level_wrapper"><div data-w-id="acee5e96-f61b-9f98-9cf9-f9e651b8920c" data-wf-id="[&quot;acee5e96-f61b-9f98-9cf9-f9e651b8920c&quot;]" class="level"><div data-w-id="acee5e96-f61b-9f98-9cf9-f9e651b8920d" data-wf-id="[&quot;acee5e96-f61b-9f98-9cf9-f9e651b8920d&quot;]" class="pointer"></div><div data-w-id="acee5e96-f61b-9f98-9cf9-f9e651b8920e" data-wf-id="[&quot;acee5e96-f61b-9f98-9cf9-f9e651b8920e&quot;]" class="level_text">level 2</div></div></div></div><div data-w-id="c0c34536-f8f0-7c07-14b7-61569feb3b14" data-wf-id="[&quot;c0c34536-f8f0-7c07-14b7-61569feb3b14&quot;]" class="timetable_block"></div><div data-w-id="43f32489-2fd0-3a9c-d6b9-858c22ffcfd4" data-wf-id="[&quot;43f32489-2fd0-3a9c-d6b9-858c22ffcfd4&quot;]" class="timetable_block"><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#schedule" data-w-id="23009a83-b016-f38a-4fc3-a197a157035e" data-wf-id="[&quot;23009a83-b016-f38a-4fc3-a197a157035e&quot;]" class="time_table_link w-inline-block"><div data-w-id="bcb4ed36-71e5-a812-606e-a5208ce9fbe9" data-wf-id="[&quot;bcb4ed36-71e5-a812-606e-a5208ce9fbe9&quot;]" class="timetable_content"><h5 data-w-id="bcb4ed36-71e5-a812-606e-a5208ce9fbea" data-wf-id="[&quot;bcb4ed36-71e5-a812-606e-a5208ce9fbea&quot;]" class="timetable_h level-2">high intensity</h5><div data-w-id="bcb4ed36-71e5-a812-606e-a5208ce9fbec" data-wf-id="[&quot;bcb4ed36-71e5-a812-606e-a5208ce9fbec&quot;]" class="time_content">6:30-8</div><div data-w-id="bcb4ed36-71e5-a812-606e-a5208ce9fbee" data-wf-id="[&quot;bcb4ed36-71e5-a812-606e-a5208ce9fbee&quot;]" class="trainers_name">Michalel Dem</div></div></a><div data-w-id="8128d646-20e5-971d-7819-48b09f531a1c" data-wf-id="[&quot;8128d646-20e5-971d-7819-48b09f531a1c&quot;]" class="level_wrapper"><div data-w-id="8128d646-20e5-971d-7819-48b09f531a1d" data-wf-id="[&quot;8128d646-20e5-971d-7819-48b09f531a1d&quot;]" class="level"><div data-w-id="8128d646-20e5-971d-7819-48b09f531a1e" data-wf-id="[&quot;8128d646-20e5-971d-7819-48b09f531a1e&quot;]" class="pointer"></div><div data-w-id="8128d646-20e5-971d-7819-48b09f531a1f" data-wf-id="[&quot;8128d646-20e5-971d-7819-48b09f531a1f&quot;]" class="level_text">advanced</div></div></div></div><div data-w-id="89cb24f5-7a29-5e12-94cf-e4bddbec5ccf" data-wf-id="[&quot;89cb24f5-7a29-5e12-94cf-e4bddbec5ccf&quot;]" class="timetable_block"><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#schedule" data-w-id="13849d03-c0af-107b-b995-bb1b6c1f2464" data-wf-id="[&quot;13849d03-c0af-107b-b995-bb1b6c1f2464&quot;]" class="time_table_link w-inline-block"><div data-w-id="835690c9-474b-bb9e-d669-d66b86148571" data-wf-id="[&quot;835690c9-474b-bb9e-d669-d66b86148571&quot;]" class="timetable_content"><h5 data-w-id="835690c9-474b-bb9e-d669-d66b86148572" data-wf-id="[&quot;835690c9-474b-bb9e-d669-d66b86148572&quot;]" class="timetable_h">beginners</h5><div data-w-id="835690c9-474b-bb9e-d669-d66b86148574" data-wf-id="[&quot;835690c9-474b-bb9e-d669-d66b86148574&quot;]" class="time_content">6:30-7:30</div><div data-w-id="835690c9-474b-bb9e-d669-d66b86148576" data-wf-id="[&quot;835690c9-474b-bb9e-d669-d66b86148576&quot;]" class="trainers_name">Michalel Dem</div></div></a><div data-w-id="b1739f3e-1ae8-bd78-ce33-419a1cc71e54" data-wf-id="[&quot;b1739f3e-1ae8-bd78-ce33-419a1cc71e54&quot;]" class="level_wrapper"><div data-w-id="b1739f3e-1ae8-bd78-ce33-419a1cc71e55" data-wf-id="[&quot;b1739f3e-1ae8-bd78-ce33-419a1cc71e55&quot;]" class="level"><div data-w-id="b1739f3e-1ae8-bd78-ce33-419a1cc71e56" data-wf-id="[&quot;b1739f3e-1ae8-bd78-ce33-419a1cc71e56&quot;]" class="pointer"></div><div data-w-id="b1739f3e-1ae8-bd78-ce33-419a1cc71e57" data-wf-id="[&quot;b1739f3e-1ae8-bd78-ce33-419a1cc71e57&quot;]" class="level_text">level 1</div></div></div></div><div data-w-id="4ee345f7-bd25-33b0-f6db-9946f2d2c3ac" data-wf-id="[&quot;4ee345f7-bd25-33b0-f6db-9946f2d2c3ac&quot;]" class="timetable_block first_block"><div data-w-id="0024e385-3bff-6752-3774-921636bdccc1" data-wf-id="[&quot;0024e385-3bff-6752-3774-921636bdccc1&quot;]" class="time">7:30pm</div></div><div data-w-id="64517be0-d532-4c72-8780-e52a1c477cf4" data-wf-id="[&quot;64517be0-d532-4c72-8780-e52a1c477cf4&quot;]" class="timetable_block"><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#schedule" data-w-id="5ac6eec5-7733-7593-cdd2-af7414c958f0" data-wf-id="[&quot;5ac6eec5-7733-7593-cdd2-af7414c958f0&quot;]" class="time_table_link w-inline-block"><div data-w-id="c1b81341-c8be-3736-b5e2-e0c7b791dca5" data-wf-id="[&quot;c1b81341-c8be-3736-b5e2-e0c7b791dca5&quot;]" class="timetable_content"><h5 data-w-id="c1b81341-c8be-3736-b5e2-e0c7b791dca6" data-wf-id="[&quot;c1b81341-c8be-3736-b5e2-e0c7b791dca6&quot;]" class="timetable_h level-2">form</h5><div data-w-id="c1b81341-c8be-3736-b5e2-e0c7b791dca8" data-wf-id="[&quot;c1b81341-c8be-3736-b5e2-e0c7b791dca8&quot;]" class="time_content">7:30-9</div><div data-w-id="c1b81341-c8be-3736-b5e2-e0c7b791dcaa" data-wf-id="[&quot;c1b81341-c8be-3736-b5e2-e0c7b791dcaa&quot;]" class="trainers_name">Michalel Dem</div></div></a><div data-w-id="19946a85-716a-f0a7-093a-c2ad191c3f7c" data-wf-id="[&quot;19946a85-716a-f0a7-093a-c2ad191c3f7c&quot;]" class="level_wrapper"><div data-w-id="19946a85-716a-f0a7-093a-c2ad191c3f7d" data-wf-id="[&quot;19946a85-716a-f0a7-093a-c2ad191c3f7d&quot;]" class="level"><div data-w-id="19946a85-716a-f0a7-093a-c2ad191c3f7e" data-wf-id="[&quot;19946a85-716a-f0a7-093a-c2ad191c3f7e&quot;]" class="pointer"></div><div data-w-id="19946a85-716a-f0a7-093a-c2ad191c3f7f" data-wf-id="[&quot;19946a85-716a-f0a7-093a-c2ad191c3f7f&quot;]" class="level_text">advanced</div></div></div></div><div data-w-id="fb081e88-0fb8-1c2c-87d5-7b3ce7d136c6" data-wf-id="[&quot;fb081e88-0fb8-1c2c-87d5-7b3ce7d136c6&quot;]" class="timetable_block"></div><div data-w-id="987934a4-2892-c14d-181c-2015f547b1ce" data-wf-id="[&quot;987934a4-2892-c14d-181c-2015f547b1ce&quot;]" class="timetable_block"><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#schedule" data-w-id="f28ffc7f-5927-314f-0020-da2e9e7de986" data-wf-id="[&quot;f28ffc7f-5927-314f-0020-da2e9e7de986&quot;]" class="time_table_link w-inline-block"><div data-w-id="9c8b5b8a-fb31-c6c0-02e9-01133ee6409e" data-wf-id="[&quot;9c8b5b8a-fb31-c6c0-02e9-01133ee6409e&quot;]" class="timetable_content"><h5 data-w-id="9c8b5b8a-fb31-c6c0-02e9-01133ee6409f" data-wf-id="[&quot;9c8b5b8a-fb31-c6c0-02e9-01133ee6409f&quot;]" class="timetable_h level-2">form</h5><div data-w-id="9c8b5b8a-fb31-c6c0-02e9-01133ee640a1" data-wf-id="[&quot;9c8b5b8a-fb31-c6c0-02e9-01133ee640a1&quot;]" class="time_content">7:30-9</div><div data-w-id="9c8b5b8a-fb31-c6c0-02e9-01133ee640a3" data-wf-id="[&quot;9c8b5b8a-fb31-c6c0-02e9-01133ee640a3&quot;]" class="trainers_name">Michalel Dem</div></div></a><div data-w-id="ce2bbcc6-517a-adcd-c221-23ca434c3cbf" data-wf-id="[&quot;ce2bbcc6-517a-adcd-c221-23ca434c3cbf&quot;]" class="level_wrapper"><div data-w-id="ce2bbcc6-517a-adcd-c221-23ca434c3cc0" data-wf-id="[&quot;ce2bbcc6-517a-adcd-c221-23ca434c3cc0&quot;]" class="level"><div data-w-id="ce2bbcc6-517a-adcd-c221-23ca434c3cc1" data-wf-id="[&quot;ce2bbcc6-517a-adcd-c221-23ca434c3cc1&quot;]" class="pointer"></div><div data-w-id="ce2bbcc6-517a-adcd-c221-23ca434c3cc2" data-wf-id="[&quot;ce2bbcc6-517a-adcd-c221-23ca434c3cc2&quot;]" class="level_text">level 2</div></div></div></div><div data-w-id="a93cfce4-f5d2-5612-b6c8-39a4cfc466b9" data-wf-id="[&quot;a93cfce4-f5d2-5612-b6c8-39a4cfc466b9&quot;]" class="timetable_block"></div><div data-w-id="f62bbd1f-d07e-cea2-c4ef-21eb76dd2fc5" data-wf-id="[&quot;f62bbd1f-d07e-cea2-c4ef-21eb76dd2fc5&quot;]" class="timetable_block"><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#schedule" data-w-id="7fabaeaa-5c15-f04d-8aee-c115a587c596" data-wf-id="[&quot;7fabaeaa-5c15-f04d-8aee-c115a587c596&quot;]" class="time_table_link w-inline-block"><div data-w-id="eec1ffbf-5629-c7c6-5c87-fe978e7a4079" data-wf-id="[&quot;eec1ffbf-5629-c7c6-5c87-fe978e7a4079&quot;]" class="timetable_content"><h5 data-w-id="eec1ffbf-5629-c7c6-5c87-fe978e7a407a" data-wf-id="[&quot;eec1ffbf-5629-c7c6-5c87-fe978e7a407a&quot;]" class="timetable_h">beginners</h5><div data-w-id="eec1ffbf-5629-c7c6-5c87-fe978e7a407c" data-wf-id="[&quot;eec1ffbf-5629-c7c6-5c87-fe978e7a407c&quot;]" class="time_content">7:30-8:30</div><div data-w-id="eec1ffbf-5629-c7c6-5c87-fe978e7a407e" data-wf-id="[&quot;eec1ffbf-5629-c7c6-5c87-fe978e7a407e&quot;]" class="trainers_name">Michalel Dem</div></div></a><div data-w-id="5a70230f-9792-05e6-1366-1428e49f2fb7" data-wf-id="[&quot;5a70230f-9792-05e6-1366-1428e49f2fb7&quot;]" class="level_wrapper"><div data-w-id="5a70230f-9792-05e6-1366-1428e49f2fb8" data-wf-id="[&quot;5a70230f-9792-05e6-1366-1428e49f2fb8&quot;]" class="level"><div data-w-id="5a70230f-9792-05e6-1366-1428e49f2fb9" data-wf-id="[&quot;5a70230f-9792-05e6-1366-1428e49f2fb9&quot;]" class="pointer"></div><div data-w-id="5a70230f-9792-05e6-1366-1428e49f2fba" data-wf-id="[&quot;5a70230f-9792-05e6-1366-1428e49f2fba&quot;]" class="level_text">level 1</div></div></div></div><div data-w-id="862fd7ef-1aa7-0f08-3698-161e4fae5d75" data-wf-id="[&quot;862fd7ef-1aa7-0f08-3698-161e4fae5d75&quot;]" class="timetable_block"><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#schedule" data-w-id="dc0df91b-a8f2-48e1-67f9-d36dba90bf38" data-wf-id="[&quot;dc0df91b-a8f2-48e1-67f9-d36dba90bf38&quot;]" class="time_table_link w-inline-block"><div data-w-id="196bdf04-7591-fd9b-54e9-3ce5e1758a51" data-wf-id="[&quot;196bdf04-7591-fd9b-54e9-3ce5e1758a51&quot;]" class="timetable_content"><h5 data-w-id="196bdf04-7591-fd9b-54e9-3ce5e1758a52" data-wf-id="[&quot;196bdf04-7591-fd9b-54e9-3ce5e1758a52&quot;]" class="timetable_h">form</h5><div data-w-id="196bdf04-7591-fd9b-54e9-3ce5e1758a54" data-wf-id="[&quot;196bdf04-7591-fd9b-54e9-3ce5e1758a54&quot;]" class="time_content">7:30-9</div><div data-w-id="196bdf04-7591-fd9b-54e9-3ce5e1758a56" data-wf-id="[&quot;196bdf04-7591-fd9b-54e9-3ce5e1758a56&quot;]" class="trainers_name">Michalel Dem</div></div></a><div data-w-id="82e16498-5f0a-d4c5-0d4b-1510fe444c7d" data-wf-id="[&quot;82e16498-5f0a-d4c5-0d4b-1510fe444c7d&quot;]" class="level_wrapper"><div data-w-id="82e16498-5f0a-d4c5-0d4b-1510fe444c7e" data-wf-id="[&quot;82e16498-5f0a-d4c5-0d4b-1510fe444c7e&quot;]" class="level"><div data-w-id="82e16498-5f0a-d4c5-0d4b-1510fe444c7f" data-wf-id="[&quot;82e16498-5f0a-d4c5-0d4b-1510fe444c7f&quot;]" class="pointer"></div><div data-w-id="82e16498-5f0a-d4c5-0d4b-1510fe444c80" data-wf-id="[&quot;82e16498-5f0a-d4c5-0d4b-1510fe444c80&quot;]" class="level_text">level 2</div></div></div></div><div data-w-id="2321d120-1a60-7f53-a304-96a38013f895" data-wf-id="[&quot;2321d120-1a60-7f53-a304-96a38013f895&quot;]" class="timetable_block"></div></div></div><div data-w-id="9ae601e9-fc24-60b0-85af-383f42346ce4" data-wf-id="[&quot;9ae601e9-fc24-60b0-85af-383f42346ce4&quot;]" class="mobile_schedule"><h3 data-w-id="5b50fb4f-5dd7-2c29-4e74-86c33decd865" data-wf-id="[&quot;5b50fb4f-5dd7-2c29-4e74-86c33decd865&quot;]" class="h3">monday</h3><div data-w-id="150e566e-448a-a5b2-07da-aec4aea05b30" data-wf-id="[&quot;150e566e-448a-a5b2-07da-aec4aea05b30&quot;]" class="mobile_schedule_block"><a data-w-id="3876e707-07b9-6783-6589-f3ddf4010bf3" data-wf-id="[&quot;3876e707-07b9-6783-6589-f3ddf4010bf3&quot;]" href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#" class="mobile_class_link">low intensity</a><div data-w-id="23b5e079-aa0c-8e87-ae6e-a7993eaeb2f0" data-wf-id="[&quot;23b5e079-aa0c-8e87-ae6e-a7993eaeb2f0&quot;]" class="mobile_class_time">7:00-8:30</div></div><div data-w-id="cd481b42-868a-83ea-58d5-c6f1f8d2bc5c" data-wf-id="[&quot;cd481b42-868a-83ea-58d5-c6f1f8d2bc5c&quot;]" class="mobile_schedule_block"><a data-w-id="cd481b42-868a-83ea-58d5-c6f1f8d2bc5d" data-wf-id="[&quot;cd481b42-868a-83ea-58d5-c6f1f8d2bc5d&quot;]" href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#" class="mobile_class_link">gradual</a><div data-w-id="cd481b42-868a-83ea-58d5-c6f1f8d2bc5f" data-wf-id="[&quot;cd481b42-868a-83ea-58d5-c6f1f8d2bc5f&quot;]" class="mobile_class_time">1:30-3:00</div></div><div data-w-id="ba37d83a-077a-6b11-adeb-77023d1a7648" data-wf-id="[&quot;ba37d83a-077a-6b11-adeb-77023d1a7648&quot;]" class="mobile_schedule_block"><a data-w-id="ba37d83a-077a-6b11-adeb-77023d1a7649" data-wf-id="[&quot;ba37d83a-077a-6b11-adeb-77023d1a7649&quot;]" href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#" class="mobile_class_link">beginners</a><div data-w-id="ba37d83a-077a-6b11-adeb-77023d1a764b" data-wf-id="[&quot;ba37d83a-077a-6b11-adeb-77023d1a764b&quot;]" class="mobile_class_time">6:30-7:30</div></div><div data-w-id="97b00684-255e-54f4-ac03-f9be83037a2e" data-wf-id="[&quot;97b00684-255e-54f4-ac03-f9be83037a2e&quot;]" class="mobile_schedule_block bottom_no_line"><a data-w-id="97b00684-255e-54f4-ac03-f9be83037a2f" data-wf-id="[&quot;97b00684-255e-54f4-ac03-f9be83037a2f&quot;]" href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#" class="mobile_class_link">form</a><div data-w-id="97b00684-255e-54f4-ac03-f9be83037a31" data-wf-id="[&quot;97b00684-255e-54f4-ac03-f9be83037a31&quot;]" class="mobile_class_time">7:30-9:00</div></div><h3 data-w-id="191cbd74-4329-2fd0-7a1a-6e575191175c" data-wf-id="[&quot;191cbd74-4329-2fd0-7a1a-6e575191175c&quot;]" class="h3">Tuesday</h3><div data-w-id="53adaee5-3ee4-ba81-f414-2d0652914e54" data-wf-id="[&quot;53adaee5-3ee4-ba81-f414-2d0652914e54&quot;]" class="mobile_schedule_block"><a data-w-id="53adaee5-3ee4-ba81-f414-2d0652914e55" data-wf-id="[&quot;53adaee5-3ee4-ba81-f414-2d0652914e55&quot;]" href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#" class="mobile_class_link">beginners</a><div data-w-id="53adaee5-3ee4-ba81-f414-2d0652914e57" data-wf-id="[&quot;53adaee5-3ee4-ba81-f414-2d0652914e57&quot;]" class="mobile_class_time">7:30-8:30</div></div><div data-w-id="0d1cd99d-665a-51ce-4d66-d768954a6869" data-wf-id="[&quot;0d1cd99d-665a-51ce-4d66-d768954a6869&quot;]" class="mobile_schedule_block"><a data-w-id="0d1cd99d-665a-51ce-4d66-d768954a686a" data-wf-id="[&quot;0d1cd99d-665a-51ce-4d66-d768954a686a&quot;]" href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#" class="mobile_class_link">form</a><div data-w-id="0d1cd99d-665a-51ce-4d66-d768954a686c" data-wf-id="[&quot;0d1cd99d-665a-51ce-4d66-d768954a686c&quot;]" class="mobile_class_time">9:30-11:00</div></div><div data-w-id="62c46245-8feb-61f8-869d-42b705a86b47" data-wf-id="[&quot;62c46245-8feb-61f8-869d-42b705a86b47&quot;]" class="mobile_schedule_block bottom_no_line"><a data-w-id="62c46245-8feb-61f8-869d-42b705a86b48" data-wf-id="[&quot;62c46245-8feb-61f8-869d-42b705a86b48&quot;]" href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#" class="mobile_class_link">low intensity</a><div data-w-id="62c46245-8feb-61f8-869d-42b705a86b4a" data-wf-id="[&quot;62c46245-8feb-61f8-869d-42b705a86b4a&quot;]" class="mobile_class_time">6:30-8:00</div></div><h3 data-w-id="bcf34dc6-dc1b-3e45-47d4-5bcf32d64577" data-wf-id="[&quot;bcf34dc6-dc1b-3e45-47d4-5bcf32d64577&quot;]" class="h3">wednesday</h3><div data-w-id="a8aaac78-7565-16d0-2db7-2a199494e567" data-wf-id="[&quot;a8aaac78-7565-16d0-2db7-2a199494e567&quot;]" class="mobile_schedule_block"><a data-w-id="a8aaac78-7565-16d0-2db7-2a199494e568" data-wf-id="[&quot;a8aaac78-7565-16d0-2db7-2a199494e568&quot;]" href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#" class="mobile_class_link">beginners</a><div data-w-id="a8aaac78-7565-16d0-2db7-2a199494e56a" data-wf-id="[&quot;a8aaac78-7565-16d0-2db7-2a199494e56a&quot;]" class="mobile_class_time">9:30-10:30</div></div><div data-w-id="0f27ce0a-9c46-addc-73c2-6201a18ba0ff" data-wf-id="[&quot;0f27ce0a-9c46-addc-73c2-6201a18ba0ff&quot;]" class="mobile_schedule_block"><a data-w-id="0f27ce0a-9c46-addc-73c2-6201a18ba100" data-wf-id="[&quot;0f27ce0a-9c46-addc-73c2-6201a18ba100&quot;]" href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#" class="mobile_class_link">low intensity</a><div data-w-id="0f27ce0a-9c46-addc-73c2-6201a18ba102" data-wf-id="[&quot;0f27ce0a-9c46-addc-73c2-6201a18ba102&quot;]" class="mobile_class_time">1:30-3:00</div></div><div data-w-id="b0863a1e-1ce6-f0eb-46c9-f6fc6258b7b4" data-wf-id="[&quot;b0863a1e-1ce6-f0eb-46c9-f6fc6258b7b4&quot;]" class="mobile_schedule_block bottom_no_line"><a data-w-id="b0863a1e-1ce6-f0eb-46c9-f6fc6258b7b5" data-wf-id="[&quot;b0863a1e-1ce6-f0eb-46c9-f6fc6258b7b5&quot;]" href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#" class="mobile_class_link">form</a><div data-w-id="b0863a1e-1ce6-f0eb-46c9-f6fc6258b7b7" data-wf-id="[&quot;b0863a1e-1ce6-f0eb-46c9-f6fc6258b7b7&quot;]" class="mobile_class_time">7:30-9:00</div></div><h3 data-w-id="326a86c1-9798-4d96-a0de-0d540f97bdcb" data-wf-id="[&quot;326a86c1-9798-4d96-a0de-0d540f97bdcb&quot;]" class="h3">thursday</h3><div data-w-id="9ce135b4-682c-146a-34b6-8efdce2ef786" data-wf-id="[&quot;9ce135b4-682c-146a-34b6-8efdce2ef786&quot;]" class="mobile_schedule_block"><a data-w-id="9ce135b4-682c-146a-34b6-8efdce2ef787" data-wf-id="[&quot;9ce135b4-682c-146a-34b6-8efdce2ef787&quot;]" href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#" class="mobile_class_link">high intensity</a><div data-w-id="9ce135b4-682c-146a-34b6-8efdce2ef789" data-wf-id="[&quot;9ce135b4-682c-146a-34b6-8efdce2ef789&quot;]" class="mobile_class_time">7:30-9:00</div></div><div data-w-id="50f46a95-eaef-fa8d-a41c-66a7d32ec77a" data-wf-id="[&quot;50f46a95-eaef-fa8d-a41c-66a7d32ec77a&quot;]" class="mobile_schedule_block"><a data-w-id="50f46a95-eaef-fa8d-a41c-66a7d32ec77b" data-wf-id="[&quot;50f46a95-eaef-fa8d-a41c-66a7d32ec77b&quot;]" href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#" class="mobile_class_link">beginners</a><div data-w-id="50f46a95-eaef-fa8d-a41c-66a7d32ec77d" data-wf-id="[&quot;50f46a95-eaef-fa8d-a41c-66a7d32ec77d&quot;]" class="mobile_class_time">1:30-2:30</div></div><div data-w-id="aa87bc37-696a-cce7-48a2-a6afe15c9630" data-wf-id="[&quot;aa87bc37-696a-cce7-48a2-a6afe15c9630&quot;]" class="mobile_schedule_block bottom_no_line"><a data-w-id="aa87bc37-696a-cce7-48a2-a6afe15c9631" data-wf-id="[&quot;aa87bc37-696a-cce7-48a2-a6afe15c9631&quot;]" href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#" class="mobile_class_link">low intensity</a><div data-w-id="aa87bc37-696a-cce7-48a2-a6afe15c9633" data-wf-id="[&quot;aa87bc37-696a-cce7-48a2-a6afe15c9633&quot;]" class="mobile_class_time">6:30-8:00</div></div><h3 data-w-id="c20317a8-13c7-1a73-6741-2a0e2bf4aad7" data-wf-id="[&quot;c20317a8-13c7-1a73-6741-2a0e2bf4aad7&quot;]" class="h3">friday</h3><div data-w-id="b53bad01-2c8a-f323-faf9-aea77864e869" data-wf-id="[&quot;b53bad01-2c8a-f323-faf9-aea77864e869&quot;]" class="mobile_schedule_block"><a data-w-id="b53bad01-2c8a-f323-faf9-aea77864e86a" data-wf-id="[&quot;b53bad01-2c8a-f323-faf9-aea77864e86a&quot;]" href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#" class="mobile_class_link">form</a><div data-w-id="b53bad01-2c8a-f323-faf9-aea77864e86c" data-wf-id="[&quot;b53bad01-2c8a-f323-faf9-aea77864e86c&quot;]" class="mobile_class_time">7:30-9:00</div></div><div data-w-id="0abd52c6-6f10-31a2-12a9-c85de04f00f7" data-wf-id="[&quot;0abd52c6-6f10-31a2-12a9-c85de04f00f7&quot;]" class="mobile_schedule_block"><a data-w-id="0abd52c6-6f10-31a2-12a9-c85de04f00f8" data-wf-id="[&quot;0abd52c6-6f10-31a2-12a9-c85de04f00f8&quot;]" href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#" class="mobile_class_link">high intensity</a><div data-w-id="0abd52c6-6f10-31a2-12a9-c85de04f00fa" data-wf-id="[&quot;0abd52c6-6f10-31a2-12a9-c85de04f00fa&quot;]" class="mobile_class_time">9:30-11:00</div></div><div data-w-id="494ea7ff-bff1-c200-72b6-e74d8dc69c1c" data-wf-id="[&quot;494ea7ff-bff1-c200-72b6-e74d8dc69c1c&quot;]" class="mobile_schedule_block bottom_no_line"><a data-w-id="494ea7ff-bff1-c200-72b6-e74d8dc69c1d" data-wf-id="[&quot;494ea7ff-bff1-c200-72b6-e74d8dc69c1d&quot;]" href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#" class="mobile_class_link">beginners</a><div data-w-id="494ea7ff-bff1-c200-72b6-e74d8dc69c1f" data-wf-id="[&quot;494ea7ff-bff1-c200-72b6-e74d8dc69c1f&quot;]" class="mobile_class_time">7:30-8:30</div></div><h3 data-w-id="e5d70933-cdb0-ff61-290a-2ab369b994af" data-wf-id="[&quot;e5d70933-cdb0-ff61-290a-2ab369b994af&quot;]" class="h3">saturday</h3><div data-w-id="2c121631-facf-0541-ddc1-5371101d5375" data-wf-id="[&quot;2c121631-facf-0541-ddc1-5371101d5375&quot;]" class="mobile_schedule_block"><a data-w-id="2c121631-facf-0541-ddc1-5371101d5376" data-wf-id="[&quot;2c121631-facf-0541-ddc1-5371101d5376&quot;]" href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#" class="mobile_class_link">beginners</a><div data-w-id="2c121631-facf-0541-ddc1-5371101d5378" data-wf-id="[&quot;2c121631-facf-0541-ddc1-5371101d5378&quot;]" class="mobile_class_time">7:30-8:30</div></div><div data-w-id="98b2386a-31e8-982f-edfa-c42f2d004a18" data-wf-id="[&quot;98b2386a-31e8-982f-edfa-c42f2d004a18&quot;]" class="mobile_schedule_block"><a data-w-id="98b2386a-31e8-982f-edfa-c42f2d004a19" data-wf-id="[&quot;98b2386a-31e8-982f-edfa-c42f2d004a19&quot;]" href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#" class="mobile_class_link">low intensity</a><div data-w-id="98b2386a-31e8-982f-edfa-c42f2d004a1b" data-wf-id="[&quot;98b2386a-31e8-982f-edfa-c42f2d004a1b&quot;]" class="mobile_class_time">9:30-11:00</div></div><div data-w-id="39d2631f-e8b0-0002-302e-0e6cdb98e1d2" data-wf-id="[&quot;39d2631f-e8b0-0002-302e-0e6cdb98e1d2&quot;]" class="mobile_schedule_block"><a data-w-id="39d2631f-e8b0-0002-302e-0e6cdb98e1d3" data-wf-id="[&quot;39d2631f-e8b0-0002-302e-0e6cdb98e1d3&quot;]" href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#" class="mobile_class_link">form</a><div data-w-id="39d2631f-e8b0-0002-302e-0e6cdb98e1d5" data-wf-id="[&quot;39d2631f-e8b0-0002-302e-0e6cdb98e1d5&quot;]" class="mobile_class_time">1:30-3:00</div></div><div data-w-id="0812d6cc-dffb-0bb3-65d1-df47afe375ad" data-wf-id="[&quot;0812d6cc-dffb-0bb3-65d1-df47afe375ad&quot;]" class="mobile_schedule_block"><a data-w-id="0812d6cc-dffb-0bb3-65d1-df47afe375ae" data-wf-id="[&quot;0812d6cc-dffb-0bb3-65d1-df47afe375ae&quot;]" href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#" class="mobile_class_link">high intensity</a><div data-w-id="0812d6cc-dffb-0bb3-65d1-df47afe375b0" data-wf-id="[&quot;0812d6cc-dffb-0bb3-65d1-df47afe375b0&quot;]" class="mobile_class_time">6:30-8:00</div></div><div data-w-id="4b90ee0f-11f2-f463-4910-b81e4e29a334" data-wf-id="[&quot;4b90ee0f-11f2-f463-4910-b81e4e29a334&quot;]" class="mobile_schedule_block bottom_no_line"><a data-w-id="4b90ee0f-11f2-f463-4910-b81e4e29a335" data-wf-id="[&quot;4b90ee0f-11f2-f463-4910-b81e4e29a335&quot;]" href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#" class="mobile_class_link">form</a><div data-w-id="4b90ee0f-11f2-f463-4910-b81e4e29a337" data-wf-id="[&quot;4b90ee0f-11f2-f463-4910-b81e4e29a337&quot;]" class="mobile_class_time">7:30-9:00</div></div><h3 data-w-id="3a08854c-b1ac-605a-12b5-fda863fa6f31" data-wf-id="[&quot;3a08854c-b1ac-605a-12b5-fda863fa6f31&quot;]" class="h3">sunday</h3><div data-w-id="7ff7c880-df53-5634-c706-84712c07da94" data-wf-id="[&quot;7ff7c880-df53-5634-c706-84712c07da94&quot;]" class="mobile_schedule_block"><a data-w-id="7ff7c880-df53-5634-c706-84712c07da95" data-wf-id="[&quot;7ff7c880-df53-5634-c706-84712c07da95&quot;]" href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#" class="mobile_class_link">form</a><div data-w-id="7ff7c880-df53-5634-c706-84712c07da97" data-wf-id="[&quot;7ff7c880-df53-5634-c706-84712c07da97&quot;]" class="mobile_class_time">7:00-8:30</div></div><div data-w-id="6bec5872-2f25-b741-0338-22efad55b20a" data-wf-id="[&quot;6bec5872-2f25-b741-0338-22efad55b20a&quot;]" class="mobile_schedule_block"><a data-w-id="6bec5872-2f25-b741-0338-22efad55b20b" data-wf-id="[&quot;6bec5872-2f25-b741-0338-22efad55b20b&quot;]" href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#" class="mobile_class_link">form</a><div data-w-id="6bec5872-2f25-b741-0338-22efad55b20d" data-wf-id="[&quot;6bec5872-2f25-b741-0338-22efad55b20d&quot;]" class="mobile_class_time">1:30-3:00</div></div><div data-w-id="edc76ccf-12b8-c1de-afdd-90f05f3191f1" data-wf-id="[&quot;edc76ccf-12b8-c1de-afdd-90f05f3191f1&quot;]" class="mobile_schedule_block bottom_no_line"><a data-w-id="edc76ccf-12b8-c1de-afdd-90f05f3191f2" data-wf-id="[&quot;edc76ccf-12b8-c1de-afdd-90f05f3191f2&quot;]" href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#" class="mobile_class_link">beginners</a><div data-w-id="edc76ccf-12b8-c1de-afdd-90f05f3191f4" data-wf-id="[&quot;edc76ccf-12b8-c1de-afdd-90f05f3191f4&quot;]" class="mobile_class_time">6:30-7:30</div></div></div></div><img src="./5ce665c8952a224384035939_bg_lines_2.svg" data-w-id="4744268e-00b2-03be-1017-b30ce27490f3" data-wf-id="[&quot;4744268e-00b2-03be-1017-b30ce27490f3&quot;]" alt="" class="image-5"></div></div><div data-w-id="56d00d9c-7c36-cbd4-732c-45627c408ed9" data-wf-id="[&quot;56d00d9c-7c36-cbd4-732c-45627c408ed9&quot;]" class="section w-section"><div id="team" data-w-id="e7facb66-67ef-d40d-95d2-a7e885de77fe" data-wf-id="[&quot;e7facb66-67ef-d40d-95d2-a7e885de77fe&quot;]" class="team_wrapper"><div data-w-id="6fc32190-5840-03dc-eaa3-ec7e1d386a07" data-wf-id="[&quot;6fc32190-5840-03dc-eaa3-ec7e1d386a07&quot;]" class="wrapper meet_the_team_wrapper"><h2 data-w-id="d4301839-2482-e604-49a2-656023f0b4c5" data-wf-id="[&quot;d4301839-2482-e604-49a2-656023f0b4c5&quot;]" class="h2">meet our team members</h2><div data-w-id="2c38a5ac-52d4-b6a7-77d7-44e03b82cea3" data-wf-id="[&quot;2c38a5ac-52d4-b6a7-77d7-44e03b82cea3&quot;]" class="text-block team_memeber_number">03</div><a href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#home" data-w-id="7673ea3c-2f1d-3d8d-70fd-e8f27317d67f" data-wf-id="[&quot;7673ea3c-2f1d-3d8d-70fd-e8f27317d67f&quot;,&quot;e218fef1-9b5a-4b8b-f314-b889f69b68ae&quot;]" class="button w-inline-block w--current"><div data-wf-id="[&quot;7673ea3c-2f1d-3d8d-70fd-e8f27317d67f&quot;,&quot;e218fef1-9b5a-4b8b-f314-b889f69b68af&quot;]" class="learn_more_wrap" data-w-instance-of="e218fef1-9b5a-4b8b-f314-b889f69b68af"><div data-wf-id="[&quot;7673ea3c-2f1d-3d8d-70fd-e8f27317d67f&quot;,&quot;e218fef1-9b5a-4b8b-f314-b889f69b68b0&quot;]" class="button_text" data-w-instance-of="e218fef1-9b5a-4b8b-f314-b889f69b68b0">Learn more</div></div><div data-wf-id="[&quot;7673ea3c-2f1d-3d8d-70fd-e8f27317d67f&quot;,&quot;e218fef1-9b5a-4b8b-f314-b889f69b68b2&quot;]" class="button_arrow_wrap" data-w-instance-of="e218fef1-9b5a-4b8b-f314-b889f69b68b2"><img src="./5ce63c75d716616e8aa6692d_crossfit_white_icon.png" width="20" data-wf-id="[&quot;7673ea3c-2f1d-3d8d-70fd-e8f27317d67f&quot;,&quot;9684f212-0b10-7003-49aa-65bfa632d0cf&quot;]" alt="" class="arrows" data-w-instance-of="9684f212-0b10-7003-49aa-65bfa632d0cf"></div></a></div><div data-w-id="c4a033f0-17ab-45fb-9f7b-48424302003f" data-wf-id="[&quot;c4a033f0-17ab-45fb-9f7b-48424302003f&quot;]" class="w-layout-grid team_grid wf-grid"><div data-w-id="fad9f6cd-61c4-58d0-86a5-49d60b959f11" data-wf-id="[&quot;fad9f6cd-61c4-58d0-86a5-49d60b959f11&quot;]" class="team_member_wrap"><div data-w-id="ecbcb761-e30a-aa9f-6906-2b4c4c8f1b9d" data-wf-id="[&quot;ecbcb761-e30a-aa9f-6906-2b4c4c8f1b9d&quot;]" class="team_member_overlay"><div data-w-id="5a350249-2c95-5f94-930b-b47d131b1146" data-wf-id="[&quot;5a350249-2c95-5f94-930b-b47d131b1146&quot;]" class="team_member_content"><h4 data-w-id="7857430f-5bae-5135-63ed-d7d2c3978076" data-wf-id="[&quot;7857430f-5bae-5135-63ed-d7d2c3978076&quot;]" class="team_member_name">michael dem</h4><div data-w-id="e39d8966-5b03-5884-3e61-92a92130b599" data-wf-id="[&quot;e39d8966-5b03-5884-3e61-92a92130b599&quot;]" class="team_member_specialty">Level 1 Trainer</div><div data-w-id="f8a7e0a7-95e5-e95b-f022-1578570762c6" data-wf-id="[&quot;f8a7e0a7-95e5-e95b-f022-1578570762c6&quot;]" class="team_member_sm_links"><a data-w-id="5e4b2ef2-d5ce-718b-e0dc-751097c4e128" data-wf-id="[&quot;5e4b2ef2-d5ce-718b-e0dc-751097c4e128&quot;]" href="https://www.instagram.com/" target="_blank" class="team_member_social_link w-inline-block"><img src="./5ce4c573a62d239f3d6f53ca_174855.png" width="19" data-w-id="e955951d-be70-7728-1077-30fb378529f8" data-wf-id="[&quot;e955951d-be70-7728-1077-30fb378529f8&quot;]" alt=""></a><a data-w-id="42381b0a-93ab-2dd5-55e0-43242abbf3c0" data-wf-id="[&quot;42381b0a-93ab-2dd5-55e0-43242abbf3c0&quot;]" href="https://www.facebook.com/" target="_blank" class="team_member_social_link w-inline-block"><img src="./5ce4c573a62d23c5da6f53c4_33702.png" width="19" data-w-id="42381b0a-93ab-2dd5-55e0-43242abbf3c1" data-wf-id="[&quot;42381b0a-93ab-2dd5-55e0-43242abbf3c1&quot;]" alt=""></a><a data-w-id="d350b343-f86b-e301-55c7-1a589b1e385e" data-wf-id="[&quot;d350b343-f86b-e301-55c7-1a589b1e385e&quot;]" href="https://twitter.com/" target="_blank" class="team_member_social_link w-inline-block"><img src="./5ce4c573a62d2305d16f53c6_twitter.png" width="19" data-w-id="d350b343-f86b-e301-55c7-1a589b1e385f" data-wf-id="[&quot;d350b343-f86b-e301-55c7-1a589b1e385f&quot;]" alt=""></a></div></div></div></div><div data-w-id="3448f234-3de3-b932-2891-82e007bf6870" data-wf-id="[&quot;3448f234-3de3-b932-2891-82e007bf6870&quot;]" class="team_member_wrap member_2"><div data-w-id="87652d2d-67f8-f7ef-ec01-d12f745620fc" data-wf-id="[&quot;87652d2d-67f8-f7ef-ec01-d12f745620fc&quot;]" class="team_member_overlay"><div data-w-id="87652d2d-67f8-f7ef-ec01-d12f745620fd" data-wf-id="[&quot;87652d2d-67f8-f7ef-ec01-d12f745620fd&quot;]" class="team_member_content"><h4 data-w-id="87652d2d-67f8-f7ef-ec01-d12f745620fe" data-wf-id="[&quot;87652d2d-67f8-f7ef-ec01-d12f745620fe&quot;]" class="team_member_name">michael dem</h4><div data-w-id="87652d2d-67f8-f7ef-ec01-d12f74562100" data-wf-id="[&quot;87652d2d-67f8-f7ef-ec01-d12f74562100&quot;]" class="team_member_specialty">Advanced Trainer</div><div data-w-id="87652d2d-67f8-f7ef-ec01-d12f74562102" data-wf-id="[&quot;87652d2d-67f8-f7ef-ec01-d12f74562102&quot;]" class="team_member_sm_links"><a data-w-id="87652d2d-67f8-f7ef-ec01-d12f74562103" data-wf-id="[&quot;87652d2d-67f8-f7ef-ec01-d12f74562103&quot;]" href="https://www.instagram.com/" target="_blank" class="team_member_social_link w-inline-block"><img src="./5ce4c573a62d239f3d6f53ca_174855.png" width="19" data-w-id="87652d2d-67f8-f7ef-ec01-d12f74562104" data-wf-id="[&quot;87652d2d-67f8-f7ef-ec01-d12f74562104&quot;]" alt=""></a><a data-w-id="87652d2d-67f8-f7ef-ec01-d12f74562105" data-wf-id="[&quot;87652d2d-67f8-f7ef-ec01-d12f74562105&quot;]" href="https://www.facebook.com/" target="_blank" class="team_member_social_link w-inline-block"><img src="./5ce4c573a62d23c5da6f53c4_33702.png" width="19" data-w-id="87652d2d-67f8-f7ef-ec01-d12f74562106" data-wf-id="[&quot;87652d2d-67f8-f7ef-ec01-d12f74562106&quot;]" alt=""></a><a data-w-id="87652d2d-67f8-f7ef-ec01-d12f74562107" data-wf-id="[&quot;87652d2d-67f8-f7ef-ec01-d12f74562107&quot;]" href="https://twitter.com/" target="_blank" class="team_member_social_link w-inline-block"><img src="./5ce4c573a62d2305d16f53c6_twitter.png" width="19" data-w-id="87652d2d-67f8-f7ef-ec01-d12f74562108" data-wf-id="[&quot;87652d2d-67f8-f7ef-ec01-d12f74562108&quot;]" alt=""></a></div></div></div></div><div data-w-id="2e979d1f-15d6-28d8-d456-24d7f8bd68bc" data-wf-id="[&quot;2e979d1f-15d6-28d8-d456-24d7f8bd68bc&quot;]" class="team_member_wrap member_3"><div data-w-id="5c179f6e-8f2b-6906-2c15-376283d3caec" data-wf-id="[&quot;5c179f6e-8f2b-6906-2c15-376283d3caec&quot;]" class="team_member_overlay"><div data-w-id="5c179f6e-8f2b-6906-2c15-376283d3caed" data-wf-id="[&quot;5c179f6e-8f2b-6906-2c15-376283d3caed&quot;]" class="team_member_content"><h4 data-w-id="5c179f6e-8f2b-6906-2c15-376283d3caee" data-wf-id="[&quot;5c179f6e-8f2b-6906-2c15-376283d3caee&quot;]" class="team_member_name">michael dem</h4><div data-w-id="5c179f6e-8f2b-6906-2c15-376283d3caf0" data-wf-id="[&quot;5c179f6e-8f2b-6906-2c15-376283d3caf0&quot;]" class="team_member_specialty">Level 2 Trainer</div><div data-w-id="5c179f6e-8f2b-6906-2c15-376283d3caf2" data-wf-id="[&quot;5c179f6e-8f2b-6906-2c15-376283d3caf2&quot;]" class="team_member_sm_links"><a data-w-id="5c179f6e-8f2b-6906-2c15-376283d3caf3" data-wf-id="[&quot;5c179f6e-8f2b-6906-2c15-376283d3caf3&quot;]" href="https://www.instagram.com/" class="team_member_social_link w-inline-block"><img src="./5ce4c573a62d239f3d6f53ca_174855.png" width="19" data-w-id="5c179f6e-8f2b-6906-2c15-376283d3caf4" data-wf-id="[&quot;5c179f6e-8f2b-6906-2c15-376283d3caf4&quot;]" alt=""></a><a data-w-id="5c179f6e-8f2b-6906-2c15-376283d3caf5" data-wf-id="[&quot;5c179f6e-8f2b-6906-2c15-376283d3caf5&quot;]" href="https://www.facebook.com/" target="_blank" class="team_member_social_link w-inline-block"><img src="./5ce4c573a62d23c5da6f53c4_33702.png" width="19" data-w-id="5c179f6e-8f2b-6906-2c15-376283d3caf6" data-wf-id="[&quot;5c179f6e-8f2b-6906-2c15-376283d3caf6&quot;]" alt=""></a><a data-w-id="5c179f6e-8f2b-6906-2c15-376283d3caf7" data-wf-id="[&quot;5c179f6e-8f2b-6906-2c15-376283d3caf7&quot;]" href="https://twitter.com/" target="_blank" class="team_member_social_link w-inline-block"><img src="./5ce4c573a62d2305d16f53c6_twitter.png" width="19" data-w-id="5c179f6e-8f2b-6906-2c15-376283d3caf8" data-wf-id="[&quot;5c179f6e-8f2b-6906-2c15-376283d3caf8&quot;]" alt=""></a></div></div></div></div><div data-w-id="5eb24e36-b8e5-6230-b358-67c7319b85e5" data-wf-id="[&quot;5eb24e36-b8e5-6230-b358-67c7319b85e5&quot;]" class="team_member_wrap member_4"><div data-w-id="a4c2ee9f-c87c-6a95-e759-0fb86b29526e" data-wf-id="[&quot;a4c2ee9f-c87c-6a95-e759-0fb86b29526e&quot;]" class="team_member_overlay"><div data-w-id="a4c2ee9f-c87c-6a95-e759-0fb86b29526f" data-wf-id="[&quot;a4c2ee9f-c87c-6a95-e759-0fb86b29526f&quot;]" class="team_member_content"><h4 data-w-id="a4c2ee9f-c87c-6a95-e759-0fb86b295270" data-wf-id="[&quot;a4c2ee9f-c87c-6a95-e759-0fb86b295270&quot;]" class="team_member_name">michael dem</h4><div data-w-id="a4c2ee9f-c87c-6a95-e759-0fb86b295272" data-wf-id="[&quot;a4c2ee9f-c87c-6a95-e759-0fb86b295272&quot;]" class="team_member_specialty">Advanced Trainer</div><div data-w-id="a4c2ee9f-c87c-6a95-e759-0fb86b295274" data-wf-id="[&quot;a4c2ee9f-c87c-6a95-e759-0fb86b295274&quot;]" class="team_member_sm_links"><a data-w-id="a4c2ee9f-c87c-6a95-e759-0fb86b295275" data-wf-id="[&quot;a4c2ee9f-c87c-6a95-e759-0fb86b295275&quot;]" href="https://www.instagram.com/" target="_blank" class="team_member_social_link w-inline-block"><img src="./5ce4c573a62d239f3d6f53ca_174855.png" width="19" data-w-id="a4c2ee9f-c87c-6a95-e759-0fb86b295276" data-wf-id="[&quot;a4c2ee9f-c87c-6a95-e759-0fb86b295276&quot;]" alt=""></a><a data-w-id="a4c2ee9f-c87c-6a95-e759-0fb86b295277" data-wf-id="[&quot;a4c2ee9f-c87c-6a95-e759-0fb86b295277&quot;]" href="https://www.facebook.com/" target="_blank" class="team_member_social_link w-inline-block"><img src="./5ce4c573a62d23c5da6f53c4_33702.png" width="19" data-w-id="a4c2ee9f-c87c-6a95-e759-0fb86b295278" data-wf-id="[&quot;a4c2ee9f-c87c-6a95-e759-0fb86b295278&quot;]" alt=""></a><a data-w-id="a4c2ee9f-c87c-6a95-e759-0fb86b295279" data-wf-id="[&quot;a4c2ee9f-c87c-6a95-e759-0fb86b295279&quot;]" href="https://twitter.com/" target="_blank" class="team_member_social_link w-inline-block"><img src="./5ce4c573a62d2305d16f53c6_twitter.png" width="19" data-w-id="a4c2ee9f-c87c-6a95-e759-0fb86b29527a" data-wf-id="[&quot;a4c2ee9f-c87c-6a95-e759-0fb86b29527a&quot;]" alt=""></a></div></div></div></div></div></div></div><div data-w-id="ad4038fe-fd8d-506a-5979-f151db6d61b0" data-wf-id="[&quot;ad4038fe-fd8d-506a-5979-f151db6d61b0&quot;]" class="section w-section"><div data-w-id="fd2b13a3-57bd-18bb-9f09-04952c8d811b" data-wf-id="[&quot;fd2b13a3-57bd-18bb-9f09-04952c8d811b&quot;]" class="partners_wrapper"><a data-w-id="22d688ae-109f-433d-72c5-a7c019eb943e" data-wf-id="[&quot;22d688ae-109f-433d-72c5-a7c019eb943e&quot;]" href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#" class="partner_link w-inline-block"><img src="./5ce4c573a62d23f0a86f53ed_the-huffington-post.png" width="125" data-w-id="40b587a2-1297-e354-db2e-edb47ad965b8" data-wf-id="[&quot;40b587a2-1297-e354-db2e-edb47ad965b8&quot;]" alt=""></a><a data-w-id="68fc2926-5581-3a4f-255d-4f93a3cf7507" data-wf-id="[&quot;68fc2926-5581-3a4f-255d-4f93a3cf7507&quot;]" href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#" class="partner_link w-inline-block"><img src="./5ce65c175375ca4d88934cbe_white-300x150.png" width="125" data-w-id="68fc2926-5581-3a4f-255d-4f93a3cf7508" data-wf-id="[&quot;68fc2926-5581-3a4f-255d-4f93a3cf7508&quot;]" alt=""></a><a data-w-id="46cf0c9a-690e-66f9-5256-3685d684f07a" data-wf-id="[&quot;46cf0c9a-690e-66f9-5256-3685d684f07a&quot;]" href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#" class="partner_link w-inline-block"><img src="./5ce65c1822f44f5011ef271b_breaking-muscle-logo.png" width="106" data-w-id="46cf0c9a-690e-66f9-5256-3685d684f07b" data-wf-id="[&quot;46cf0c9a-690e-66f9-5256-3685d684f07b&quot;]" alt=""></a><a data-w-id="2f2db299-3488-8473-1f17-af892a82cd80" data-wf-id="[&quot;2f2db299-3488-8473-1f17-af892a82cd80&quot;]" href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#" class="partner_link w-inline-block"><img src="./5ce65c3122f44f7c34ef2730_Reebok-Logo-PNG-Photos.png" width="125" data-w-id="2f2db299-3488-8473-1f17-af892a82cd81" data-wf-id="[&quot;2f2db299-3488-8473-1f17-af892a82cd81&quot;]" alt=""></a><a data-w-id="0f935f49-2c01-e716-f6f1-cac21df72001" data-wf-id="[&quot;0f935f49-2c01-e716-f6f1-cac21df72001&quot;]" href="https://preview.webflow.com/preview/crossfitmatter-landing-page?utm_source=crossfitmatter-landing-page&amp;preview=7b24df444dc81689c71376769606845c&amp;mode=preview#" class="partner_link w-inline-block"><img src="./5ce4c573a62d235c456f53eb_download.png" width="125" data-w-id="0f935f49-2c01-e716-f6f1-cac21df72002" data-wf-id="[&quot;0f935f49-2c01-e716-f6f1-cac21df72002&quot;]" alt=""></a></div><div data-w-id="4191e52a-99db-ed94-6bc4-5de583b2763d" data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d4d1&quot;]" class="footer_wrapper"><div id="contact" data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d4d2&quot;]" class="footer" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d4d2"><div data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d4d3&quot;]" class="wrapper" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d4d3"><div data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d4d4&quot;]" class="footer_content_wrap" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d4d4"><div data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d4d5&quot;]" class="footer_contact_wrapper" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d4d5"><img src="./5ce4ce5c7a1a2e51b5d8d5cf_CROSSFIT LOGO.png" width="287" data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d4d6&quot;]" alt="" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d4d6"><p data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d4d7&quot;]" class="footer_p" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d4d7">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus.</p><div data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d4d9&quot;]" class="contact_info_wrap" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d4d9"><a data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d4da&quot;]" href="tel:1-555-124-44227" class="contact_link w-inline-block" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d4da"><img src="./5ce61596952a2286f5023d37_noun_Phone_2226202.svg" width="40" data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d4db&quot;]" alt="" class="contact-icon" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d4db"><div data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d4dc&quot;]" class="contact_info" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d4dc">1-555-124-44227</div></a><a data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d4de&quot;]" href="https://www.google.com/maps" target="_blank" class="contact_link w-inline-block" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d4de"><img src="./5ce615965375ca931a922d22_noun_Location_2526886.svg" width="40" data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d4df&quot;]" alt="" class="contact-icon" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d4df"><div data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d4e0&quot;]" class="contact_info" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d4e0">26 Cooper Street.</div></a><div data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;b3cacee7-931d-dbcf-bf14-057e78aa74b4&quot;]" class="contact_link" data-w-instance-of="b3cacee7-931d-dbcf-bf14-057e78aa74b4"><img src="./5ce61595d716614b95a5ea74_noun_clock_883744.svg" width="40" data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d4e3&quot;]" alt="" class="contact-icon" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d4e3"><div data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d4e4&quot;]" class="contact_info" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d4e4">Mon - Sat 8.00 - 18.00</div></div></div></div><div data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d4e6&quot;]" class="form-block w-form" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d4e6"><form id="email-form" name="email-form" data-name="Email Form" data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d4e7&quot;]" class="form" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d4e7"><h3 data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d4e8&quot;]" class="h3" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d4e8">contact us</h3><input class="field_text w-input" maxlength="256" name="Name" data-name="Name" placeholder="Name" data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d4ea&quot;]" type="text" id="Name-3" required="" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d4ea"><input class="field_text w-input" maxlength="256" name="Email" data-name="Email" placeholder="Email" data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d4eb&quot;]" type="email" id="Email-3" required="" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d4eb"><textarea placeholder="Your message" maxlength="5000" id="Your-Message-3" name="Your-Message" data-name="Your Message" data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d4ec&quot;]" class="text_area w-input" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d4ec"></textarea><div data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d4ed&quot;]" class="submit_btn_wrap" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d4ed"><input type="submit" data-wait="Please wait..." data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d4ee&quot;]" class="button submit_button w-button" value="Submit" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d4ee"><div data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d4ef&quot;]" class="button_arrow_wrap submit_arrow" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d4ef"><img src="./5ce4c573a62d23619c6f53e5_Group 5.png" width="15" data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d4f0&quot;]" alt="" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d4f0"></div></div></form><div data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d4f1&quot;]" class="success-message w-form-done" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d4f1"><div data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d4f2&quot;]" class="text-block-6" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d4f2">Thank you! <br data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;9c645121-d58d-ec52-ac79-82e31e1677fc&quot;]" data-w-instance-of="9c645121-d58d-ec52-ac79-82e31e1677fc">Your submission has been received! <br data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;49001656-c809-221f-658b-91197628d6a4&quot;]" data-w-instance-of="49001656-c809-221f-658b-91197628d6a4">We will contact you shortly.</div><img src="./5ce4ce5bc3f52cfb01c5ab4a_GREEN ARROWS.png" width="54" data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;fdd1f3bf-5b46-5d42-ee1b-b80bbb79257e&quot;]" alt="" class="image-6" data-w-instance-of="fdd1f3bf-5b46-5d42-ee1b-b80bbb79257e"></div><div data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d4f4&quot;]" class="w-form-fail" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d4f4"><div data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d4f5&quot;]" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d4f5">Oops! Something went wrong while submitting the form.</div></div></div></div></div></div><div data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d4f7&quot;]" class="copyrights_wrap" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d4f7"><div data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d4f8&quot;]" class="wrapper vertical reverse_layout" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d4f8"><div data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d4f9&quot;]" class="copyright" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d4f9">Copyrights © <a data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;d3fdde4c-0b18-c6f4-734b-067ef4007fac&quot;]" href="https://www.rebeccamariondesign.com/" class="footer_link" data-w-instance-of="d3fdde4c-0b18-c6f4-734b-067ef4007fac">Rebecca Marion Design</a> | <a data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;f05b9bef-f043-48fc-997f-d1291a5743bd&quot;]" href="https://preview.webflow.com/image-licensing" class="footer_link" data-w-instance-of="f05b9bef-f043-48fc-997f-d1291a5743bd">Image Licensing</a> | <a data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;c6887e64-2a4a-2594-2d59-a569933c212b&quot;]" href="https://preview.webflow.com/style-guide" class="footer_link" data-w-instance-of="c6887e64-2a4a-2594-2d59-a569933c212b">Style Guide</a></div><div data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d4fb&quot;]" class="social-media-wrapper" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d4fb"><div data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d4fc&quot;]" class="follow_us" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d4fc">Follow us</div><div data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d4fe&quot;]" class="sm_icons_wrap" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d4fe"><a data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d4ff&quot;]" href="http://www.facebook.com/" target="_blank" class="sm_link w-inline-block" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d4ff"><img src="./5ce4c573a62d23c5da6f53c4_33702.png" width="23" data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d500&quot;]" alt="" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d500"></a><a data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d501&quot;]" href="https://www.instagram.com/" target="_blank" class="sm_link w-inline-block" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d501"><img src="./5ce4c573a62d239f3d6f53ca_174855.png" width="23" data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d502&quot;]" alt="" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d502"></a><a data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d503&quot;]" href="https://twitter.com/" target="_blank" class="sm_link w-inline-block" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d503"><img src="./5ce4c573a62d2305d16f53c6_twitter.png" width="23" data-wf-id="[&quot;4191e52a-99db-ed94-6bc4-5de583b2763d&quot;,&quot;addec3e3-d663-b16a-631d-baedcfd7d504&quot;]" alt="" data-w-instance-of="addec3e3-d663-b16a-631d-baedcfd7d504"></a></div></div></div></div></div></div><div id="lightbox-mountpoint" style="position: absolute;"></div><iframe frameborder="0" allowtransparency="true" scrolling="no" name="__privateStripeMetricsController0" allowpaymentrequest="true" src="./outer.html" aria-hidden="true" tabindex="-1" style="border: none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important; user-select: none !important;"></iframe></body></html>
