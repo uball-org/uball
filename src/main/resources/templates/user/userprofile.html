@@ -5,22 +5,22 @@
 <body class="grey lighten-2">
 <nav th:replace="partials/navbar :: nav"></nav>
 <!--<main>-->
-<main style=" height: 100%; background-size: cover; background-image: url('img/backgground1b.jpg')" >
+<main style="height: 100%; background-size: cover; background-image: url('img/background-1.jpg')" >
 
-<div class="container">
-    <br/>
+    <div class="container">
+        <h2 class="center">Profile</h2>
         <div class="col s12">
             <div class="row">
                 <div class="col s12 m4 l4">
-                    <div class="card-panel gradient-45deg-light-blue-cyan">
+                    <div class="header-shadow" style="padding: 1em;">
                         <div class="card-content center">
-                            <span class="card-title grey-text text-darken-4"><h3><em><span th:text="${user.username}"></span></em></h3></span>
-                            <p>
+                            <span class="card-title white-text"><h3><em><span th:text="${user.username}"></span></em></h3></span>
+                            <p class="white-text">
                                 <i class="material-icons">perm_identity</i> <span th:text="${user.firstName}"></span> <span th:text="${user.lastName}"></span></p>
-                            <p>
-                                <i class="material-icons">import_contacts</i> <span th:text=" ${#dates.format(user.DOB, 'dd-MMM-yyyy')}"></span></p>
-                                <i class="material-icons">wc</i> <span th:text=" ${user.gender}"></span>
-                            <p>
+                            <p class="white-text">
+                                <i class="material-icons white">import_contacts</i> <span th:text=" ${#dates.format(user.DOB, 'dd-MMM-yyyy')}"></span></p>
+                                <i class="material-icons white">wc</i> <span th:text=" ${user.gender}"></span>
+                            <p class="white-text">
                                 <i class="material-icons">email</i> <span th:text=" ${user.email}"></span></p>
                         </div>
                         <div class="row center">
