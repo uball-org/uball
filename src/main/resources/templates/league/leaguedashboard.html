@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/head :: head('League Dashboard')"></head>
-<body class="grey lighten-2">
+<body class="gradient-45deg-indigo-purple">
 <nav th:replace="partials/navbar :: nav"></nav>
 
 <main>
@@ -9,7 +9,7 @@
         <div class="section no-pad-bot">
             <div class="container">
                 <div class="row center">
-                    <h3 class="header col s12 light ">League View</h3>
+                    <h1 class="header col s12 light ">League View</h1>
                 </div>
                 <div class="row center " style="margin-top: 2rem;">
                     <div class="col m6">
@@ -21,40 +21,42 @@
                 </div>
             </div>
         </div>
-        <div class="parallax"><img src="img/pinballabstract1.jpg" alt="Unsplashed background img 1" class="header-img"/></div>
+        <div class="parallax"><img src="img/background-2.jpg" alt="Unsplashed background img 1" class="header-img"/></div>
     </div>
 
     <div class="container">
         <h3 class="center-align">Top Rankings</h3>
         <div class="row" style="margin-top: 2rem;">
-            <table class=" card-panel indigo lighten-5  responsive-table highlight z-depth-5 striped highlight">
+            <div class="header-shadow" style="padding: 1em;">
+            <table class="card-content responsive-table highlight">
                 <thead>
                 <tr>
-                    <th>Profile</th>
-                    <th>Place</th>
-                    <th>Points</th>
-                    <th>Name</th>
-                    <th>Gender</th>
-                    <th>League</th>
+<!--                    <th class="white-text">Profile</th>-->
+                    <th class="white-text">Place</th>
+                    <th class="white-text">Points</th>
+                    <th class="white-text">Name</th>
+                    <th class="white-text">Gender</th>
+                    <th class="white-text">League</th>
                 </tr>
                 </thead>
                 <tbody class="collection">
                 <th:block th:each="user : ${users}">
                     <tr>
+<!--                        <td>-->
+<!--                            <img src="img/logo.png" alt="" class="circle"  style="width: 30px; height: 30px;"/>-->
+<!--                        </td>-->
                         <td>
-                            <img src="img/logo.png" alt="" class="circle"  style="width: 30px; height: 30px;"/>
+                            <span class="white-text">#</span><span th:text="${users.indexOf(user)} + 1" class="white-text"></span><span class="white-text"> Place</span>
                         </td>
-                        <td>
-                            <span>#</span><span th:text="${users.indexOf(user)} + 1"></span><span> Place</span>
-                        </td>
-                        <td th:text="${user.points}">points</td>
-                        <td th:text="${user.username}">Name</td>
-                        <td th:text="${user.gender}">Gender</td>
-                        <td th:text="${user.getLeague().name}">League</td>
+                        <td th:text="${user.points}" class="white-text">Points</td>
+                        <td th:text="${user.username}" class="white-text">Name</td>
+                        <td th:text="${user.gender}" class="white-text">Gender</td>
+                        <td th:text="${user.getLeague().name}" class="white-text">League</td>
                     </tr>
                 </th:block>
                 </tbody>
             </table>
+        </div>
         </div>
     </div> <!--User Stats-->
     <!--bottom paralax -->
@@ -66,7 +68,7 @@
                 </div>
             </div>
         </div>
-        <div class="parallax"><img src="img/pinballindex.jpg" alt="Unsplashed background img 2"/></div>
+        <div class="parallax"><img src="img/background-5.jpg" alt="Unsplashed background img 2"/></div>
     </div>
 
 </main>

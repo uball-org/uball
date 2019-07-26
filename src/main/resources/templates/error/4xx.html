@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" >
 <head th:replace="partials/head :: head(${error})">
 </head>
-<body style="height: 100%; background-size: cover; background-image: url('img/background-7.jpg')" >
+<body style="height: 100%; background-size: cover; background-image: url('img/background-7.jpg')">
 
 <nav th:replace="partials/navbar :: nav"></nav>
 
@@ -11,13 +11,13 @@
 <th:block th:switch="${error}">
     <div th:case="'Not Found'">
         <div class="col s12 m4 l4 center error">
-            <h1><strong>404 Error</strong></h1>
+            <h1 class="red-text"><strong>404 Error</strong></h1>
 <!--            <img src="img/logo.png" class="circle" alt="404 error image" />-->
         </div>
     </div>
     <div th:case="'Forbidden'">
         <div class="col s12 m4 l4 center error">
-            <h1><strong>403 Error</strong></h1>
+            <h1 class="red-text"><strong>403 Error</strong></h1>
 <!--            <img src="img/logo.png" class="circle" alt="403 error image" />-->
         </div>
     </div>
