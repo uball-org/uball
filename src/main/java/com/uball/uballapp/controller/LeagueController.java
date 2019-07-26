@@ -57,7 +57,7 @@ public class LeagueController <leagueRepository>{
         return "league/leaguesaplview";
     }
 
-    @GetMapping("/leagues/SAPL")
+    @GetMapping("/leagues/Belles")
     public String league2(Model model){
 
         User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -86,7 +86,7 @@ public class LeagueController <leagueRepository>{
         model.addAttribute("topsMachinesScores",scoreDao.findTopsScoresOnMachines(3L));
         model.addAttribute("topTenScores",scoreDao.findTop10Scores(3L));
 
-        return "league/leaguebellesview";
+        return "league/leaguethreeview";
     }
 
     @GetMapping("/leagues/Four")
@@ -102,7 +102,7 @@ public class LeagueController <leagueRepository>{
         model.addAttribute("topsMachinesScores",scoreDao.findTopsScoresOnMachines(4L));
         model.addAttribute("topTenScores",scoreDao.findTop10Scores(4L));
 
-        return "league/leaguebellesview";
+        return "league/leaguefourview";
     }
 
     @GetMapping("/createleague")
