@@ -20,6 +20,10 @@ h4 {
   text-shadow: 2px 3px black;
 }
 
+.custom-font{
+  font-family: 'Bungee Shade', cursive;
+}
+
 nav {
   font-family: 'Bungee', cursive;
 }
