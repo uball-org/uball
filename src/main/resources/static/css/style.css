@@ -1,5 +1,24 @@
 /* Custom Stylesheet */
 
+
+/* white text input fields */
+
+input:not([type]),
+input[type=text]:not(.browser-default),
+input[type=password]:not(.browser-default),
+input[type=email]:not(.browser-default),
+input[type=url]:not(.browser-default),
+input[type=time]:not(.browser-default),
+input[type=date]:not(.browser-default),
+input[type=datetime]:not(.browser-default),
+input[type=datetime-local]:not(.browser-default),
+input[type=tel]:not(.browser-default),
+input[type=number]:not(.browser-default),
+input[type=search]:not(.browser-default),
+textarea.materialize-textarea {
+  color: white;
+}
+
 .tabs .tab a:hover, .tabs .tab a.active {
   background-color: transparent;
   color: #26a69a;
@@ -8,7 +27,7 @@
 h1, h2, h3 {
   font-family: 'Bungee Shade', cursive;
   /*font-weight: bold;*/
-  color: red;
+  color: white;
   text-shadow: 2px 3px black;
 
 }
@@ -25,7 +44,7 @@ h4 {
 }
 
 nav {
-  font-family: 'Bungee', cursive;
+  /*font-family: 'Bungee', cursive;*/
 }
 
 button .btn {
@@ -110,7 +129,7 @@ button .btn {
   overflow-y: hidden;
   height: 48px;
   width: 100%;
-  background-color: #fff;
+  background-color: transparent;
   margin: 0 auto;
   white-space: nowrap;
 }
@@ -122,16 +141,16 @@ button .btn {
 .tabs.tabs-transparent .tab a,
 .tabs.tabs-transparent .tab.disabled a,
 .tabs.tabs-transparent .tab.disabled a:hover {
-  color: rgba(255, 255, 255, 0.7);
+  color: transparent;
 }
 
 .tabs.tabs-transparent .tab a:hover,
 .tabs.tabs-transparent .tab a.active {
-  color: #e0e0e0;
+  color: transparent;
 }
 
 .tabs.tabs-transparent .indicator {
-  background-color: #e0e0e0;
+  background-color: transparent;
 }
 
 .tabs.tabs-fixed-width {
