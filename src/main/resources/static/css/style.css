@@ -9,6 +9,15 @@ h1, h2, h3 {
   font-family: 'Bungee Shade', cursive;
   /*font-weight: bold;*/
   color: red;
+  text-shadow: 2px 3px black;
+
+}
+
+h4 {
+  font-family: 'Bungee Shade', cursive;
+  /*font-weight: bold;*/
+  color: red;
+  text-shadow: 2px 3px black;
 }
 
 nav {
@@ -605,6 +614,9 @@ p {
     padding-right: 5px;
     margin: 5px;
   }
+  .input-field{
+    text-align: center;
+  }
 }
 
 @media only screen and (max-width : 600px) {
@@ -615,6 +627,9 @@ p {
     padding-left: 5px;
     padding-right: 5px;
     margin: 5px;
+  }
+  .input-field{
+    text-align: center;
   }
 }
 
@@ -702,6 +717,8 @@ ul li ul li {
 button.btn-link.btn{
     /*background-color: red;*/
 }
+
+
 
 /*ul li:hover > ul,*/
 /*ul li:focus-within > ul, !* this is the line we add *!*/
