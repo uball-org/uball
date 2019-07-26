@@ -3,7 +3,7 @@
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head th:replace="partials/head :: head('Admin Dashboard')">
 </head>
-<main style="height: 100%; background-size: cover; background-image: url('img/background-9.jpg')" >
+<body style="height: 100%; background-size: cover; background-image: url('img/background-5.jpg')" >
 
 <nav th:replace="partials/navbar :: nav"></nav>
 <main>
@@ -145,35 +145,35 @@
             </div>
 
 
-            <div class="card">
+            <div class="header-shadow" style="padding: 1em;">
                 <div class="card-content center">
             <form th:action="@{/admindashboard/updatepoints}" method="post">
-                <h4 class="center-align blue-grey-text">Group 4</h4>
+                <h4 class="center-align white-text">Group 4</h4>
                 <br/>
                 <div class="center">
                     <table class="responsive-table centered highlight">
                         <thead>
                         <tr>
                             <th></th>
-                            <th>Player</th>
-                            <th>Machine</th>
-                            <th>Score</th>
-                            <th style="text-align: right;" th:if="${#httpSession.getAttribute('isAdmin')}">Points For Place</th>
+                            <th class="white-text">Player</th>
+                            <th class="white-text">Machine</th>
+                            <th class="white-text">Score</th>
+                            <th style="text-align: right;" th:if="${#httpSession.getAttribute('isAdmin')}" class="white-text">Points For Place</th>
                         </tr>
                         </thead>
                         <tbody>
                         <th:block th:each="scored : ${scores4}">
                             <tr>
-                                <td th:text="${scores4.indexOf(scored) +1}"></td>
-                                <td th:text="${scored.getUser().username}"></td>
-                                <td th:text="${scored.getMachine().name}"></td>
-                                <td th:text="${scored.score}"></td>
+                                <td th:text="${scores4.indexOf(scored) +1}" class="white-text"></td>
+                                <td th:text="${scored.getUser().username}" class="white-text"></td>
+                                <td th:text="${scored.getMachine().name}" class="white-text"></td>
+                                <td th:text="${scored.score}" class="white-text"></td>
                                 <td>
                                     <div style="margin: 0; text-align: right;" class="input-field" th:if="${#httpSession.getAttribute('isAdmin')}">
                                         <input style="width: 13%;" th:placeholder="${scored.getUser().id}" th:value="${scored.getUser().id}"
-                                               name="user" type="text" class="validate" th:readonly="readonly"/>
+                                               name="user" type="text" class="validate white-text" th:readonly="readonly"/>
                                         <input style="width: 13%;" th:placeholder="${scored.getUser().points}" name="points" type="text"
-                                               class="validate"/>
+                                               class="validate white-text"/>
                                       </div>
                                 </td>
                             </tr>
@@ -182,7 +182,7 @@
                     </table>
                 </div>
                 <br/>
-                <button th:if="${#httpSession.getAttribute('isAdmin')}" type="submit" class="btn btn-primary mt-1 light-blue darken-2">
+                <button th:if="${#httpSession.getAttribute('isAdmin')}" type="submit" class="btn pulse btn-primary mt-1 light-blue darken-2">
                     Submit Final Scores
                 </button>
             </form>
