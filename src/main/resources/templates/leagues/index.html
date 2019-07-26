@@ -31,9 +31,9 @@
             <td th:text="${league.id}">League ID</td>
             <td th:text="${league.name}">Name</td>
             <td>
-                <a th:href="@{'/leagues/' + ${league.id} +'/edit'}">Edit</a>
+                <a class="btn btn-small light-blue darken-2 center" th:href="@{'/leagues/' + ${league.id} +'/edit'}">Edit</a>
                 &nbsp;&nbsp;&nbsp;
-                <a th:href="@{'/leagues/' + ${league.id} + '/delete'}">Delete</a>
+                <a class="btn btn-small red center" th:href="@{'/leagues/' + ${league.id} + '/delete'}">Delete</a>
             </td>
         </tr>
 
