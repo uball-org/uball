@@ -34,9 +34,9 @@
                 <td th:text="${machine.id}">Product ID</td>
                 <td th:text="${machine.name}">Name</td>
                 <td>
-                    <a th:href="@{'/machines/' + ${machine.id} +'/edit'}">Edit</a>
-                    &nbsp;&nbsp;&nbsp;
-                    <a th:href="@{'/machines/' + ${machine.id} + '/delete'}">Delete</a>
+                    <a class="btn btn-small light-blue darken-2 center" th:href="@{'/machines/' + ${machine.id} +'/edit'}">Edit</a>
+                    &nbsp;&nbsp;
+                    <a class="btn btn-small red center" th:href="@{'/machines/' + ${machine.id} + '/delete'}">Delete</a>
                 </td>
             </tr>
 

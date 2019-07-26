@@ -31,9 +31,9 @@
             <td th:text="${group.id}">Group ID</td>
             <td th:text="${group.name}">Name</td>
             <td>
-                <a th:href="@{'/groups/' + ${group.id} +'/edit'}">Edit</a>
-                &nbsp;&nbsp;&nbsp;
-                <a th:href="@{'/groups/' + ${group.id} + '/delete'}">Delete</a>
+                <a class=" btn btn-small light-blue darken-2 center" th:href="@{'/groups/' + ${group.id} +'/edit'}">Edit</a>
+
+                <a class="btn btn-small red center" th:href="@{'/groups/' + ${group.id} + '/delete'}">Delete</a>
             </td>
         </tr>
         </tbody>
