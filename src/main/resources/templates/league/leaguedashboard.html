@@ -4,129 +4,71 @@
 <body class="grey lighten-2">
 <nav th:replace="partials/navbar :: nav"></nav>
 
-<main style=" height: 100%; background-size: cover; background-image: url('img/backgroundwave.jpg')" >
-<div>
-<!--    <div class=" parallax-container " >-->
-        <h3 class="center-align">League View</h3>
-            <div class="row" style="margin-top: 2rem;">
-                <table class=" col m6 s12 offset-m3 responsive-table highlight">
-                    <thead>
-                    <tr>
-                        <th>Profile</th>
-                        <th>Place</th>
-                        <th>Points</th>
-                        <th>Name</th>
-                        <th>Gender</th>
-                        <th>League</th>
-                    </tr>
-                    </thead>
-                    <tbody class="collection">
-                    <th:block th:each="user : ${users}">
-                        <tr>
-                            <td>
-                                <img src="img/logo.png" alt="" class="circle"  style="width: 30px; height: 30px;"/>
-                            </td>
-                            <td>
-                                <span>#</span><span th:text="${users.indexOf(user)} + 1"></span><span> Place</span>
-                            </td>
-                            <td th:text="${user.points}">points</td>
-                            <td th:text="${user.username}">Name</td>
-                            <td th:text="${user.gender}">Gender</td>
-                            <td th:text="${user.getLeague().name}">League</td>
-                        </tr>
-                    </th:block>
-                    </tbody>
-                </table>
-            </div>
-<!--    </div>-->
-    <div>
-    <div class="center">
-        <h4>Live Standings</h4>
-        <a class="waves-effect waves-light btn light-blue darken-2" th:href="@{'/weeks-scores'}">Let's See</a>
-        <br />
-    </div>
-    <br />
-
-    <div align="center">
-    </div>
-        <div class="container" style= "width: 90%;">
-            <div class="row" style="position: inherit;">
-                <div class="card">
-                <div class="card-tabs" style="height: 20px;">
-                    <ul class="tabs tabs-fixed-width">
-                        <li class="tab"><a href="#SAPL">San Antonio Pinball League</a></li>
-                        <li class="tab"><a href="#Belles_Chimes" class="active">Belles and Chimes </a></li>
-                    </ul>
+<main>
+    <div id="index-banner" class="parallax-container center">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <div class="row center">
+                    <h3 class="header col s12 light ">League View</h3>
                 </div>
-
-                <div class="card-content " >
-                    <div id="SAPL">
-                        <div align="center">
-                            <br />
-                            <h4>SAPL Stats</h4>
-                            <br/>
-                            <table class="responsive-table centered highlight">
-                                <thead>
-                                <tr>
-                                    <th>Place</th>
-                                    <th>Name</th>
-                                    <th>Machine Name</th>
-                                    <th>Score</th>
-                                    <th>Date</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <th:block>
-                                    <tr th:each="oneLS : ${oneLeagueScores}">
-                                        <td># <span th:text="${oneLeagueScores.indexOf(oneLS) + 1 } "></span> Place</td>
-                                        <td><span th:text="${oneLS.getUser().username}"></span></td>
-                                        <td><span th:text="${oneLS.getMachine().name}"></span></td>
-                                        <td><span th:text="${oneLS.score}"></span></td>
-                                        <td th:text="${oneLS.addedscoredate}"></td>
-                                    </tr>
-                                </th:block>
-                                </tbody>
-                            </table>
-                        </div>
-                        <br />
+                <div class="row center " style="margin-top: 2rem;">
+                    <div class="col m6">
+                        <a class="btn-large waves-effect waves-light red accent-3”" th:href="@{'/leagues/SAPL'}">SAPL</a>
                     </div>
-
-                    <div id="Belles_Chimes">
-                        <div align="center">
-                            <br />
-                            <h4>Belles and Chimes Stats</h4>
-                            <br/>
-                            <table class="responsive-table centered highlight">
-                                <thead>
-                                <tr>
-                                    <th>Place</th>
-                                    <th>Name</th>
-                                    <th>Machine Name</th>
-                                    <th>Score</th>
-                                    <th>Date</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <th:block>
-                                    <tr th:each="twoLS : ${twoLeagueScores}">
-                                        <td># <span th:text="${twoLeagueScores.indexOf(twoLS) + 1 } "></span> Place</td>
-                                        <td><span th:text="${twoLS.getUser().username}"></span></td>
-                                        <td><span th:text="${twoLS.getMachine().name}"></span></td>
-                                        <td th:text="${twoLS.score}"></td>
-                                        <td th:text="${twoLS.addedscoredate}"></td>
-                                    </tr>
-                                </th:block>
-                                </tbody>
-                            </table>
-                        </div>
-                        <br />
+                    <div class="col m6">
+                        <a class="btn-large  waves-effect waves-light red accent-3”" th:href="@{'/leagues/Belles'}">Belles</a>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="parallax"><img src="img/pinballabstract1.jpg" alt="Unsplashed background img 1" class="header-img"/></div>
     </div>
-</div>
-</div>
+
+    <div class="container">
+        <h3 class="center-align">Top Rankings</h3>
+        <div class="row" style="margin-top: 2rem;">
+            <table class=" card-panel indigo lighten-5  responsive-table highlight z-depth-5 striped highlight">
+                <thead>
+                <tr>
+                    <th>Profile</th>
+                    <th>Place</th>
+                    <th>Points</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>League</th>
+                </tr>
+                </thead>
+                <tbody class="collection">
+                <th:block th:each="user : ${users}">
+                    <tr>
+                        <td>
+                            <img src="img/logo.png" alt="" class="circle"  style="width: 30px; height: 30px;"/>
+                        </td>
+                        <td>
+                            <span>#</span><span th:text="${users.indexOf(user)} + 1"></span><span> Place</span>
+                        </td>
+                        <td th:text="${user.points}">points</td>
+                        <td th:text="${user.username}">Name</td>
+                        <td th:text="${user.gender}">Gender</td>
+                        <td th:text="${user.getLeague().name}">League</td>
+                    </tr>
+                </th:block>
+                </tbody>
+            </table>
+        </div>
+    </div> <!--User Stats-->
+    <!--bottom paralax -->
+    <div class="parallax-container valign-wrapper">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <div class="row center"><!--Live Standings-->
+                    <h1 class="header col s12 light"><a class="btn-large pulse waves-effect waves-light red accent-3”" th:href="@{'/weeks-scores'}">Live Standings</a> </h1>
+                </div>
+            </div>
+        </div>
+        <div class="parallax"><img src="img/pinballindex.jpg" alt="Unsplashed background img 2"/></div>
+    </div>
+
 </main>
 
 
