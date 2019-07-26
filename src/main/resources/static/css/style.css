@@ -53,6 +53,10 @@ nav {
   font-family: 'Bungee', cursive;
 }
 
+.about-body{
+  background-color: #212529;
+}
+
 /*.tab .tabs {*/
 /*  font-family: 'Bungee', cursive;*/
 /*}*/
