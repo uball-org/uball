@@ -72,7 +72,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/leagues/create",
                         "/leagues/{id}/edit",
                         "/leagues/{id}/delete",
-                        "/leagues"
+                        "/leagues",
+                        "/leagues/SAPL",
+                        "/leagues/Belles",
+                        "/leagues/Three",
+                        "/leagues/Four"
                 )
                 .authenticated()
         ;

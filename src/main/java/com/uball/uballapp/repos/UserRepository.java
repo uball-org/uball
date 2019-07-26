@@ -23,10 +23,9 @@ public interface UserRepository extends CrudRepository <User, Long> {
     User getUserById(long id);
 
     //    Find all who are in one league by league id
-    @Query(value = "select id, concat(first_name, ' ', last_name) as Name, " +
-            "       gender as Gender, points as Total_Points from users where league_id in (" +
+    @Query(value = "select * from users where league_id in (" +
             "    select id from leagues where id = ?1)", nativeQuery = true)
-    User findByLeague(long id);
+    List<User> findByLeague(long id);
 
     //    Spring made method
     User findAllByLeague(League league);
@@ -39,10 +38,6 @@ public interface UserRepository extends CrudRepository <User, Long> {
             "limit 4", nativeQuery = true)
     List<User> findTop4();
 
-
-    /**ToDo: Start here
-     * working on League page data**/
-    /**  Top 4 all times #*/
     //  Top 4 of all time users
     @Query(value = "select distinct u.id, u.*" +
             " from users u" +
@@ -50,7 +45,7 @@ public interface UserRepository extends CrudRepository <User, Long> {
             " order by u.points desc" +
             " limit 4", nativeQuery = true)
     List<User> findTop4ScoringUsers();
-    /**Top All time scorers by league(id)*/
+
     //  Top 4 of users by league(id)
     @Query(value = "select u.*" +
             " from users u" +
@@ -60,9 +55,6 @@ public interface UserRepository extends CrudRepository <User, Long> {
             " order by s.score desc " +
             " limit 4", nativeQuery = true)
     List<User> Top4ScoringUserByLeague(long id);
-    /**ToDo: End here
-     * working on League page data**/
-
 
     //  update total points for user (ADDING)
     @Transactional

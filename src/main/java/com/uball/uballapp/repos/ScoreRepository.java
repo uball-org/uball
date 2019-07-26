@@ -12,26 +12,20 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 @Repository
 public interface ScoreRepository extends CrudRepository <Score, Long> {
 
-    List <Score> findDistinctTopByMachineOrderByScore(Machine machine);
-    /**ToDo: Start here
-     * working on League page data**/
-    /**  Top 4 all times #*/
-
 //  Top 4 of all time scores
-    @Query(value = "select s.* " +
-            " from users u" +
-            " join scores s on u.id = s.user_id" +
-            " order by s.score desc" +
-            " limit 4", nativeQuery = true)
-    List<Score> findTop4Scores();
+    @Query(value = "select s.*, m.name " +
+            " from scores s" +
+            " join machines m on s.machine_id = m.id" +
+            " join users u on u.id = s.user_id" +
+            " where league_id = ?1 order by s.score desc" +
+            " limit 10", nativeQuery = true)
+    List<Score> findTop10Scores(long id);
 
-    /**Top All time scorers by league(id)*/
 // Top 4 of scores by league(id)
     @Query(value = "select s.* " +
             "from  scores s " +
@@ -41,20 +35,10 @@ public interface ScoreRepository extends CrudRepository <Score, Long> {
             " limit 4", nativeQuery = true)
     List<Score> Top4ScoresByLeague(long id);
 
-/**ToDo: End here
- * working on League page data**/
-
-
     List<Score> findAllByUser_Id(long user_id);
 
 
     List<Score> findDistinctByAddedscoredateAndScore( LocalDate addedscoredate, long score);
-
-    Score findByUserAndMachine(User user, Machine machine);
-
-//    @Modifying
-//    @Query(value = "update scores SET score = ?1 WHERE machine_id = ?2 AND user_id = ?3 AND score = 0", nativeQuery = true)
-//    void updateScore( Long score, Long machineId, Long userId);
 
     @Transactional
     @Modifying
@@ -77,5 +61,12 @@ public interface ScoreRepository extends CrudRepository <Score, Long> {
             "where u.id = ?1  " +
             "order by s.score desc", nativeQuery = true)
     List<Score> findTopScoresOnMachines(long id);
+
+    @Query(value = "select distinct m.name, s.* from scores s " +
+            "join machines m on m.id = s.machine_id " +
+            "join users u on s.user_id = u.id " +
+            "where u.league_id = ?1 " +
+            "order by m.name, s.score desc", nativeQuery = true)
+    List<Score> findTopsScoresOnMachines(long id);
 
 }

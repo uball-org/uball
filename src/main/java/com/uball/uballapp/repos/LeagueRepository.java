@@ -15,10 +15,6 @@ public interface LeagueRepository extends CrudRepository <League, Long> {
 
     List<League> findAllById(long id);
 
-
-/**ToDo: Start here
- * working on League page data**/
-
     /**  Top 4 all times #*/
 //  Top 4 of all time leagues
     @Query(value = "select l.*" +
@@ -29,8 +25,6 @@ public interface LeagueRepository extends CrudRepository <League, Long> {
             " limit 4 ", nativeQuery = true)
     List<League> findTop4ScoringLeagues();
 
-/**ToDo: End here
- * working on League page data**/
 
 
 
