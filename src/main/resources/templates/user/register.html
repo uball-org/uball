@@ -8,41 +8,41 @@
 <h2 class="center-align">Register</h2>
 
 <main class="container">
-    <div class="card">
-        <div class="card-content">
+    <div class="header-shadow" style="padding: .5em;">
+        <div class="card-content white-text center">
     <form th:action="@{/register}" method="POST" th:object="${user}">
-        <label for="username">Username</label>
+        <label for="username" class="white-text">Username</label>
         <br/>
         <input id="username" th:field="*{username}"/>
         <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}" style="color: red;"/>
         <br/>
-        <label for="firstName">First Name</label>
+        <label for="firstName" class="white-text">First Name</label>
         <br/>
         <input id="firstName" th:field="*{firstName}"/>
         <p th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" style="color: red;"/>
         <br/>
-        <label for="lastName">Last Name</label>
+        <label for="lastName" class="white-text">Last Name</label>
         <br/>
         <input id="lastName" th:field="*{lastName}"/>
         <p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" style="color: red;"/>
         <br/>
-        <label for="password">Password</label>
+        <label for="password" class="white-text">Password</label>
         <br/>
         <input id="password" type="password" th:field="*{password}"/>
         <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" style="color: red;"/>
         <br/>
-        <label for="email">Email</label>
+        <label for="email" class="white-text">Email</label>
         <br/>
         <input id="email" th:field="*{email}"/>
         <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color: red;"/>
         <br/>
-        <label for="DOB">Date of Birth</label>
+        <label for="DOB" class="white-text">Date of Birth</label>
         <br/>
         <input id="DOB" type="date" th:field="*{DOB}"/>
         <p th:if="${#fields.hasErrors('DOB')}" th:errors="*{DOB}" style="color: red;"/>
         <br/>
 
-        <label>Gender</label>
+        <label class="white-text">Gender</label>
         <select class="browser-default" th:field="*{gender}">
             <option value="0">Choose your option</option>
             <option value="M" th:text="M"></option>
@@ -50,7 +50,7 @@
         </select>
         <br/>
 
-        <label>League</label>
+        <label class="white-text">League</label>
         <select class="browser-default" th:field="*{league}">
             <option value="0">Choose your option</option>
             <option value="1" th:text="SAPL"></option>
@@ -58,7 +58,7 @@
         </select>
         <br/>
         <div class="center-align">
-            <button type="submit" class="btn btn-primary light-blue darken-2">Register</button>
+            <button type="submit" class="btn pulse waves-effect waves-light red accent-3">Register</button>
         </div>
         <br/>
     </form>
