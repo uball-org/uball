@@ -3,7 +3,7 @@
       xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/head :: head('Create Machines')">
 </head>
-<body class="grey lighten-2">
+<body class="gradient-45deg-indigo-purple">
     <nav th:replace="partials/navbar :: nav"></nav>
 
 
@@ -12,27 +12,27 @@
 
         <h1 class="center">Machines List</h1>
         <div class="center-align">
-            <a class="waves-effect waves-light btn center light-blue darken-2" th:href="@{'/machines/create'}">Create New Machine</a>
+            <a class="waves-effect waves-light btn pulse center light-blue darken-2" th:href="@{'/machines/create'}">Create New Machine</a>
         </div>
         <br/>
 
-        <div class="card">
+        <div class="header-shadow" style="padding: 1em;">
             <div class="card-content">
 
     <div align="center">
 
-        <table border="1" cellpadding="10">
+        <table border="1" cellpadding="10" class="highlight">
             <thead>
             <tr>
-                <th>Machine ID</th>
-                <th>Name</th>
-                <th>Action</th>
+                <th class="white-text">Machine ID</th>
+                <th class="white-text">Name</th>
+                <th class="white-text">Action</th>
             </tr>
             </thead>
             <tbody>
             <tr th:each="machine : ${machines}">
-                <td th:text="${machine.id}">Product ID</td>
-                <td th:text="${machine.name}">Name</td>
+                <td th:text="${machine.id}" class="white-text">Product ID</td>
+                <td th:text="${machine.name}" class="white-text">Name</td>
                 <td>
                     <a class="btn btn-small light-blue darken-2 center" th:href="@{'/machines/' + ${machine.id} +'/edit'}">Edit</a>
                     &nbsp;&nbsp;

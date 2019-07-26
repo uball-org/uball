@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/head :: head('Create League')">
 </head>
-<body class="grey lighten-2">
+<body class="gradient-45deg-indigo-purple">
     <nav th:replace="partials/navbar :: nav"></nav>
 
 
@@ -10,13 +10,13 @@
 
         <h3 class="center">Create New League</h3>
 
-        <div class="card">
+        <div class="header-shadow" style="padding: 1em;">
             <div class="card-content">
 
             <form  th:action="@{/leagues/create}" method="POST" th:object="${leaguesForm}">
 
                 <div class="form-group">
-                    <label for="name">League Name</label>
+                    <label for="name" class="white-text">League Name</label>
                     <input id="name" type="text" th:field="*{name}" />
                 </div>
                 <div class="center-align">
