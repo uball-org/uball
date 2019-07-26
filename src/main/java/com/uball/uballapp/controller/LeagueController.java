@@ -1,10 +1,8 @@
 package com.uball.uballapp.controller;
 
-import com.uball.uballapp.models.Group;
 import com.uball.uballapp.models.League;
 import com.uball.uballapp.models.User;
-import com.uball.uballapp.repos.GroupRepository;
-import com.uball.uballapp.repos.LeagueRepository;
+import com.uball.uballapp.repos.*;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,17 +12,50 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-public class LeagueController {
+public class LeagueController <leagueRepository>{
+    private UserRepository userDao;
+    private MachineRepository machineDao;
+    private ScoreRepository scoreDao;
     private LeagueRepository leagueDao;
 
 
-    public LeagueController(LeagueRepository leagueDao) {
+    public LeagueController(UserRepository userDao, MachineRepository machineDao, LeagueRepository leagueDao, ScoreRepository scoreDao) {
+        this.userDao = userDao;
+        this.machineDao = machineDao;
+        this.scoreDao = scoreDao;
         this.leagueDao = leagueDao;
     }
 
-    /**
-     * ounces URI accessed, displays machines page
-     */
+    @GetMapping("/leagues")
+    public String all(Model model){
+
+        User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        long userId = userSession.getId();
+        String username = userSession.getUsername();
+
+        model.addAttribute("userName", username);
+        model.addAttribute("users",userDao.findTop4ScoringUsers());
+        model.addAttribute("oneLeagueScores",scoreDao.Top4ScoresByLeague(1));
+        model.addAttribute("twoLeagueScores",scoreDao.Top4ScoresByLeague(2));
+
+        return "league/leaguedashboard";
+    }
+
+    @GetMapping("/leagues/SAPL")
+    public String league1(Model model){
+
+        User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        long userId = userSession.getId();
+        String username = userSession.getUsername();
+
+        model.addAttribute("userName", username);
+        model.addAttribute("users",userDao.findTop4ScoringUsers());
+        model.addAttribute("oneLeagueScores",scoreDao.Top4ScoresByLeague(1));
+        model.addAttribute("twoLeagueScores",scoreDao.Top4ScoresByLeague(2));
+
+        return "league/leaguesaplview";
+    }
+
     @GetMapping("/createleague")
     public String index(Model model) {
 
@@ -42,9 +73,6 @@ public class LeagueController {
 
     }
 
-    /**
-     * returns create machine form
-     */
     @GetMapping("/leagues/create")
     public String create(Model model) {
 
@@ -60,9 +88,6 @@ public class LeagueController {
         }
     }
 
-    /**
-     * accessed through create machine form and inserts into DB before redirecting to machines index page
-     */
     @PostMapping("/leagues/create")
     public String insert(@ModelAttribute League league) {
 
@@ -78,9 +103,6 @@ public class LeagueController {
         }
     }
 
-    /**
-     * when URI accessed from machines index page, displays edit machine page by id
-     */
     @GetMapping("/leagues/{id}/edit")
     public String edit(@PathVariable long id, Model model) {
 
@@ -96,9 +118,6 @@ public class LeagueController {
         }
     }
 
-    /**
-     * accessed through edit machine form and inserts into DB before redirecting to machines index page
-     */
     @PostMapping("/leagues/{id}/edit")
     public String update(@PathVariable long id, @ModelAttribute League league) {
 

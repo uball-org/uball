@@ -2,7 +2,6 @@ package com.uball.uballapp.controller;
 
 
 import com.uball.uballapp.models.League;
-import com.uball.uballapp.repos.LeagueRepository;
 import com.uball.uballapp.repos.MachineRepository;
 import com.uball.uballapp.repos.ScoreRepository;
 
@@ -21,21 +20,16 @@ import javax.validation.Valid;
 import java.util.Date;
 
 @Controller
-public class UserController<leagueRepository> {
+public class UserController {
     private UserRepository userDao;
     private PasswordEncoder passwordEncoder;
-    private MachineRepository machineDao;
     private ScoreRepository scoreDao;
-    private LeagueRepository leagueDoa;
 
 
-    public UserController(UserRepository userDao, PasswordEncoder passwordEncoder, MachineRepository machineDao, LeagueRepository leagueDoa, ScoreRepository scoreDao) {
+    public UserController(UserRepository userDao, PasswordEncoder passwordEncoder, MachineRepository machineDao, ScoreRepository scoreDao) {
         this.userDao = userDao;
         this.passwordEncoder = passwordEncoder;
-        this.machineDao = machineDao;
         this.scoreDao = scoreDao;
-        this.leagueDoa = leagueDoa;
-
     }
 
     @GetMapping("/register")
@@ -68,21 +62,6 @@ public class UserController<leagueRepository> {
         user.setPassword(hash);
         userDao.save(user);
         return "redirect:/login";
-    }
-
-    @GetMapping("/leagues")
-    public String all(Model model){
-
-        User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        long userId = userSession.getId();
-        String username = userSession.getUsername();
-
-        model.addAttribute("userName", username);
-        model.addAttribute("users",userDao.findTop4ScoringUsers());
-        model.addAttribute("oneLeagueScores",scoreDao.Top4ScoresByLeague(1));
-        model.addAttribute("twoLeagueScores",scoreDao.Top4ScoresByLeague(2));
-
-        return "league/leaguedashboard";
     }
 
     @GetMapping("/userprofile")

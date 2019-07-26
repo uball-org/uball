@@ -19,8 +19,7 @@ import java.util.List;
 public interface ScoreRepository extends CrudRepository <Score, Long> {
 
     List <Score> findDistinctTopByMachineOrderByScore(Machine machine);
-    /**ToDo: Start here
-     * working on League page data**/
+
     /**  Top 4 all times #*/
 
 //  Top 4 of all time scores
@@ -41,9 +40,7 @@ public interface ScoreRepository extends CrudRepository <Score, Long> {
             " limit 4", nativeQuery = true)
     List<Score> Top4ScoresByLeague(long id);
 
-/**ToDo: End here
- * working on League page data**/
-
+ /** working on League page data**/
 
     List<Score> findAllByUser_Id(long user_id);
 
@@ -51,10 +48,6 @@ public interface ScoreRepository extends CrudRepository <Score, Long> {
     List<Score> findDistinctByAddedscoredateAndScore( LocalDate addedscoredate, long score);
 
     Score findByUserAndMachine(User user, Machine machine);
-
-//    @Modifying
-//    @Query(value = "update scores SET score = ?1 WHERE machine_id = ?2 AND user_id = ?3 AND score = 0", nativeQuery = true)
-//    void updateScore( Long score, Long machineId, Long userId);
 
     @Transactional
     @Modifying
