@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="partials/head :: head('League Dashboard')"></head>
+<body class="grey lighten-2">
+<nav th:replace="partials/navbar :: nav"></nav>
+
+<div class="container" style="width: 70%;">
+    <h4 class="center-align">League Members</h4>
+        <table class=" col m6 s12 offset-m3 responsive-table highlight">
+            <thead>
+            <tr>
+                <th></th>
+                <th>User Name</th>
+                <th>Gender</th>
+                <th>Points</th>
+            </tr>
+            </thead>
+            <tbody>
+            <th:block th:each="all : ${Bellesall}">
+                <tr>
+                    <td th:text="${Bellesall.indexOf(all) + 1 }"></td>
+                    <td th:text="${all.username}"></td>
+                    <td th:text="${all.gender}"></td>
+                    <td th:text="${all.points}"></td>
+                </tr>
+            </th:block>
+            </tbody>
+        </table>
+</div>
+
+<br />
+<br />
+
+<div class="container" style="width: 90%;">
+    <div class="row" style="position: inherit;">
+        <div>
+            <div class="card-tabs" style="height: 20px;">
+                <ul class="tabs tabs-fixed-width">
+                    <li class="tab"><a href="#Machine">Top Machine Scores</a></li>
+                    <li class="tab"><a href="#LL" class="active">League Top Scores </a></li>
+                </ul>
+            </div>
+
+            <div>
+                <div id="Machine">
+                    <div align="center">
+                        <br/>
+                        <h4 class="center-align">Top Machine Scores</h4>
+                        <br/>
+                        <table class="responsive-table centered striped">
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <th>Machine Name</th>
+                                <th>Gender</th>
+                                <th>Name</th>
+                                <th>Date</th>
+                                <th>Score</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <th:block>
+                                <tr th:each="topM : ${topsMachinesScores}">
+                                    <td th:text="${topsMachinesScores.indexOf(topM) + 1 }"></td>
+                                    <td th:text="${topM.getMachine().name}"></td>
+                                    <td th:text="${topM.getUser().gender}"></td>
+                                    <td th:text="${topM.getUser().username}"></td>
+                                    <td th:text="${#dates.format(topM.date, 'dd-MMM-yyyy')}"></td>
+                                    <td th:text="${topM.score}"></td>
+                                </tr>
+                            </th:block>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br/>
+                </div>
+
+                <div id="LL">
+                    <div align="center">
+                        <br/>
+                        <h4 class="center-align">League Top Scores</h4>
+                        <br/>
+                        <table class="responsive-table centered striped">
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <th>User Name</th>
+                                <th>Gender</th>
+                                <th>Machine</th>
+                                <th>Date</th>
+                                <th>Score</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <th:block>
+                                <tr th:each="topBelle : ${topTenScores}">
+                                    <td th:text="${topTenScores.indexOf(topBelle) + 1 }"></td>
+                                    <td th:text="${topBelle.getUser().username}"></td>
+                                    <td th:text="${topBelle.getUser().gender}"></td>
+                                    <td th:text="${topBelle.getMachine().name}"></td>
+                                    <td th:text="${#dates.format(topBelle.date, 'dd-MMM-yyyy')}"></td>
+                                    <td th:text="${topBelle.score}"></td>
+                                </tr>
+                            </th:block>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <br/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div th:replace="partials/footer :: footer"></div>
+    <th:block th:include="partials/footer :: scripts"/>
+</footer>
+</body>
+</html>

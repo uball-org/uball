@@ -49,11 +49,60 @@ public class LeagueController <leagueRepository>{
         String username = userSession.getUsername();
 
         model.addAttribute("userName", username);
+        model.addAttribute("league", leagueDao.findOne(1L));
         model.addAttribute("SAPLall",userDao.findByLeague(1L));
         model.addAttribute("topsMachinesScores",scoreDao.findTopsScoresOnMachines(1L));
         model.addAttribute("topTenScores",scoreDao.findTop10Scores(1L));
 
         return "league/leaguesaplview";
+    }
+
+    @GetMapping("/leagues/SAPL")
+    public String league2(Model model){
+
+        User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        long userId = userSession.getId();
+        String username = userSession.getUsername();
+
+        model.addAttribute("userName", username);
+        model.addAttribute("league", leagueDao.findOne(2L));
+        model.addAttribute("Bellesall",userDao.findByLeague(2L));
+        model.addAttribute("topsMachinesScores",scoreDao.findTopsScoresOnMachines(2L));
+        model.addAttribute("topTenScores",scoreDao.findTop10Scores(2L));
+
+        return "league/leaguebellesview";
+    }
+
+    @GetMapping("/leagues/Three")
+    public String league3(Model model){
+
+        User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        long userId = userSession.getId();
+        String username = userSession.getUsername();
+
+        model.addAttribute("userName", username);
+        model.addAttribute("league", leagueDao.findOne(3L));
+        model.addAttribute("Threeall",userDao.findByLeague(3L));
+        model.addAttribute("topsMachinesScores",scoreDao.findTopsScoresOnMachines(3L));
+        model.addAttribute("topTenScores",scoreDao.findTop10Scores(3L));
+
+        return "league/leaguebellesview";
+    }
+
+    @GetMapping("/leagues/Four")
+    public String league4(Model model){
+
+        User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        long userId = userSession.getId();
+        String username = userSession.getUsername();
+
+        model.addAttribute("userName", username);
+        model.addAttribute("league", leagueDao.findOne(4L));
+        model.addAttribute("Fourall",userDao.findByLeague(4L));
+        model.addAttribute("topsMachinesScores",scoreDao.findTopsScoresOnMachines(4L));
+        model.addAttribute("topTenScores",scoreDao.findTop10Scores(4L));
+
+        return "league/leaguebellesview";
     }
 
     @GetMapping("/createleague")
