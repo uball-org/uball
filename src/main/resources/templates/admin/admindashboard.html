@@ -8,97 +8,62 @@
 <nav th:replace="partials/navbar :: nav"></nav>
 <main style=" height: 100%; background-size: cover; background-image: url('img/backgroundwave4.jpg')" >
 
-    <h2 class="center">Admin</h2>
+    <h2 class="center">Admin, </h2>
 
     <div class="container">
-
 <!--            <div class="col s12 m12 l12">-->
 <!--                <img src="img/pinball._800x600.png/" style="height: 20rem; width: 100%;" alt="Unsplashed background img 1"-->
 <!--                                            class="admin-img responsive-img"/></div>-->
-
         <div class="row">
-
-
             <div class="col s12 m12 l12">
                     <div class="row center">
-                        <th:block th:each="user : ${users}">
-
-                            <div class="col s12 m4 l4" >
-                                <div class="card-panel gradient-45deg-light-blue-cyan center">
-                                    <div class="card-content center">
-                                        <span class="card-title grey-text text-darken-4">
-                                             <i class="material-icons">accessibility</i><span th:text="${user.firstName + ' ' + user.lastName}"></span>
-                                        </span>
-                                        <p>
-                                            <i class="material-icons">perm_identity</i> <span th:text="${user.username}"></span></p>
-                                        <p>
-                                            <i class="material-icons">email</i> <span th:text="${user.email}"></span></p>
-                                        <p>
-                                            <i class="material-icons">wc</i> <span th:text=" ${user.gender}"></span></p>
-                                        <p>
-                                            <span><img src="/img/logo.png" alt="pinball logo" style="width: 32px; height: 32px"/> </span>
-                                            <span  th:text="${user.getLeague().name}"></span></p>
-                                         <p>
-                                            <i class="material-icons">import_contacts</i> <span  th:text="${#dates.format(user.DOB, 'dd-MMM-yyyy')}" ></span></p>
-
-                                    </div>
-                                    <div class="row center">
-                                        <a th:href="@{'/edituser/' + ${user.id}}" id="edit-button"
-                                           class="btn-floating activator btn-move-up waves-effect waves-light red accent-2 z-depth-4"><i class="material-icons">edit</i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </th:block>
-
+                            <table class="responsive-table centered highlight">
+                                <thead>
+                                <tr>
+                                    <th>ID#</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Gender</th>
+                                    <th>League</th>
+                                    <th>Date of Birth</th>
+                                    <th>Manage</th>
+                                    <th>Admin</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <th:block th:each="user : ${users}">
+                                    <tr>
+                                        <td th:text="${user.id}"></td>
+                                        <td th:text="${user.firstName + ' ' + user.lastName}"></td>
+                                        <td th:text="${user.email}">theiremail@live.com</td>
+                                        <td th:text="${user.gender}"></td>
+                                        <td th:text="${user.getLeague().name}"></td>
+                                        <td th:text="${#dates.format(user.DOB, 'dd-MMM-yyyy')}"></td>
+                                        <td>
+                                            <a class="btn btn-small light-blue darken-2 center" th:hidden="${user.id}"
+                                               th:href="@{'/edituser/'+${user.id}}">
+                                                <i class="material-icons">edit</i>
+                                            </a>
+                                            <a class="btn btn-small red center" th:hidden="${user.id}"
+                                               th:href="@{'/user/' +${user.id}+ '/delete'}">
+                                                <i class="material-icons">delete_forever</i>
+                                            </a>
+                                        </td>
+                                        <td th:if="${user.isAdmin()}"><a
+                                                class="btn-floating waves-effect waves-light admin-mng-btns" th:hidden="${user.id}"
+                                                th:href="@{'/isNotAdmin/'+${user.id}}">
+                                            <i class="material-icons">clear</i>
+                                        </a></td>
+                                        <td th:if="${!user.isAdmin()}"><a
+                                                class="btn-floating waves-effect waves-light light-blue darken-2" th:hidden="${user.id}"
+                                                th:href="@{'/isAdmin/'+${user.id}}">
+                                            <i class="material-icons">add</i>
+                                        </a></td>
+                                    </tr>
+                                </th:block>
+                                </tbody>
+                            </table>
                     </div>
-                <!--<table class="responsive-table centered highlight">-->
-                    <!--<thead>-->
-                    <!--<tr>-->
-                        <!--<th>ID#</th>-->
-                        <!--<th>Name</th>-->
-                        <!--<th>Email</th>-->
-                        <!--<th>Gender</th>-->
-                        <!--<th>League</th>-->
-                        <!--<th>Date of Birth</th>-->
-                        <!--<th>Manage</th>-->
-                        <!--<th>Admin</th>-->
-                    <!--</tr>-->
-                    <!--</thead>-->
-                    <!--<tbody>-->
-                    <!--<th:block th:each="user : ${users}">-->
-                        <!--<tr>-->
-                            <!--<td th:text="${user.id}"></td>-->
-                            <!--<td th:text="${user.firstName + ' ' + user.lastName}"></td>-->
-                            <!--<td th:text="${user.email}">theiremail@live.com</td>-->
-                            <!--<td th:text="${user.gender}"></td>-->
-                            <!--<td th:text="${user.getLeague().name}"></td>-->
-                            <!--<td th:text="${#dates.format(user.DOB, 'dd-MMM-yyyy')}"></td>-->
-                            <!--<td>-->
-                                <!--<a class="btn btn-small light-blue darken-2 center" th:hidden="${user.id}"-->
-                                   <!--th:href="@{'/edituser/'+${user.id}}">-->
-                                    <!--<i class="material-icons">edit</i>-->
-                                <!--</a>-->
-                                <!--<a class="btn btn-small red center" th:hidden="${user.id}"-->
-                                   <!--th:href="@{'/user/' +${user.id}+ '/delete'}">-->
-                                    <!--<i class="material-icons">delete_forever</i>-->
-                                <!--</a>-->
-                            <!--</td>-->
-                            <!--<td th:if="${user.isAdmin()}"><a-->
-                                    <!--class="btn-floating waves-effect waves-light admin-mng-btns" th:hidden="${user.id}"-->
-                                    <!--th:href="@{'/isNotAdmin/'+${user.id}}">-->
-                                <!--<i class="material-icons">clear</i>-->
-                            <!--</a></td>-->
-                            <!--<td th:if="${!user.isAdmin()}"><a-->
-                                    <!--class="btn-floating waves-effect waves-light light-blue darken-2" th:hidden="${user.id}"-->
-                                    <!--th:href="@{'/isAdmin/'+${user.id}}">-->
-                                <!--<i class="material-icons">add</i>-->
-                            <!--</a></td>-->
-                        <!--</tr>-->
-                    <!--</th:block>-->
-                    <!--</tbody>-->
-
-
-                <!--</table>-->
             </div>
         </div>
 
