@@ -35,8 +35,8 @@ public class LeagueController <leagueRepository>{
 
         model.addAttribute("userName", username);
         model.addAttribute("users",userDao.findTop4ScoringUsers());
-        model.addAttribute("oneLeagueScores",scoreDao.Top4ScoresByLeague(1));
-        model.addAttribute("twoLeagueScores",scoreDao.Top4ScoresByLeague(2));
+        model.addAttribute("oneLeagueScores",scoreDao.Top4ScoresByLeague(1L));
+        model.addAttribute("twoLeagueScores",scoreDao.Top4ScoresByLeague(2L));
 
         return "league/leaguedashboard";
     }
@@ -49,9 +49,9 @@ public class LeagueController <leagueRepository>{
         String username = userSession.getUsername();
 
         model.addAttribute("userName", username);
-        model.addAttribute("users",userDao.findTop4ScoringUsers());
-        model.addAttribute("oneLeagueScores",scoreDao.Top4ScoresByLeague(1));
-        model.addAttribute("twoLeagueScores",scoreDao.Top4ScoresByLeague(2));
+        model.addAttribute("SAPLall",userDao.findByLeague(1L));
+        model.addAttribute("topsMachinesScores",scoreDao.findTopsScoresOnMachines(1L));
+        model.addAttribute("topTenScores",scoreDao.findTop10Scores(1L));
 
         return "league/leaguesaplview";
     }
