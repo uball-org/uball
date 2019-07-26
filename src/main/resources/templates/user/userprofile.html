@@ -18,14 +18,15 @@
                             <p class="white-text">
                                 <i class="material-icons">perm_identity</i> <span th:text="${user.firstName}"></span> <span th:text="${user.lastName}"></span></p>
                             <p class="white-text">
-                                <i class="material-icons white">import_contacts</i> <span th:text=" ${#dates.format(user.DOB, 'dd-MMM-yyyy')}"></span></p>
-                                <i class="material-icons white">wc</i> <span th:text=" ${user.gender}"></span>
+                                <i class="material-icons">import_contacts</i> <span th:text=" ${#dates.format(user.DOB, 'dd-MMM-yyyy')}"></span></p>
+                            <p class="white-text">
+                                <i class="material-icons">wc</i> <span th:text=" ${user.gender}"></span></p>
                             <p class="white-text">
                                 <i class="material-icons">email</i> <span th:text=" ${user.email}"></span></p>
                         </div>
                         <div class="row center">
                             <a th:href="@{'/edituser/' + ${user.id}}" id="edit-button"
-                               class="btn-floating activator btn-move-up waves-effect waves-light red accent-2 z-depth-4"><i class="material-icons">edit</i></a>
+                               class="btn-floating activator btn-move-up waves-effect waves-light red accent-3 z-depth-4"><i class="material-icons">edit</i></a>
                         </div>
                     </div>
                 </div>
