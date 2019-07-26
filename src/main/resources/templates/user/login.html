@@ -17,20 +17,20 @@
 <br />
 <br />
 <main class="container">
-<div class="card">
-<div class="card-content">
+<div class="header-shadow" style="padding: .5em;">
+<div class="card-content white-text">
 <form th:action="@{/login}" method="post" class="center">
-    <div class="form-group">
-        <label for="username">Username</label>
+    <div class="form-group white-text">
+        <label for="username" class="white-text">Username</label>
         <input id="username" name="username" type="text" />
     </div>
-    <div class="form-group">
-        <label for="password">Password</label>
+    <div class="form-group white-text">
+        <label for="password" class="white-text">Password</label>
         <input id="password" name="password" type="password" />
     </div>
     <br />
     <div class="center-align">
-        <button type="submit" class="btn btn-primary light-blue darken-2" >Log In</button>
+        <button type="submit" class="btn btn-primary blue pulse" >Log In</button>
     </div>
     <br />
 </form>
