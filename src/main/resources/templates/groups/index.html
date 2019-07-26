@@ -3,7 +3,7 @@
       xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/head :: head('Create Groups')">
 </head>
-<body class="grey lighten-2">
+<body class="gradient-45deg-indigo-purple">
 <nav th:replace="partials/navbar :: nav"></nav>
 
 
@@ -11,25 +11,25 @@
 
     <h1 class="center">Groups List</h1>
     <div class="center-align">
-        <a class="waves-effect waves-light btn center light-blue darken-2" th:href="@{'/groups/create'}">Create New Group</a>
+        <a class="waves-effect waves-light btn pulse center light-blue darken-2" th:href="@{'/groups/create'}">Create New Group</a>
     </div>
     <br/>
 
-    <div class="card">
+    <div class="header-shadow" style="padding: 1em;">
         <div class="card-content">
 <div align="center">
-    <table border="1" cellpadding="10">
+    <table border="1" cellpadding="10" class="center">
         <thead>
         <tr>
-            <th>Group ID</th>
-            <th>Name</th>
-            <th>Action</th>
+            <th class="white-text">Group ID</th>
+            <th class="white-text">Name</th>
+            <th class="white-text">Action</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="group : ${groups}">
-            <td th:text="${group.id}">Group ID</td>
-            <td th:text="${group.name}">Name</td>
+            <td th:text="${group.id}" class="white-text">Group ID</td>
+            <td th:text="${group.name}" class="white-text">Name</td>
             <td>
                 <a class=" btn btn-small light-blue darken-2 center" th:href="@{'/groups/' + ${group.id} +'/edit'}">Edit</a>
 

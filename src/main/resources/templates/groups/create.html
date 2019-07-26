@@ -2,18 +2,18 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/head :: head('Create Group')">
 </head>
-<body class="grey lighten-2">
+<body class="gradient-45deg-indigo-purple">
 <nav th:replace="partials/navbar :: nav"></nav>
 
 <main class="container">
 
     <h3 class="center">Create New Group</h3>
 
-    <div class="card">
+    <div class="header-shadow" style="padding: 1em;">
         <div class="card-content">
         <form  th:action="@{/groups/create}" method="POST" th:object="${groupsForm}">
             <div class="form-group">
-                <label for="name">Group Name</label>
+                <label for="name" class="white-text">Group Name</label>
                 <input id="name" type="text" th:field="*{name}" />
             </div>
             <div class="center-align">
