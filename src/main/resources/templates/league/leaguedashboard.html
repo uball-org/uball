@@ -4,12 +4,12 @@
 <body class="grey lighten-2">
 <nav th:replace="partials/navbar :: nav"></nav>
 
-<main style=" background-size:cover; background-image: url('img/leaguepageimageattempt.jpg')">
+<main style=" height: 100%; background-size: cover; background-image: url('img/backgroundwave.jpg')" >
 <div>
-    <div class=" parallax-container " >
-        <h3 class="center-align" style="border: 3px double white;">Welcome to League View <span th:text="${userName}"></span></h3>
+<!--    <div class=" parallax-container " >-->
+        <h3 class="center-align">League View</h3>
             <div class="row" style="margin-top: 2rem;">
-                <table class=" col m6 s12 offset-m3 responsive-table  header-shadow highlight">
+                <table class=" col m6 s12 offset-m3 responsive-table highlight">
                     <thead>
                     <tr>
                         <th>Profile</th>
@@ -38,11 +38,10 @@
                     </tbody>
                 </table>
             </div>
-    </div>
+<!--    </div>-->
     <div>
     <div class="center">
-        <br />
-        <h4>Want To See Live Standings For The Groups Playing?</h4>
+        <h4>Live Standings</h4>
         <a class="waves-effect waves-light btn light-blue darken-2" th:href="@{'/weeks-scores'}">Let's See</a>
         <br />
     </div>
@@ -51,7 +50,8 @@
     <div align="center">
     </div>
         <div class="container" style= "width: 90%;">
-            <div class="row header-shadow" style="position: inherit; color: whitesmoke;">
+            <div class="row" style="position: inherit;">
+                <div class="card">
                 <div class="card-tabs" style="height: 20px;">
                     <ul class="tabs tabs-fixed-width">
                         <li class="tab"><a href="#SAPL">San Antonio Pinball League</a></li>
@@ -123,6 +123,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 </main>
 

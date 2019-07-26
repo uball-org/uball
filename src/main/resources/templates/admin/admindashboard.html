@@ -6,24 +6,25 @@
 <body class="grey lighten-2">
 
 <nav th:replace="partials/navbar :: nav"></nav>
-<main>
+<main style=" height: 100%; background-size: cover; background-image: url('img/backgroundwave4.jpg')" >
 
-    <h2 class="center">Welcome, <span th:text="${adminname}"></span></h2>
+    <h2 class="center">Admin</h2>
 
     <div class="container">
 
-            <div class="col s12 m12 l12"><img src="img/pinball._800x600.png/" style="height: 20rem; width: 100%;" alt="Unsplashed background img 1"
-                                            class="admin-img responsive-img"/></div>
+<!--            <div class="col s12 m12 l12">-->
+<!--                <img src="img/pinball._800x600.png/" style="height: 20rem; width: 100%;" alt="Unsplashed background img 1"-->
+<!--                                            class="admin-img responsive-img"/></div>-->
 
         <div class="row">
 
 
             <div class="col s12 m12 l12">
-                    <div class="row">
+                    <div class="row center">
                         <th:block th:each="user : ${users}">
 
                             <div class="col s12 m4 l4" >
-                                <div class="card-panel gradient-45deg-light-blue-cyan">
+                                <div class="card-panel gradient-45deg-light-blue-cyan center">
                                     <div class="card-content center">
                                         <span class="card-title grey-text text-darken-4">
                                              <i class="material-icons">accessibility</i><span th:text="${user.firstName + ' ' + user.lastName}"></span>
