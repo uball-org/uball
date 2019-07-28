@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/head :: head('League Dashboard')"></head>
-<body class="grey lighten-2">
+<body class="gradient-45deg-red-pink">
 <nav th:replace="partials/navbar :: nav"></nav>
 
+<main>
 <h2 class="center-align"> – <span th:text="${league.name}" ></span> – </h2>
 
 <div class="container" style="width: 70%;">
     <h4 class="center-align">League Members</h4>
+    <div class="header-shadow" style="padding: 1em;">
         <table class=" col m6 s12 offset-m3 responsive-table highlight">
             <thead>
             <tr>
@@ -28,6 +30,7 @@
             </th:block>
             </tbody>
         </table>
+    </div>
 </div>
 
 <br />
@@ -36,6 +39,7 @@
 <div class="container" style="width: 90%;">
     <div class="row" style="position: inherit;">
         <div>
+            <div class="header-shadow" style="padding: 1em;">
             <div class="card-tabs" style="height: 20px;">
                 <ul class="tabs tabs-fixed-width">
                     <li class="tab"><a href="#Machine">Top Machine Scores</a></li>
@@ -112,8 +116,9 @@
             </div>
         </div>
     </div>
+    </div>
 </div>
-
+</main>
 <footer>
     <div th:replace="partials/footer :: footer"></div>
     <th:block th:include="partials/footer :: scripts"/>

@@ -13,10 +13,10 @@
                 </div>
                 <div class="row center " style="margin-top: 2rem;">
                     <div class="col m6">
-                        <a class="btn-large waves-effect waves-light red accent-3”" th:href="@{'/leagues/SAPL'}">SAPL</a>
+                        <a class="btn-large waves-effect pulse waves-light green accent-3”" th:href="@{'/leagues/SAPL'}">SAPL</a>
                     </div>
                     <div class="col m6">
-                        <a class="btn-large  waves-effect waves-light red accent-3”" th:href="@{'/leagues/Belles'}">Belles</a>
+                        <a class="btn-large  waves-effect pulse waves-light pink accent-3”" th:href="@{'/leagues/Belles'}">Belles</a>
                     </div>
                 </div>
             </div>
@@ -64,7 +64,9 @@
         <div class="section no-pad-bot">
             <div class="container">
                 <div class="row center"><!--Live Standings-->
-                    <h1 class="header col s12 light"><a class="btn-large pulse waves-effect waves-light red accent-3”" th:href="@{'/weeks-scores'}">Live Standings</a> </h1>
+                    <div class="col s12">
+                        <a class="btn-large pulse waves-effect waves-light red" th:href="@{'/weeks-scores'}">Live Standings</a>
+                    </div>
                 </div>
             </div>
         </div>
