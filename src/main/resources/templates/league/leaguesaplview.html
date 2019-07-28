@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/head :: head('League Dashboard')"></head>
-<body class="grey lighten-2">
+<body class="gradient-45deg-deep-purple-blue">
 <nav th:replace="partials/navbar :: nav"></nav>
 
+<main>
 <h2 class="center-align"> – <span th:text="${league.name}" ></span> – </h2>
 
 <div class="container" style="width: 70%;">
+    <div class="header-shadow" style="padding: 1em;">
     <h4 class="center-align">League Members</h4>
         <table class=" col m6 s12 offset-m3 responsive-table highlight">
             <thead>
             <tr>
                 <th></th>
-                <th>User Name</th>
-                <th>Gender</th>
-                <th>Points</th>
+                <th class="white-text">User Name</th>
+                <th class="white-text">Gender</th>
+                <th class="white-text">Points</th>
             </tr>
             </thead>
             <tbody>
             <th:block th:each="all : ${SAPLall}">
                 <tr>
-                    <td th:text="${SAPLall.indexOf(all) + 1 }"></td>
-                    <td th:text="${all.username}"></td>
-                    <td th:text="${all.gender}"></td>
-                    <td th:text="${all.points}"></td>
+                    <td th:text="${SAPLall.indexOf(all) + 1 }" class="white-text"></td>
+                    <td th:text="${all.username}" class="white-text"></td>
+                    <td th:text="${all.gender}" class="white-text"></td>
+                    <td th:text="${all.points}" class="white-text"></td>
                 </tr>
             </th:block>
             </tbody>
         </table>
+    </div>
 </div>
 
 <br />
@@ -36,6 +39,7 @@
 <div class="container" style="width: 90%;">
     <div class="row" style="position: inherit;">
         <div>
+            <div class="header-shadow" style="padding: 1em;">
             <div class="card-tabs" style="height: 20px;">
                 <ul class="tabs tabs-fixed-width">
                     <li class="tab"><a href="#Machine">Top Machine Scores</a></li>
@@ -53,22 +57,22 @@
                             <thead>
                             <tr>
                                 <th></th>
-                                <th>Machine Name</th>
-                                <th>Gender</th>
-                                <th>Name</th>
-                                <th>Date</th>
-                                <th>Score</th>
+                                <th class="white-text">Machine Name</th>
+                                <th class="white-text">Gender</th>
+                                <th class="white-text">Name</th>
+                                <th class="white-text">Date</th>
+                                <th class="white-text">Score</th>
                             </tr>
                             </thead>
                             <tbody>
                             <th:block>
                                 <tr th:each="topM : ${topsMachinesScores}">
-                                    <td th:text="${topsMachinesScores.indexOf(topM) + 1 }"></td>
-                                    <td th:text="${topM.getMachine().name}"></td>
-                                    <td th:text="${topM.getUser().gender}"></td>
-                                    <td th:text="${topM.getUser().username}"></td>
-                                    <td th:text="${#dates.format(topM.date, 'dd-MMM-yyyy')}"></td>
-                                    <td th:text="${topM.score}"></td>
+                                    <td th:text="${topsMachinesScores.indexOf(topM) + 1 }" class="white-text"></td>
+                                    <td th:text="${topM.getMachine().name}" class="white-text"></td>
+                                    <td th:text="${topM.getUser().gender}" class="white-text"></td>
+                                    <td th:text="${topM.getUser().username}" class="white-text"></td>
+                                    <td th:text="${#dates.format(topM.date, 'dd-MMM-yyyy')}" class="white-text"></td>
+                                    <td th:text="${topM.score}" class="white-text"></td>
                                 </tr>
                             </th:block>
                             </tbody>
@@ -86,22 +90,22 @@
                             <thead>
                             <tr>
                                 <th></th>
-                                <th>User Name</th>
-                                <th>Gender</th>
-                                <th>Machine</th>
-                                <th>Date</th>
-                                <th>Score</th>
+                                <th class="white-text">User Name</th>
+                                <th class="white-text">Gender</th>
+                                <th class="white-text">Machine</th>
+                                <th class="white-text">Date</th>
+                                <th class="white-text">Score</th>
                             </tr>
                             </thead>
                             <tbody>
                             <th:block>
                                 <tr th:each="topSAPL : ${topTenScores}">
-                                    <td th:text="${topTenScores.indexOf(topSAPL) + 1 }"></td>
-                                    <td th:text="${topSAPL.getUser().username}"></td>
-                                    <td th:text="${topSAPL.getUser().gender}"></td>
-                                    <td th:text="${topSAPL.getMachine().name}"></td>
-                                    <td th:text="${#dates.format(topSAPL.date, 'dd-MMM-yyyy')}"></td>
-                                    <td th:text="${topSAPL.score}"></td>
+                                    <td th:text="${topTenScores.indexOf(topSAPL) + 1 }" class="white-text"></td>
+                                    <td th:text="${topSAPL.getUser().username}" class="white-text"></td>
+                                    <td th:text="${topSAPL.getUser().gender}" class="white-text"></td>
+                                    <td th:text="${topSAPL.getMachine().name}" class="white-text"></td>
+                                    <td th:text="${#dates.format(topSAPL.date, 'dd-MMM-yyyy')}" class="white-text"></td>
+                                    <td th:text="${topSAPL.score}" class="white-text"></td>
                                 </tr>
                             </th:block>
                             </tbody>
@@ -112,8 +116,11 @@
             </div>
         </div>
     </div>
+    </div>
 </div>
-
+    <br />
+    <br />
+</main>
 <footer>
     <div th:replace="partials/footer :: footer"></div>
     <th:block th:include="partials/footer :: scripts"/>

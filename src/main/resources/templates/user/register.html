@@ -2,14 +2,14 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/head :: head('UBall Register')">
 </head>
-<body class="grey lighten-2" style="background-image: url('img/background-4.jpg');">
+<body class="grey lighten-2" style="background-image: url('img/background-6.jpg');">
 <nav th:replace="partials/navbar :: nav"></nav>
 
 <h2 class="center-align">Register</h2>
 
 <main class="container">
     <div class="header-shadow" style="padding: .5em;">
-        <div class="card-content white-text center">
+        <div class="card-content white-text">
     <form th:action="@{/register}" method="POST" th:object="${user}">
         <label for="username" class="white-text">Username</label>
         <br/>
