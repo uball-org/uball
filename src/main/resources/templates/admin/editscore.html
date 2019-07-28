@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head th:replace="partials/head :: head('Edit User')">
+</head>
+<body class="gradient-45deg-indigo-purple">
+<nav th:replace="partials/navbar :: nav"></nav>
+
+<main>
+
+    <h1 class="center">Edit Profile</h1>
+
+<div class="container" >
+    <div class="header-shadow" style="padding: 1em;">
+        <div class="card-content">
+    <form th:action="@{'/edituser/' + ${user.id}}" method="POST" th:object="${user}" >
+        <label for="firstName" class="white-text">First Name</label>
+        <br/>
+        <input id="firstName" th:field="*{firstName}" />
+        <br/>
+        <label for="lastName" class="white-text">Last Name</label>
+        <br/>
+        <input id="lastName" th:field="*{lastName}" />
+        <br/>
+        <label for="email" class="white-text">Email</label>
+        <br/>
+        <input id="email" th:field="*{email}" />
+        <br/>
+        <label for="DOB" class="white-text">Date of Birth</label>
+        <br/>
+        <input id="DOB" type="date" th:field="*{DOB}" />
+        <br/>
+        <label class="white-text">Gender</label>
+        <select class="browser-default" th:field="*{gender}">
+            <option value="0" >Choose your option</option>
+            <option th:value="M" th:text="M" ></option>
+            <option th:value="F" th:text="F" ></option>
+        </select>
+        <br/>
+        <label class="white-text">League</label>
+        <select class="browser-default" th:field="*{league}">
+            <option value="0" >Choose your option</option>
+            <option th:value="1" th:text="SAPL" ></option>
+            <option th:value="2" th:text="Belles" ></option>
+        </select>
+        <br/>
+        <div class="center-align">
+            <button type="submit" class="btn btn-primary pulse light-blue darken-2" >Save</button>
+        </div>
+        <br />
+    </form>
+        </div>
+    </div>
+    <br />
+
+</div>
+</main>
+<footer>
+    <div th:replace="partials/footer :: footer"></div>
+    <th:block th:include="partials/footer :: scripts" />
+</footer>
+
+</body>
+</html>

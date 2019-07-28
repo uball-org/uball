@@ -77,6 +77,12 @@ public class AdminController {
         return "redirect:/admindashboard";
     }
 
+    @GetMapping("/user/{id}/delete")
+    public String delete(@PathVariable long id) {
+        adminDao.delete(id);
+        return "redirect:/admindashboard";
+    }
+
     @GetMapping("/deleteUGTable")
     public String truncateTableUG() {
         adminDao.eliminateTableUG();
@@ -158,11 +164,35 @@ public class AdminController {
         return "redirect:/weeks-scores";
     }
 
-    @GetMapping("/user/{id}/delete")
-    public String delete(@PathVariable long id) {
-        adminDao.delete(id);
+    @GetMapping("/admindashboard/scoresedit")
+    public String allscorestoedit(Model model){
+        model.addAttribute("points1", scoreDao.findAll());
+        return "admin/scoresedit";
+    }
+
+    @GetMapping("/score/{id}/delete")
+    public String deletescore(@PathVariable long id) {
+        scoreDao.delete(id);
         return "redirect:/admindashboard";
     }
 
+    @GetMapping("/editscore/{id}")
+    public String edit ( @PathVariable long id, Model model){
+        model.addAttribute("points", scoreDao.findOne(id));
+        return "admin/editscore";
+    }
+
+    @PostMapping("/editscore/{id}")
+    public String updatescore (
+            @PathVariable long id,
+            @ModelAttribute Score score)
+    {
+        Score original = scoreDao.findOne(id);
+        score.setId(original.getId());
+        score.setAddedscoredate(original.getAddedscoredate());
+        score.setDate(original.getDate());
+        scoreDao.save(score);
+        return "redirect:/admindashboard/scoresedit";
+    }
 
 }
