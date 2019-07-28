@@ -16,7 +16,7 @@
     <form th:action="@{'/editscore/' + ${points2.id}}" method="POST" th:object="${points2}" >
         <label for="lastName" class="white-text">Player</label>
         <br/>
-        <input id="lastName" th:field="*{getUser().username}" />
+        <input id="lastName" th:placeholder="*{getUser().username}" th:readonly="readonly"/>
         <br/>
         <label for="score" class="white-text">Score</label>
         <br/>

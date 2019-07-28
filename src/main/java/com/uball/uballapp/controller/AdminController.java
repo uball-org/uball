@@ -96,6 +96,7 @@ public class AdminController {
         User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         long userId = userSession.getId();
         boolean isAdmin = userSession.isAdmin();
+
         if (isAdmin) {
         adminDao.delete(id);
         return "redirect:/admindashboard";
@@ -192,7 +193,7 @@ public class AdminController {
         return "redirect:/weeks-scores";
     }
 
-    @GetMapping("/admindashboard/scoresedit")
+    @GetMapping("/scoresedit")
     public String allscorestoedit(Model model){
         User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         long userId = userSession.getId();
@@ -210,9 +211,10 @@ public class AdminController {
         User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         long userId = userSession.getId();
         boolean isAdmin = userSession.isAdmin();
+
         if (isAdmin) {
         scoreDao.delete(id);
-        return "redirect:/admindashboard";
+        return "redirect:/scoresedit";
         }else{
             return "redirect:/userprofile";
         }
@@ -236,6 +238,10 @@ public class AdminController {
             @PathVariable long id,
             @ModelAttribute Score score)
     {
+        User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        long userId = userSession.getId();
+        boolean isAdmin = userSession.isAdmin();
+        if (isAdmin) {
         Score original = scoreDao.findOne(id);
         score.setId(original.getId());
         score.setAddedscoredate(original.getAddedscoredate());
@@ -243,7 +249,10 @@ public class AdminController {
         score.setUser(original.getUser());
         score.setMachine(original.getMachine());
         scoreDao.save(score);
-        return "redirect:/admindashboard/scoresedit";
+        return "redirect:/scoresedit";
+        }else{
+            return "redirect:/userprofile";
+        }
     }
 
 }
