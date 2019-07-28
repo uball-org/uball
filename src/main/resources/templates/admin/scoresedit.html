@@ -21,7 +21,8 @@
                             <th class="white-text">Id</th>
                             <th class="white-text">Player</th>
                             <th class="white-text">Machine</th>
-                            <th class="white-text">Score</th>
+                            <th class="white-text">Date</th>
+                            <th class="white-text">Score Id</th>
                             <th class="white-text">Manage</th>
                         </tr>
                         </thead>
@@ -29,9 +30,10 @@
                         <th:block th:each="points : ${points1}">
                             <tr>
                                 <td th:text="${points1.indexOf(points) +1}" class="white-text"></td>
-                                <td th:text="${points.id}" class="white-text"></td>
                                 <td th:text="${points.getUser().username}" class="white-text"></td>
                                 <td th:text="${points.getMachine().name}" class="white-text"></td>
+                                <td th:text="${#dates.format(points.date, 'dd-MMM-yyyy')}" class="white-text"></td>
+                                <td th:text="${points.id}" class="white-text"></td>
                                 <td th:text="${points.score}" class="white-text"></td>
                                 <td>
                                     <a class="btn btn-small light-blue darken-2 center" th:hidden="${points.id}"
