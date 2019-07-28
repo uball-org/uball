@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/head :: head('League Dashboard')"></head>
-<body class="gradient-45deg-red-pink">
+<body class="gradient-45deg-purple-deep-orange">
 <nav th:replace="partials/navbar :: nav"></nav>
 
 <main>
 <h2 class="center-align"> – <span th:text="${league.name}" ></span> – </h2>
 
 <div class="container" style="width: 70%;">
-    <h4 class="center-align">League Members</h4>
     <div class="header-shadow" style="padding: 1em;">
+    <h4 class="center-align">League Members</h4>
         <table class=" col m6 s12 offset-m3 responsive-table highlight">
             <thead>
             <tr>
-                <th></th>
-                <th>User Name</th>
-                <th>Gender</th>
-                <th>Points</th>
+                <th class="white-text"></th>
+                <th class="white-text">User Name</th>
+                <th class="white-text">Gender</th>
+                <th class="white-text">Points</th>
             </tr>
             </thead>
             <tbody>
             <th:block th:each="all : ${Bellesall}">
                 <tr>
-                    <td th:text="${Bellesall.indexOf(all) + 1 }"></td>
-                    <td th:text="${all.username}"></td>
-                    <td th:text="${all.gender}"></td>
-                    <td th:text="${all.points}"></td>
+                    <td th:text="${Bellesall.indexOf(all) + 1 }" class="white-text"></td>
+                    <td th:text="${all.username}" class="white-text"></td>
+                    <td th:text="${all.gender}" class="white-text"></td>
+                    <td th:text="${all.points}" class="white-text"></td>
                 </tr>
             </th:block>
             </tbody>
@@ -57,22 +57,22 @@
                             <thead>
                             <tr>
                                 <th></th>
-                                <th>Machine Name</th>
-                                <th>Gender</th>
-                                <th>Name</th>
-                                <th>Date</th>
-                                <th>Score</th>
+                                <th class="white-text">Machine Name</th>
+                                <th class="white-text">Gender</th>
+                                <th class="white-text">Name</th>
+                                <th class="white-text">Date</th>
+                                <th class="white-text">Score</th>
                             </tr>
                             </thead>
                             <tbody>
                             <th:block>
                                 <tr th:each="topM : ${topsMachinesScores}">
-                                    <td th:text="${topsMachinesScores.indexOf(topM) + 1 }"></td>
-                                    <td th:text="${topM.getMachine().name}"></td>
-                                    <td th:text="${topM.getUser().gender}"></td>
-                                    <td th:text="${topM.getUser().username}"></td>
-                                    <td th:text="${#dates.format(topM.date, 'dd-MMM-yyyy')}"></td>
-                                    <td th:text="${topM.score}"></td>
+                                    <td th:text="${topsMachinesScores.indexOf(topM) + 1 }" class="white-text"></td>
+                                    <td th:text="${topM.getMachine().name}" class="white-text"></td>
+                                    <td th:text="${topM.getUser().gender}" class="white-text"></td>
+                                    <td th:text="${topM.getUser().username}" class="white-text"></td>
+                                    <td th:text="${#dates.format(topM.date, 'dd-MMM-yyyy')}" class="white-text"></td>
+                                    <td th:text="${topM.score}" class="white-text"></td>
                                 </tr>
                             </th:block>
                             </tbody>
@@ -90,22 +90,22 @@
                             <thead>
                             <tr>
                                 <th></th>
-                                <th>User Name</th>
-                                <th>Gender</th>
-                                <th>Machine</th>
-                                <th>Date</th>
-                                <th>Score</th>
+                                <th class="white-text">User Name</th>
+                                <th class="white-text">Gender</th>
+                                <th class="white-text">Machine</th>
+                                <th class="white-text">Date</th>
+                                <th class="white-text">Score</th>
                             </tr>
                             </thead>
                             <tbody>
                             <th:block>
                                 <tr th:each="topBelle : ${topTenScores}">
-                                    <td th:text="${topTenScores.indexOf(topBelle) + 1 }"></td>
-                                    <td th:text="${topBelle.getUser().username}"></td>
-                                    <td th:text="${topBelle.getUser().gender}"></td>
-                                    <td th:text="${topBelle.getMachine().name}"></td>
-                                    <td th:text="${#dates.format(topBelle.date, 'dd-MMM-yyyy')}"></td>
-                                    <td th:text="${topBelle.score}"></td>
+                                    <td th:text="${topTenScores.indexOf(topBelle) + 1 }" class="white-text"></td>
+                                    <td th:text="${topBelle.getUser().username}" class="white-text"></td>
+                                    <td th:text="${topBelle.getUser().gender}" class="white-text"></td>
+                                    <td th:text="${topBelle.getMachine().name}" class="white-text"></td>
+                                    <td th:text="${#dates.format(topBelle.date, 'dd-MMM-yyyy')}" class="white-text"></td>
+                                    <td th:text="${topBelle.score}" class="white-text"></td>
                                 </tr>
                             </th:block>
                             </tbody>
@@ -118,6 +118,8 @@
     </div>
     </div>
 </div>
+    <br />
+    <br />
 </main>
 <footer>
     <div th:replace="partials/footer :: footer"></div>
