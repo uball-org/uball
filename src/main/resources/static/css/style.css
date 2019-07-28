@@ -45,6 +45,8 @@ h4 {
 
 nav {
   /*font-family: 'Bungee', cursive;*/
+  position:sticky;
+  top:0;
 }
 
 button .btn {
