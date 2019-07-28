@@ -66,27 +66,55 @@ public class AdminController {
     @GetMapping("/isNotAdmin/{id}")
     public String notAdminNow(@ModelAttribute User user,
                               @PathVariable long id) {
+        User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        long userId = userSession.getId();
+        boolean isAdmin = userSession.isAdmin();
+        if (isAdmin) {
         userDao.isNewNonAdmin(id);
         return "redirect:/admindashboard";
+        }else{
+            return "redirect:/userprofile";
+        }
     }
 
     @GetMapping("/isAdmin/{id}")
     public String isAdminNow(@ModelAttribute User user,
                              @PathVariable long id) {
+        User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        long userId = userSession.getId();
+        boolean isAdmin = userSession.isAdmin();
+        if (isAdmin) {
         userDao.isNewAdmin(id);
         return "redirect:/admindashboard";
+        }else{
+            return "redirect:/userprofile";
+        }
     }
 
     @GetMapping("/user/{id}/delete")
     public String delete(@PathVariable long id) {
+        User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        long userId = userSession.getId();
+        boolean isAdmin = userSession.isAdmin();
+        if (isAdmin) {
         adminDao.delete(id);
         return "redirect:/admindashboard";
+        }else{
+            return "redirect:/userprofile";
+        }
     }
 
     @GetMapping("/deleteUGTable")
     public String truncateTableUG() {
+        User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        long userId = userSession.getId();
+        boolean isAdmin = userSession.isAdmin();
+        if (isAdmin) {
         adminDao.eliminateTableUG();
         return "redirect:/admindashboard";
+        }else{
+            return "redirect:/userprofile";
+        }
     }
 
 
@@ -166,33 +194,54 @@ public class AdminController {
 
     @GetMapping("/admindashboard/scoresedit")
     public String allscorestoedit(Model model){
-        model.addAttribute("points1", scoreDao.findAll());
-        return "admin/scoresedit";
+        User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        long userId = userSession.getId();
+        boolean isAdmin = userSession.isAdmin();
+        if (isAdmin) {
+            model.addAttribute("points1", scoreDao.findAll());
+            return "admin/scoresedit";
+        }else{
+            return "redirect:/userprofile";
+        }
     }
 
     @GetMapping("/score/{id}/delete")
     public String deletescore(@PathVariable long id) {
+        User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        long userId = userSession.getId();
+        boolean isAdmin = userSession.isAdmin();
+        if (isAdmin) {
         scoreDao.delete(id);
         return "redirect:/admindashboard";
+        }else{
+            return "redirect:/userprofile";
+        }
     }
 
     @GetMapping("/editscore/{id}")
     public String edit ( @PathVariable long id, Model model){
+        User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        long userId = userSession.getId();
+        boolean isAdmin = userSession.isAdmin();
+        if (isAdmin) {
         model.addAttribute("points2", scoreDao.findOne(id));
         return "admin/editscore";
+        }else{
+            return "redirect:/userprofile";
+        }
     }
 
     @PostMapping("/editscore/{id}")
     public String updatescore (
             @PathVariable long id,
-            @RequestParam long ,
             @ModelAttribute Score score)
     {
         Score original = scoreDao.findOne(id);
         score.setId(original.getId());
         score.setAddedscoredate(original.getAddedscoredate());
         score.setDate(original.getDate());
-        score.setDate(original.getDate());
+        score.setUser(original.getUser());
+        score.setMachine(original.getMachine());
         scoreDao.save(score);
         return "redirect:/admindashboard/scoresedit";
     }
