@@ -199,7 +199,7 @@ public class AdminController {
         long userId = userSession.getId();
         boolean isAdmin = userSession.isAdmin();
         if (isAdmin) {
-            model.addAttribute("points1", scoreDao.findAll());
+            model.addAttribute("points1", scoreDao.findAllOrderByDate());
             return "admin/scoresedit";
         }else{
             return "redirect:/userprofile";
