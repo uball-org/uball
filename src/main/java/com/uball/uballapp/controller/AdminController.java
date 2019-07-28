@@ -178,18 +178,20 @@ public class AdminController {
 
     @GetMapping("/editscore/{id}")
     public String edit ( @PathVariable long id, Model model){
-        model.addAttribute("points", scoreDao.findOne(id));
+        model.addAttribute("points2", scoreDao.findOne(id));
         return "admin/editscore";
     }
 
     @PostMapping("/editscore/{id}")
     public String updatescore (
             @PathVariable long id,
+            @RequestParam long ,
             @ModelAttribute Score score)
     {
         Score original = scoreDao.findOne(id);
         score.setId(original.getId());
         score.setAddedscoredate(original.getAddedscoredate());
+        score.setDate(original.getDate());
         score.setDate(original.getDate());
         scoreDao.save(score);
         return "redirect:/admindashboard/scoresedit";

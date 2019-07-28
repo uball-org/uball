@@ -28,7 +28,7 @@
                         <tbody>
                         <th:block th:each="points : ${points1}">
                             <tr>
-                                <td th:text="${points.indexOf(scored) +1}" class="white-text"></td>
+                                <td th:text="${points1.indexOf(points) +1}" class="white-text"></td>
                                 <td th:text="${points.id}" class="white-text"></td>
                                 <td th:text="${points.getUser().username}" class="white-text"></td>
                                 <td th:text="${points.getMachine().name}" class="white-text"></td>
@@ -38,7 +38,7 @@
                                        th:href="@{'/editscore/'+${points.id}}">
                                         <i class="material-icons">edit</i>
                                     </a>
-                                    <a class="btn btn-small red center" th:hidden="${user.id}"
+                                    <a class="btn btn-small red center" th:hidden="${points.id}"
                                        th:href="@{'/score/' +${points.id}+ '/delete'}">
                                         <i class="material-icons">delete_forever</i>
                                     </a>
