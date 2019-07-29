@@ -19,6 +19,10 @@ textarea.materialize-textarea {
   color: white;
 }
 
+.card-content {
+  padding: 1em;
+}
+
 .tabs .tab a:hover, .tabs .tab a.active {
   background-color: transparent;
   color: #26a69a;
