@@ -4,7 +4,7 @@
 </head>
 <body class="grey lighten-2">
 <nav th:replace="partials/navbar :: nav"></nav>
-<!--<main>-->
+
 <main style="height: 100%; background-size: cover; background-image: url('img/background-1.jpg')" >
 
     <div class="container">
@@ -31,7 +31,6 @@
                     </div>
                 </div>
 
-<!--    <div class="header-shadow s12 m8 l8">-->
         <div class="card-content header-shadow col s12 m8 l8">
 
                 <div class="card-tabs">
@@ -56,7 +55,7 @@
                                 <td th:text="${scores.indexOf(score) + 1 }"></td>
                                 <td th:text="${score.getMachine().name}"></td>
                                 <td th:text="${#dates.format(score.getDate(), 'dd-MMM-yyyy')}"></td>
-                                <td th:text="${#numbers.formatDecimal(score.score, 0, 'COMMA', 2, 'POINT')}" class="right-align"></td>
+                                <td th:text="${#numbers.formatDecimal(score.score, 0, 'COMMA', 0, 'POINT')}" class="right-align"></td>
                             </tr>
                         </th:block>
                         </tbody>
@@ -78,7 +77,7 @@
                                 <td th:text="${scoremach.indexOf(scoremachine) + 1 }"></td>
                                 <td th:text="${scoremachine.getMachine().name}"></td>
                                 <td th:text="${#dates.format(scoremachine.getDate(), 'dd-MMM-yyyy')}"></td>
-                                <td th:text="${#numbers.formatDecimal(scoremachine.score, 0, 'COMMA', 2, 'POINT')}" class="right-align"></td>
+                                <td th:text="${#numbers.formatDecimal(scoremachine.score, 0, 'COMMA', 0, 'POINT')}" class="right-align"></td>
                             </tr>
                         </th:block>
                         </tbody>
@@ -88,7 +87,6 @@
     </div>
 </div>
 </div>
-<!--</div>-->
 
 </main>
 

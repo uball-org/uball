@@ -23,7 +23,7 @@
                     <td th:text="${Threeall.indexOf(all) + 1 }"></td>
                     <td th:text="${all.username}"></td>
                     <td th:text="${all.gender}"></td>
-                    <td th:text="${all.points}"></td>
+                    <td th:text="${all.points}" class="white-text right-align"></td>
                 </tr>
             </th:block>
             </tbody>
@@ -68,7 +68,7 @@
                                     <td th:text="${topM.getUser().gender}"></td>
                                     <td th:text="${topM.getUser().username}"></td>
                                     <td th:text="${#dates.format(topM.date, 'dd-MMM-yyyy')}"></td>
-                                    <td th:text="${#numbers.formatDecimal(topM.score, 0, 'COMMA', 2, 'POINT')}"></td>
+                                    <td th:text="${#numbers.formatDecimal(topM.score, 0, 'COMMA', 0, 'POINT')}" class="white-text right-align"></td>
                                 </tr>
                             </th:block>
                             </tbody>
@@ -101,7 +101,7 @@
                                     <td th:text="${topThree.getUser().gender}"></td>
                                     <td th:text="${topThree.getMachine().name}"></td>
                                     <td th:text="${#dates.format(topThree.date, 'dd-MMM-yyyy')}"></td>
-                                    <td th:text="${#numbers.formatDecimal(topThree.score, 0, 'COMMA', 2, 'POINT')}"></td>
+                                    <td th:text="${#numbers.formatDecimal(topThree.score, 0, 'COMMA', 0, 'POINT')}" class="white-text right-align"></td>
                                 </tr>
                             </th:block>
                             </tbody>

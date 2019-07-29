@@ -9,7 +9,6 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-//This repository may end up being unnecessary
 
 @Repository
 public interface AdminRepository extends CrudRepository <User, Long> {
