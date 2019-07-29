@@ -72,7 +72,7 @@
                                     <td th:text="${topM.getUser().gender}" class="white-text"></td>
                                     <td th:text="${topM.getUser().username}" class="white-text"></td>
                                     <td th:text="${#dates.format(topM.date, 'dd-MMM-yyyy')}" class="white-text"></td>
-                                    <td th:text="${topM.score}" class="white-text"></td>
+                                    <td th:text="${#numbers.formatDecimal(topM.score, 0, 'COMMA', 2, 'POINT')}" class="white-text"></td>
                                 </tr>
                             </th:block>
                             </tbody>
@@ -105,7 +105,7 @@
                                     <td th:text="${topBelle.getUser().gender}" class="white-text"></td>
                                     <td th:text="${topBelle.getMachine().name}" class="white-text"></td>
                                     <td th:text="${#dates.format(topBelle.date, 'dd-MMM-yyyy')}" class="white-text"></td>
-                                    <td th:text="${topBelle.score}" class="white-text"></td>
+                                    <td th:text="${#numbers.formatDecimal(topBelle.score, 0, 'COMMA', 2, 'POINT')}" class="white-text"></td>
                                 </tr>
                             </th:block>
                             </tbody>
