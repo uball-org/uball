@@ -38,7 +38,12 @@ As an ADMIN, register as a user (with all player utilities) plus have full CRUD 
 
 * [Java](https://www.java.com/en/) - Java
 * [Maven](https://maven.apache.org/) - Dependency Management
+* [Spring Boot Framework](https://spring.io/projects/spring-boot) - Spring Boot Framework
+* [Spring Security](https://spring.io/projects/spring-security) - Spring Security
 * [MySQL](http://mysql.com/) - MySQL
+* [Apache Tomcat](https://tomcat.apache.org/) - Apache Tomcat
+* [Thymeleaf](https://www.thymeleaf.org/) - Thymeleaf
+* [Hibernate](https://hibernate.org/) - Hibernate
 * [Materialize](https://materializecss.com/) - Materialize
 
 
