@@ -14,7 +14,7 @@
                 <div class="col s12 m4 l4">
                     <div class="header-shadow" style="padding: 1em;">
                         <div class="card-content">
-                            <span class="card-title white-text"><h3><em><span th:text="${user.username}"></span></em></h3></span>
+                            <span class="card-title white-text"><h3><span th:text="${user.username}"></span></h3></span>
                             <p class="white-text">
                                 <i class="material-icons">perm_identity</i> <span th:text="${user.firstName}"></span> <span th:text="${user.lastName}"></span></p>
                             <p class="white-text">
@@ -56,7 +56,7 @@
                                 <td th:text="${scores.indexOf(score) + 1 }"></td>
                                 <td th:text="${score.getMachine().name}"></td>
                                 <td th:text="${#dates.format(score.getDate(), 'dd-MMM-yyyy')}"></td>
-                                <td th:text="${score.score}"></td>
+                                <td th:text="${#numbers.formatDecimal(score.score, 0, 'COMMA', 2, 'POINT')}" class="right-align"></td>
                             </tr>
                         </th:block>
                         </tbody>
@@ -78,7 +78,7 @@
                                 <td th:text="${scoremach.indexOf(scoremachine) + 1 }"></td>
                                 <td th:text="${scoremachine.getMachine().name}"></td>
                                 <td th:text="${#dates.format(scoremachine.getDate(), 'dd-MMM-yyyy')}"></td>
-                                <td th:text="${scoremachine.score}"></td>
+                                <td th:text="${#numbers.formatDecimal(scoremachine.score, 0, 'COMMA', 2, 'POINT')}" class="right-align"></td>
                             </tr>
                         </th:block>
                         </tbody>
