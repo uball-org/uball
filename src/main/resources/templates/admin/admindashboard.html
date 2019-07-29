@@ -50,12 +50,12 @@
                                             </a>
                                         </td>
                                         <td th:if="${user.isAdmin()}"><a
-                                                class="btn-floating waves-effect waves-light admin-mng-btns" th:hidden="${user.id}"
+                                                class="btn  admin-mng-btns" th:hidden="${user.id}"
                                                 th:href="@{'/isNotAdmin/'+${user.id}}">
                                             <i class="material-icons">clear</i>
                                         </a></td>
                                         <td th:if="${!user.isAdmin()}"><a
-                                                class="btn-floating waves-effect waves-light light-blue darken-2" th:hidden="${user.id}"
+                                                class=" btn  light-blue darken-2" th:hidden="${user.id}"
                                                 th:href="@{'/isAdmin/'+${user.id}}">
                                             <i class="material-icons">add</i>
                                         </a></td>
@@ -69,10 +69,10 @@
 
         <br/>
         <div class="center">
-            <a style="padding-left: 5px; padding-right: 5px;" class="waves-effect waves-light btn light-blue darken-2 admin-buttons" th:href="@{'/creategroup'}">Manage Groups</a>
-            <a style="padding-left: 5px; padding-right: 5px;" class="waves-effect waves-light btn light-blue darken-2 admin-buttons" th:href="@{'/createmachine'}">Manage
+            <a style="padding-left: 5px; padding-right: 5px;" class=" btn light-blue darken-2 admin-buttons" th:href="@{'/creategroup'}">Manage Groups</a>
+            <a style="padding-left: 5px; padding-right: 5px;" class=" btn light-blue darken-2 admin-buttons" th:href="@{'/createmachine'}">Manage
                 Machines</a>
-            <a style="padding-left: 5px; padding-right: 5px;" class="waves-effect waves-light btn light-blue darken-2 admin-buttons" th:href="@{'/createleague'}">Manage Leagues</a>
+            <a style="padding-left: 5px; padding-right: 5px;" class=" btn light-blue darken-2 admin-buttons" th:href="@{'/createleague'}">Manage Leagues</a>
         </div>
         <br/>
 
