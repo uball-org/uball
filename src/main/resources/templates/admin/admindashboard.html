@@ -187,7 +187,7 @@
                             <select class="browser-default" th:field="*{user}">
                                 <th:block th:each="newUser : ${userselect}">
                                     <option name="user" th:value="${newUser.getId()}"
-                                            th:text="${newUser.username}" class="white-text"></option>
+                                            th:text="${newUser.username}"></option>
                                 </th:block>
                             </select>
 
