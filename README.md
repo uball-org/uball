@@ -44,6 +44,8 @@ As an ADMIN, register as a user (with all player utilities) plus have full CRUD 
 * [Apache Tomcat](https://tomcat.apache.org/) - Apache Tomcat
 * [Thymeleaf](https://www.thymeleaf.org/) - Thymeleaf
 * [Hibernate](https://hibernate.org/) - Hibernate
+* [jQuery](https://jquery.com/) - jQuery
+* [ECMA Script 6](http://es6-features.org) - ECMA Script 6
 * [Materialize](https://materializecss.com/) - Materialize
 
 
