@@ -37,7 +37,7 @@
                                     <div style="margin: 0; text-align: right;" class="input-field" th:if="${#httpSession.getAttribute('isAdmin')}">
                                         <input style="width: 13%;" th:placeholder="${scored.getUser().id}" th:value="${scored.getUser().id}"
                                                name="user" type="text" class="validate white-text right-align" th:readonly="readonly"/>
-                                        <input style="width: 13%;" th:placeholder="${scored.getUser().points}" name="points" type="text"
+                                        <input style="width: 13%;" th:placeholder="0" name="points" type="text"
                                                class="validate white-text right-align"/>
                                       </div>
                                 </td>
@@ -83,7 +83,7 @@
                                     <div style="margin: 0; text-align: right;" class="input-field" th:if="${#httpSession.getAttribute('isAdmin')}">
                                         <input style="width: 13%;" th:placeholder="${scored.getUser().id}" th:value="${scored.getUser().id}"
                                                name="user" type="text" th:readonly="readonly" class="white-text right-align"/>
-                                        <input style="width: 13%;" th:placeholder="${scored.getUser().points}" name="points" type="text"
+                                        <input style="width: 13%;" th:placeholder="0" name="points" type="text"
                                                class="validate white-text right-align"/>
                                      </div>
                                 </td>
@@ -127,7 +127,7 @@
                                     <div style="margin: 0; text-align: right;" class="input-field" th:if="${#httpSession.getAttribute('isAdmin')}">
                                         <input style="width: 13%;" th:placeholder="${scored.getUser().id}" th:value="${scored.getUser().id}"
                                                name="user" type="text" class="validate white-text right-align" th:readonly="readonly"/>
-                                        <input style="width: 13%;" th:placeholder="${scored.getUser().points}" name="points" type="text"
+                                        <input style="width: 13%;" th:placeholder="0" name="points" type="text"
                                                class="validate white-text right-align"/>
                                      </div>
                                 </td>
@@ -172,7 +172,7 @@
                                     <div style="margin: 0; text-align: right;" class="input-field" th:if="${#httpSession.getAttribute('isAdmin')}">
                                         <input style="width: 13%;" th:placeholder="${scored.getUser().id}" th:value="${scored.getUser().id}"
                                                name="user" type="text" class="validate white-text right-align " th:readonly="readonly"/>
-                                        <input style="width: 13%;" th:placeholder="${scored.getUser().points}" name="points" type="text"
+                                        <input style="width: 13%;" th:placeholder="0" name="points" type="text"
                                                class="validate white-text right-align "/>
                                       </div>
                                 </td>
