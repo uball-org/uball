@@ -7,19 +7,19 @@
 <nav th:replace="partials/navbar :: nav"></nav>
 
 <h2 class="center blue-text">Log In</h2>
-<div th:if="${param.error}" class="center" style="color: red;">
-    Invalid Username and Password.
-</div>
-<div th:if="${param.logout}" class="center" style="color: red;">
-    You have been logged out.
-</div>
 
 <br />
 <br />
 <main class="container">
 <div class="header-shadow" style="padding: .5em;">
+    <div th:if="${param.error}" class="center" style="color: red; font-weight: bold;">
+        <h5>Invalid Username and Password.</h5>
+    </div>
+    <div th:if="${param.logout}" class="center" style="color: red; font-weight: bold;">
+        <h5>You have been logged out.</h5>
+    </div>
 <div class="card-content white-text">
-<form th:action="@{/login}" method="post" class="center">
+<form th:action="@{/login}" method="post">
     <div class="form-group white-text">
         <label for="username" class="white-text">Username</label>
         <input id="username" name="username" type="text" />
