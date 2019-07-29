@@ -32,7 +32,7 @@
                                 <td th:text="${scores1.indexOf(scored) +1}" class="white-text"></td>
                                 <td th:text="${scored.getUser().username}" class="white-text"></td>
                                 <td th:text="${scored.getMachine().name}" class="white-text"></td>
-                                <td th:text="${#numbers.formatDecimal(scored.score, 0, 'COMMA', 2, 'POINT')}" class="white-text right-align"></td>
+                                <td th:text="${#numbers.formatDecimal(scored.score, 0, 'COMMA', 0, 'POINT')}" class="white-text right-align"></td>
                                 <td>
                                     <div style="margin: 0; text-align: right;" class="input-field" th:if="${#httpSession.getAttribute('isAdmin')}">
                                         <input style="width: 13%;" th:placeholder="${scored.getUser().id}" th:value="${scored.getUser().id}"
@@ -78,7 +78,7 @@
                                 <td th:text="${scores2.indexOf(scored) +1}" class="white-text"></td>
                                 <td th:text="${scored.getUser().username}" class="white-text"></td>
                                 <td th:text="${scored.getMachine().name}" class="white-text"></td>
-                                <td th:text="${#numbers.formatDecimal(scored.score, 0, 'COMMA', 2, 'POINT')}" class="white-text right-align"></td>
+                                <td th:text="${#numbers.formatDecimal(scored.score, 0, 'COMMA', 0, 'POINT')}" class="white-text right-align"></td>
                                 <td>
                                     <div style="margin: 0; text-align: right;" class="input-field" th:if="${#httpSession.getAttribute('isAdmin')}">
                                         <input style="width: 13%;" th:placeholder="${scored.getUser().id}" th:value="${scored.getUser().id}"
@@ -122,7 +122,7 @@
                                 <td th:text="${scores3.indexOf(scored) +1}" class="white-text"></td>
                                 <td th:text="${scored.getUser().username}" class="white-text"></td>
                                 <td th:text="${scored.getMachine().name}" class="white-text"></td>
-                                <td th:text="${#numbers.formatDecimal(scored.score, 0, 'COMMA', 2, 'POINT')}" class="white-text right-align"></td>
+                                <td th:text="${#numbers.formatDecimal(scored.score, 0, 'COMMA', 0, 'POINT')}" class="white-text right-align"></td>
                                 <td>
                                     <div style="margin: 0; text-align: right;" class="input-field" th:if="${#httpSession.getAttribute('isAdmin')}">
                                         <input style="width: 13%;" th:placeholder="${scored.getUser().id}" th:value="${scored.getUser().id}"
@@ -167,7 +167,7 @@
                                 <td th:text="${scores4.indexOf(scored) +1}" class="white-text"></td>
                                 <td th:text="${scored.getUser().username}" class="white-text"></td>
                                 <td th:text="${scored.getMachine().name}" class="white-text"></td>
-                                <td th:text="${#numbers.formatDecimal(scored.score, 0, 'COMMA', 2, 'POINT')}" class="white-text right-align"></td>
+                                <td th:text="${#numbers.formatDecimal(scored.score, 0, 'COMMA', 0, 'POINT')}" class="white-text right-align"></td>
                                 <td>
                                     <div style="margin: 0; text-align: right;" class="input-field" th:if="${#httpSession.getAttribute('isAdmin')}">
                                         <input style="width: 13%;" th:placeholder="${scored.getUser().id}" th:value="${scored.getUser().id}"

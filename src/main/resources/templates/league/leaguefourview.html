@@ -68,7 +68,7 @@
                                     <td th:text="${topM.getUser().gender}"></td>
                                     <td th:text="${topM.getUser().username}"></td>
                                     <td th:text="${#dates.format(topM.date, 'dd-MMM-yyyy')}"></td>
-                                    <td th:text="${#numbers.formatDecimal(topM.score, 0, 'COMMA', 2, 'POINT')}"></td>
+                                    <td th:text="${#numbers.formatDecimal(topM.score, 0, 'COMMA', 0, 'POINT')}"></td>
                                 </tr>
                             </th:block>
                             </tbody>
@@ -101,7 +101,7 @@
                                     <td th:text="${topFour.getUser().gender}"></td>
                                     <td th:text="${topFour.getMachine().name}"></td>
                                     <td th:text="${#dates.format(topFour.date, 'dd-MMM-yyyy')}"></td>
-                                    <td th:text="${#numbers.formatDecimal(topFour.score, 0, 'COMMA', 2, 'POINT')}"></td>
+                                    <td th:text="${#numbers.formatDecimal(topFour.score, 0, 'COMMA', 0, 'POINT')}"></td>
                                 </tr>
                             </th:block>
                             </tbody>

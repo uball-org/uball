@@ -34,7 +34,7 @@
                                 <td th:text="${points.getMachine().name}" class="white-text"></td>
                                 <td th:text="${#dates.format(points.date, 'dd-MMM-yyyy')}" class="white-text"></td>
                                 <td th:text="${points.id}" class="white-text"></td>
-                                <td th:text="${#numbers.formatDecimal(points.score, 0, 'COMMA', 2, 'POINT')}" class="white-text"></td>
+                                <td th:text="${#numbers.formatDecimal(points.score, 0, 'COMMA', 0, 'POINT')}" class="white-text"></td>
                                 <td>
                                     <a class="btn btn-small light-blue darken-2 center" th:hidden="${points.id}"
                                        th:href="@{'/editscore/'+${points.id}}">
