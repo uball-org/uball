@@ -44,18 +44,20 @@
 
         <label class="white-text">Gender</label>
         <select class="browser-default" th:field="*{gender}">
-            <option value="0">Choose your option</option>
+            <option value="M">Choose your option</option>
             <option value="M" th:text="M"></option>
             <option value="F" th:text="F"></option>
         </select>
+        <p th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}" style="color: red;"/>
         <br/>
 
         <label class="white-text">League</label>
         <select class="browser-default" th:field="*{league}">
-            <option value="0">Choose your option</option>
+            <option value="1">Choose your option</option>
             <option value="1" th:text="SAPL"></option>
             <option value="2" th:text="Belles"></option>
         </select>
+        <p th:if="${#fields.hasErrors('league')}" th:errors="*{league}" style="color: red;"/>
         <br/>
         <div class="center-align">
             <button type="submit" class="btn pulse waves-effect waves-light red accent-3">Register</button>
