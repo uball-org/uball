@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head th:replace="partials/head :: head('Scores Edit')">
+</head>
+<body style="height: 100%; background-size: cover; background-image: url('img/background-5.jpg')" >
+
+<nav th:replace="partials/navbar :: nav"></nav>
+<main>
+
+    <div class="container">
+        <h3 class="center">Manage Scores</h3>
+        <div class="header-shadow" style="padding: 1em;">
+            <div class="card-content center">
+                <br/>
+                <div class="center">
+                    <table class="responsive-table centered highlight">
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th class="white-text">Id</th>
+                            <th class="white-text">Player</th>
+                            <th class="white-text">Machine</th>
+                            <th class="white-text">Date</th>
+                            <th class="white-text">Score Id</th>
+                            <th class="white-text">Manage</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <th:block th:each="points : ${points1}">
+                            <tr>
+                                <td th:text="${points1.indexOf(points) +1}" class="white-text"></td>
+                                <td th:text="${points.getUser().username}" class="white-text"></td>
+                                <td th:text="${points.getMachine().name}" class="white-text"></td>
+                                <td th:text="${#dates.format(points.date, 'dd-MMM-yyyy')}" class="white-text"></td>
+                                <td th:text="${points.id}" class="white-text"></td>
+                                <td th:text="${points.score}" class="white-text"></td>
+                                <td>
+                                    <a class="btn btn-small light-blue darken-2 center" th:hidden="${points.id}"
+                                       th:href="@{'/editscore/'+${points.id}}">
+                                        <i class="material-icons">edit</i>
+                                    </a>
+                                    <a class="btn btn-small red center" th:hidden="${points.id}"
+                                       th:href="@{'/score/' +${points.id}+ '/delete'}">
+                                        <i class="material-icons">delete_forever</i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </th:block>
+                        </tbody>
+                    </table>
+                </div>
+        </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div th:replace="partials/footer :: footer"></div>
+    <th:block th:include="partials/footer :: scripts"/>
+</footer>
+
+</body>
+</html>

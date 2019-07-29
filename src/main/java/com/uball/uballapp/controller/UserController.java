@@ -92,12 +92,20 @@ public class UserController {
             @PathVariable long id,
             @ModelAttribute User user)
     {
+        User userSession = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        long userId = userSession.getId();
+        boolean isAdmin = userSession.isAdmin();
+
         User original = userDao.findOne(id);
         user.setId(original.getId());
         user.setPassword(original.getPassword());
         user.setUsername(original.getUsername());
         userDao.save(user);
-        return "redirect:/userprofile";
+        if (isAdmin) {
+        return "redirect:/admindashboard";
+        }else{
+            return "redirect:/userprofile";
+        }
     }
 
 }

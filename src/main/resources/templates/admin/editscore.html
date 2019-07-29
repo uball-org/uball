@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head th:replace="partials/head :: head('Edit Score')">
+</head>
+<body class="gradient-45deg-indigo-purple">
+<nav th:replace="partials/navbar :: nav"></nav>
+
+<main>
+
+    <h1 class="center">Edit Score</h1>
+
+<div class="container" >
+    <div class="header-shadow" style="padding: 1em;">
+        <div class="card-content">
+    <form th:action="@{'/editscore/' + ${points2.id}}" method="POST" th:object="${points2}" >
+        <label for="lastName" class="white-text">Player</label>
+        <br/>
+        <input id="lastName" th:placeholder="*{getUser().username}" th:readonly="readonly"/>
+        <br/>
+        <label for="score" class="white-text">Score</label>
+        <br/>
+        <input id="score" th:field="*{score}" />
+        <br/>
+        <div class="center-align">
+            <button type="submit" class="btn btn-primary pulse light-blue darken-2" >Save</button>
+        </div>
+        <br />
+    </form>
+        </div>
+    </div>
+    <br />
+
+</div>
+</main>
+<footer>
+    <div th:replace="partials/footer :: footer"></div>
+    <th:block th:include="partials/footer :: scripts" />
+</footer>
+
+</body>
+</html>

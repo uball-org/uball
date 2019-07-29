@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 @Repository
@@ -68,5 +69,9 @@ public interface ScoreRepository extends CrudRepository <Score, Long> {
             "where u.league_id = ?1 " +
             "order by m.name, s.score desc", nativeQuery = true)
     List<Score> findTopsScoresOnMachines(long id);
+
+    default List<Score> findAllOrderByDate() {
+        return null;
+    }
 
 }
