@@ -32,13 +32,13 @@
                                 <td th:text="${scores1.indexOf(scored) +1}" class="white-text"></td>
                                 <td th:text="${scored.getUser().username}" class="white-text"></td>
                                 <td th:text="${scored.getMachine().name}" class="white-text"></td>
-                                <td th:text="${scored.score}" class="white-text"></td>
+                                <td th:text="${#numbers.formatDecimal(scored.score, 0, 'COMMA', 2, 'POINT')}" class="white-text right-align"></td>
                                 <td>
                                     <div style="margin: 0; text-align: right;" class="input-field" th:if="${#httpSession.getAttribute('isAdmin')}">
                                         <input style="width: 13%;" th:placeholder="${scored.getUser().id}" th:value="${scored.getUser().id}"
-                                               name="user" type="text" class="validate white-text" th:readonly="readonly"/>
+                                               name="user" type="text" class="validate white-text right-align" th:readonly="readonly"/>
                                         <input style="width: 13%;" th:placeholder="${scored.getUser().points}" name="points" type="text"
-                                               class="validate white-text"/>
+                                               class="validate white-text right-align"/>
                                       </div>
                                 </td>
                             </tr>
@@ -78,13 +78,13 @@
                                 <td th:text="${scores2.indexOf(scored) +1}" class="white-text"></td>
                                 <td th:text="${scored.getUser().username}" class="white-text"></td>
                                 <td th:text="${scored.getMachine().name}" class="white-text"></td>
-                                <td th:text="${scored.score}" class="white-text"></td>
+                                <td th:text="${#numbers.formatDecimal(scored.score, 0, 'COMMA', 2, 'POINT')}" class="white-text right-align"></td>
                                 <td>
                                     <div style="margin: 0; text-align: right;" class="input-field" th:if="${#httpSession.getAttribute('isAdmin')}">
                                         <input style="width: 13%;" th:placeholder="${scored.getUser().id}" th:value="${scored.getUser().id}"
-                                               name="user" type="text" th:readonly="readonly" class="white-text"/>
+                                               name="user" type="text" th:readonly="readonly" class="white-text right-align"/>
                                         <input style="width: 13%;" th:placeholder="${scored.getUser().points}" name="points" type="text"
-                                               class="validate white-text"/>
+                                               class="validate white-text right-align"/>
                                      </div>
                                 </td>
                             </tr>
@@ -122,13 +122,13 @@
                                 <td th:text="${scores3.indexOf(scored) +1}" class="white-text"></td>
                                 <td th:text="${scored.getUser().username}" class="white-text"></td>
                                 <td th:text="${scored.getMachine().name}" class="white-text"></td>
-                                <td th:text="${scored.score}" class="white-text"></td>
+                                <td th:text="${#numbers.formatDecimal(scored.score, 0, 'COMMA', 2, 'POINT')}" class="white-text right-align"></td>
                                 <td>
                                     <div style="margin: 0; text-align: right;" class="input-field" th:if="${#httpSession.getAttribute('isAdmin')}">
                                         <input style="width: 13%;" th:placeholder="${scored.getUser().id}" th:value="${scored.getUser().id}"
-                                               name="user" type="text" class="validate white-text" th:readonly="readonly"/>
+                                               name="user" type="text" class="validate white-text right-align" th:readonly="readonly"/>
                                         <input style="width: 13%;" th:placeholder="${scored.getUser().points}" name="points" type="text"
-                                               class="validate white-text"/>
+                                               class="validate white-text right-align"/>
                                      </div>
                                 </td>
                             </tr>
@@ -167,13 +167,13 @@
                                 <td th:text="${scores4.indexOf(scored) +1}" class="white-text"></td>
                                 <td th:text="${scored.getUser().username}" class="white-text"></td>
                                 <td th:text="${scored.getMachine().name}" class="white-text"></td>
-                                <td th:text="${scored.score}" class="white-text"></td>
+                                <td th:text="${#numbers.formatDecimal(scored.score, 0, 'COMMA', 2, 'POINT')}" class="white-text right-align"></td>
                                 <td>
                                     <div style="margin: 0; text-align: right;" class="input-field" th:if="${#httpSession.getAttribute('isAdmin')}">
                                         <input style="width: 13%;" th:placeholder="${scored.getUser().id}" th:value="${scored.getUser().id}"
-                                               name="user" type="text" class="validate white-text" th:readonly="readonly"/>
+                                               name="user" type="text" class="validate white-text right-align " th:readonly="readonly"/>
                                         <input style="width: 13%;" th:placeholder="${scored.getUser().points}" name="points" type="text"
-                                               class="validate white-text"/>
+                                               class="validate white-text right-align "/>
                                       </div>
                                 </td>
                             </tr>
